@@ -1,0 +1,7 @@
+/venv/
+/.idea/
+/workspace.xml
+/shelf/
+/__pyache__/
+secrets.json
+db.sqlite3
