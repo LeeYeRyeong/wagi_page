@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈페이지 메인</title>
+    <style>
+        /* 스타일을 추가할 수 있습니다 */
+        body {
+        background-color: black;
+        }
+        .box {
+            width: 300px;
+            height: 150px;
+            background-color: white;
+            color: black;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 150px;
+            margin: 10px;
+            float: left;
+            display: flex;
+            align-items: center;
+        }
+        .box img {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        }
+        .box-text {
+        color: white; /* 글씨 색 */
+        flex: 1; 
+        padding: 10px;
+        background-color: black;
+        overflow: hidden;
+        text-overflow: ellipsis; /* 텍스트가 박스를 벗어날 때 점(...)으로 표시 */
+        }
+        .image-container {
+        display: flex;
+        align-items: center;
+        }
+
+        .image-container img {
+            width: 350px; /* 이미지 크기 조절 */
+            height: auto;
+        }
+
+        .image-text {
+            background-color: black;
+            color: white; 
+            padding: 10px;
+            margin-left: 10px; /* 이미지와 텍스트 사이 여백 조절 */
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>메인 페이지</h1>
+    </header>
+
+    <section>
+        <h2>사진</h2> 
+        <div class="image-container">
+            <img src="C:\Users\helen\OneDrive\바탕 화면\WAGI\메인페이지 사진.png" alt="사진 설명" width="350" height="auto">
+            <div class="image-text">함께 알아가고, 배워가는 <br> 누구나 성장할 수 있는 기회</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>박스</h2>
+        <div class="box">
+            <img src="C:\Users\helen\OneDrive\바탕 화면\WAGI\책.png" alt="사진 1 설명" width="100" height="auto">
+        </div>
+        <div class="box">
+            <img src="C:\Users\helen\OneDrive\바탕 화면\WAGI\따봉.png" alt="사진 2 설명" width="100" height="auto">
+        </div>
+        <div class="box">
+            <img src="C:\Users\helen\OneDrive\바탕 화면\WAGI\구름.png" alt="사진 3 설명" width="100" height="auto">
+        </div>
+        <div class="box">
+            <img src="C:\Users\helen\OneDrive\바탕 화면\WAGI\하트.png" alt="사진 4 설명" width="100" height="auto">
+        </div>
+    </section>
+    
+</body>
+</html>
