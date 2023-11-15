@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동아리원 소개</title>
+    <style>
+        body{
+            background-color: black;  
+            
+        }
+        .top>h1{color: white;}
+        .top{
+           border: dotted white;
+            height: 200px;
+        }
+        
+        .center{
+            width: 1500px;
+            position: relative;
+            margin: 0 auto;
+            
+        }
+        .L_bubble {/*말풍선 둥근 사각형 생성*/
+            position: relative;
+            width: 640px;
+            height: 180px;
+            padding: 10px;
+            margin: 10px;
+            margin-left: 80px;
+            background: #9EA9D7;
+            border-radius: 20px;
+            
+        
+        }
+
+        .L_bubble:after { /*말풍선 아래 삼각형 생성*/
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 0;
+            height: 0;
+            border: 30px solid transparent;
+            border-top-color: #9EA9D7;
+            border-bottom: 0;
+            border-left: 0;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            
+        }
+
+        .L_photo{
+            width: 180px;
+            height: 160px;
+            float: left;
+            margin: 1%;
+            margin-left: 15px;
+            padding: auto;
+            text-align: center;
+            border: 2px dotted black;
+        }
+        .L_text{
+            width: 400px;
+            height: 80px;
+            float: inline-end; 
+            margin-left: 15px;
+            margin-right: 15px;
+            padding: auto;
+            text-align: center;
+            border: 2px dotted black;
+        }
+        .L_name{
+            width: 120px;
+            height: 60px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            margin-left: 15px;
+            float: inline-start;
+            text-align: center;
+            padding: auto;
+            border: 2px dotted black;
+        }
+        .L_rink{
+            width: 140px;
+            height: 60px;  
+            margin-bottom: 10px;
+            margin-top: 10px;
+            margin-left: 15px;
+            float: inline-start; 
+            text-align: center;
+            padding: auto;
+            border: 2px dotted black;
+        }
+
+        .R_bubble {/*말풍선 둥근 사각형 생성*/
+            position: relative;
+            float: left;
+            width: 640px;
+            height: 180px;
+            padding: 10px;
+            margin: 10px;
+            margin-left: 640px;
+            background: white;
+            border-radius: 20px;
+            align-self: flex-end;
+        
+        }
+
+        .R_bubble:after { /*말풍선 아래 삼각형 생성*/
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 5%;
+            width: 0;
+            height: 0;
+            border: 30px solid transparent;
+            border-top-color: white;
+            border-bottom: 0;
+            border-left: 0;
+            margin-left: -10px;
+            margin-bottom: -30px;
+            
+        }
+
+        .R_photo{
+            width: 180px;
+            height: 160px;
+            float: right;
+            margin: 1%;
+            margin-right: 15px;
+            padding: auto;
+            text-align: center;
+            border: 2px dotted black;
+        }
+        .R_text{
+            width: 400px;
+            height: 80px;
+            float: inline-start; 
+            margin-left: 15px;
+            margin-right: 15px;
+            padding: auto;
+            text-align: center;
+            border: 2px dotted black;
+        }
+        .R_name{
+            width: 120px;
+            height: 60px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            margin-left: 15px;
+            float: inline-start;
+            text-align: center;
+            padding: auto;
+            border: 2px dotted black;
+        }
+        .R_rink{
+            width: 140px;
+            height: 60px;  
+            margin-bottom: 10px;
+            margin-top: 10px;
+            margin-left: 15px;
+            float: inline-start; 
+            text-align: center;
+            padding: auto;
+            border: 2px dotted black;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class ="top"><h1>상단바</h1></div>
+
+    <div class ="center">
+        <div class = "L_bubble">
+            <div class = "L_photo">
+                <h1>사진</h1>
+            </div>
+            <div class="L_name">
+                <h2> 이름</h2>
+            </div>
+            <div class = "L_rink">
+                <h2>링크자리</h2>
+            </div>
+            <div class ="L_text" >
+                <h3> 소개글 들어갈 공간입니다. </h3>
+            </div>
+        </div>
+
+        <div class = "R_bubble">
+            <div class = "R_photo">
+                <h1>사진</h1>
+            </div>
+            <div class="R_name">
+                <h2> 이름</h2>
+            </div>
+            <div class = "R_rink">
+                <h2>링크자리</h2>
+            </div>
+            <div class ="R_text" >
+                <h3> 소개글 들어갈 공간입니다. </h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
