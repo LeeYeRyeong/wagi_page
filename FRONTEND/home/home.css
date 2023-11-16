@@ -1,0 +1,1018 @@
+/* main */
+
+position: relative;
+width: 1280px;
+height: 2496px;
+
+background: #000000;
+
+
+/* Line 1 */
+
+position: absolute;
+width: 1280.01px;
+height: 0px;
+left: -1px;
+top: 832px;
+
+border: 1px solid #FFFFFF;
+
+
+/* Line 2 */
+
+position: absolute;
+width: 1280.01px;
+height: 0px;
+left: -1px;
+top: 1664px;
+
+border: 1px solid #FFFFFF;
+
+
+/* 소개글 */
+
+position: absolute;
+width: 510px;
+height: 152px;
+left: calc(50% - 510px/2 + 297px);
+top: 357px;
+
+font-family: 'Pretendard Variable';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 57px;
+
+color: #FFFFFF;
+
+
+
+/* Group 1 */
+
+position: absolute;
+width: 527.5px;
+height: 488.39px;
+left: 85.61px;
+top: 241.61px;
+
+
+
+/* 핫투 */
+
+position: absolute;
+width: 226px;
+height: 226px;
+left: 345px;
+top: 288px;
+
+background: url(hearts_love_valentine_romantic_valentines_day_icon_233310.png);
+transform: rotate(7.63deg);
+
+
+/* 엄지척 */
+
+position: absolute;
+width: 254px;
+height: 254px;
+left: 85.61px;
+top: 286.37px;
+
+background: url(thumbs_up_icon_192639.png);
+transform: rotate(-10.15deg);
+
+
+/* 구름 */
+
+position: absolute;
+width: 357px;
+height: 356px;
+left: 116px;
+top: 374px;
+
+background: url(weather_clouds_forecast_cloud_sky_cloudy_icon_253957.png);
+
+
+/* 책 */
+
+position: absolute;
+width: 233px;
+height: 232px;
+left: 381.09px;
+top: 465.84px;
+
+background: url(image.png);
+transform: rotate(5.24deg);
+
+
+/* 링크 */
+
+position: absolute;
+width: 1280px;
+height: 231px;
+left: 0px;
+top: 2266px;
+
+background: #9EA9D7;
+
+
+/* 스터디 */
+
+position: absolute;
+width: 549px;
+height: 266px;
+left: 65px;
+top: 942px;
+
+box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+
+/* Rectangle 3 */
+
+position: absolute;
+width: 529px;
+height: 266px;
+left: 85px;
+top: 942px;
+
+background: rgba(255, 255, 255, 0.9);
+border-radius: 20px;
+
+
+/* 책 */
+
+position: absolute;
+width: 244.76px;
+height: 181.16px;
+left: 84.88px;
+top: 975.25px;
+
+background: url(image.png);
+transform: matrix(1, 0.08, -0.11, 0.99, 0, 0);
+
+
+/* 스터디 멘트 */
+
+position: absolute;
+width: 307px;
+height: 70px;
+left: 289px;
+top: 1031px;
+
+
+
+/* 같이 배우고 성장해요. */
+
+position: absolute;
+width: 307px;
+height: 43px;
+left: 289px;
+top: 1031px;
+
+font-family: 'Pretendard Variable';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 43px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* C++, 자료구조 등의 컴공 과목 스터디로 성장하는 우리 */
+
+position: absolute;
+width: 273px;
+height: 15px;
+left: 289px;
+top: 1086px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* 플젝 */
+
+position: absolute;
+width: 529px;
+height: 266px;
+left: 671px;
+top: 942px;
+
+box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+
+/* Rectangle 3 */
+
+position: absolute;
+width: 529px;
+height: 266px;
+left: 671px;
+top: 942px;
+
+background: rgba(255, 255, 255, 0.9);
+border-radius: 20px;
+
+
+/* 엄지척 */
+
+position: absolute;
+width: 219.46px;
+height: 184.57px;
+left: 671px;
+top: 993.42px;
+
+background: url(thumbs_up_icon_192639.png);
+transform: matrix(0.99, -0.15, 0.21, 0.98, 0, 0);
+
+
+/* 플젝멘트 */
+
+position: absolute;
+width: 159px;
+height: 215px;
+left: 973px;
+top: 965px;
+
+
+
+/* 말하고, 듣고, 경험하며 알아가요. */
+
+position: absolute;
+width: 135px;
+height: 172px;
+left: 973px;
+top: 965px;
+
+font-family: 'Pretendard Variable';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 43px;
+
+color: #000000;
+
+
+
+/* ICBMA, 알유컴공 활동을 통해 생생하게 알게되는 지식들 */
+
+position: absolute;
+width: 159px;
+height: 30px;
+left: 973px;
+top: 1150px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+
+color: #000000;
+
+
+
+/* MT */
+
+position: absolute;
+width: 529px;
+height: 266px;
+left: 671px;
+top: 1288px;
+
+box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+
+/* Rectangle 3 */
+
+position: absolute;
+width: 529px;
+height: 266px;
+left: 671px;
+top: 1288px;
+
+background: rgba(255, 255, 255, 0.9);
+border-radius: 20px;
+
+
+/* 핫투 */
+
+position: absolute;
+width: 225.38px;
+height: 188.6px;
+left: 705px;
+top: 1312.11px;
+
+background: url(hearts_love_valentine_romantic_valentines_day_icon_233310.png);
+transform: matrix(0.99, 0.11, -0.16, 0.99, 0, 0);
+
+
+/* 발표 */
+
+position: absolute;
+width: 529px;
+height: 266px;
+left: 85px;
+top: 1288px;
+
+box-shadow: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+
+/* Rectangle 3 */
+
+position: absolute;
+width: 529px;
+height: 266px;
+left: 85px;
+top: 1288px;
+
+background: rgba(255, 255, 255, 0.9);
+border-radius: 20px;
+
+
+/* 발표 멘트 */
+
+position: absolute;
+width: 237px;
+height: 80px;
+left: 367px;
+top: 1379px;
+
+
+
+/* 우리가 만들어요. */
+
+position: absolute;
+width: 237px;
+height: 43px;
+left: 367px;
+top: 1379px;
+
+font-family: 'Pretendard Variable';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 43px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* 팀프로젝트 활동을 통해 직접 만들어가는 우리의 꿈 */
+
+position: absolute;
+width: 202px;
+height: 30px;
+left: 381px;
+top: 1429px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+
+color: #000000;
+
+
+
+/* MT멘트 */
+
+position: absolute;
+width: 206px;
+height: 82px;
+left: 953px;
+top: 1380px;
+
+
+
+/* 우리 친해져요. */
+
+position: absolute;
+width: 206px;
+height: 43px;
+left: 953px;
+top: 1380px;
+
+font-family: 'Pretendard Variable';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 43px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* MT와 번개 모임을 통해 소통하고 즐기는 모두 */
+
+position: absolute;
+width: 168px;
+height: 30px;
+left: 958px;
+top: 1432px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+
+color: #000000;
+
+
+
+/* 구름 */
+
+position: absolute;
+width: 291px;
+height: 290px;
+left: 102px;
+top: 1280px;
+
+background: url(weather_clouds_forecast_cloud_sky_cloudy_icon_253957.png);
+
+
+/* 여기는 머 넣지 흠냐흠냐 흠냐. 카드뉴스(인스타) -인스타에 있는 게시물 불러오는 거? 아님 인스타에 올렸던 카뉴를 홈페이지에도 올리는 거? */
+
+position: absolute;
+width: 808px;
+height: 220px;
+left: 388px;
+top: 1923px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 44px;
+
+color: #FFFFFF;
+
+
+
+/* 상단바 */
+
+position: absolute;
+width: 1066px;
+height: 248.67px;
+left: 0px;
+top: -27px;
+
+
+
+/* 상단바 */
+
+position: absolute;
+width: 506px;
+height: 29px;
+left: 560px;
+top: 74px;
+
+
+
+/* Activitics */
+
+position: absolute;
+width: 107px;
+height: 29px;
+left: 560px;
+top: 74px;
+
+font-family: 'Pretendard Variable';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Notice */
+
+position: absolute;
+width: 74px;
+height: 29px;
+left: 992px;
+top: 74px;
+
+font-family: 'Pretendard Variable';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* People */
+
+position: absolute;
+width: 78px;
+height: 29px;
+left: 724px;
+top: 74px;
+
+font-family: 'Pretendard Variable';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* Join */
+
+position: absolute;
+width: 48px;
+height: 29px;
+left: 875px;
+top: 74px;
+
+font-family: 'Pretendard Variable';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+color: #FFFFFF;
+
+
+
+/* 간지와기 */
+
+position: absolute;
+width: 248.67px;
+height: 248.67px;
+left: 0px;
+top: -27px;
+
+
+
+/* 간지와기-removebg-preview 1 */
+
+position: absolute;
+width: 248.67px;
+height: 248.67px;
+left: 0px;
+top: -27px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 58.89%;
+right: 30.35%;
+top: 55.2%;
+bottom: 27.47%;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 46.05%;
+right: 47.97%;
+top: 42.48%;
+bottom: 52.84%;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 72.95%;
+right: 20.28%;
+top: 55.06%;
+bottom: 27.7%;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 83.29%;
+right: 12.35%;
+top: 43.1%;
+bottom: 51.6%;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 26.25%;
+right: 63.13%;
+top: 54.88%;
+bottom: 28.24%;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 35.85%;
+right: 53.55%;
+top: 54.86%;
+bottom: 28.3%;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 92.05%;
+right: 3.95%;
+top: 55.2%;
+bottom: 27.6%;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 84.25%;
+right: 11.75%;
+top: 55%;
+bottom: 37.4%;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 51.63%;
+right: 41.35%;
+top: 55.2%;
+bottom: 40.6%;
+
+background: #FFFFFF;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* 간지와기 */
+
+position: absolute;
+width: 192.67px;
+height: 192.67px;
+left: calc(50% - 192.67px/2 - 22.67px);
+top: 2254px;
+
+
+
+/* 간지와기-removebg-preview 1 */
+
+position: absolute;
+width: 192.67px;
+height: 192.67px;
+left: 521px;
+top: 2254px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 58.89%;
+right: 30.35%;
+top: 55.2%;
+bottom: 27.47%;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 46.05%;
+right: 47.97%;
+top: 42.48%;
+bottom: 52.84%;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 72.95%;
+right: 20.28%;
+top: 55.06%;
+bottom: 27.7%;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 83.29%;
+right: 12.35%;
+top: 43.1%;
+bottom: 51.6%;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 26.25%;
+right: 63.13%;
+top: 54.88%;
+bottom: 28.24%;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 35.85%;
+right: 53.55%;
+top: 54.86%;
+bottom: 28.3%;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 92.05%;
+right: 3.95%;
+top: 55.2%;
+bottom: 27.6%;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 84.25%;
+right: 11.75%;
+top: 55%;
+bottom: 37.4%;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Vector */
+
+position: absolute;
+left: 51.63%;
+right: 41.35%;
+top: 55.2%;
+bottom: 40.6%;
+
+background: #000000;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* 저작권 */
+
+position: absolute;
+width: 303px;
+height: 24px;
+left: calc(50% - 303px/2 - 0.5px);
+top: 2463px;
+
+
+
+/* WAGI. 2023 All rights reserved */
+
+position: absolute;
+width: 273px;
+height: 24px;
+left: calc(50% - 273px/2 + 14.5px);
+top: 2463px;
+
+font-family: 'Pretendard Variable';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* ic:baseline-copyright */
+
+position: absolute;
+width: 24px;
+height: 24px;
+left: 488px;
+top: 2463px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* Group 4 */
+
+position: absolute;
+width: 141px;
+height: 31px;
+left: calc(50% - 141px/2 - 0.5px);
+top: 2416px;
+
+
+
+/* instagram */
+
+position: absolute;
+width: 31px;
+height: 31px;
+left: 569px;
+top: 2416px;
+
+
+
+/* Ellipse 6 */
+
+position: absolute;
+width: 31px;
+height: 31px;
+left: 569px;
+top: 2416px;
+
+background: rgba(255, 255, 255, 0.46);
+
+
+/* uil:instagram */
+
+position: absolute;
+width: 22.55px;
+height: 22.55px;
+left: 573.23px;
+top: 2420.23px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 8.33%;
+right: 8.33%;
+top: 8.33%;
+bottom: 8.33%;
+
+background: #000000;
+
+
+/* Group 2 */
+
+position: absolute;
+width: 31px;
+height: 31px;
+left: 624px;
+top: 2416px;
+
+
+
+/* instagram */
+
+position: absolute;
+width: 31px;
+height: 31px;
+left: 624px;
+top: 2416px;
+
+
+
+/* Ellipse 6 */
+
+position: absolute;
+width: 31px;
+height: 31px;
+left: 624px;
+top: 2416px;
+
+background: rgba(255, 255, 255, 0.46);
+
+
+/* quill:mail */
+
+position: absolute;
+width: 21px;
+height: 21px;
+left: 629px;
+top: 2421px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 9.38%;
+right: 9.38%;
+top: 21.88%;
+bottom: 21.88%;
+
+border: 2px solid #000000;
+
+
+/* Group 3 */
+
+position: absolute;
+width: 31px;
+height: 31px;
+left: 679px;
+top: 2416px;
+
+
+
+/* instagram */
+
+position: absolute;
+width: 31px;
+height: 31px;
+left: 679px;
+top: 2416px;
+
+
+
+/* Ellipse 6 */
+
+position: absolute;
+width: 31px;
+height: 31px;
+left: 679px;
+top: 2416px;
+
+background: rgba(255, 255, 255, 0.46);
+
+
+/* quill:mail */
+
+position: absolute;
+width: 21px;
+height: 21px;
+left: 684px;
+top: 2421px;
+
+
+
+/* Vector */
+
+position: absolute;
+left: 9.38%;
+right: 9.38%;
+top: 21.88%;
+bottom: 21.88%;
+
+border: 2px solid #000000;
