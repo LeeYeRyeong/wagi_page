@@ -1,0 +1,52 @@
+import javafx.animation.TranslateTransition;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.util.Duration;
+
+public class FloatingIconsApp extends Application {
+    private static final int NUM_ICONS = 4;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Floating Icons");
+
+        Pane root = new Pane();
+
+        // Create and add floating icons
+        for (int i = 0; i < NUM_ICONS; i++) {
+            Label icon = new Label("Icon" + (i + 1)); // Customize the icon representation
+            root.getChildren().add(icon);
+            animateFloating(icon);
+        }
+
+        Scene scene = new Scene(root, 400, 400);
+        primaryStage.setScene(scene);
+
+        primaryStage.show();
+    }
+
+    private void animateFloating(Label icon) {
+        // Create a TranslateTransition for the floating effect
+        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(2), icon);
+
+        // Set the range of floating (you can customize as needed)
+        translateTransition.setFromY(0);
+        translateTransition.setToY(100);
+
+        // Set the cycle count to indefinite for continuous floating
+        translateTransition.setCycleCount(TranslateTransition.INDEFINITE);
+
+        // Reverse the direction to create a bouncing effect
+        translateTransition.setAutoReverse(true);
+
+        // Start the animation
+        translateTransition.play();
+    }
+}
