@@ -6,21 +6,27 @@
     <title>동아리원 소개</title>
     <style>
         body{
+            background-color: black; 
+        }
+        .center{
             background-color: black;  
-            
+            width: 1500px;
+            position: relative;
+            margin: 0 auto;
         }
         .top>h1{color: white;}
         .top{
            border: dotted white;
             height: 200px;
+        }        
+        nav {
+            float: right;
+            position: absolute;
+            top: 50%;
+            right: 7%;
+            transform: translate(0%, -50%);
         }
         
-        .center{
-            width: 1500px;
-            position: relative;
-            margin: 0 auto;
-            
-        }
         .L_bubble {/*말풍선 둥근 사각형 생성*kjhsdvio*/
             position: relative;
             width: 640px;
@@ -30,8 +36,7 @@
             margin-left: 80px;
             background: #9EA9D7;
             border-radius: 20px;
-            
-        
+            color: black;
         }
 
         .L_bubble:after { /*말풍선 아래 삼각형 생성*/
@@ -46,10 +51,9 @@
             border-bottom: 0;
             border-left: 0;
             margin-left: -10px;
-            margin-bottom: -30px;
-            
+            margin-bottom: -30px;  
         }
-
+        
         .L_photo{
             width: 180px;
             height: 160px;
@@ -104,6 +108,7 @@
             background: white;
             border-radius: 20px;
             align-self: flex-end;
+            color: black;
         
         }
 
@@ -120,6 +125,7 @@
             border-left: 0;
             margin-left: -10px;
             margin-bottom: -30px;
+            transform: matrix(45);
             
         }
 
@@ -170,8 +176,6 @@
     </style>
 </head>
 <body>
-    <div class ="top"><h1>상단바</h1></div>
-
     <div class ="center">
         <div class = "L_bubble">
             <div class = "L_photo">
