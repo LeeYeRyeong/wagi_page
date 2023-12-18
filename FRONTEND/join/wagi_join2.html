@@ -1,74 +1,475 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <script src="https://kit.fontawesome.com/374f504269.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../join/css/auth.css">
-    <link rel="stylesheet" href="../join/css/common.css">
-    <link rel="stylesheet" href="../join/css/index.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>지원서작성</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAGI2</title>
+    <!-- 여기에 CSS 링크 또는 스타일을 포함하는 코드도 추가할 수 있습니다. -->
+    <style>
+        /* CSS 스타일을 여기에 추가합니다. */
+        body {
+            background-color: black; /* 화면 바탕색을 검은색으로 설정 */
+        }
+
+        .info-box {
+            position: absolute;
+            width: 188px;
+            height: 60px;
+            top: 185px;
+            left: 20px;
+            background-color: #e0e0e0;
+            border: 1px solid #000000;
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-text {
+            font-size: 14px;
+        }
+
+        .input-box {
+            position: absolute;
+            width: 1006px;
+            height: 446px;
+            top: 271px;
+            left: 20px; /* 변경된 위치 */
+            border: 1px solid #000000;
+            border-radius: 20px;
+            box-sizing: border-box;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-container {
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* input, textarea 스타일을 추가합니다. */
+        input, textarea {
+            width: calc(100% - 10px);
+            box-sizing: border-box;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* label 스타일을 추가하여 인라인으로 표시합니다. */
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        /* 추가된 스타일 */
+        .basic-info {
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding-left: 0; /* 왼쪽 여백 제거 */
+    margin-left: 0; /* 왼쪽 여백 제거 */
+            
+        }
+
+        .required-text {
+            font-size: 12px;
+            color: red;
+        }
+
+        .confirm-button {
+            position: absolute;
+            width: 375px;
+            height: 65px;
+            top: 734px;
+            left: 453px;
+            border: 1.5px solid #999898;
+            border-radius: 20px;
+            background-color: #999898;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* 추가된 스타일 */
+        .warning-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+      
+      
+    /* * {
+        background-color: black;
+        color: white;
+    } */
+    #main-header { 
+        width: 100%;
+        height: 20%;
+        position: relative;
+    }
+    nav {
+        float: right;
+        position: absolute;
+        top: 50%;
+        right: 7%;
+        transform: translate(0%, -50%);
+    }
+    .menu-item {
+        list-style: none;
+        display: inline-block;
+        padding-right: 120px; /*상대적으로 어케하징...*/
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .input-box{
+      background-color: white;
+    }
+    .confirm-button{
+      background-color: white;
+      color: black;
+    }
+    .enter{
+          width: 375px;
+          height: 65px;
+          position:absolute;
+          top: 734px;
+          left: 453px;
+          border-radius: 20px;
+          background-color:  #9EA9D7;
+        }
+
+        .confirm-button {
+            position: absolute;
+            width: 115px;
+            height: 40px;
+            top: 480px;
+            left: 991px;
+            border: 1.5px solid #999898;
+            border-radius: 20px;
+            background-color: #999898;
+            color: #999898;
+            cursor: pointer;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            transition: border-bottom-width 0.3s ease-out;
+        }
+
+        /* ========== */
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            transition: 0.3s;
+            font-size: 16px;
+            color: #333;
+            transform: translateY(14px);
+            
+           
+        }
+
+        input {
+            font-size: 16px;
+            padding: 5px;
+            margin-top: 1px;
+            border: none;
+            border-bottom: 1px solid #333;
+            transition: 0.3s;
+          
+        }
+
+        input:focus {
+            outline: none;
+            border-bottom: 2px solid #000;
+        }
+
+        .warning-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+          /* 추가된 스타일 */
+          .input-error {
+            background-color: #FFB6C1; /* 빨간 배경색 */
+            color: red;
+        }
+
+        .input-error label,
+        .input-error .warning-message {
+            color: red;
+        }
+
+
+
+
+
+
+        
+
+     
+        
  
- 
-    
+
+
+
+
+
+    </style>
 </head>
 <body>
-  <header>
-    <h1>WAGI</h1>
-    <nav>
-        <div class="nav-item active">
-        <a href="label" href="">Activities</a>
-        <div class="line"></div>
-        </div>
-        <div class="nav-item">
-        <a href="label" href="">People</a>
-        <div class="line"></div>
-        </div>
-        <div class="nav-item">
-        <a href="label"href=>Join</a>
-        <div class="line"></div>
-        <div class="nav-item">
-        <a href="label"href=>Notice</a>
-        <div class="line"></div>
-        </div>
-    </nav>
+  <header id="main-header">
+    <img src="../join/img/WAGI logo.png" alt="WAGI logo image">
+    <nav id="main-navigation">
+        <ul class="menu" style="color: white;">
+            <li class="menu-item">Activities</li> 
+            <li class="menu-item">People</li>
+            <li class="menu-item">Join</li>
+            <li class="menu-item">Notice</li>
+        </ul> 
+    </nav> 
 </header>
-  <div class="">
-    <div class="wrap">     
-      <i class="fa-solid fa-x cancel-icon"></i>
-      <div class="auth-box">
 
-       
-        <div class="auth-body">
-        <form class="auth-form">
-          <div class="input-box-wrap">
-          <div class="input-box">
-          <input id="email"  type="text"  placeholder="이름">
-          <p class="err-msg">이름은 필수 입력입니당</p>
+    <!-- 여기에 HTML 내용을 추가합니다. -->
+    <div class="info-box" style="background-color: #9EA9D7;">
+        <div class="info-text">
+            지원자 정보
         </div>
-        <div class="input-box">
-          <input id="pw" type="password"  placeholder="학번">
-          <p class="err-msg">학번은 필수 입력입니당</p>
-        </div>
-        <div class="input-box">
-          <input id="pw" type="password"  placeholder="학과">
-          <p class="err-msg">학과는 필수 입력입니당</p>
-        </div>
-        <div class="input-box">
-          <input id="pw" type="password"  placeholder="전화번호">
-          <p class="err-msg">전화번호는 필수 입력입니당</p>
-        </div>
-      </div>
-          <button onclick="loginHandler(event)">지원서 작성하기</button>
-        </form>
-        <div class="line"></div>
-       
-        </div>
-      </div>
-      </div>
     </div>
+
+    <div class="input-box">
+        <div class="basic-info" >
+            기본 정보
+            <span class="required-text"> (필수)</span>
+        </div>
+       
+    <div class="input-container">
+      <!-- 이름 입력 -->
+      <label for="name" style="color: #999898;">이름</label>
+      <input type="text" id="name" oninput="handleInput(this)" required>
+      <div class="warning-message" id="warningName"></div>
+
+      <!-- 학번 입력 -->
+      <label for="studentID" style="color: #999898;">학번</label>
+      <input type="text" id="studentID" oninput="handleInput(this)" required>
+      <div class="warning-message" id="warningStudentID"></div>
+
+      <!-- 학과 입력 -->
+      <label for="department" style="color: #999898;">학과</label>
+      <input type="text" id="department" oninput="handleInput(this)" required>
+      <div class="warning-message" id="warningDepartment"></div>
+
+      <!-- 전화번호 입력 -->
+      <label for="phoneNumber" style="color: #999898;">전화번호('-'없이 입력해 주세요)</label>
+      <input type="tel" id="phoneNumber" oninput="handleInput(this)" required>
+      <div class="warning-message" id="warningPhoneNumber"></div>
   </div>
-  <script src="../../js/login.js"></script>
- 
+    </div>
+
+    <!-- 학번 확인 버튼 -->
+    <div class="confirm-button" onclick="confirmStudentID()">학번 확인</div>
+
+    <!-- 지원서 작성하기 버튼 -->
+    <button class="enter" onclick="checkForm()">지원서 작성하기</button>
+
+    <!-- 여기에 JavaScript 스크립트를 추가합니다. -->
+    <script>
+      
+        function confirmStudentID() {
+            // 학번 확인 로직을 여기에 추가
+            document.querySelector('.confirm-button').style.backgroundColor = 'gray';
+        }
+
+
+        function checkForm() {
+            var name = document.getElementById('name').value;
+            var studentID = document.getElementById('studentID').value;
+            var department = document.getElementById('department').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+
+            // 경고 메시지 초기화
+            document.getElementById('warningName').innerHTML = '';
+            document.getElementById('warningStudentID').innerHTML = '';
+            document.getElementById('warningDepartment').innerHTML = '';
+            document.getElementById('warningPhoneNumber').innerHTML = '';
+
+            // 필수 입력 항목 확인
+            if (name === '') {
+                document.getElementById('warningName').innerHTML = '이름을 알맞게 입력해주세요.';
+
+            }
+
+            if (studentID === '') {
+                document.getElementById('warningStudentID').innerHTML = '학번을 알맞게 입력해주세요.';
+            }
+
+            if (department === '') {
+                document.getElementById('warningDepartment').innerHTML = '학과를 알맞게 입력해주세요.';
+            }
+
+            if (phoneNumber === '') {
+                document.getElementById('warningPhoneNumber').innerHTML = '전화번호(9~11자)를 알맞게 입력해주세요.';
+            }
+        }
+
+        function handleInput(input) {
+            if (input.value.trim() !== '') {
+                input.previousElementSibling.style.fontSize = '12px';
+                input.previousElementSibling.style.color = '#999898';
+                input.style.borderBottom = '2px solid #000';
+            } else {
+                input.previousElementSibling.style.fontSize = '16px';
+                input.previousElementSibling.style.color = '#999898';
+                input.style.borderBottom = '1px solid #333';
+            }
+        }
+
+        function confirmStudentID() {
+            // 학번 확인 로직을 여기에 추가
+            document.querySelector('.confirm-button').style.backgroundColor = 'gray';
+        }
+
+        function checkForm() {
+            var name = document.getElementById('name');
+            var studentID = document.getElementById('studentID');
+            var department = document.getElementById('department');
+            var phoneNumber = document.getElementById('phoneNumber');
+
+            validateInput(name);
+            validateInput(studentID);
+            validateInput(department);
+            validateInput(phoneNumber);
+
+            // 필수 입력 항목 확인
+            if (name.value === '' || studentID.value === '' || department.value === '' || phoneNumber.value === '') {
+                alert('모든 필수 항목을 입력해주세요.');
+            }
+        }
+
+        function validateInput(input) {
+            if (input.value.trim() === '') {
+                input.classList.add('input-error');
+                input.previousElementSibling.classList.add('input-error');
+                input.nextElementSibling.innerHTML = '알맞게 입력해주세요.';
+            } else {
+                input.classList.remove('input-error');
+                input.previousElementSibling.classList.remove('input-error');
+                input.nextElementSibling.innerHTML = '';
+            }
+        }
+
+        function handleInput(input) {
+            if (input.value.trim() !== '') {
+                input.previousElementSibling.style.fontSize = '12px';
+                input.previousElementSibling.style.color = '#999898';
+                input.style.borderBottom = '2px solid #000';
+            } else {
+                input.previousElementSibling.style.fontSize = '16px';
+                input.previousElementSibling.style.color = '#999898';
+                input.style.borderBottom = '1px solid #333';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // 모든 input 요소에 focus, blur 이벤트 리스너 등록
+            var inputs = document.querySelectorAll('input');
+            inputs.forEach(function(input) {
+                input.addEventListener('focus', function() {
+                    handleInput(this);
+                    validateInput(this);
+                });
+
+                input.addEventListener('blur', function() {
+                    validateInput(this);
+                });
+
+                input.addEventListener('input', function() {
+                    // 사용자가 입력 중이면 빨간 경고 스타일 제거
+                    if (this.value.trim() !== '') {
+                        this.classList.remove('input-error');
+                        this.previousElementSibling.classList.remove('input-error');
+                        this.nextElementSibling.innerHTML = '';
+                    }
+                });
+            });
+        });
+
+        function confirmStudentID() {
+            // 학번 확인 로직을 여기에 추가
+            document.querySelector('.confirm-button').style.backgroundColor = 'gray';
+        }
+
+        function checkForm() {
+            var name = document.getElementById('name');
+            var studentID = document.getElementById('studentID');
+            var department = document.getElementById('department');
+            var phoneNumber = document.getElementById('phoneNumber');
+
+            validateInput(name);
+            validateInput(studentID);
+            validateInput(department);
+            validateInput(phoneNumber);
+
+            // 필수 입력 항목 확인
+            if (name.value === '' || studentID.value === '' || department.value === '' || phoneNumber.value === '') {
+                alert('모든 필수 항목을 입력해주세요.');
+            }
+        }
+
+        function validateInput(input) {
+            var warningMessage = '';
+
+            switch (input.id) {
+                case 'name':
+                    warningMessage = '이름을 알맞게 입력해주세요.';
+                    break;
+                case 'studentID':
+                    warningMessage = '학번을 알맞게 입력해주세요.';
+                    break;
+                case 'department':
+                    warningMessage = '학과를 알맞게 입력해주세요.';
+                    break;
+                case 'phoneNumber':
+                    warningMessage = '전화번호(9~11자)를 알맞게 입력해주세요.';
+                    break;
+                default:
+                    break;
+            }
+
+            if (input.value.trim() === '') {
+                input.classList.add('input-error');
+                input.previousElementSibling.classList.add('input-error');
+                input.nextElementSibling.innerHTML = warningMessage;
+            } else {
+                input.classList.remove('input-error');
+                input.previousElementSibling.classList.remove('input-error');
+                input.nextElementSibling.innerHTML = '';
+            }
+        }
+
+        function handleInput(input) {
+            if (input.value.trim() !== '') {
+                input.previousElementSibling.style.fontSize = '12px';
+                input.previousElementSibling.style.color = '#999898';
+                input.style.borderBottom = '2px solid #000';
+            } else {
+                input.previousElementSibling.style.fontSize = '16px';
+                input.previousElementSibling.style.color = '#999898';
+                input.style.borderBottom = '1px solid #333';
+            }
+        }
+    </script>
 </body>
 </html>
