@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Apply for Club</title>
+</head>
+<body>
+
+<h2>Apply for Club</h2>
+
+<form method="post" action="{% url 'apply_club_user_info_view' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

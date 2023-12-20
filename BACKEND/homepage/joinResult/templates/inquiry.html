@@ -1,0 +1,37 @@
+<!doctype html>
+ <head>
+  <title>합격자 조회, 지원서 제출</title>
+ </head>
+ <body>
+   <form method='post' action={% url 'joinResult:result' %}>
+      {% csrf_token %}
+      {% if isDate == 2 %}
+      <input type="text" name="inputId" placeholder="학번을 입력하세요.">
+      <a href={% url 'joinResult:result' %}>
+         <button>합격자 조회</button>
+      </a>
+      {%endif%}
+      {% if isDate == 0 or isDate == 1 %}
+      <input type="text" name="inputId" placeholder="학번을 입력하세요.", disabled>
+      <a href={% url 'joinResult:result' %}>
+         <button disabled>합격자 조회</button>
+      </a>
+      {%endif%}
+      </form>
+      
+      <!--지원서 제출 버튼-->
+   <form method='post' action={% url 'joinResult:write_form' %}>
+      {% csrf_token %}
+      {% if isDate == 1 %}
+      <a href={% url 'joinResult:write_form' %}>
+         <button>지원서 제출</button>
+      </a>
+      {%endif%}
+      {% if isDate == 0 or isDate == 2 %}
+      <a href={% url 'joinResult:write_form' %}>
+       <button disabled>지원서 제출</button>
+      </a>
+      {%endif%}
+   </form>
+ </body>
+</html>

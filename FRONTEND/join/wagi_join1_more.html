@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/374f504269.js" crossorigin="anonymous"></script>
+  
+ 
+    <link rel="stylesheet" href="../join/css/auth.css">
+    <link rel="stylesheet" href="../join/css/common.css">
+    <link rel="stylesheet" href="../join/css/index.css">
+   
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지원서 제출</title>
+ 
+
+    <style>
+      input{
+        height: 100px;
+      }
+      
+    </style>
+</head>
+<body>
+  <header>
+    <h1>WAGI</h1>
+    <nav>
+        <div class="nav-item active">
+        <a href="label" href="">Activities</a>
+        <div class="line"></div>
+        </div>
+        <div class="nav-item">
+        <a href="label" href="">People</a>
+        <div class="line"></div>
+        </div>
+        <div class="nav-item">
+        <a href="label"href=>Join</a>
+        <div class="line"></div>
+        <div class="nav-item">
+        <a href="label"href=>Notice</a>
+        <div class="line"></div>
+        </div>
+    </nav>
+</header>
+  <div class="">
+    <div class="wrap">     
+      <i class="fa-solid fa-x cancel-icon"></i>
+      <div class="auth-box">
+
+       
+        <div class="auth-body">
+        <form class="auth-form">
+          <div class="input-box-wrap">
+          <div class="input-box">
+            <h6>자기소개를 해주세요(500자 내외)</h6>
+          <input id="email"  type="text"  placeholder="">
+          <p class="err-msg">이름은 필수 입력입니당</p>
+        </div>
+        <div class="input-box">
+          <h6>지원동기를 작성해주세요.(500자 내외)</h6>
+          <input id="pw" type="password"  placeholder="">
+          <p class="err-msg">학번은 필수 입력입니당</p>
+        </div>
+        <div class="input-box">
+          <h6>프로젝트 관련 경험이 있다면 작성해주세요(800자 내외)</h6>
+          <input id="pw" type="password"  placeholder="">
+          
+          <p class="err-msg">학과는 필수 입력입니당</p>
+        </div>
+        <div class="input-box">
+          <h6>개발과 관련한 공부를 한 경험이 있다면 작성해주세요(700자 내외)</h6>
+          <input id="pw" type="password"  placeholder="">
+          <p class="err-msg">전화번호는 필수 입력입니당</p>
+        </div>
+      </div>
+          <button onclick="loginHandler(event)">지원서 제출</button>
+        </form>
+        <div class="line"></div>
+       
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../js/join.js"></script>
+  <script src="../../js/login.js"></script>
+ 
+</body>
+</html>
