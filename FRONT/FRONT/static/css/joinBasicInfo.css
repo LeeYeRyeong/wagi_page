@@ -1,0 +1,223 @@
+
+/* CSS 스타일 */
+body {
+    background-color: black; /* 화면 바탕색을 검은색으로 설정 */
+}
+
+.info-box {
+    position: absolute;
+    width: 188px;
+    height: 60px;
+    top: 185px;
+    left: 20px;
+    background-color: #e0e0e0;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-text {
+    font-size: 14px;
+}
+
+.input-box {
+    position: absolute;
+    width: 1006px;
+    height: 446px;
+    top: 271px;
+    left: 20px; /* 변경된 위치 */
+    border: 1px solid #000000;
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* input, textarea 스타일을 추가합니다. */
+input, textarea {
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+/* label 스타일을 추가하여 인라인으로 표시합니다. */
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+/* 추가된 스타일 */
+.basic-info {
+    font-size: 16px;
+    margin-bottom: 10px;
+    padding-left: 0; /* 왼쪽 여백 제거 */
+margin-left: 0; /* 왼쪽 여백 제거 */
+    
+}
+
+.required-text {
+    font-size: 12px;
+    color: red;
+}
+
+.confirm-button {
+    position: absolute;
+    width: 375px;
+    height: 65px;
+    top: 734px;
+    left: 453px;
+    border: 1.5px solid #999898;
+    border-radius: 20px;
+    background-color: #999898;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* 추가된 스타일 */
+.warning-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+/* * {
+background-color: black;
+color: white;
+} */
+#main-header { 
+width: 100%;
+height: 20%;
+position: relative;
+}
+nav {
+float: right;
+position: absolute;
+top: 50%;
+right: 7%;
+transform: translate(0%, -50%);
+}
+.menu-item {
+list-style: none;
+display: inline-block;
+padding-right: 120px; /*상대적으로 어케하징...*/
+font-weight: bold;
+font-size: 20px;
+}
+.input-box{
+background-color: white;
+}
+.confirm-button{
+background-color: white;
+color: black;
+}
+.enter{
+  width: 375px;
+  height: 65px;
+  position:absolute;
+  top: 734px;
+  left: 453px;
+  border-radius: 20px;
+  background-color:  #9EA9D7;
+}
+
+.confirm-button {
+    position: absolute;
+    width: 115px;
+    height: 40px;
+    top: 480px;
+    left: 991px;
+    border: 1.5px solid #999898;
+    border-radius: 20px;
+    background-color: #999898;
+    color: #999898;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    transition: border-bottom-width 0.3s ease-out;
+}
+
+/* ========== */
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    transition: 0.3s;
+    font-size: 16px;
+    color: #333;
+    transform: translateY(14px);
+    
+   
+}
+
+input {
+    font-size: 16px;
+    padding: 5px;
+    margin-top: 1px;
+    border: none;
+    border-bottom: 1px solid #333;
+    transition: 0.3s;
+  
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #000;
+}
+
+.warning-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+  /* 추가된 스타일 */
+  .input-error {
+    background-color: #FFB6C1; /* 빨간 배경색 */
+    color: red;
+}
+
+.input-error label,
+.input-error .warning-message {
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
