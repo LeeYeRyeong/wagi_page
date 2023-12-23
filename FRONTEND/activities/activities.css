@@ -109,12 +109,12 @@ h1 {
 }
 
 #MT {
-    position : absolute; 
+    position : absolute;
     margin-left : 50px;
     width: 400px;
     height: 470px;
     top: 40px;
-    left: 10%;
+    left: 110px;
     
 }
 
@@ -124,7 +124,7 @@ h1 {
     width: 400px;
     height: 470px;
     top: 40px;
-    left: 464px;
+    left: 444px;
     border-radius: 25px;
 
 }

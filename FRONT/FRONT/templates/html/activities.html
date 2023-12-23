@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>activites_main</title>
+    <link rel="stylesheet" href="../../static/css/activities.css"> <!--load static으로 바꿔줘야 할것으로 보임-->
+
+</head>
+<body> <!-- base.html 을 삽입하려는 시도를 해야함-->
+    <header id="main-header">
+        <img src="../../static/img/WAGI logo.png" alt="WAGI logo image">
+        <nav id="main-navigation">
+            <ul class="menu">
+                <li class="menu-item">Activities</li> 
+                <li class="menu-item">People</li>
+                <li class="menu-item">Join</li>
+                <li class="menu-item">Notice</li>
+            </ul> 
+        </nav> 
+    </header>
+    <div class="content"><!--헤더 밑-->
+        <div class="button" id="modify_button"><!--수정 버튼-->
+                <a href="#">수정하기</a>
+        </div>
+        <!--수정하기 버튼을 누르고 나서 밑에 있는 버튼들이 나오게 해야 할 듯-->
+        <div class="button" id="delete_button"><!--삭제 버튼-->
+            <a href="#">선택한 파일 삭제하기</a>
+        </div>
+        <div class="button" id="upload_button"><!--업로드 버튼-->
+            <a href="#">사진 다시 업로드하기 </a>
+        </div>
+        <!--각 버튼 hidden 추가할 것-->
+        <div class="article"><!--모든 앨범-->
+            <!--MT-->
+            <div class="item" id="MT"><!--앨범 및 앨범 이름-->
+                <!--모달 창이 나오도록 해야함... 추가 수정 요함-->
+                <div class="album" id="MT_album"><!--앨범-->
+                    <br>
+                    <br>
+                    <img src="https://via.placeholder.com/180x180"  width =180px; height = 180px; style="cursor:pointer" alt="MT picture 1">
+                    <img src="https://via.placeholder.com/180x180"  width =180px; height = 180px; style="cursor:pointer" alt="MT picture 2" >
+                    <!---사이즈를 지금은 180x180 아무거나 했지만 사이즈를 따로 180x180 지정해야할거 가틈-->
+                </div>
+                <div class="album" id="MT_album"><!--앨범-->
+                    <img src="https://via.placeholder.com/180x180"  width =180px; height = 180px; style="cursor:pointer" alt="MT picture 3">
+                    <img src="https://via.placeholder.com/180x180"  width =180px; height = 180px; style="cursor:pointer" alt="MT picture 4">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="album_name">
+                    <br>
+                    <h1 style = "text-align:center;">MT</h1>
+                </div> <!--앨범 이름-->
+                <br>
+                <div id="myModal" class="modal close">
+                    <img class="modal-content album-img_left" id="modalImage">
+                </div>
+            </div>
+            <!--이하 동일-->
+            <!--study-->
+            <div class="item" id="study">
+                <div class="album" id="study_album">
+                    <br>
+                    <br>
+                    <img src="https://via.placeholder.com/180x180" width =180px; height = 180px; style="cursor:pointer" alt="study picture 1">
+                    <img src="https://via.placeholder.com/180x180" width =180px; height = 180px; style="cursor:pointer" alt="study picture 2">
+                </div>
+                <div class="album" id="study_album">
+                    <img src="https://via.placeholder.com/180x180" width =180px; height = 180px; style="cursor:pointer" alt="study picture 3">
+                    <img src="https://via.placeholder.com/180x180" width =180px; height = 180px; style="cursor:pointer" alt="study picture 4">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="album_name">
+                    <br>
+                    <h1 style = "text-align : center;">Study</h1>
+                </div>
+                <div id="myModal" class="modal close">
+                    <img class="modal-content album-img_center" id="modalImage">
+                </div>
+            </div>
+            <!--project-->
+            <div class="item" id="project">
+                <div class="album" id="project_album">
+                    <br>
+                    <br>
+                    <img src="https://via.placeholder.com/180x180" width =180px; height = 180px; style="cursor:pointer" alt="project picture 1">
+                    <img src="https://via.placeholder.com/180x180" width =180px; height = 180px; style="cursor:pointer" alt="project picture 2">
+                </div>
+                <div class="album" id="project_album">
+                    <img src="https://via.placeholder.com/180x180"  width =180px; height = 180px; style="cursor:pointer" alt="project picture 3">
+                    <img src="https://via.placeholder.com/180x180"  width =180px; height = 180px; style="cursor:pointer" alt="project picture 4">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="album_name">
+                    <br>
+                    <h1 style = "text-align : center;">Project</h1>
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="myModal" class="modal close">
+        <img class="modal-content album-img_right" id="modalImage">
+    </div>
+    <script>
+        // 모달 요소 가져오기
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modalImage");
+        var modalContent = document.querySelector('.modal-content'); // 모달 컨텐츠
+        var captionText = document.getElementById("caption");
+        var span = document.getElementsByClassName("close")[0];
+
+        
+
+        // 이미지 클릭 이벤트 설정
+        var images = document.querySelectorAll('.album img');
+        images.forEach(function(img) {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            // Transform 속성 초기화
+            modalContent.style.transform = 'none';
+        };
+    }); 
+    
+
+    // 닫기 버튼 클릭 이벤트
+    span.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // 모달 외부 클릭 시 닫기
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
+        
+    </script> 
+</body>
+</html>
