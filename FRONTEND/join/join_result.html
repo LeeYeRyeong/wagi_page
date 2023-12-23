@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WAGI JOIN</title>
+<link rel="stylesheet" href="css_join_result.css" />
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: black; color: white;"> 
+    <div id="page-wrapper">
+        <header id="main-header">
+            <img src="../join/img/WAGI logo.png" alt="WAGI logo image">
+            <nav id="main-navigation">
+                <ul class="menu">
+                    <li class="menu-item">Activities</li> 
+                    <li class="menu-item">People</li>
+                    <li class="menu-item" id="apply">Join</li>
+                    <li class="menu-item">Notice</li>
+                </ul> 
+            </nav> 
+        </header>
+        <div id="content">
+            <div id="main-section">
+                <div id="합격자 조회">
+                    <h1 id="title">합격자 조회</h1>
+                    <form id="search">
+                        <input id="input_studentNum" type="text" name="student number" placeholder="학번을 입력하세요." post>
+                        <button id="btn_studentNum" type="button"><img src="../join/img/검색_아이콘.png"></button>
+                    </form>
+                </div>
+                <button id="btn_apply">지원서 제출</button>
+            </div> 
+        </div>
+        
+        <div class="modal_unavailable">
+            <div class="modal-box1">
+                <img class="imgWagi" src="../join/img/아기와기.png">
+                <button id="close-modal" style="padding-bottom: 3px;">✕</button>
+                <p>
+                    <br>
+                    <br>
+                </p>
+                <div class="modal-content1">
+                    <h2 class="message">지금은 모집 기간이 아니에요!</h2>
+                    <h4 class="message">아래의 메일을 입력해주시면<br>모집 기간에 안내 메일을 발송해드립니다.</h4>
+                    <form id="email" method="post">
+                        <input id="input_email" type="email" name="email" placeholder="메일을 입력해주세요." required="required">
+                    </form>
+                </div>
+                <p class="up">
+                </p>
+            </div>
+        </div>
+        <div class="modal_pass">
+            <div class="modal-box2">
+                <img class="imgWagi" src="../join/img/아기와기.png">
+                <div class="modal-content2">
+                    <h2 class="message">20221153 김현수님!</h2>
+                    <h4 class="message">WAGI 신입부원 모집에<br>최종합격 하신 것을 진심으로 축하드립니다!</h4>
+                    <div class="OT_info">
+                        <div class="OT_message">
+                            <h4 style="margin-top: 14px;">OT일정을 안내드립니다.</h4>
+                            <h4>
+                                일시: 2024년 3월 7일 목요일 6시
+                                <br>
+                                장소: 성신관 301호
+                            </h4>
+                            <h5>*노트북 없이 와도 됩니다!</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal_fail">
+            <div class="modal-box3">
+                <img class="imgWagi" src="../join/img/아기와기.png">
+                <div class="modal-content3">
+                    <h2 class="message">20221153 김현수님</h2>
+                    <div class="failure_message">
+                            <h4 style="margin-top: 20px;">
+                                WAGI 신입부원 모집에
+                                <br>
+                                안타깝게 불합격 하셨습니다.
+                                <br>
+                                당신의 미래를 응원합니다.
+                            </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="main-footer"></footer>
+            
+        </footer>
+        
+        <script>
+            //모달창 띄우기
+            const modal_unavailable = document.querySelector('.modal_unavailable');
+            const btnOpenModal_1=document.querySelector('#apply');
+    
+            btnOpenModal_1.addEventListener("click", ()=>{
+                modal_unavailable.style.display="flex";
+            });
+
+            const modal_pass = document.querySelector('.modal_pass');
+            const btnOpenModal_2=document.querySelector('#btn_studentNum');
+    
+            btnOpenModal_2.addEventListener("click", ()=>{
+                modal_pass.style.display="flex";
+            });
+            //모달창 닫기 버튼
+            const closeModal = document.querySelector('#close-modal');
+    
+            closeModal.addEventListener("click", ()=>{
+                modal_unavailable.style.display="none";
+            });
+
+            
+            
+            $( document ).ready( function() {
+                    $( '#email' ).on("submit", function(event) {
+                        $( '.modal-content1' ).animate({ 
+                            height: 0, 
+                            opacity: 0 
+                        }, 700 , event.preventDefault());
+                        $('.up').text( 
+                            "해당 주소로 메일을 보내드리겠습니다."); 
+                        $('.up').css({'background':'white'}); 
+                    } );
+                } );
+            
+        </script>
+        
+    </div> 
+</body>
+</html>
