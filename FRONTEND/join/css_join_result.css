@@ -5,25 +5,6 @@
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
-#main-header { 
-    width: 100%;
-    height: 20%;
-    position: relative;
-}
-nav {
-    float: right;
-    position: absolute;
-    top: 42%;
-    right: 7%;
-    transform: translate(0%, -50%);
-}
-.menu-item {
-    list-style: none;
-    display: inline-block;
-    padding-right: 120px;
-    font-weight: bold;
-    font-size: 22px;
-}
 #main-section {
     position: absolute;
     top: 50%;
@@ -140,7 +121,7 @@ nav {
     border-radius: 17px;
     /*background-color: rgb(255, 255, 255, 0.5);*/
 }
-#input_email {
+.input_email {
     border: 0;
     font-size: 17px;
     width: 350px;
@@ -155,18 +136,24 @@ nav {
 }
 .up {
     position: relative;
+    display: none;
 
-    width: 372px;
+    width: 350px;
     height: 55px;
 
-    top: 38px;
-    left: 65px;
+    top: 62px;
+    left: 72px;
+
+    
+    border-radius: 15px;
+}
+.up_message {
+    position: relative;
 
     font-size: 17px;
-
-    text-align: center;
+    margin-top: auto;
+    margin-left: 51px;
     line-height: 55px;
-    border-radius: 15px;
 }
 #close-modal {
     float: right;
