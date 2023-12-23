@@ -1,205 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            color:black;
-            overflow-x: hidden; 
-        }
-        .fixed-image:nth-child(1) {
-        position: fixed;
-        top: 200px;
-        left: 170px;
-        opacity: 0;
-        animation: flyIn 1s forwards;
-        }
-
-    .fixed-image:nth-child(2) {
-    position: fixed;
-    top: 220px;
-    left: 90px;
-    opacity: 0;
-    animation: flyIn 1s forwards;
-        }
-
-    .fixed-image:nth-child(3) {
-    position: fixed;
-    top: 310px;
-    left: 83px;
-    opacity: 0;
-    animation: flyIn 1s forwards;
-    }
-
-    .fixed-image:nth-child(4) {
-    position: fixed;
-      top:340px;
-   left:150px;
-    opacity: 0;
-    animation: flyIn 1s forwards;
-}
-
-        section {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 1s;
-            position: relative;
-            padding: 0 20%;
-            
-        }
-
-        #section1 {
-            background-color: black;
-            color: #fff;
-            font-size: 30px;
-            text-align: left center;
-        }
-
-        
-
-        
-
-        #section2 {
-            background-color: black;
-            color: black;
-        }
-         #section3 {
-            display: flex;
-            background-color: black;
-        }
-
-        #section3 a {
-            margin-right: 10px; /* 각 이미지 사이의 간격을 조절할 수 있습니다. */
-        }
-
-        .top-box {
-    top: 30px;
-    left: 50px;
-    align-items: center;
-    justify-content: space-between;
-   
-}
-
-/* Style for the first box inside top-box */
-.top-box .box1 {
-    width: 450px;
-    height: 200px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 20px;
-    display: flex;
-    position:relative;
-  
-}
-
-/* Style for the second box inside top-box */
-.top-box .box2 {
-    width: 450px;
-    height: 200px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 20px;
-    display: flex;
-    
-}
-
-.bottom-box {
-    top: 60px;
-    left: 50px;
-    justify-content: space-between;
-    align-items: center;
-    color: black;
-}
-
-/* Style for the third box inside bottom-box */
-.bottom-box .box3 {
-    width: 450px;
-    height: 200px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 20px;
-    display: flex;
-  
-}
-
-/* Style for the fourth box inside bottom-box */
-.bottom-box .box4 {
-    width: 450px;
-    height: 200px;
-    background-color: white;
-    margin: 20px;
-    border-radius: 20px;
-    display: flex;
-   
-    
-}
-.move-img{
-    position: relative;
-    top:20px;
-    left:20px;
-}
-.move-img1{
-    position: absolute;
-    top:20px;
-    left:120px;
-}
-.box1 h1,
-.box2 h1,
-.box3 h3,
-.box4 h1 {
-    margin: 2px; /* Adjust the text spacing */
-}
-
-#p {
-    font-size: 10px;
-}
-#p2{
-    font-size: 30px;
-
-}
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-        }
-        @keyframes flyIn {
-    to {
-        opacity: 1;
-        transform: translate(0, 0);
-    }
-}
-
-.fixed-image {
-    opacity: 0;
-    animation: flyIn 1s forwards;
-    transform: translate(-100px, 0); /* 초기 위치를 왼쪽으로 이동시킴 */
-}
-.text{
-    position: absolute;
-    left:200px;
-    top:80px;
-}
-.tex1{
-    position: relative;
-    left:220px;
-    top:280px;
-}
-
-
-    </style>
+    <link rel="stylesheet" href="home.css" >
     <title>Scrolling Sections with Flying Icons, Header, and Footer</title>
 </head>
 <body>
@@ -230,7 +35,7 @@
                  <div class="move-img">
                     <img src="C:\image\book.png" alt="Icon 1" width="160px">
                 </div>
-                <div class="text">
+                <div class="text1">
                     <h1> 같이 배우고 성장해요.</h1>
                     <div id="p">C++, 자료구조 등의 컴공 과목 스터디로 성장하는 우리</div>
                 </div>
@@ -241,12 +46,12 @@
         
             <div class="box2">
                  <div class="move-img1">
-                    <img src="C:\image\thumbsup.png" alt="Icon 2" width="150px">
+                    <img src="C:\image\cloud.png" alt="Icon 2" width="150px">
                 </div>
-                 <div class="text1">
+                 <div class="text2">
                     <h1>우리가 만들어요</h1>
                     <div id="p">팀프로젝트 활동을 통해 직접 만들어가는</div>
-                    <div id="p">
+                    <div id="p1">
                         우리의 꿈
                     </div>
                  </div>
@@ -258,13 +63,13 @@
             <div class="bottom-box">
                 <div class="box3">
                 <div class="move-img2">
-                    <img src="C:\image\heart.png" alt="Icon 4"width="160px">
+                    <img src="C:\image\thumbsup.png" alt="Icon 4"width="160px">
                 </div>
-                <div class = "text">
-                    <h3>말하고,</h3>
-                    <h3>듣고,</h3> 
-                    <h3>경험하며</h3>
-                    <h3>알아가요.</h3>
+                <div class = "text3">
+                    <h2>말하고,</h2>
+                    <h2>듣고,</h2> 
+                    <h2>경험하며</h2>
+                    <h2>알아가요.</h2>
                     <div id="p">
                         ICBMA, 알유컴공 활동을 통해
                     </div>
@@ -277,14 +82,14 @@
                
             <div class="box4">
                 <div class="move-img3">
-                    <img src="C:\image\cloud.png" alt="Icon 3"width="150px">
+                    <img src="C:\image\heart.png" alt="Icon 3"width="150px">
                 </div>
                 <div class="text4">
                     <h1>우리 친해져요</h1>
                     <div id="p">
                         MT와 번개 모임을 통해 소통하고
                      </div>
-                    <div id="p">
+                    <div id="p1">
                         즐기는 모두
                     </div>
                 </div>
@@ -307,32 +112,68 @@
     <footer>
         <p>&copy; 2023 My Website. All rights reserved.</p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-    const sectionIds = ['#section1', '#section2', '#section3'];
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const sectionIds = ['#section1', '#section2', '#section3'];
+        let lastScrollPosition = window.scrollY;
 
-    function checkScroll() {
-        sectionIds.forEach((sectionId) => {
-            const section = document.querySelector(sectionId);
-            const sectionTop = section.getBoundingClientRect().top;
-            const sectionBottom = section.getBoundingClientRect().bottom;
+        function checkScroll() {
+            sectionIds.forEach((sectionId) => {
+                const section = document.querySelector(sectionId);
+                const sectionTop = section.getBoundingClientRect().top;
+                const sectionBottom = section.getBoundingClientRect().bottom;
 
-            if (sectionTop < window.innerHeight / 2 && sectionBottom >= 0) {
-                section.style.opacity = '1';
-                section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 10 });
-            } else {
-                section.style.opacity = '0';
-            }
-        });
-    }
+                if (sectionTop < window.innerHeight / 2 && sectionBottom >= 0) {
+                    // 섹션이 이미 보이는 상태가 아닌 경우에만 추가 애니메이션 적용
+                    if (section.style.opacity !== '1') {
+                        section.style.opacity = '1';
+                        section.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest', duration: 10 });
 
-    window.addEventListener('scroll', checkScroll);
-    window.addEventListener('resize', checkScroll);
+                        // section2 내의 move-img 요소들에 대한 Flying-in 효과
+                        if (sectionId === '#section2') {
+                            document.querySelectorAll('.move-img, .move-img1, .move-img2, .move-img3').forEach((moveImg) => {
+                                moveImg.style.transition = 'transform 1s';
+                                moveImg.style.transform = 'translate(0, 0)';
+                            });
+                        }
 
-    checkScroll(); // Initial check
-});
+                        // section2에서 section1로 스크롤할 때 section1에 대한 Flying-in 효과
+                        if (sectionId === '#section1' && lastScrollPosition > window.scrollY) {
+                            document.querySelectorAll('.move-img, .move-img1, .move-img2, .move-img3').forEach((moveImg) => {
+                                moveImg.style.transition = 'transform 1s';
+                                moveImg.style.transform = 'translate(0, 0)';
+                            });
+                        }
+                    }
+                } else {
+                    section.style.opacity = '0';
 
-    </script>
+                    // section2 내의 move-img 요소들에 대한 Flying-out 효과
+                    if (sectionId === '#section2') {
+                        document.querySelectorAll('.move-img, .move-img1, .move-img2, .move-img3').forEach((moveImg) => {
+                            moveImg.style.transition = 'transform 1s';
+                            moveImg.style.transform = 'translate(-100px, 0)';
+                        });
+                    }
+                }
+            });
+
+            lastScrollPosition = window.scrollY;
+        }
+
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('resize', checkScroll);
+
+        checkScroll(); // 초기 체크
+    });
+</script>
+
+
+
+
 
 </body>
 </html>
+
+
+
