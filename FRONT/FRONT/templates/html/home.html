@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html>
+    <head>
+        <title>WAGI WEB PAGE</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <script src="{% static 'js/home.js' %}"></script>
+
+    </head>
+    
+
+<body>
+
+    <div id="page-wrapper">
+        <header id="main-header">
+            <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
+            <nav id="main-navigation">
+                <ul class="menu">
+                    <li class="menu-item">Activities</li>
+                    <li class="menu-item">People</li>
+                    <li class="menu-item">Join</li>
+                    <li class="menu-item">Notice</li>
+                </ul>
+            </nav>
+        </header>
+
+        {% block content %} 
+        <section id="section1">
+            <h1>Section 1</h1>
+       
+            <img src="{% static 'img.하트.png'%}" alt="Icon 1" class="icon"width="30px">
+            <img src="{% static 'img.엄지.png'%}" alt="Icon 2" class="icon"width="30px">
+            <img src="{% static 'img.구름.png'%}"  alt="Icon 3" class="icon" width="30px">
+            <img src="{% static 'img.책.png'%}"  alt="Icon 4" class="icon"width="30px">
+        </section>
+         <section id="section2">
+            <div class="top-box">
+                <div class="box1">
+                    <h1> 같이 배우고 성장해요.</h1>   
+                         <div id="p">
+                            C++,자료구조 등의 컴공 과목 스터디로 성장하는 우리 
+                        </div>
+                </div>
+                <div class="box2">
+                <h1>우리가 만들어요</h1>     
+                    <div id="p">
+                        팀프로젝트 활동을 통해 직접 만들어가는
+                    </div>
+                    <div id="p">
+                        우리의 꿈
+                    </div> 
+                </div>
+            </div>
+
+        <div class="bottom-box">
+            <div class="box3">
+                 <h1>말하고,</h1>
+                <h1>듣고,</h1> 
+                <h1>경험하며</h1>
+                <h1>알아가요.</h1>
+                <div id="p">
+                    ICBMA, 알유컴공 활동을 통해
+                </div>
+                 <div id="p">
+                     생생하게 알게되는 지식들
+                </div>
+               
+             </div>
+            <div class="box4">
+                <h1>우리 친해져요</h1>
+            <div id="p">
+                    MT와 번개 모임을 통해 소통하고
+                </div>
+                 <div id="p">
+                    즐기는 모두
+                </div>
+            </div>
+        </div>
+    </section>
+       <section id="section3">
+        <!-- 이미지를 클릭하면 인스타그램 링크로 이동 -->
+        <a href="https://www.instagram.com/p/CsyNHw_rMKe/?igshid=ZDE1MWVjZGVmZQ==" target="_blank"margin="30px">
+            <img src={% static 'img.insta1.png'%} alt="이미지1 설명" width="250px" height="250px" >
+        </a>
+        <a href="https://www.instagram.com/p/Ct_hlxQLJnS/?igshid=ZDE1MWVjZGVmZQ==" target="_blank">
+            <img src={% static 'img.insta2.png'%}  alt="이미지2 설명" width="250px" height="250px" margin="10px">
+        </a>
+        <a href="https://www.instagram.com/p/CvWisC6r-Yl/?igshid=ZDE1MWVjZGVmZQ==" target="_blank">
+            <img src={% static 'img.insta3.png'%}  alt="이미지3 설명" width="250px" height="250px"margin="10px">
+        </a>
+    </section>
+       
+                
+	
+       
+    
+        {% endblock %}
+
+        <footer id="main-footer">
+
+            <img src="{% static 'img/WAGI black.png' %}" alt="logo">
+
+            <div style="background-color: #9EA9D7;">
+                <div class="round-button"></div>
+                <div class="round-button"></div>
+                <div class="round-button"></div>
+            </div>
+
+            <p>ⓒWAGI. 2023 All rights reserved</p>
+
+            <button id="login-button" onclick="window.location.href='login.html'">LOGIN</button>
+        </footer>
+
+        <script>
+        </script>
+    </div>
+</body>
+
+</html>

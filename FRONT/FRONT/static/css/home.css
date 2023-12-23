@@ -1,0 +1,124 @@
+        body {
+            margin: 0;
+            padding: 0;
+            color:black;
+            overflow-x: hidden; /* 가로 스크롤 제거 */
+        }
+        
+
+        section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 1s;
+            position: relative;
+            padding: 0 20%;
+            
+        }
+
+        #section1 {
+            background-color: black;
+            color: #fff;
+        }
+
+        .icon:nth-child(1) { top: 10%; left: 20px; width: 30px; }
+        .icon:nth-child(2) { top: 25%; left: 40px; width: 30px; }
+        .icon:nth-child(3) { top: 40%; left: 60%; width: 30px; }
+        .icon:nth-child(4) { top: 55%; left: 80px; width: 30px; }
+
+        
+
+        #section2 {
+            background-color: black;
+            color: black;
+        }
+         #section3 {
+            display: flex;
+            background-color: black;
+        }
+
+        #section3 a {
+            margin-right: 10px; /* 각 이미지 사이의 간격을 조절할 수 있습니다. */
+        }
+
+        .top-box {
+    top: 30px;
+    left: 50px;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/* Style for the first box inside top-box */
+.top-box .box1 {
+    width: 450px;
+    height: 200px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the second box inside top-box */
+.top-box .box2 {
+    width: 450px;
+    height: 200px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-box {
+    top: 60px;
+    left: 50px;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+/* Style for the third box inside bottom-box */
+.bottom-box .box3 {
+    width: 450px;
+    height: 200px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the fourth box inside bottom-box */
+.bottom-box .box4 {
+    width: 450px;
+    height: 200px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 h1,
+.box2 h1,
+.box3 h1,
+.box4 h1 {
+    margin: 5px; /* Adjust the text spacing */
+}
+
+#p {
+    font-size: 10px;
+}
