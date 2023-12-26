@@ -1,11 +1,11 @@
-//모달창 띄우기
+//모달창 띄우기1
 const modal_unavailable = document.querySelector('.modal_unavailable');
 const btnOpenModal_1=document.querySelector('#btn_apply');
 
 btnOpenModal_1.addEventListener("click", ()=>{
     modal_unavailable.style.display="flex";
 });
-
+//모달창 띄우기2
 const modal_pass = document.querySelector('.modal_pass');
 const btnOpenModal_2=document.querySelector('#btn_studentNum');
 
@@ -28,12 +28,10 @@ closeModal.addEventListener("click", ()=>{
 $( document ).ready( function() {
         $( '#email' ).on("submit", function(event) {
             $( '.message_2' ).animate({ 
-                //height: 0, 
                 opacity: 0
             }, 100 , event.preventDefault());
 
             $('.email').css('display', 'none');
-            $('.out_text').css('display', 'flex');
             $( '.out_text' ).addClass( 'on' );
 
         } );
@@ -44,7 +42,6 @@ $(document).ready(function() {
 
         $('.message_2').css('opacity', '100');
         $('.email').css('display', 'flex');
-        $('.out_text').css('display', 'none');
         $( '.out_text' ).removeClass( 'on' );
     });
 });

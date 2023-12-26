@@ -143,19 +143,19 @@ nav {
 }
 
 .out_text {
-    display:none;
     position: absolute;
-    top: 64%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 76%);
     width: 330px;
     height: 55px;
     border-radius: 17px;
-    transition: all 5s ease;
+    transition: all 1s;
     line-height: 55px;
     text-align: center;
     z-index:9;
     background-color: rgb(255, 255, 255, 0.58);
+    opacity:0;
 }
 .out_text span{
     border: 0;
@@ -171,9 +171,9 @@ nav {
     background-color:rgb(255, 255, 255, 0);
 }
 .out_text.on {
-    top:50%;
+    transform: translate(-50%, 0);
     background-color: rgb(255, 255, 255);
-
+    opacity: 1;
 }
 .input_email{
     border: 0;
