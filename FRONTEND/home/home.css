@@ -1,8 +1,9 @@
 body {
             margin: 0;
             padding: 0;
-            color:black;
+            color:white;
             overflow-x: hidden; 
+            background-color: black;
         }
    
     section {
@@ -16,42 +17,42 @@ body {
             padding: 0 20%;
             
         }
-        .fixed-image:nth-child(1) {
-        position: fixed;
-        top: 200px;
-        left: 170px;
-        opacity: 0;
-        animation: flyIn 1s forwards;
-        }
-        .fixed-image:nth-child(2) {
-        position: fixed;
-        top: 220px;
-        left: 90px;
-         opacity: 0;
-        animation: flyIn 1s forwards;
-        }
-
-    .fixed-image:nth-child(3) {
+    .fixed-image:nth-child(1),
+.fixed-image:nth-child(2),
+.fixed-image:nth-child(3),
+.fixed-image:nth-child(4) {
     position: fixed;
-    top: 310px;
-    left: 83px;
-    opacity: 0;
-    animation: flyIn 1s forwards;
-    }
-
-    .fixed-image:nth-child(4) {
-    position: fixed;
-      top:340px;
-   left:150px;
     opacity: 0;
     animation: flyIn 1s forwards;
 }
+
+.fixed-image:nth-child(1) {
+    top: 200px;
+    left: 170px;
+}
+
+.fixed-image:nth-child(2) {
+    top: 220px;
+    left: 90px;
+}
+
+.fixed-image:nth-child(3) {
+    top: 310px;
+    left: 83px;
+}
+
+.fixed-image:nth-child(4) {
+    top: 340px;
+    left: 150px;
+}
+
 @keyframes flyIn {
     to {
         opacity: 1;
         transform: translate(0, 0);
     }
 }
+
 
         #section1 {
             background-color: black;
@@ -71,10 +72,12 @@ body {
          #section3 {
             display: flex;
             background-color: black;
+            
         }
 
         #section3 a {
-            margin-right: 10px; /* 각 이미지 사이의 간격을 조절할 수 있습니다. */
+            margin-right: 30px; /* 각 이미지 사이의 간격을 조절할 수 있습니다. */
+            
         }
 
         .top-box {
@@ -225,7 +228,7 @@ body {
    
     left:200px;
     top:100px;
-     margin-top: 50px;
+    margin-top: 50px;
     margin-left: 60px;
 }
 
