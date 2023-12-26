@@ -5,6 +5,25 @@
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
+#main-header { 
+    width: 100%;
+    height: 20%;
+    position: relative;
+}
+nav {
+    float: right;
+    position: absolute;
+    top: 42%;
+    right: 7%;
+    transform: translate(0%, -50%);
+}
+.menu-item {
+    list-style: none;
+    display: inline-block;
+    padding-right: 120px;
+    font-weight: bold;
+    font-size: 22px;
+}
 #main-section {
     position: absolute;
     top: 50%;
@@ -111,28 +130,63 @@ body {
 
 
 }
-#email {
+.email {
     position: absolute;
-    top: 63%;
-    left: 48%;
+    top: 64%;
+    left: 50%;
     transform: translate(-50%, 0);
-    width: 350px;
+    width: 333px;
     height: 55px;
     border-radius: 17px;
-    /*background-color: rgb(255, 255, 255, 0.5);*/
+    z-index: 10;
+    background-color: rgb(255, 255, 255, 0.58);
 }
-.input_email {
+
+.out_text {
+    display:none;
+    position: absolute;
+    top: 64%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 330px;
+    height: 55px;
+    border-radius: 17px;
+    transition: all 5s ease;
+    line-height: 55px;
+    text-align: center;
+    z-index:9;
+    background-color: rgb(255, 255, 255, 0.58);
+}
+.out_text span{
     border: 0;
     font-size: 17px;
-    width: 350px;
-    height: 55px;
+    width: 310px;
+    height: 53px;
+    outline: none;
+    float: left;
+    padding-left: 40px;
+    margin: 0;
+    text-align: left;
+    border-radius: 17px;
+    background-color:rgb(255, 255, 255, 0);
+}
+.out_text.on {
+    top:50%;
+    background-color: rgb(255, 255, 255);
+
+}
+.input_email{
+    border: 0;
+    font-size: 17px;
+    width: 310px;
+    height: 53px;
     outline: none;
     float: left;
     padding-left: 20px;
     margin: 0;
     text-align: left;
-    border-radius: 15px;
-    background-color:rgb(255, 255, 255, 0.58);
+    border-radius: 17px;
+    background-color:rgb(255, 255, 255, 0);
 }
 .up {
     position: relative;
@@ -204,7 +258,7 @@ body {
 }
 .OT_info {
     position: absolute;
-    top: 63%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     
