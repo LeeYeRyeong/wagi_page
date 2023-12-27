@@ -95,20 +95,18 @@ document.addEventListener('DOMContentLoaded', function() {
   
     for (let i = 0; i < 2 && i < peopleData.length; i++) {
       const person = peopleData[i];
-      createBubble(person, i % 2 === 0);
-      visibleBubbles++;
+      createBubble(person, i % 2 === 0);    
     }
   
-    window.addEventListener('scroll', function () {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-      let scrollIncrement = 60;
-
-      if ( scrollTop >= scrollIncrement && visibleBubbles < peopleData.length) {
+    window.addEventListener('wheel', function (event) {
+      const deltaY = event.deltaY;
+      
+      if (deltaY > 0 && visibleBubbles < peopleData.length) {
         const person = peopleData[visibleBubbles];
         createBubble(person, visibleBubbles % 2 === 0);
         visibleBubbles++;
       }
-
     });
+
   });
