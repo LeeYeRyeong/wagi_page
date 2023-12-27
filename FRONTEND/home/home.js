@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
         const sectionIds = ['#section1', '#section2', '#section3'];
         let lastScrollPosition = window.scrollY;
+        
 
         function checkScroll() {
             sectionIds.forEach((sectionId) => {
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const sectionBottom = section.getBoundingClientRect().bottom;
 
                 if (sectionTop < window.innerHeight / 2 && sectionBottom >= 0) {
+                    
                     // 섹션이 이미 보이는 상태가 아닌 경우에만 추가 애니메이션 적용
                     if (section.style.opacity !== '1') {
                         section.style.opacity = '1';
@@ -16,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // section2 내의 move-img 요소들에 대한 Flying-in 효과
                         if (sectionId === '#section2') {
+                            document.querySelectorAll('.move-img, .move-img1, .move-img2, .move-img3').forEach((moveImg) => {
+                                moveImg.style.transition = 'transform 1s';
+                                moveImg.style.transform = 'translate(0, 0)';
+                            });
+                        }
+                          if (sectionId === '#section1') {
                             document.querySelectorAll('.move-img, .move-img1, .move-img2, .move-img3').forEach((moveImg) => {
                                 moveImg.style.transition = 'transform 1s';
                                 moveImg.style.transform = 'translate(0, 0)';
@@ -32,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 } else {
                     section.style.opacity = '0';
+                  
 
                     // section2 내의 move-img 요소들에 대한 Flying-out 효과
                     if (sectionId === '#section2') {
@@ -53,3 +62,5 @@ document.addEventListener('DOMContentLoaded', function () {
     
     });
     
+
+
