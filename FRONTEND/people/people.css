@@ -1,36 +1,33 @@
+body {
+    background-color: black;
+    height: 10000px;
+    overflow: scroll;
+    padding: 20%;
+    margin: auto;
+}
 
-body{
-    background-color: black; 
-}
-.center{
-    background-color: black;  
-    width: 1500px;
-    position: relative;
-    margin: 0 auto;
-}
-.top>h1{color: white;}
-.top{
-   border: dotted white;
-    height: 200px;
-}        
-nav {
-    float: right;
+.center {
+    width: 1200px;
+    height: auto;
     position: absolute;
-    top: 50%;
-    right: 7%;
-    transform: translate(0%, -50%);
-}
+    top: 20%;
+    margin : 0, 30%;
+    overflow: hidden; /* 말풍선이 넘치지 않도록 설정합니다. */
+  }
+  
 
 .L_bubble {/*말풍선 둥근 사각형 생성*kjhsdvio*/
     position: relative;
     width: 640px;
     height: 180px;
     padding: 10px;
-    margin: 10px;
-    margin-left: 80px;
+    margin: 30px;
+    margin-top: 60px;
+    margin-left: 120px;
     background: #9EA9D7;
     border-radius: 20px;
     color: black;
+    clear: both;
 }
 
 .L_bubble:after { /*말풍선 아래 삼각형 생성*/
@@ -45,7 +42,7 @@ nav {
     border-bottom: 0;
     border-left: 0;
     margin-left: -10px;
-    margin-bottom: -30px;  
+    margin-bottom: -25px;  
 }
 
 .L_photo{
@@ -93,16 +90,18 @@ nav {
 
 .R_bubble {/*말풍선 둥근 사각형 생성*/
     position: relative;
-    float: left;
+    float: right;
     width: 640px;
     height: 180px;
     padding: 10px;
-    margin: 10px;
-    margin-left: 640px;
+    margin: 30px;
+    margin-bottom: 60px;
+    margin-right: 120px;
     background: white;
     border-radius: 20px;
     align-self: flex-end;
     color: black;
+    clear: both;
 
 }
 
@@ -118,7 +117,7 @@ nav {
     border-bottom: 0;
     border-left: 0;
     margin-left: -10px;
-    margin-bottom: -30px;
+    margin-bottom: -25px;
     transform: matrix(45);
     
 }
@@ -166,4 +165,27 @@ nav {
     border: 2px dotted black;
 }
 
+@keyframes bubbleFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .L_bubble, .R_bubble {
+    opacity: 0;
+    animation-name: bubbleFadeIn;
+    animation-duration: 0.5s; /* 애니메이션 지속 시간을 조정합니다. */
+    animation-fill-mode: forwards; /* 애니메이션 완료 후 상태를 유지합니다. */
+  }
 
+  
+  
