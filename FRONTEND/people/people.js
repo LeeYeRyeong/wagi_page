@@ -7,53 +7,59 @@ window.onload = function() {
 document.addEventListener('DOMContentLoaded', function() {
   const peopleData = [
       {
-          name: "John",
-          photo: "john.jpg",
-          bio: "안녕하세요, 저는 John입니다.",
-          link: "https://example.com/john"
+          name: "이예령",
+          photo: "ex1.png",
+          bio: "개발자 가보자고",
+          link_1: "https://github.com/LeeYeRyeong",
+          link_2: "https://ryeong-322.tistory.com"
       },
       {
-          name: "Emily",
-          photo: "emily.jpg",
-          bio: "반갑습니다, 저는 Emily입니다.",
-          link: "https://example.com/emily"
+          name: "이나경",
+          photo: "ex2.jpg",
+          bio: "안녕하세요. WAGI의 창조주입니다.",
+          link_1: "https://github.com/nagaeng"
       },
       {
-        name: "John",
-        photo: "john.jpg",
-        bio: "안녕하세요, 저는 John입니다.",
-        link: "https://example.com/john"
-      },
-      {
-          name: "Emily",
-          photo: "emily.jpg",
-          bio: "반갑습니다, 저는 Emily입니다.",
-          link: "https://example.com/emily"
-      },
-      {
-        name: "John",
-        photo: "john.jpg",
-        bio: "안녕하세요, 저는 John입니다.",
-        link: "https://example.com/john"
-      },
-      {
-          name: "Emily",
-          photo: "emily.jpg",
-          bio: "반갑습니다, 저는 Emily입니다.",
-          link: "https://example.com/emily"
-      },
-      {
-        name: "John",
-        photo: "john.jpg",
-        bio: "안녕하세요, 저는 John입니다.",
-        link: "https://example.com/john"
-      },
-      {
-          name: "Emily",
-          photo: "emily.jpg",
-          bio: "반갑습니다, 저는 Emily입니다.",
-          link: "https://example.com/emily"
-      },
+        name: "이예령",
+        photo: "ex1.png",
+        bio: "개발자 가보자고",
+        link_1: "https://github.com/LeeYeRyeong",
+        link_2: "https://ryeong-322.tistory.com"
+    },
+    {
+        name: "이나경",
+        photo: "ex2.jpg",
+        bio: "안녕하세요. WAGI의 창조주입니다.",
+        link_1: "https://github.com/nagaeng"
+    },
+    {
+      name: "이예령",
+      photo: "ex1.png",
+      bio: "개발자 가보자고",
+      link_1: "https://github.com/LeeYeRyeong",
+      link_2: "https://ryeong-322.tistory.com"
+    },
+    {
+        name: "이나경",
+        photo: "ex2.jpg",
+        bio: "안녕하세요. WAGI의 창조주입니다.",
+        link_1: "https://github.com/nagaeng"
+    },
+    {
+      name: "이예령",
+      photo: "ex1.png",
+      bio: "개발자 가보자고",
+      link_1: "https://github.com/LeeYeRyeong",
+      link_2: "https://ryeong-322.tistory.com"
+    },
+    {
+        name: "이나경",
+        photo: "ex2.jpg",
+        bio: "안녕하세요. WAGI의 창조주입니다.",
+        link_1: "https://github.com/nagaeng"
+    },
+      
+      
     ];
 
     const container = document.querySelector('.center');
@@ -71,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const img = document.createElement('img');
       img.src = person.photo;
       img.alt = person.name;
+      img.style.maxHeight = "160px";
+      img.style.maxWidth = "180px";
       photo.appendChild(img);
   
       const name = document.createElement('div');
@@ -79,7 +87,15 @@ document.addEventListener('DOMContentLoaded', function() {
   
       const rink = document.createElement('div');
       rink.classList.add(isLeft ? 'L_rink' : 'R_rink');
-      rink.innerHTML = `<a href="${person.link}">링크</a>`;
+      //링크가 2개일때랑 1개일때 구분해서 생성하는 코드입니다. 
+      if(person.link_2){
+        rink.innerHTML = `<a href="${person.link_1}"><img src ="github.svg" /></a>
+                         <a href="${person.link_2}"><img src ="home.svg" /></a>`; 
+      }
+      else {
+        rink.innerHTML = '<a href="${person.link_1}"><img src ="github.svg" /></a>';
+      }
+      
   
       const text = document.createElement('div');
       text.classList.add(isLeft ? 'L_text' : 'R_text');
