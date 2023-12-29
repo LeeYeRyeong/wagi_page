@@ -286,7 +286,7 @@ nav {
     top:50%;  
 
     width:430px;  
-    height:280px;  
+    height:250px;  
     
     text-align: center;
 
@@ -299,7 +299,7 @@ nav {
 }
 .modal-content3 {
     position: absolute;
-    top: 78%;
+    top: 86%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 350px;
