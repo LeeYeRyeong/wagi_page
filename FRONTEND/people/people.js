@@ -7,17 +7,18 @@ window.onload = function() {
 document.addEventListener('DOMContentLoaded', function() {
   const peopleData = [
       {
-          name: "이예령",
-          photo: "ex1.png",
-          bio: "개발자 가보자고",
-          link_1: "https://github.com/LeeYeRyeong",
-          link_2: "https://ryeong-322.tistory.com"
+        name: "이나경",
+        photo: "ex2.jpg",
+        bio: "이렇게하면 13글자가 넘어요",
+        link_1: "https://github.com/nagaeng"
+        
       },
       {
-          name: "이나경",
-          photo: "ex2.jpg",
-          bio: "안녕하세요. WAGI의 창조주입니다.",
-          link_1: "https://github.com/nagaeng"
+        name: "이예령",
+        photo: "ex1.png",
+        bio: "여기까지가 마지노선입니다",
+        link_1: "https://github.com/LeeYeRyeong",
+        link_2: "https://ryeong-322.tistory.com"
       },
       {
         name: "이예령",
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {
         name: "이나경",
         photo: "ex2.jpg",
-        bio: "안녕하세요. WAGI의 창조주입니다.",
+        bio: "안녕하세요. WAGI의",
         link_1: "https://github.com/nagaeng"
     },
       
@@ -77,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const img = document.createElement('img');
       img.src = person.photo;
       img.alt = person.name;
-      img.style.maxHeight = "160px";
-      img.style.maxWidth = "180px";
+      img.style.maxHeight = "200px";
+      img.style.maxWidth = "200px";
       photo.appendChild(img);
   
       const name = document.createElement('div');
@@ -99,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
       const text = document.createElement('div');
       text.classList.add(isLeft ? 'L_text' : 'R_text');
-      text.innerHTML = `<p>${person.bio}</p>`;
+      text.innerHTML = `<p>"${person.bio}"</p>`;
   
       bubble.appendChild(photo);
       bubble.appendChild(name);
