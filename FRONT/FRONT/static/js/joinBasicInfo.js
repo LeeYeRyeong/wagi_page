@@ -121,6 +121,17 @@ document.addEventListener('DOMContentLoaded', function() {
 function confirmStudentID() {
     // 학번 확인 로직을 여기에 추가
     document.querySelector('.confirm-button').style.backgroundColor = 'gray';
+
+    var studentIDInput = document.getElementById('studentID');
+    var confirmButton = document.querySelector('.confirm-button');
+
+    if (studentIDInput.value.length == 8) {
+        confirmButton.style.backgroundColor = 'white';
+        confirmButton.style.color = 'black';
+
+    } else {
+        confirmButton.style.backgroundColor = 'gray';
+    }
 }
 
 function checkForm() {
