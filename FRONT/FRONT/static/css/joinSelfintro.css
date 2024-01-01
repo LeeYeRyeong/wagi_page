@@ -21,7 +21,7 @@ body {
     border-radius: 20px;
     margin-top: 10px;
     position: relative;
-    color: #000; /* 텍스트 색상 추가 */
+    color: #000;
 }
 
 .question-box {
@@ -49,6 +49,7 @@ body {
     border-radius: 20px;
     padding: 10px;
     margin-top: 10px;
+    background-color: white;
 }
 
 .submit-button {
@@ -73,6 +74,7 @@ body {
     font-size: 30px;
     line-height: 35.8px;
     color: #000000;
+    background-color: #9EA9D7;
 }
 
 
@@ -98,5 +100,12 @@ font-size: 20px;
 .menu-item{
 color: white;
 }
+
+p{
+    background-color: #9EA9D7;
+    color: black;
+}
+
+
 
 
