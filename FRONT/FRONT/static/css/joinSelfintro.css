@@ -56,7 +56,7 @@ body {
     width: 722px;
     height: 88px;
     top: 1280px;
-    left: 279px;
+    left: 390px;
     border-radius: 20px;
     background-color: #9EA9D7;
     position: absolute;
@@ -64,18 +64,24 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: #000;
 }
 
-.submit-text {
+/* .submit-text {
     width: 150px;
-    height: 23.55px;
+    height: 88px;
     font-family: 'Pretendard Variable', sans-serif;
     font-weight: 600;
     font-size: 30px;
     line-height: 35.8px;
     color: #000000;
     background-color: #9EA9D7;
-}
+    position: absolute;
+    top: 1280px;
+    left: 279px;
+    border-radius: 20px;
+
+} */
 
 
 #main-header { 

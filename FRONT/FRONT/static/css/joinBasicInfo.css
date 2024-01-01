@@ -3,6 +3,9 @@
 body {
     background-color: black; /* 화면 바탕색을 검은색으로 설정 */
 }
+input {
+    color: black;
+}
 
 .info-box {
     position: absolute;
@@ -39,6 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: black;
 }
 
 .input-container {
@@ -123,10 +127,7 @@ font-size: 20px;
 .input-box{
 background-color: white;
 }
-.confirm-button{
-background-color: white;
-color: black;
-}
+
 .enter{
   width: 375px;
   height: 65px;
@@ -146,8 +147,10 @@ color: black;
     border: 1.5px solid #999898;
     border-radius: 20px;
     background-color: #999898;
-    color: #999898;
+    background-color: white;
+    color: black;  
     cursor: pointer;
+    text-align: center;
 }
 
 input {
