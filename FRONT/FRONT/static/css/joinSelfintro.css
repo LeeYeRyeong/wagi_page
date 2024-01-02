@@ -40,6 +40,7 @@ body {
     padding: 20px;
     box-sizing: border-box;
     overflow: hidden;
+   
 }
 
 .input-box {
@@ -50,21 +51,40 @@ body {
     padding: 10px;
     margin-top: 10px;
     background-color: white;
+    color: black;
+
 }
 
 .submit-button {
     width: 722px;
     height: 88px;
-    top: 1280px;
-    left: 390px;
+    top: 580px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   
     border-radius: 20px;
     background-color: #9EA9D7;
-    position: absolute;
+    color: #000;
+    cursor: pointer;
+    align-items: center;
     display: flex;
+    justify-content: center;
+    
+    /* display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     color: #000;
+    display: grid;
+    place-content: center; */
+   
+}
+.container2{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
 }
 
 /* .submit-text {
