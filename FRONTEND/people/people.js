@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         name: "이예령",
         photo: "ex1.png",
-        bio: "개발자 가보자고",
+        bio: "구글 삼성 와기 let's go",
         link_1: "https://github.com/LeeYeRyeong",
         link_2: "https://ryeong-322.tistory.com"
     },
