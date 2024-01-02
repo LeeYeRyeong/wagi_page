@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'joinInfo',
     'joinResult',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -94,6 +95,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+AUTH_USER_MODEL='login.User'
+#내가 지정한(로그인 앱 내의 User모델 사용하기 위한거, 새로 정의함)
 
 
 # Password validation
