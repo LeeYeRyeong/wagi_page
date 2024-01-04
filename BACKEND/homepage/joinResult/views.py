@@ -13,10 +13,10 @@ def join_button(request):
 # join 버튼 눌렀을 때 
 def inquiry(request):
     current_date = date.today() # 현재 날짜
-    start_j_date = date(2023, 11, 10) # 지원서 제출 시작 날짜
-    end_j_date = date(2023, 12, 5) # 지원서 제 출 끝나는 날짜
-    start_r_date = date(2023, 12, 19) # 합격자 조회 시작 날짜
-    end_r_date = date(2023, 12, 30) # 합격자 조회 끝나는 날짜
+    start_j_date = date(2024, 1, 1) # 지원서 제출 시작 날짜
+    end_j_date = date(2024, 1, 2) # 지원서 제 출 끝나는 날짜
+    start_r_date = date(2024, 1, 3) # 합격자 조회 시작 날짜
+    end_r_date = date(2024, 1, 30) # 합격자 조회 끝나는 날짜
     isDate = 0
     if start_j_date <= current_date <= end_j_date:
         isDate = 1
