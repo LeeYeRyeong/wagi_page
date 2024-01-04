@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('join/', apply_club_user_info_view, name='apply_club_user_info_view'),
     path('joinResult/', include('joinResult.urls')),
+    path('login/', include('login.urls')),
 ]

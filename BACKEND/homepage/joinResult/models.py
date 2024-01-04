@@ -16,4 +16,4 @@ class FailId(models.Model):
     
 # 알림 보낼 메일
 class SendMail(models.Model):
-    user_mail = models.CharField(max_length=20, unique=True)
+    user_mail = models.CharField(max_length=50, unique=True)
