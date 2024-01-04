@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>WAGI WEB PAGE</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    </head>
+    
+
+<body>
+    <div id="page-wrapper">
+        <header id="main-header">
+            <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
+            <nav id="main-navigation">
+                <ul class="menu"> 
+                    <li class="menu-item"><button onclick="window.location.href='activities.html'">Activities</button></li>
+                    <li class="menu-item"><button onclick="window.location.href='people.html'">People</button></li>
+                    <li class="menu-item"><button onclick="window.location.href='join.html'">Join</button></li>
+                    <li class="menu-item"><button onclick="window.location.href='notice.html'">Notice</button></li>
+                </ul>
+            </nav>
+        </header>
+
+        {% block content %}     
+            <!--이 사이에 각 html별로 겹치지 않는 내용이 들어가면 됩니다-->
+        {% endblock %}
+      
+        <footer id="main-footer">
+
+            <img src="{% static 'img/WAGI black.png' %}" alt="logo">
+
+            <div style="background-color: #9EA9D7;">
+                <div class="round-button"></div>
+                <div class="round-button"></div>
+                <div class="round-button"></div>
+            </div>
+
+            <p>ⓒWAGI. 2023 All rights reserved</p>
+
+            <button id="login-button" onclick="window.location.href='login.html'">LOGIN</button>
+        </footer>
+
+        <script>
+        </script>
+    </div>
+</body>
+
+</html>

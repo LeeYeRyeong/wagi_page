@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAGI2</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/joinBasicInfo.css">
+
+</head>
+<body>
+    <header id="main-header">
+    <img src="../join/img/WAGI logo.png" alt="WAGI logo image">
+    <nav id="main-navigation">
+        <ul class="menu" style="color: white;">
+            <li class="menu-item">Activities</li> 
+            <li class="menu-item">People</li>
+            <li class="menu-item">Join</li>
+            <li class="menu-item">Notice</li>
+        </ul> 
+    </nav> 
+</header>
+
+    <!-- 여기에 HTML 내용을 추가합니다. -->
+    <div class="info-box" style="background-color: #9EA9D7;">
+        <div class="info-text">
+            지원자 정보
+        </div>
+    </div>
+
+    <div class="input-box">
+        <div class="basic-info" >
+            기본 정보
+            <span class="required-text"> (필수)</span>
+        </div>
+    
+    <div class="input-container">
+    <!-- 이름 입력 -->
+    <label for="name" style="color: #999898;">이름</label>
+    <input type="text" id="name" oninput="handleInput(this)" required>
+    <div class="warning-message" id="warningName"></div>
+
+    <!-- 학번 입력 -->
+    <label for="studentID" style="color: #999898;">학번</label>
+    <input type="text" id="studentID" oninput="handleInput(this)" required>
+    <div class="warning-message" id="warningStudentID"></div>
+
+    <!-- 학과 입력 -->
+    <label for="department" style="color: #999898;">학과</label>
+    <input type="text" id="department" oninput="handleInput(this)" required>
+    <div class="warning-message" id="warningDepartment"></div>
+
+    <!-- 전화번호 입력 -->
+    <label for="phoneNumber" style="color: #999898;">전화번호('-'없이 입력해 주세요)</label>
+    <input type="tel" id="phoneNumber" oninput="handleInput(this)" required>
+    <div class="warning-message" id="warningPhoneNumber"></div>
+</div>
+    </div>
+
+    <!-- 학번 확인 버튼 -->
+    <div class="confirm-button" onclick="confirmStudentID()">학번 확인</div>
+
+    <!-- 지원서 작성하기 버튼 -->
+    <button class="enter" onclick="checkForm()">지원서 작성하기</button>
+
+    <!-- 여기에 JavaScript 스크립트를 추가합니다. -->
+
+    <script src="joinBasicInfo.js"></script>
+
+
+    
+</body>
+</html>

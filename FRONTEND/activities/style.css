@@ -1,0 +1,162 @@
+* {
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+}
+#main-header { 
+    width: 100%;
+    height: 20%;
+    position: relative;
+}
+nav {
+    float: right;
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    transform: translate(0%, -50%);
+}
+.menu-item {
+    list-style: none;
+    display: inline-block;
+    padding-right: 120px; /*상대적으로 어케하징...*/
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* 위에 있는 애들은 건들지 마세용 */
+
+h1 {
+    font-style : Pretendard Variable;
+}
+
+.button {
+    height: 49px;
+    position: relative;
+    background-color: white;
+    line-height: 49px;
+    top: 21.6px;
+    left: 48px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+#modify_button {
+    width: 169px;
+    height: 49px;
+    position: relative;
+    background-color: white;
+    line-height: 49px;
+    top: 21.6px;
+    left: 48px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.button > a {
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    color: black;
+}
+
+.button > a:active{
+    background-color : #9EA9D7;
+    border-radius: 25px;
+}
+
+#delete_button, #upload_button {
+    width: 300px;
+    background-color : #999898;
+}
+
+#content {
+    width: 100%;
+    height: 70%;
+}
+
+.article {
+    position : relative;
+    width : 100%; height : 80%;
+}
+
+.item {
+    width: 400px;
+    height: 470px;
+    top: 294px;
+    left : 58px;
+    margin-left: 60px;
+    margin-right : 58px;
+    border-radius: 25px;
+    background-color : #D9D9D9;
+
+}
+
+.album_name > h1 {
+    width: 200px;
+    height: 52px;
+    line-height: 52px;
+    top: 716px;
+    left: 160px;
+    border-radius: 20px;
+    background-color: #9EA9D7;
+    margin-left : 90px;
+
+}
+
+#MT {
+    position : absolute; 
+    margin-left : 50px;
+    width: 400px;
+    height: 470px;
+    top: 40px;
+    left: 10%;
+    
+}
+
+#study {
+    position : absolute;
+    margin-left : 200px;
+    width: 400px;
+    height: 470px;
+    top: 40px;
+    left: 464px;
+    border-radius: 25px;
+
+}
+
+#project {
+    position : absolute;
+    margin-left : 250px;
+    width: 400px;
+    height: 470px;
+    top: 40px;
+    left: 871px;
+    border-radius: 25px;
+}
+
+#MT_album {
+    top : 300px;
+    left : 100px;
+    margin-left : 18px;
+}
+
+#study_album {
+    top : 300px;
+    left : 100px;
+    margin-left : 18px;
+}
+
+#project_album {
+    top : 300px;
+    left : 100px;
+    margin-left : 18px;
+}
+
+
+
+/* article 해줄 때 좀 오류가 생겨서 다예가 보내준 거로 다시 시도해보기 */
