@@ -1,0 +1,156 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Comforter&family=Diphylleia&display=swap');
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Diphylleia', serif;
+    font-weight: lighter;
+}
+.secondary {
+    color: #e3e4e68c;
+}
+.primary{
+    color: #e3e4e6;
+}
+.emphasis{
+    color: #bc3cd8
+}
+
+
+body{
+    background-color: #010208;
+    color: #e3e4e6;
+    font-size: 18px;
+}
+
+h1{
+    font-size: 56px;
+}
+h2{
+    font-size: 40px;
+}
+
+h3{
+    font-size: 32px;
+}
+h4{
+    font-size: 24px;
+}
+h5, button {
+    font-size: 16px;
+}
+
+.em {
+    font-weight: bold;
+}
+.label{
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color:#e3e4e6
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    height: 96px;
+    box-sizing: border-box;  
+    /* 패딩이랑 나머지 내용물도 포함해줘 */
+}
+nav{
+    display: flex;
+    column-gap: 20px;
+}
+.nav-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3px;
+}
+
+.nav-item > .line{
+    width: 10px;
+    display: none;
+}
+.nav-item.active > .line{
+    display: block;
+}
+.nav-item.active > a{
+    color:#bc3cd8
+}
+.line{
+    border-bottom: 3px solid white;
+    
+    /* margin: 10px auto 0; */
+
+}
+
+footer{
+    padding: 90px 0;
+    
+}
+.contacts{
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon-btn{
+    background-color: #e3e4e68c;
+   
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.icon-btn  img{
+    /* object-fit: contain;
+    width: 48px; */
+    width: 40px;
+    height: 40px;
+}
+.footer-wrap{
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

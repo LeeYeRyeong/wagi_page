@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WAGI 웹 페이지</title>
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="Notice_manager.css">
+</head>
+<body>
+        <div id="notices" class="notice"><span>공지사항</span></div>
+        <div id="writings" class="writing"><span>글 작성</span></div>
+        <div id="regularActivity" class="round-button">정기활동</div>
+        <div id="event" class="round-button">행사</div>
+        <div id="competition" class="round-button">공모전</div>
+        <div id="allContent"><span style="color:black;">모든 활동 내용</span></div>
+        
+        <div id="regularActivityContent" class="content" >
+            <span style="color:black;">정기활동 내용</span>
+        </div>
+
+        <div id="eventContent" class="content">
+            <span style="color:black;">행사 내용</span>
+        </div>
+
+        <div id="competitionContent" class="content">
+            <span style="color:black;">공모전 내용</span>
+        </div>
+    </div>
+
+<script src="Notice_manager.js"></script>
+<script>
+    document.getElementById("writings").addEventListener("click", function() {
+        window.location.href = "Notice_manager_writing.html";
+    });
+</script>
+    
+
+</body>
+</html>
+
