@@ -5,3 +5,6 @@
 /__pyache__/
 secrets.json
 db.sqlite3
+/joinInfo/migrations/
+/joinResult/migrations/
+/login/migrations/
