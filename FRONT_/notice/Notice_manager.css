@@ -24,7 +24,13 @@
     align-items: center;
     justify-content: center;
     color: black;
+    border: 0.7px solid white;
 }
+
+#writings span {
+    font-size: 16.2px; 
+}
+
 
 #allContent{
     position: fixed; 
@@ -106,15 +112,14 @@
 #regularActivityContent,
 #eventContent,
 #competitionContent {
-    position: relative; 
-    top: 0;
-    left: 0;
+    position: fixed; 
     width: 1014px;
     height: 475px;
+    top: 292px;
+    left: 133px;
     border-radius: 20px;
     background-color: white;
-    margin-top: 20px; 
-
+    margin-top: 20px;
 }
 
 footer {
@@ -129,7 +134,7 @@ footer {
 }
 
 .selected {
-    background-color:  #9EA9D7 !important;
+    background-color: gray !important;
     color:black !important;
 }
 
