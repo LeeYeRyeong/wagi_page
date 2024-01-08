@@ -91,24 +91,7 @@ body {
     font-size: 18px;
 }
 
-.in-button{
-    position: absolute;
-    width: 104.76px;
-    height: 31px;
-    background: #9EA9D7;
-    border-radius: 20px;
-    line-height: 21px;
-    color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Pretendard Variable';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-}
-
-.back-button{
+.in-button > button {
     position: absolute;
     width: 104.76px;
     height: 31px;
