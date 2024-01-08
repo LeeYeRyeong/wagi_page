@@ -1,31 +1,30 @@
 body {
     background-color: black;
-    height: 10000px;
+    height: auto;
     width: auto;
     overflow: scroll;
     position: relative;
 }
 
 .center {
-    width: 1200px;
+    width: 800px;
     height: auto;
     position: absolute;  
     left: 50%;
     top: 300px;
-    margin-left: -600px;
+    margin-left: -400px;
+    padding-bottom: 500px;
   }
   
 
 .L_bubble {/*말풍선 둥근 사각형 생성*kjhsdvio*/
     position: relative;
-    width: 660px;
-    height: 200px;
-    padding: 5px;
-    margin: 30px;
+    width: 450px;
+    height: 150px;
     margin-top: 60px;
-    margin-left: 120px;
+    margin-left: 30px;
     background: #9EA9D7;
-    border-radius: 20px;
+    border-radius: 10px;
     color: black;
     clear: both;
 }
@@ -37,66 +36,64 @@ body {
     left: 5%;
     width: 0;
     height: 0;
-    border: 50px solid transparent;
+    border: 25px solid transparent;
     border-top-color: #9EA9D7;
     border-bottom: 0;
     border-left: 0;
-    margin-left: -10px;
-    margin-bottom: -35px;  
+    margin-left: -5px;
+    margin-bottom: -20px;  
 }
 
 .L_photo{
-    width: 180px;
-    height: 180px;
+    width: 110px;
+    height: 110px;
     float: left;
-    margin-left: 15px;
     text-align: center;
     
 }
 .L_text{
-    width: 400px;
-    height: 60px;
+    width: 330px;
+    height: 80px;
     float: inline-start;
     text-align: center;
     font-weight: bold ;
-    font-size: 30px;
-    margin-left: 15px;
+    margin-left: 3px;
+    font-size: 18px;
     overflow: visible;  
 }
 .L_name{
-    width: 130px;
-    height: 70px;
-    margin-left: 15px;
+    width: 70px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 5px;
     float: inline-start;
     text-align: center;
     font-weight: bolder ;
-    font-size: 25px;
+    font-size: 15px;
     overflow: visible;
 
 }
 .L_rink{
-    width: 140px;
-    height: 60px;  
+    width: 200px;
+    height: 50px;  
     margin-bottom: 5px;
-    margin-top: 30px;
-    margin-left: 15px;
+    margin-top: 7px;
+    margin-left: 3px;
     float: inline-start; 
-    text-align: center;
-    padding: auto;
+    text-align: left;
     
 }
 
 .R_bubble {/*말풍선 둥근 사각형 생성*/
     position: relative;
     float: right;
-    width: 660px;
-    height: 200px;
-    padding: 10px;
-    margin: 30px;
+    width: 450px;
+    height: 150px;
+    margin-top: 60px;
     margin-bottom: 60px;
-    margin-right: 120px;
+    margin-right: 30px;
     background: white;
-    border-radius: 20px;
+    border-radius: 10px;
     align-self: flex-end;
     color: black;
     clear: both;
@@ -110,53 +107,52 @@ body {
     right: 5%;
     width: 0;
     height: 0;
-    border: 40px solid transparent;
+    border: 25px solid transparent;
     border-top-color: white;
     border-bottom: 0;
     border-left: 0;
     margin-left: -10px;
-    margin-bottom: -35px;
+    margin-bottom: -20px;
     transform: matrix(10);
     
 }
 
 .R_photo{
-    width: 180px;
-    height: 180px;
-    float: right;
-    margin-right: 15px;
+    width: 110px;
+    height: 110px;
+    float: left;
     text-align: center;
 }
 .R_text{
-    width: 400px;
-    height: 60px;
+    width: 330px;
+    height: 80px;
     float: inline-start;
     text-align: center;
     font-weight: bold ;
-    margin-left: 15px;
-    font-size: 30px;
+    
+    margin-left: 3px;
+    font-size: 18px;
     overflow: visible;  
 }
 .R_name{
-    width: 120px;
-    height: 80px;
-    margin-bottom: 10px;
-    margin-left: 60px;
+    width: 70px;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 5px;
     float: inline-start;
     text-align: center;
-    font-weight: bold ;
-    font-size: 25px;
-    overflow: hidden;
+    font-weight: bolder ;
+    font-size: 15px;
+    overflow: visible;
 }
 .R_rink{
-    width: 140px;
-    height: 60px;  
+    width: 200px;
+    height: 50px;  
     margin-bottom: 5px;
-    margin-top: 30px;
-    margin-left: 15px;
+    margin-top: 7px;
+    margin-left: 3px;
     float: inline-start; 
-    text-align: center;
-    padding: auto;
+    text-align: left;
     
 }
 

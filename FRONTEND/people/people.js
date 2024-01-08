@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const peopleData = [
       {
         name: "이나경",
-        photo: "ex2.jpg",
-        bio: "이렇게하면 13글자가 넘어요",
+        photo: "ex2.png",
+        bio: "일이삼사오육칠팔구십일이삼사오육",
         link_1: "https://github.com/nagaeng"
         
       },
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     {
         name: "이나경",
-        photo: "ex2.jpg",
+        photo: "ex2.png",
         bio: "안녕하세요. WAGI의 창조주입니다.",
         link_1: "https://github.com/nagaeng"
     },
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     {
         name: "이나경",
-        photo: "ex2.jpg",
+        photo: "ex2.png",
         bio: "안녕하세요. WAGI의 창조주입니다.",
         link_1: "https://github.com/nagaeng"
     },
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     {
         name: "이나경",
-        photo: "ex2.jpg",
+        photo: "ex2.png",
         bio: "안녕하세요. WAGI의",
         link_1: "https://github.com/nagaeng"
     },
@@ -78,8 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const img = document.createElement('img');
       img.src = person.photo;
       img.alt = person.name;
-      img.style.maxHeight = "200px";
-      img.style.maxWidth = "200px";
+      img.style.maxHeight = "130px";
+      img.style.maxWidth = "130px";
       photo.appendChild(img);
   
       const name = document.createElement('div');
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('wheel', function (event) {
       const deltaY = event.deltaY;
       
-      if (deltaY > 0 && visibleBubbles < peopleData.length) {
+      if (deltaY > 30 && visibleBubbles < peopleData.length) {
         const person = peopleData[visibleBubbles];
         createBubble(person, visibleBubbles % 2 === 0);
         visibleBubbles++;
