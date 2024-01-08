@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Activity Images</title>
+</head>
+<body>
+
+<h2>Upload Activity Images</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <!-- MT 이미지 업로드 -->
+    <div class="form-group">
+        <label for="{{ mt_form.mt_image.id_for_label }}">MT Image:</label>
+        {{ mt_form.mt_image }}
+    </div>
+
+    <!-- Study 이미지 업로드 -->
+    <div class="form-group">
+        <label for="{{ study_form.study_image.id_for_label }}">Study Image:</label>
+        {{ study_form.study_image }}
+    </div>
+
+    <!-- Project 이미지 업로드 -->
+    <div class="form-group">
+        <label for="{{ project_form.project_image.id_for_label }}">Project Image:</label>
+        {{ project_form.project_image }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">이미지 업로드하기</button>
+</form>
+
+</body>
+</html>
