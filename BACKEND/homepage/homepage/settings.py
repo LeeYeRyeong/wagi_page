@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'joinResult',
     'login',
     'activity',
+    'people',
 ]
 
 MIDDLEWARE = [
