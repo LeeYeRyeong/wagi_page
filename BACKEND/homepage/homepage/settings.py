@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'joinInfo',
     'joinResult',
     'login',
+    'activity',
 ]
 
 MIDDLEWARE = [
