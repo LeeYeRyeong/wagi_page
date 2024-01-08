@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link href="activities.css" rel="stylesheet" type="text/css">
     <script src="activities.js"></script>
 </head>
+
 <body>
     <div id="activities_main" hidden></div><!--js 처리용 div-->
     <header id="main-header">
@@ -26,15 +28,14 @@
         <div id="item_area"><!--수정 버튼 밑-->
             <div id="article"><!--모든 앨범-->
                 <!--MT-->
-                <form action="" method="post">
-                    {% csrf_token %}
-                    <div class="item" id="mt"><!--앨범 및 앨범 이름-->
-                        <div class="album"><!--앨범-->
-                            <div class="prev_button" id="mt_prev_button">&lt;</div>
-                            <div class="next_button" id="mt_next_button">&gt;</div>
-                            <div class="img_box">
-                                <div class="img_area clearfix" id="mt_img_area">
-                                    <div id="mt_img_content_1" class="img_content size_original">
+                <div class="item" id="mt"><!--앨범 및 앨범 이름-->
+                    <div class="album"><!--앨범-->
+                        <div class="prev_button" id="mt_prev_button">&lt;</div>
+                        <div class="next_button" id="mt_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="mt_img_area">
+                                <!--js로 주석 부분 구현-->
+                                <!-- <div id="mt_img_content_1" class="img_content size_original">
                                         <img src="../project/image/mt/ex1.jpg" alt="mt picture 1">
                                         <img src="../project/image/mt/ex2.jpg" alt="mt picture 2">
                                         <img src="../project/image/mt/ex3.jpg" alt="mt picture 3">
@@ -53,62 +54,62 @@
                                         <img src="../project/image/mt/ex10.jpg" alt="mt picture 10">
                                         <img src="../project/image/mt/ex11.jpg" alt="mt picture 11">
                                         <img src="../project/image/mt/ex12.jpg" alt="mt picture 12">
-                                    </div>
-                                </div>
-                                <div id="mtModal" class="modal">
-                                    <img class="modal-content" id="mtModalImage">
-                                </div>
+                                    </div> -->
+                            </div>
+                            <div id="mtModal" class="modal">
+                                <img class="modal-content" id="mtModalImage">
                             </div>
                         </div>
-                        <div class="album_name">MT</div> <!--앨범 이름-->
                     </div>
-                    <!--이하 동일-->
-                    <!--study-->
-                    <div class="item" id="study">
-                        <div class="album">
-                            <div class="prev_button" id="study_prev_button">&lt;</div>
-                            <div class="next_button" id="study_next_button">&gt;</div>
-                            <div class="img_box">
-                                <div class="img_area clearfix" id="study_img_area">
-                                    <!--js로 주석 부분 구현-->
-                                    <!--
+                    <div class="album_name">MT</div> <!--앨범 이름-->
+                </div>
+                <!--이하 동일-->
+                <!--study-->
+                <div class="item" id="study">
+                    <div class="album">
+                        <div class="prev_button" id="study_prev_button">&lt;</div>
+                        <div class="next_button" id="study_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="study_img_area">
+                                <!--js로 주석 부분 구현-->
+                                <!--
                                     <div id="study_img_content_1" class="img_content size_original">
                                         <img src="../project/image/study/ex1.jpg" alt="study picture 1">
                                         <img src="../project/image/study/ex2.jpg" alt="study picture 2">
                                         <img src="../project/image/study/ex3.jpg" alt="study picture 3">
                                         <img src="../project/image/study/ex4.jpg" alt="study picture 4">
                                     </div> -->
-                                    <!--
+                                <!--
                                     <div id="study_img_content_2" class="img_content size_original">
                                         <img src="../project/image/study/ex5.jpg" alt="study picture 5">
                                         <img src="../project/image/study/ex6.jpg" alt="study picture 6">
                                         <img src="../project/image/study/ex7.jpg" alt="study picture 7">
                                         <img src="../project/image/study/ex8.jpg" alt="study picture 8">
                                     </div> -->
-                                    <!--
+                                <!--
                                     <div id="study_img_content_3" class="img_content size_original">
                                         <img src="../project/image/study/ex9.jpg" alt="study picture 9">
                                         <img src="../project/image/study/ex10.jpg" alt="study picture 10">
                                         <img src="../project/image/study/ex11.jpg" alt="study picture 11">
                                         <img src="../project/image/study/ex12.jpg" alt="study picture 12">
                                     </div> -->
-                                </div>
-                                <div id="studyModal" class="modal">
-                                    <img class="modal-content" id="studyModalImage">
-                                </div>
+                            </div>
+                            <div id="studyModal" class="modal">
+                                <img class="modal-content" id="studyModalImage">
                             </div>
                         </div>
-                        <div class="album_name">Study</div>
                     </div>
-                    <!--project-->
-                    <div class="item" id="project">
-                        <div class="album">
-                            <div class="prev_button" id="project_prev_button">&lt;</div>
-                            <div class="next_button" id="project_next_button">&gt;</div>
-                            <div class="img_box">
-                                <div class="img_area clearfix" id="project_img_area">
-                                   <!--js로 주석 부분 구현-->
-                                    <!--
+                    <div class="album_name">Study</div>
+                </div>
+                <!--project-->
+                <div class="item" id="project">
+                    <div class="album">
+                        <div class="prev_button" id="project_prev_button">&lt;</div>
+                        <div class="next_button" id="project_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="project_img_area">
+                                <!--js로 주석 부분 구현-->
+                                <!--
                                     <div id="project_img_content_1" class="img_content size_original">
                                         <a href="프로젝트 링크">
                                             <img src="../project/image/project/ex1.jpg" alt="project picture 1">
@@ -123,7 +124,7 @@
                                             <img src="../project/image/project/ex4.jpg" alt="project picture 4">
                                         </a>
                                     </div> -->
-                                    <!--
+                                <!--
                                     <div id="project_img_content_2" class="img_content size_original">
                                         <a href="프로젝트 링크">
                                             <img src="../project/image/project/ex5.jpg" alt="project picture 5">
@@ -138,7 +139,7 @@
                                             <img src="../project/image/project/ex8.jpg" alt="project picture 8">
                                         </a>
                                     </div> -->
-                                    <!--
+                                <!--
                                     <div id="project_img_content_3" class="img_content size_original">
                                         <a href="프로젝트 링크">
                                             <img src="../project/image/project/ex9.jpg" alt="project picture 9">
@@ -153,14 +154,14 @@
                                             <img src="../project/image/project/ex12.jpg" alt="project picture 12">
                                         </a>
                                     </div> -->
-                                </div>
                             </div>
                         </div>
-                        <div class="album_name">Project</div>
                     </div>
-                </form>
+                    <div class="album_name">Project</div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

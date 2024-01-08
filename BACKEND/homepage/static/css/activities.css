@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    color: white;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
@@ -27,6 +26,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    color: white;
 }
 
 nav {
@@ -79,12 +79,12 @@ nav {
     color: black;
 }
 
-.button > a:hover{
+.button:hover, .button > a:hover{
     background-color : #9EA9D7;
     border-radius: 25px;
 }
 
-.button > a:active{
+.button:active, .button > a:active{
     background-color : #9EA9D7;
     border-radius: 25px;
 }
@@ -164,6 +164,7 @@ nav {
     border-radius: 20px;
     text-align: center;
     font-size: 30px;
+    color: white;
 }
 
 .delete_button, .file_label {
@@ -171,7 +172,6 @@ nav {
     top: 35px;
     text-align: center;
     border-radius: 25px;
-    color: black;
     cursor: pointer;
     background-color: #999898;
     width: 200px;
@@ -237,10 +237,6 @@ input[type="file"] {
     left: 8%;
 }
 
-.img_box img[alt] {
-    color: black;
-}
-
 .img_area {
     width: 100%;
     height: 100%;
@@ -295,19 +291,6 @@ img {
 .box {
     position: relative;
     display: inline-block;
-}
-
-.check_button {
-    position: absolute;
-    top: -7.5px;
-    left: -7.5px;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    font-size: 13px;
-    background-color: rgba(215, 215, 215, 0.7);
-    border-radius: 100%;
-    color: black;
 }
 
 .image-wrapper {
