@@ -12,72 +12,72 @@ window.onload = function () {
 
   if (activitiesMain || activitiesManager) { //activities.html일 때
     //이미지 불러오기
-    // (function () {
-    //   for (let i = 0; i < albumLen; i++) {
-    //     let imageNum = 0;
-    //     let albumName;
+    (function () {
+      for (let i = 0; i < albumLen; i++) {
+        let imageNum = 0;
+        let albumName;
 
-    //     if (i == 0) {
-    //       albumName = 'mt';
-    //     } else if (i == 1) {
-    //       albumName = 'study';
-    //     } else {
-    //       albumName = 'project'
-    //     }
+        if (i == 0) {
+          albumName = 'mt';
+        } else if (i == 1) {
+          albumName = 'study';
+        } else {
+          albumName = 'project'
+        }
 
-    //     for (let j = 0; j < imageBoxLen; j++) {
-    //       let imgContent = document.createElement('div');
-    //       let imgAreaSrc = document.getElementById(albumName + "_img_area");
-    //       imgAreaSrc.appendChild(imgContent);
+        for (let j = 0; j < imageBoxLen; j++) {
+          let imgContent = document.createElement('div');
+          let imgAreaSrc = document.getElementById(albumName + "_img_area");
+          imgAreaSrc.appendChild(imgContent);
 
-    //       imgContent.id = albumName + '_img_content_' + (j + 1); //id, class 추가
-    //       imgContent.classList.add('img_content');
-    //       imgContent.classList.add('size_original');
+          imgContent.id = albumName + '_img_content_' + (j + 1); //id, class 추가
+          imgContent.classList.add('img_content');
+          imgContent.classList.add('size_original');
 
-    //       let imageSrc = document.getElementById(albumName + '_img_content_' + (j + 1));
+          let imageSrc = document.getElementById(albumName + '_img_content_' + (j + 1));
 
-    //       for (let k = 0; k < imagesLen / imageBoxLen; k++) {
-    //         let image = document.createElement("img");
+          for (let k = 0; k < imagesLen / imageBoxLen; k++) {
+            let image = document.createElement("img");
 
-    //         image.src = "img/" + albumName + "/ex" + (imageNum + 1) + ".jpg"; //속성 추가
-    //         image.alt = albumName + " picture " + (imageNum + 1);
+            image.src = "../../static/img/" + albumName + "/ex" + (imageNum + 1) + ".jpg"; //속성 추가
+            image.alt = albumName + " picture " + (imageNum + 1);
 
-    //         //onerror="this.style.display='none'"
-    //         // image.onerror = "this.style.display='none'"
-    //         // console.log(image.onerror)
+            //onerror="this.style.display='none'"
+            // image.onerror = "this.style.display='none'"
+            // console.log(image.onerror)
 
-    //         if (i < albumLen - 1) imageSrc.appendChild(image);
-    //         else {
-    //           let aSrc = document.createElement('a');
-    //           imageSrc.appendChild(aSrc);
-    //           aSrc.appendChild(image);
-    //         }
+            if (i < albumLen - 1) imageSrc.appendChild(image);
+            else {
+              let aSrc = document.createElement('a');
+              imageSrc.appendChild(aSrc);
+              aSrc.appendChild(image);
+            }
 
-    //         imageNum++;
-    //       }
-    //     }
-    //   }
+            imageNum++;
+          }
+        }
+      }
 
-    //   //프로젝트 링크 삽입
-    //   let projectLink = document.querySelectorAll('a');
+      //프로젝트 링크 삽입
+      let projectLink = document.querySelectorAll('a');
 
-    //   if (activitiesMain) { //수정 버튼의 a 태그 제외
-    //     projectLink[0].href = 'https://naver.com';
-    //   }
+      if (activitiesMain) { //수정 버튼의 a 태그 제외
+        projectLink[0].href = 'https://naver.com';
+      }
 
-    //   projectLink[1].href = 'https://naver.com';
-    //   projectLink[2].href = 'https://naver.com';
-    //   projectLink[3].href = 'https://naver.com';
-    //   projectLink[4].href = 'https://naver.com';
-    //   projectLink[5].href = 'https://naver.com';
-    //   projectLink[6].href = 'https://naver.com';
-    //   projectLink[7].href = 'https://naver.com';
-    //   projectLink[8].href = 'https://naver.com';
-    //   projectLink[9].href = 'https://naver.com';
-    //   projectLink[10].href = 'https://naver.com';
-    //   projectLink[11].href = 'https://naver.com';
+      projectLink[1].href = 'https://naver.com';
+      projectLink[2].href = 'https://naver.com';
+      projectLink[3].href = 'https://naver.com';
+      projectLink[4].href = 'https://naver.com';
+      projectLink[5].href = 'https://naver.com';
+      projectLink[6].href = 'https://naver.com';
+      projectLink[7].href = 'https://naver.com';
+      projectLink[8].href = 'https://naver.com';
+      projectLink[9].href = 'https://naver.com';
+      projectLink[10].href = 'https://naver.com';
+      projectLink[11].href = 'https://naver.com';
 
-    // })();
+    })();
 
     //mt
     (function () {
