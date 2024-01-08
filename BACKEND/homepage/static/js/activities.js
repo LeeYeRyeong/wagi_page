@@ -325,8 +325,6 @@ window.onload = function () {
       });
     })();
 
-
-
   } else {
     //사진 삭제
     (function () {
