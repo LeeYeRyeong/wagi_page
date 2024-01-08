@@ -129,34 +129,44 @@
         $("#apply").click(function (e) { //join버튼 누름
             e.preventDefault();
             if ({{ isDate }} === 0) {
-            $(".modal_unavailable").show();
-
-           var userEmail = $("#input_email").val();
-           $.ajax({
-               url: '{% url "joinResult:join_button" %}', 
-               method: 'POST',
-               data: {
-                'user_mail': userEmail,
-                'csrfmiddlewaretoken': '{{ csrf_token }}' 
-                },
-               success: function (response) {
-                 console.log(response);
-                },
-               error: function (error) {
-                console.error(error);
-                }
-            });    
+            $(".modal_unavailable").show();  
             // 모달 닫기 버튼 
            const closeModal = document.querySelector('#close-modal');
            closeModal.addEventListener("click", ()=>{
             $(".modal_unavailable").hide();
             input.value=null;
-           });    
-            
-        }
+           });}
+           var userEmail = $("#input_email").val();
+            sendAjaxRequest(userEmail);
         });
     });
-            
+   
+   // Enter 키 이벤트 감지
+    $("#input_email").keyup(function (e) {
+      if (e.keyCode === 13) { // Enter 키 코드
+          e.preventDefault();
+          var userEmail = $("#input_email").val();
+          sendAjaxRequest(userEmail);
+      }
+   });
+   
+   function sendAjaxRequest(userEmail) {
+      $.ajax({
+          url: '{% url "joinResult:join_button" %}',
+          method: 'POST',
+          data: {
+              'user_mail': userEmail,
+              'csrfmiddlewaretoken': '{{ csrf_token }}'
+          },
+          success: function (response) {
+              console.log(response);
+          },
+          error: function (error) {
+              console.error(error);
+          }
+      });
+     };
+
     $( document ).ready( function() {
             $( '#email' ).on("submit", function(event) {
                 $( '.modal-content1' ).animate({ 
