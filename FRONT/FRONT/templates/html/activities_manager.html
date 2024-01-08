@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activities_main</title>
+    <link href="../../static/css/activities.css" rel="stylesheet" type="text/css">
+    <script src="../../static/js/activities.js"></script>
+</head>
+<body>
+    <div id="activities_manager" hidden></div><!--js 처리용 div-->
+    <header id="main-header">
+        <img src="../../static/img/WAGI logo.png" alt="logo">
+        <nav id="main-navigation">
+            <ul class="menu">
+                <li class="menu-item">Activities</li>
+                <li class="menu-item">People</li>
+                <li class="menu-item">Join</li>
+                <li class="menu-item">Notice</li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content"><!--헤더 밑-->
+        <div id="modify_button_area"><!--수정 버튼 공간-->
+            <div class="button" id="modify_button"><!--수정 버튼-->
+                <a href="activities_modify.html">수정하기</a>
+            </div>
+        </div>
+        <div id="item_area"><!--수정 버튼 밑-->
+            <div id="article"><!--모든 앨범-->
+                <!--MT-->
+                <div class="item" id="mt"><!--앨범 및 앨범 이름-->
+                    <div class="album"><!--앨범-->
+                        <div class="prev_button" id="mt_prev_button">&lt;</div>
+                        <div class="next_button" id="mt_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="mt_img_area">
+                                <!--js로 주석 부분 구현-->
+                                <!--
+                                <div id="mt_img_content_1" class="img_content size_original">
+                                    <img src="../../static/img/mt/ex1.jpg" alt="mt picture 1">
+                                    <img src="../../static/img/mt/ex2.jpg" alt="mt picture 2">
+                                    <img src="../../static/img/mt/ex3.jpg" alt="mt picture 3">
+                                    <img src="../../static/img/mt/ex4.jpg" alt="mt picture 4">
+                                </div> -->
+                                <!--
+                                <div id="mt_img_content_2" class="img_content size_original">
+                                    <img src="../../static/img/mt/ex5.jpg" alt="mt picture 5">
+                                    <img src="../../static/img/mt/ex6.jpg" alt="mt picture 6">
+                                    <img src="../../static/img/mt/ex7.jpg" alt="mt picture 7">
+                                    <img src="../../static/img/mt/ex8.jpg" alt="mt picture 8">
+                                </div> -->
+                                <!--
+                                <div id="mt_img_content_3" class="img_content size_original">
+                                    <img src="../../static/img/mt/ex9.jpg" alt="mt picture 9">
+                                    <img src="../../static/img/mt/ex10.jpg" alt="mt picture 10">
+                                    <img src="../../static/img/mt/ex11.jpg" alt="mt picture 11">
+                                    <img src="../../static/img/mt/ex12.jpg" alt="mt picture 12">
+                                </div> -->
+                            </div>
+                            <div id="mtModal" class="modal">
+                                <img class="modal-content" id="mtModalImage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album_name">MT</div> <!--앨범 이름-->
+                </div>
+                <!--이하 동일-->
+                <!--study-->
+                <div class="item" id="study">
+                    <div class="album">
+                        <div class="prev_button" id="study_prev_button">&lt;</div>
+                        <div class="next_button" id="study_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="study_img_area">
+                                <!--js로 주석 부분 구현-->
+                                <!--
+                                <div id="study_img_content_1" class="img_content size_original">
+                                    <img src="../../static/img/study/ex1.jpg" alt="study picture 1">
+                                    <img src="../../static/img/study/ex2.jpg" alt="study picture 2">
+                                    <img src="../../static/img/study/ex3.jpg" alt="study picture 3">
+                                    <img src="../../static/img/study/ex4.jpg" alt="study picture 4">
+                                </div> -->
+                                <!--
+                                <div id="study_img_content_2" class="img_content size_original">
+                                    <img src="../../static/img/study/ex5.jpg" alt="study picture 5">
+                                    <img src="../../static/img/study/ex6.jpg" alt="study picture 6">
+                                    <img src="../../static/img/study/ex7.jpg" alt="study picture 7">
+                                    <img src="../../static/img/study/ex8.jpg" alt="study picture 8">
+                                </div> -->
+                                <!--
+                                <div id="study_img_content_3" class="img_content size_original">
+                                    <img src="../../static/img/study/ex9.jpg" alt="study picture 9">
+                                    <img src="../../static/img/study/ex10.jpg" alt="study picture 10">
+                                    <img src="../../static/img/study/ex11.jpg" alt="study picture 11">
+                                    <img src="../../static/img/study/ex12.jpg" alt="study picture 12">
+                                </div> -->
+                            </div>
+                            <div id="studyModal" class="modal">
+                                <img class="modal-content" id="studyModalImage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album_name">Study</div>
+                </div>
+                <!--project-->
+                <div class="item" id="project">
+                    <div class="album">
+                        <div class="prev_button" id="project_prev_button">&lt;</div>
+                        <div class="next_button" id="project_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="project_img_area">
+                               <!--js로 주석 부분 구현-->
+                                <!--
+                                <div id="project_img_content_1" class="img_content size_original">
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex1.jpg" alt="project picture 1">
+                                    </a>
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex2.jpg" alt="project picture 2">
+                                    </a>
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex3.jpg" alt="project picture 3">
+                                    </a>
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex4.jpg" alt="project picture 4">
+                                    </a>
+                                </div> -->
+                                <!--
+                                <div id="project_img_content_2" class="img_content size_original">
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex5.jpg" alt="project picture 5">
+                                    </a>
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex6.jpg" alt="project picture 6">
+                                    </a>
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex7.jpg" alt="project picture 7">
+                                    </a>
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex8.jpg" alt="project picture 8">
+                                    </a>
+                                </div> -->
+                                <!--
+                                <div id="project_img_content_3" class="img_content size_original">
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex9.jpg" alt="project picture 9">
+                                    </a>
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex10.jpg" alt="project picture 10">
+                                    </a>
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex11.jpg" alt="project picture 11">
+                                    </a>
+                                    <a href="프로젝트 링크">
+                                        <img src="../../static/img/project/ex12.jpg" alt="project picture 12">
+                                    </a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album_name">Project</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
