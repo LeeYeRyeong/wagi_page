@@ -6,8 +6,5 @@ class People(models.Model):
     user_image = models.ImageField()
     user_portfolio = models.URLField(max_length=200)
     generation_number = models.IntegerField()
-    
-    def __str__(self):
-        return self.name
 
 # Create your models here.

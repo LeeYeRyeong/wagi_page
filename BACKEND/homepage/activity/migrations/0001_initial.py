@@ -12,24 +12,24 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='FailId',
+            name='Activity_mt',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('studentId', models.CharField(max_length=20, unique=True)),
+                ('mt_image', models.ImageField(upload_to='mt_images/')),
             ],
         ),
         migrations.CreateModel(
-            name='PassId',
+            name='Activity_project',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('studentId', models.CharField(max_length=20, unique=True)),
+                ('project_image', models.ImageField(upload_to='project_images/')),
             ],
         ),
         migrations.CreateModel(
-            name='SendMail',
+            name='Activity_study',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('user_mail', models.CharField(max_length=50, unique=True)),
+                ('study_image', models.ImageField(upload_to='study_images/')),
             ],
         ),
     ]
