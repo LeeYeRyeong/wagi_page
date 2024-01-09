@@ -1,6 +1,3 @@
-document.getElementById("addPhoto").addEventListener("click", function() {
-    window.location.href = "Notice_manager_writing_p.html";});
-    
     document.getElementById("signUp").addEventListener("click", function() {
         window.location.href = "Notice_manager_record.html";
     });
@@ -20,20 +17,6 @@ document.getElementById("addPhoto").addEventListener("click", function() {
         document.getElementById("contentsWriting").value = "공모전 내용을 입력해주세요";
     });
     
-    document.getElementById("addPhoto").addEventListener("click", function() {
-    
+    document.getElementById("addPhotoLabel").addEventListener("click", function() {
+        document.getElementById("profile").click();
     });
-
-    function showContent(contentId) {
-
-        var buttons = document.querySelectorAll('.round-button');
-        buttons.forEach(function(button) {
-            button.classList.remove('selected');
-        });
-    
-        var clickedButton = document.getElementById(contentId);
-        if (clickedButton) {
-            clickedButton.classList.add('selected');
-        }
-    }
-    

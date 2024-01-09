@@ -10,18 +10,20 @@
 </head>
 <body>
 
-    <div id="notices" class="notice"><span>공지사항</span></div>
-    <div id="writings" class="writing"><span>글 작성</span></div>
-    <button id="regularActivity" class="round-button" onclick="showContent('regularActivity')">정기활동</button>
-    <button id="event" class="round-button" onclick="showContent('event')">행사</button>
-    <button id="competition" class="round-button" onclick="showContent('competition')">공모전</button>
-    <div id="writingZone"></div>
-    <textarea id="titleWriting" name="message" rows="4" cols="50" placeholder="제목을 입력해주세요"></textarea>
-    <textarea id="contentsWriting" name="message2" rows="10" cols="50" placeholder="내용을 입력해주세요"></textarea>
-    <div id="addPhoto" class="round-button"><span>사진추가</span></div>
-    <button id="signUp"><span>등록하기</span></button>
-    <img id="Vector" src="Vector.png">
-    <div id="img_name"><span>파일이름.png</span></div>
+    <form>
+        <div id="notices" class="notice"><span>공지사항</span></div>
+        <div id="writings" class="writing"><span>글 작성</span></div>
+        <button id="regularActivity" class="round-button" onclick="showContent('regularActivity')">정기활동</button>
+        <button id="event" class="round-button" onclick="showContent('event')">행사</button>
+        <button id="competition" class="round-button" onclick="showContent('competition')">공모전</button>
+        <div id="writingZone"></div>
+        <textarea id="titleWriting" name="message" rows="4" cols="50" placeholder="제목을 입력해주세요"></textarea>
+        <textarea id="contentsWriting" name="message2" rows="10" cols="50" placeholder="내용을 입력해주세요"></textarea>
+        <button id="addPhoto" class="round-button"><span>사진추가</span></button>
+        <button id="signUp"><span>등록하기</span></button>
+        <img id="Vector" src="Vector.png">
+        <textarea id="img_name" name="img_name" rows="1" cols="50" readonly>파일이름.png</textarea>
+    </form>
 
     <script src="Notice_manager_writing_p.js"></script>
 </body>

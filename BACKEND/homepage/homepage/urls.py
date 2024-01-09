@@ -31,4 +31,5 @@ urlpatterns = [
     path('edit/', edit_page, name='edit_page'),
     path('edit_images/<int:image_id>/', edit_images, name='edit_images'),
     path('people/', show_people, name='show_people'),
+    path('notice/', include('notice.urls')),  
 ]
