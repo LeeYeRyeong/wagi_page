@@ -21,7 +21,7 @@ from activity.views import upload_activity, success_page, edit_page, edit_images
 from people.views import show_people
 from joinResult import views
 
-appname = 'homepage'
+app_name = 'homepage'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
