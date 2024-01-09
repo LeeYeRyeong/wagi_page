@@ -14,9 +14,8 @@ def apply_club_user_info_view(request):
         form = ApplicantForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('application_success')
+            return redirect('application:form')
     else:
         form = ApplicantForm()
 
     return render(request, 'join_info.html', {'form': form})
-
