@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>WAGI 웹 페이지</title>
     <link rel="stylesheet" type="text/css" href="base.css">
@@ -8,20 +8,17 @@
 <body>
     <div id="notices" class="notice"><span>공지사항</span></div>
 
-    <button id="regularActivity" class="round-button" onclick="showContent('regularActivity')">정기활동</button>
-    <button id="event" class="round-button" onclick="showContent('event')">행사</button>
-    <button id="competition" class="round-button" onclick="showContent('competition')">공모전</button>
+    <form>
+        <button id="regularActivity" class="round-button" onclick="showContent('regularActivity', event)">정기활동</button>
+        <button id="event" class="round-button" onclick="showContent('event', event)">행사</button>
+        <button id="competition" class="round-button" onclick="showContent('competition', event)">공모전</button>
 
-    <textarea id="allContent" readonly>모든 활동 내용</textarea>
-
-    <textarea id="regularActivityContent" class="content" readonly>&nbsp;정기활동 내용</textarea>
-
-    <textarea id="eventContent" class="content" readonly>&nbsp;행사 내용</textarea>
-
-    <textarea id="competitionContent" class="content" readonly>&nbsp;공모전 내용</textarea>
-
+        <textarea id="allContent" class="content" readonly>모든 활동 내용</textarea>
+        <textarea id="regularActivityContent" class="content" readonly>&nbsp;정기활동 내용</textarea>
+        <textarea id="eventContent" class="content" readonly>&nbsp;행사 내용</textarea>
+        <textarea id="competitionContent" class="content" readonly>&nbsp;공모전 내용</textarea>
+    </form>
 
     <script src="Notice_main.js"></script>
 </body>
 </html>
-
