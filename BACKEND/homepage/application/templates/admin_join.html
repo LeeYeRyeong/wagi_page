@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>학번</th>
+            <th>이름</th>
+            <th>학과</th>
+            <th>지원서</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if join_list %}
+        {% for join_objects in join_list %}
+        <tr>
+            <td>{{ join_objects.id }}</td>
+            <td>{{ join_objects.user_number }}</td>
+            <td>
+                <a href="{% url 'application:join_detail' join_objects.id %}">{{ join_objects.user_name }}</a>
+            </td>
+            <td>{{ join_objects.user_major }}</td>
+            <td>{{ join_objects.user_major }}</td>
+            <td>지원서 제출 완료</td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+            <td>질문이 없습니다.</td>
+        </tr>
+        {% endif %}
+        </tbody>
+    </table>
+
+    <!-- 페이징처리 시작 -->
+    <ul>
+        <!-- 이전페이지 -->
+        {% if join_list.has_previous %}
+        <li>
+            <a href="?page={{ join_list.previous_page_number }}">이전</a>
+        </li>
+        {% else %}
+        <li>
+            <a tabindex="-1" aria-disabled="true" href="#">이전</a>
+        </li>
+        {% endif %}
+        <!-- 페이지리스트 -->
+        {% for page_number in join_list.paginator.page_range %}
+        {% if page_number >= join_list.number|add:-5 and page_number <= join_list.number|add:5 %}
+        {% if page_number == join_list.number %}
+        <li aria-current="page">
+            <a href="?page={{ page_number }}">{{ page_number }}</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="?page={{ page_number }}">{{ page_number }}</a>
+        </li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        <!-- 다음페이지 -->
+        {% if join_list.has_next %}
+        <li>
+            <a href="?page={{ join_list.next_page_number }}">다음</a>
+        </li>
+        {% else %}
+        <li>
+            <a tabindex="-1" aria-disabled="true" href="#">다음</a>
+        </li>
+        {% endif %}
+    </ul>
+    <!-- 페이징처리 끝 -->
+</body>
+</html>

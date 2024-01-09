@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if application_info %}
+    번호 : {{join_info.id}}<br>
+    학과 : {{join_info.user_major}}<br>
+    제출일시 : {{application_info.submit_date}}<br>
+    이름 : {{join_info.user_name}}<br>
+    학번 : {{join_info.user_number}}<br>
+    1. 자기소개를 해주세요.(500자 내외)<br>
+    {{ application_info.introduction }}<br>
+    2. 지원동기를 작성해주세요.(500자 내외)<br>
+    {{ application_info.motivation }}<br>
+    3. 프로젝트 관련 경험이 있다면 작성해주세요.(800자 내외)<br>
+    {{ application_info.project_experience }}<br>
+    4. 개발과 관련한 공부를 한 경험이 있다면 작성해주세요.(700자 내외)<br>
+    {{ application_info.study_experience }}
+
+    {% else %}
+    상세페이지가 없습니다.
+    {% endif %}
+</body>
+</html>

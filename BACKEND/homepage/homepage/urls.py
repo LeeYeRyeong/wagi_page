@@ -20,6 +20,7 @@ from joinInfo.views import apply_club_user_info_view
 from activity.views import upload_activity, success_page, edit_page, edit_images
 from people.views import show_people
 from joinResult import views
+from application import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,4 +32,5 @@ urlpatterns = [
     path('edit/', edit_page, name='edit_page'),
     path('edit_images/<int:image_id>/', edit_images, name='edit_images'),
     path('people/', show_people, name='show_people'),
+    path('application/', include('application.urls')),
 ]
