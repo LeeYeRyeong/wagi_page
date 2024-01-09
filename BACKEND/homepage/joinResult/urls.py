@@ -7,4 +7,5 @@ urlpatterns = [
     path('send_mail/', views.send_mail, name='send_mail'),
     path('write_form/',views.write_form, name='write_form'),
     path('result/', views.result,name='result'),
+    path('writeMail/', views.writeMail, name='writeMail'),
 ]
