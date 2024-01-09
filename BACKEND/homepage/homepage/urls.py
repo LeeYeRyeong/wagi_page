@@ -21,6 +21,8 @@ from activity.views import upload_activity, success_page, edit_page, edit_images
 from people.views import show_people
 from joinResult import views
 
+appname = 'homepage'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('join/', apply_club_user_info_view, name='apply_club_user_info_view'),

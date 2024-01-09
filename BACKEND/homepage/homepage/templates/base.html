@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WAGI WEB PAGE</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body> 
+    <div id="page-wrapper">
+        <header id="main-header">
+            <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
+            <nav id="main-navigation">
+                <ul class="menu">
+                    <li class="menu-item"><button data-url="{% url 'homepage:activity' %}">Activities</button></li>
+                    <li class="menu-item"><button data-url="{% url 'homepage:show_people' %}">People</button></li>
+                    <li class="menu-item"><button data-url="{% url 'homepage:apply_club_user_info_view' %}">Join</button></li>
+                    <li class="menu-item"><button data-url="{% url 'homepage:notice' %}">Notice</button></li>
+                </ul>
+            </nav> 
+        </header>
+        <div id="main-section">
+
+        </div>
+        <footer id="main-footer">
+
+            <img src="{% static 'img/WAGI black.png' %}" alt="logo">
+
+            <div style="background-color: #9EA9D7;">
+                <div class="round-button"></div>
+                <div class="round-button"></div>
+                <div class="round-button"></div>
+            </div>
+
+            <p>ⓒWAGI. 2023 All rights reserved</p>
+
+            <button id="login-button" onclick="redirectButton(this)">LOGIN</button>
+        </footer>
+
+        <script>
+            function redirectButton(button) {
+                var url = button.getAttribute("data-url");
+                window.location.href = url;
+            }
+        </script>
+    </div> 
+</body>
+</html>
