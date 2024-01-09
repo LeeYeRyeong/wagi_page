@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+</head>
+<body>
+    <h2>Application</h2>
+    <!-- 폼 입력받는 부분 -->
+    <form method="post" action="{% url 'application:form' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <!-- submit 누르면 페이지 이동 -->
+        <a href="{% url 'application:success' %}">
+            <button type="submit">Submit</button>
+        </a>
+    </form>
+
+</body>
+</html>
