@@ -5,63 +5,10 @@ window.onload = function() {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-  const peopleData = [
-      {
-        name: "이나경",
-        photo: "ex2.png",
-        bio: "일이삼사오육칠팔구십일이삼사오육",
-        link_1: "https://github.com/nagaeng"
-        
-      },
-      {
-        name: "이예령",
-        photo: "ex1.png",
-        bio: "여기까지가 마지노선입니다",
-        link_1: "https://github.com/LeeYeRyeong",
-        link_2: "https://ryeong-322.tistory.com"
-      },
-      {
-        name: "이예령",
-        photo: "ex1.png",
-        bio: "구글 삼성 와기 let's go",
-        link_1: "https://github.com/LeeYeRyeong",
-        link_2: "https://ryeong-322.tistory.com"
-    },
-    {
-        name: "이나경",
-        photo: "ex2.png",
-        bio: "안녕하세요. WAGI의 창조주입니다.",
-        link_1: "https://github.com/nagaeng"
-    },
-    {
-      name: "이예령",
-      photo: "ex1.png",
-      bio: "개발자 가보자고",
-      link_1: "https://github.com/LeeYeRyeong",
-      link_2: "https://ryeong-322.tistory.com"
-    },
-    {
-        name: "이나경",
-        photo: "ex2.png",
-        bio: "안녕하세요. WAGI의 창조주입니다.",
-        link_1: "https://github.com/nagaeng"
-    },
-    {
-      name: "이예령",
-      photo: "ex1.png",
-      bio: "개발자 가보자고",
-      link_1: "https://github.com/LeeYeRyeong",
-      link_2: "https://ryeong-322.tistory.com"
-    },
-    {
-        name: "이나경",
-        photo: "ex2.png",
-        bio: "안녕하세요. WAGI의",
-        link_1: "https://github.com/nagaeng"
-    },
+  const peopleContainer = document.getElementById('people-data');
+  const peopleData = JSON.parse(peopleContainer.getAttribute('data-people'));
       
-      
-    ];
+
 
     const container = document.querySelector('.center');
     let visibleBubbles = 0;
