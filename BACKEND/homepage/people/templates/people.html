@@ -1,15 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>People List</title>
+    <link rel="stylesheet" href="{% static 'css/people.css' %}">
+    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
 </head>
 <body>
+    <div class="center"></div>
+    <script src="{% static 'js/people.js' %}"></script>
+
     <h1>People List</h1>
     
     {% for person in people_data %}
-        <div>
+        <div id="people_data">
             <h2>{{ person.user_name }}</h2>
             <p>Bio: {{ person.use_bio }}</p>
             <img src="{{ person.user_image.url }}" alt="User Image">
