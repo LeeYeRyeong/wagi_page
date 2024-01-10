@@ -230,6 +230,11 @@ input:focus {
 #phoneNumber{
     background-color: white;
 }
+*{
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+
+}
+
 
 
 
