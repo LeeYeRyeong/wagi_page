@@ -4,7 +4,8 @@
             color:black;
             overflow-x: hidden; /* 가로 스크롤 제거 */
         }
-        
+        *{ font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+        }
 
         section {
             height: 100vh;

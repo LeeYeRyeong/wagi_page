@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>WAGI WEB PAGE</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_main.css' %}">
+    </head>
+    
+
+<body>
+    <div id="page-wrapper">
+        <header id="main-header">
+            <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
+            <nav id="main-navigation">
+                <ul class="menu">
+                    <li class="menu-item">Activities</li>
+                    <li class="menu-item">People</li>
+                    <li class="menu-item">Join</li>
+                    <li class="menu-item">Notice</li>
+                </ul>
+            </nav>
+        </header>
+
+        {% block content %} 
+	
+        <!--이 사이에 각 html별로 겹치지 않는 내용이 들어가면 됩니다-->
+            <div id="notices"><span>공지사항</span></div>
+            <div id="regularActivity" class="round-button" onclick="showContent('regularActivity')">정기활동</div>
+            <div id="event" class="round-button" onclick="showContent('event')">행사</div>
+            <div id="competition" class="round-button" onclick="showContent('competition')">공모전</div>
+            
+            <div id="regularActivityContent">
+                <!-- 정기 활동 내용 -->
+            </div>
+            <div id="eventContent">
+                <!-- 행사 내용 -->
+            </div>
+            <div id="competitionContent">
+                <!-- 공모전 내용 -->
+            </div>
+    
+        {% endblock %}
+
+        <footer id="main-footer">
+
+            <img src="{% static 'img/WAGI black.png' %}" alt="logo">
+
+            <div style="background-color: #9EA9D7;">
+                <div class="round-button"></div>
+                <div class="round-button"></div>
+                <div class="round-button"></div>
+            </div>
+
+            <p>ⓒWAGI. 2023 All rights reserved</p>
+
+            <button id="login-button" onclick="window.location.href='login.html'">LOGIN</button>
+        </footer>
+
+        <script>
+             function showContent(section) {
+                document.getElementById('regularActivity').classList.remove('clicked');
+                document.getElementById('event').classList.remove('clicked');
+                document.getElementById('competition').classList.remove('clicked');
+                document.getElementById(section).classList.add('clicked');
+            }
+        </script>
+    </div>
+</body>
+
+</html>
