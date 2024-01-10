@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>activities_main</title>
     <link href="../../static/css/activities.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
     <script src="../../static/js/activities.js"></script>
 </head>
 
@@ -35,14 +36,15 @@
                         <div class="next_button" id="mt_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="mt_img_area">
-                                <div class="img_content size_original">
                                 {% for image in images %}
-                                    {% if image.mt_image %}
-                                        <img src="{{ image.mt_image.url }}" alt="MT Image">
-                                    {% endif %}
+                                    <div class="img_content size_original"> <!--필요시 함수로 변경-->
+                                        {% for i in range(3) %}
+                                            {% if image.mt_image %}
+                                                <img src="{{ image.mt_image.url }}" alt="MT Image">
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
                                 {% endfor %}
-                                </div>
-                                <!--js로 주석 부분 구현-->
                                 <!-- <div id="mt_img_content_1" class="img_content size_original">
                                     <img src="../project/image/mt/ex1.jpg" alt="mt picture 1">
                                     <img src="../project/image/mt/ex2.jpg" alt="mt picture 2">
