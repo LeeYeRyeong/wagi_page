@@ -1,48 +1,59 @@
 from django.shortcuts import render, redirect
 from datetime import date
 from .models import PassId, FailId, SendMail
-from django import forms
 from joinInfo.models import JoinInfo # 유저인포 받아와서 합불여부 html에 반영하기
 from django.core.mail import EmailMessage
+from django.http import JsonResponse
 
 
-# 메인페이지에 있는 join 버튼
+#  join 버튼 눌렀을 떄
 def join_button(request):
-  return render(request, 'join.html')
-
-# join 버튼 눌렀을 때 
-def inquiry(request):
     current_date = date.today() # 현재 날짜
-    start_j_date = date(2023, 11, 10) # 지원서 제출 시작 날짜
-    end_j_date = date(2023, 12, 5) # 지원서 제 출 끝나는 날짜
-    start_r_date = date(2023, 12, 19) # 합격자 조회 시작 날짜
-    end_r_date = date(2023, 12, 30) # 합격자 조회 끝나는 날짜
+    start_j_date = date(2024, 1, 1) # 지원서 제출 시작 날짜
+    end_j_date = date(2024, 1, 3) # 지원서 제 출 끝나는 날짜
+    start_r_date = date(2024, 1, 8) # 합격자 조회 시작 날짜
+    end_r_date = date(2024, 1,8) # 합격자 조회 끝나는 날짜
     isDate = 0
-    if start_j_date <= current_date <= end_j_date:
+    if start_j_date <= current_date <= end_j_date: # 지원서 제출 기간
         isDate = 1
         return render(request, 'inquiry.html',{'isDate':isDate})
-    elif start_r_date <= current_date <= end_r_date:
+    elif start_r_date <= current_date <= end_r_date: # 합격자 조회 기간
         isDate = 2
         return render(request, 'inquiry.html',{'isDate':isDate})
-    else: # 기간 아닐 경우, 메일 입력 받기
-        return redirect('joinResult:writeMail')
-    
-# 메일 폼
-class MailForm(forms.ModelForm):
-    class Meta:
-        model = SendMail
-        fields = ['user_mail']
+    else :
+        isDate = 0 # 이메일 입력창 띄움
+        return render(request, 'inquiry.html', {'isDate':isDate}) 
 
-# 메일 입력 받는 페이지
+
+# 메일 입력 받음
 def writeMail(request):
-    if request.method == 'POST':
-        input_mail = MailForm(request.POST)
-        if input_mail.is_valid():
-            input_mail.save()
-            return render(request, 'will_send_mail.html',{'mail':input_mail}) # 메일 입력하고 나오는 페이지
-    else:
-        input_mail = MailForm()
-    return render(request, 'write_mail.html', {'input_mail':input_mail}) 
+    if request.headers.get('x-requested-with') == 'XMLHttpRequest':
+        email = request.POST.get('email')
+
+        if not email:
+            return JsonResponse({'noEmail': True})
+
+        # email 형식이 올바른지 확인
+        if '@' not in email or '.' not in email:
+            return JsonResponse({'wrongEmail': True})
+
+        index = email.index('.')
+        try:
+            email[index + 1]
+        except IndexError:
+            return JsonResponse({'wrongEmail': True})
+
+        # 이미 등록된 email인지 확인
+        if SendMail.objects.filter(user_mail=email).exists():
+            return JsonResponse({'emailExists': True})
+        
+        # email 형식이 정상인 경우
+        user_mail = SendMail(user_mail=email)
+        user_mail.save()
+        return JsonResponse({'works': True})
+
+
+
 
 # 지원서 제출 기간에 메일 알림 가도록
 def send_mail(request):
@@ -68,16 +79,17 @@ def result(request):
     if request.method == 'POST':
         inputId = request.POST.get('inputId')
         inputId_int = int(inputId)
-        if PassId.objects.filter(studentId=inputId): # 합격자일 때
+        if PassId.objects.filter(studentId=inputId).exists(): # 합격자일 때
             join_info_object = JoinInfo.objects.get(user_number=inputId_int)
-            return render(request, 'result_pass.html',{'number':inputId, 'name':join_info_object.user_name})
-        elif FailId.objects.filter(studentId=inputId): # 불합격자일 때
+            data = {'result': 'pass', 'number': inputId, 'name': join_info_object.user_name}
+            return JsonResponse(data)
+        elif FailId.objects.filter(studentId=inputId).exists(): # 불합격자일 때
             join_info_object = JoinInfo.objects.get(user_number=inputId_int)
-            return render(request, "result_fail.html",{'number':inputId, 'name':join_info_object.user_name})
+            data = {'result': 'fail', 'number': inputId, 'name': join_info_object.user_name, }
+            return JsonResponse(data)
         else:
-           return redirect('joinResult:inquiry')
-    return render(request, "inquiry.html")
-
+           return redirect('joinResult:inquiry')   
+    return render(request, 'inquiry.html')
 
 # 지원서 작성 페이지로 이동
 def write_form(request):
