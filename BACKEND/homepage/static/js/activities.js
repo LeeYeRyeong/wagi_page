@@ -88,7 +88,7 @@ window.onload = function () {
       let slideContents = new Array();
 
       for (let i = 0; i < imageBoxLen; i++) {
-        slideContents[i] = document.querySelector('#mt_img_content_' + (i + 1));
+        slideContents[i] = document.querySelector('#mt_img_content');
       }
 
       const slideLen = slideContents.length;
