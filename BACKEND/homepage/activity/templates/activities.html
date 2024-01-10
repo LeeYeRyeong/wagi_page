@@ -36,31 +36,31 @@
                         <div class="img_box">
                             <div class="img_area clearfix" id="mt_img_area">
                                 <div class="img_content size_original">
-                                    {% for image in images %}
-                                        {% if image.mt_image %}
-                                            <img src="{{ image.mt_image.url }}" alt="MT Image">
-                                        {% endif %}
-                                    {% endfor %}
-                                    <!--js로 주석 부분 구현-->
-                                    <!-- <div id="mt_img_content_1" class="img_content size_original">
-                                        <img src="../project/image/mt/ex1.jpg" alt="mt picture 1">
-                                        <img src="../project/image/mt/ex2.jpg" alt="mt picture 2">
-                                        <img src="../project/image/mt/ex3.jpg" alt="mt picture 3">
-                                        <img src="../project/image/mt/ex4.jpg" alt="mt picture 4">
-                                    </div>
-                                    <div id="mt_img_content_2" class="img_content size_original">
-                                        <img src="../project/image/mt/ex5.jpg" alt="mt picture 5">
-                                        <img src="../project/image/mt/ex6.jpg" alt="mt picture 6">
-                                        <img src="../project/image/mt/ex7.jpg" alt="mt picture 7">
-                                        <img src="../project/image/mt/ex8.jpg" alt="mt picture 8">
-                                    </div>
-                                    <div id="mt_img_content_3" class="img_content size_original">
-                                        <img src="../project/image/mt/ex9.jpg" alt="mt picture 9">
-                                        <img src="../project/image/mt/ex10.jpg" alt="mt picture 10">
-                                        <img src="../project/image/mt/ex11.jpg" alt="mt picture 11">
-                                        <img src="../project/image/mt/ex12.jpg" alt="mt picture 12">
-                                    </div> -->
+                                {% for image in images %}
+                                    {% if image.mt_image %}
+                                        <img src="{{ image.mt_image.url }}" alt="MT Image">
+                                    {% endif %}
+                                {% endfor %}
                                 </div>
+                                <!--js로 주석 부분 구현-->
+                                <!-- <div id="mt_img_content_1" class="img_content size_original">
+                                    <img src="../project/image/mt/ex1.jpg" alt="mt picture 1">
+                                    <img src="../project/image/mt/ex2.jpg" alt="mt picture 2">
+                                    <img src="../project/image/mt/ex3.jpg" alt="mt picture 3">
+                                    <img src="../project/image/mt/ex4.jpg" alt="mt picture 4">
+                                </div>
+                                <div id="mt_img_content_2" class="img_content size_original">
+                                    <img src="../project/image/mt/ex5.jpg" alt="mt picture 5">
+                                    <img src="../project/image/mt/ex6.jpg" alt="mt picture 6">
+                                    <img src="../project/image/mt/ex7.jpg" alt="mt picture 7">
+                                    <img src="../project/image/mt/ex8.jpg" alt="mt picture 8">
+                                </div>
+                                <div id="mt_img_content_3" class="img_content size_original">
+                                    <img src="../project/image/mt/ex9.jpg" alt="mt picture 9">
+                                    <img src="../project/image/mt/ex10.jpg" alt="mt picture 10">
+                                    <img src="../project/image/mt/ex11.jpg" alt="mt picture 11">
+                                    <img src="../project/image/mt/ex12.jpg" alt="mt picture 12">
+                                </div> -->
                             </div>
                             <div id="mtModal" class="modal">
                                 <img class="modal-content" id="mtModalImage">
