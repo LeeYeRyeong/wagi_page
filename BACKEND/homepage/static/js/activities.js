@@ -4,7 +4,7 @@ window.onload = function () {
   const slideSpeed = 300;
   const startNum = 0; //슬라이드 인덱스 (0 ~ imageBoxLen-1)
   const imagesLen = 12;
-  const imageBoxLen = 3;
+  let imageBoxLen;
   const albumLen = 3;
 
   let activitiesMain = document.getElementById('activities_main');
@@ -12,72 +12,76 @@ window.onload = function () {
 
   if (activitiesMain || activitiesManager) { //activities.html일 때
     //이미지 불러오기
-    // (function () {
-    //   for (let i = 0; i < albumLen; i++) {
-    //     let imageNum = 0;
-    //     let albumName;
+    (function () {
+      // for (let i = 0; i < albumLen; i++) {
+      //   let imageNum = 0;
+      //   let albumName;
 
-    //     if (i == 0) {
-    //       albumName = 'mt';
-    //     } else if (i == 1) {
-    //       albumName = 'study';
-    //     } else {
-    //       albumName = 'project'
-    //     }
+      //   if (i == 0) {
+      //     albumName = 'mt';
+      //   } else if (i == 1) {
+      //     albumName = 'study';
+      //   } else {
+      //     albumName = 'project'
+      //   }
 
-    //     for (let j = 0; j < imageBoxLen; j++) {
-    //       let imgContent = document.createElement('div');
-    //       let imgAreaSrc = document.getElementById(albumName + "_img_area");
-    //       imgAreaSrc.appendChild(imgContent);
+      //   for (let j = 0; j < imageBoxLen; j++) {
+      //     let imgContent = document.createElement('div');
+      //     let imgAreaSrc = document.getElementById(albumName + "_img_area");
+      //     imgAreaSrc.appendChild(imgContent);
 
-    //       imgContent.id = albumName + '_img_content_' + (j + 1); //id, class 추가
-    //       imgContent.classList.add('img_content');
-    //       imgContent.classList.add('size_original');
+      //     imgContent.id = albumName + '_img_content_' + (j + 1); //id, class 추가
+      //     imgContent.classList.add('img_content');
+      //     imgContent.classList.add('size_original');
 
-    //       let imageSrc = document.getElementById(albumName + '_img_content_' + (j + 1));
+      //     let imageSrc = document.getElementById(albumName + '_img_content_' + (j + 1));
 
-    //       for (let k = 0; k < imagesLen / imageBoxLen; k++) {
-    //         let image = document.createElement("img");
+      //     for (let k = 0; k < imagesLen / imageBoxLen; k++) {
+      //       let image = document.createElement("img");
 
-    //         image.src = "img/" + albumName + "/ex" + (imageNum + 1) + ".jpg"; //속성 추가
-    //         image.alt = albumName + " picture " + (imageNum + 1);
+      //       image.src = "img/" + albumName + "/ex" + (imageNum + 1) + ".jpg"; //속성 추가
+      //       image.alt = albumName + " picture " + (imageNum + 1);
 
-    //         //onerror="this.style.display='none'"
-    //         // image.onerror = "this.style.display='none'"
-    //         // console.log(image.onerror)
+      //       //onerror="this.style.display='none'"
+      //       // image.onerror = "this.style.display='none'"
+      //       // console.log(image.onerror)
 
-    //         if (i < albumLen - 1) imageSrc.appendChild(image);
-    //         else {
-    //           let aSrc = document.createElement('a');
-    //           imageSrc.appendChild(aSrc);
-    //           aSrc.appendChild(image);
-    //         }
+      //       if (i < albumLen - 1) imageSrc.appendChild(image);
+      //       else {
+      //         let aSrc = document.createElement('a');
+      //         imageSrc.appendChild(aSrc);
+      //         aSrc.appendChild(image);
+      //       }
 
-    //         imageNum++;
-    //       }
-    //     }
-    //   }
+      //       imageNum++;
+      //     }
+      //   }
+      // }
 
-    //   //프로젝트 링크 삽입
-    //   let projectLink = document.querySelectorAll('a');
+      //프로젝트 링크 삽입
+      let projectLink = document.querySelectorAll('a');
 
-    //   if (activitiesMain) { //수정 버튼의 a 태그 제외
-    //     projectLink[0].href = 'https://naver.com';
-    //   }
+      if (activitiesMain) { //수정 버튼의 a 태그 제외
+        projectLink[0].href = 'https://naver.com';
+      }
 
-    //   projectLink[1].href = 'https://naver.com';
-    //   projectLink[2].href = 'https://naver.com';
-    //   projectLink[3].href = 'https://naver.com';
-    //   projectLink[4].href = 'https://naver.com';
-    //   projectLink[5].href = 'https://naver.com';
-    //   projectLink[6].href = 'https://naver.com';
-    //   projectLink[7].href = 'https://naver.com';
-    //   projectLink[8].href = 'https://naver.com';
-    //   projectLink[9].href = 'https://naver.com';
-    //   projectLink[10].href = 'https://naver.com';
-    //   projectLink[11].href = 'https://naver.com';
+      try {
+        projectLink[1].href = 'https://naver.com';
+        projectLink[2].href = 'https://naver.com';
+        projectLink[3].href = 'https://naver.com';
+        projectLink[4].href = 'https://naver.com';
+        projectLink[5].href = 'https://naver.com';
+        projectLink[6].href = 'https://naver.com';
+        projectLink[7].href = 'https://naver.com';
+        projectLink[8].href = 'https://naver.com';
+        projectLink[9].href = 'https://naver.com';
+        projectLink[10].href = 'https://naver.com';
+        projectLink[11].href = 'https://naver.com';
+      } catch (e) {
+        
+      }
 
-    // })();
+    })();
 
     //mt
     (function () {
@@ -85,11 +89,22 @@ window.onload = function () {
       const mtNextBtn = document.querySelector('#mt_next_button');
       const imagesArea = document.querySelector('#mt_img_area');
 
-      let slideContents = new Array();
+      let imageNum = new Array();
+      imageNum = document.querySelectorAll('#mt_img_content img');
 
-      for (let i = 0; i < imageBoxLen; i++) {
-        slideContents[i] = document.querySelector('#mt_img_content');
-      }
+      //사진 개수에 따른 슬라이드 개수 조정
+      if (imageNum.length == 0) imageBoxLen = 0;
+      else if (imageNum.length >= 1 && imageNum.length <= 4){
+        imageBoxLen = 1;
+        mtPrevBtn.classList.add('display_none');
+        mtNextBtn.classList.add('display_none');
+      } 
+      else if (imageNum.length >= 5 && imageNum.length <= 8) imageBoxLen = 2;
+      else if (imageNum.length >= 9 && imageNum.length <= 12) imageBoxLen = 3;
+      else imageBoxLen = 0;
+
+      let slideContents = new Array();
+      slideContents = document.querySelectorAll('#mt_img_content');
 
       const slideLen = slideContents.length;
 
@@ -155,12 +170,22 @@ window.onload = function () {
       const studyNextBtn = document.querySelector('#study_next_button');
       const imagesArea = document.querySelector('#study_img_area');
 
+      let imageNum = new Array();
+      imageNum = document.querySelectorAll('#study_img_content img');
+
+      //사진 개수에 따른 슬라이드 개수 조정
+      if (imageNum.length == 0) imageBoxLen = 0;
+      else if (imageNum.length >= 1 && imageNum.length <= 4){
+        imageBoxLen = 1;
+        studyPrevBtn.classList.add('display_none');
+        studyNextBtn.classList.add('display_none');
+      } 
+      else if (imageNum.length >= 5 && imageNum.length <= 8) imageBoxLen = 2;
+      else if (imageNum.length >= 9 && imageNum.length <= 12) imageBoxLen = 3;
+      else imageBoxLen = 0;
+
       let slideContents = new Array();
-
-      for (let i = 0; i < imageBoxLen; i++) {
-        slideContents[i] = document.querySelector('#study_img_content_' + (i + 1));
-      }
-
+      slideContents = document.querySelectorAll('#study_img_content');
       const slideLen = slideContents.length;
 
       imagesArea.style.width = slideWidth * (slideLen + 2) + "px";
@@ -225,11 +250,22 @@ window.onload = function () {
       const projectNextBtn = document.querySelector('#project_next_button');
       const imagesArea = document.querySelector('#project_img_area');
 
-      let slideContents = new Array();
+      let imageNum = new Array();
+      imageNum = document.querySelectorAll('#project_img_content img');
 
-      for (let i = 0; i < imageBoxLen; i++) {
-        slideContents[i] = document.querySelector('#project_img_content_' + (i + 1));
-      }
+      //사진 개수에 따른 슬라이드 개수 조정
+      if (imageNum.length == 0) imageBoxLen = 0;
+      else if (imageNum.length >= 1 && imageNum.length <= 4){
+        imageBoxLen = 1;
+        projectPrevBtn.classList.add('display_none');
+        projectNextBtn.classList.add('display_none');
+      } 
+      else if (imageNum.length >= 5 && imageNum.length <= 8) imageBoxLen = 2;
+      else if (imageNum.length >= 9 && imageNum.length <= 12) imageBoxLen = 3;
+      else imageBoxLen = 0;
+
+      let slideContents = new Array();
+      slideContents = document.querySelectorAll('#project_img_content');
 
       const slideLen = slideContents.length;
 
