@@ -1,61 +1,81 @@
-  // 메일 입력 창
-  /*   $(document).ready(function () {
-      $("#apply").click(function (e) { //join버튼 누름
-        e.preventDefault();
+    // 메일 입력 창
+    $(document).ready(function () {
+        const isDate = parseInt($('script[src$="joinResult.js"]').data('isDate'));
+        $("#apply").click(function (e) { //join버튼 누름
+            e.preventDefault();
 
-        if ({{ isDate }} === 0) {
-           $(".modal_unavailable").show(); // 메일창 띄우기 
+            if (isDate == 0) {
+               $(".modal_unavailable").show(); // 메일창 띄우기 
  
-           const closeModal = document.querySelector('#close-modal'); // 모달 닫기 버튼 
-           var input = document.querySelector('.input_email');
-           closeModal.addEventListener("click", ()=>{
-              $(".modal_unavailable").hide();
-              input.value=null; //이메일 입력하다가 모달창 닫았을 때 input창 리셋
-           });
-        }
-    });
-    $("#email").submit(function (event) {
-        event.preventDefault();
-        var userEmail = $(".input_email").val();
-               $.ajax({
-                   url :  '{% url "joinResult:writeMail" %}',
-                   method: "POST",
-                   headers: {
+               const closeModal = document.querySelector('#close-modal'); // 모달 닫기 버튼 
+               var input = document.querySelector('.input_email');
+               closeModal.addEventListener("click", ()=>{
+                  $(".modal_unavailable").hide();
+                  input.value=null; //이메일 입력하다가 모달창 닫았을 때 input창 리셋
+                });
+            }
+        });
+        // 메일 입력 받기
+        $("#email").submit(function (event) {
+            event.preventDefault();
+            var userEmail = $(".input_email").val();
+            var csrfToken = getCookie('csrftoken');
+            var url = '/joinResult/writeMail/';
+            $.ajax({
+                url :  url,
+                method: "POST",
+                headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                     'X-CSRFToken': '{{ csrf_token }}'
-                     },
-                   cache: false,
-                   data: {
+                },
+                cache: false,
+                data: {
                     'email': userEmail,
                     'csrfmiddlewaretoken': '{{ csrf_token }}' 
-                    },
+                },
 
-                   dataType: 'json',
-                   success: function (data) {
-                       if (data.works) {
+                dataType: 'json',
+                success: function (data) {
+                    if (data.works) {
                                 
-                                    $( '.message_2' ).animate({ 
-                                        opacity: 0
-                                    }, 100 , event.preventDefault());
+                            $( '.message_2' ).animate({ 
+                                    opacity: 0
+                            }, 100 , event.preventDefault());
                         
-                                    $('.email').css('display', 'none');
-                                    $( '.out_text' ).addClass( 'on' );
+                            $('.email').css('display', 'none');
+                            $( '.out_text' ).addClass( 'on' );
                         
                                 
-                       } else if (data.noEmail) {
-                            alert('이메일 주소를 입력해주세요.');
-                       } else if (data.wrongEmail) {
-                            alert('올바른 이메일 주소 형식이 아닙니다.');
-                       } else if(data.emailExists){
-                            alert('입력하신 이메일이 이미 등록되어있습니다.');
-                       }
-                    },  
-                    error: function (error) {
-                        console.error('Error:', error);
+                    } else if (data.noEmail) {
+                        alert('이메일 주소를 입력해주세요.');
+                    } else if (data.wrongEmail) {
+                        alert('올바른 이메일 주소 형식이 아닙니다.');
+                    } else if(data.emailExists){
+                        alert('입력하신 이메일이 이미 등록되어있습니다.');
                     }
-                });
+                },  
+                error: function (error) {
+                    console.error('Error:', error);
+                }
             });
         });
+        // CSRF 토큰을 쿠키에서 가져오는 함수
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    });
 
    // Enter 키 이벤트 감지
    $("#input_email").keyup(function (e) {
@@ -124,4 +144,4 @@ $(document).ready(function() {
         $('.email').css('display', 'flex');
         $( '.out_text' ).removeClass( 'on' );
     });
-});*/
+});
