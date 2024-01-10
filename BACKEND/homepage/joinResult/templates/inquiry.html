@@ -17,7 +17,7 @@
                <ul class="menu">
                    <li class="menu-item">Activities</li> 
                    <li class="menu-item">People</li>
-                   <li class="menu-item" id="apply"><a href={% url 'joinResult:join_button' %}>JOIN</a></li>
+                   <li class="menu-item" id="apply"><a href="{% url 'joinResult:join_button' %}">JOIN</a></li>
                    <li class="menu-item">Notice</li>
                </ul> 
             </nav> 
@@ -27,17 +27,17 @@
         <div id="main-section">
             <div id="합격자 조회">
                 <h1 id="title">합격자 조회</h1>
-                <form id="search" method='post' action={% url 'joinResult:result' %}>
+                <form id="search" method='post' action="{% url 'joinResult:result' %}">
                     {% csrf_token %}
                     {% if isDate == 2 %}
                     <input id="input_studentNum" type="text" name="inputId" placeholder="학번을 입력하세요.">
-                    <a href={% url 'joinResult:result' %}>
+                    <a href="{% url 'joinResult:result' %}">
                         <button id="btn_studentNum"><img src="{% static 'img/검색_아이콘.png' %}"></button>
                     </a>
                     {%endif%}
                     {% if isDate == 0 or isDate == 1 %}
                     <input id="input_studentNum" type="text" name="inputId" placeholder="학번을 입력하세요.", disabled>
-                    <a href={% url 'joinResult:result' %}>
+                    <a href="{% url 'joinResult:result' %}">
                         <button id="btn_studentNum" disabled><img src="{% static 'img/검색_아이콘.png' %}"></button>
                     </a>
                     {%endif%}
@@ -45,15 +45,15 @@
             </div>
   
             <!--지원서 제출 버튼-->
-            <form method='post' action={% url 'joinResult:write_form' %}>
+            <form method='post' action="{% url 'joinResult:write_form' %}">
                 {% csrf_token %}
                 {% if isDate == 1 %}
-                <a href={% url 'joinResult:write_form' %}>
+                <a href="{% url 'joinResult:write_form' %}">
                     <button id="btn_apply">지원서 제출</button>
                 </a>
                 {%endif%}
                 {% if isDate == 0 or isDate == 2 %}
-                <a href={% url 'joinResult:write_form' %}>
+                <a href="{% url 'joinResult:write_form' %}">
                     <button id="btn_apply" disabled>지원서 제출</button>
                 </a>
                 {%endif%}

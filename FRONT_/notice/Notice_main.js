@@ -1,9 +1,11 @@
-function showContent(contentId) {
+function showContent(contentId, event) {
+    event.preventDefault(); 
+
     var contents = document.querySelectorAll('.content');
     contents.forEach(function(content) {
         content.style.display = 'none';
     });
-
+    
     var buttons = document.querySelectorAll('.round-button');
     buttons.forEach(function(button) {
         button.classList.remove('selected');
