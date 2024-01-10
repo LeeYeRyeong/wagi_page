@@ -1,6 +1,6 @@
 // 메일 입력 창
 $(document).ready(function () {
-    const isDate = parseInt($('script[src$="joinResult.js"]').data('isDate'));
+    const isDate = parseInt($('script[src$="inquiry.js"]').data('isDate'));
     $("#apply").click(function (e) { //join버튼 누름
         e.preventDefault();
 
