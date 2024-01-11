@@ -4,7 +4,6 @@ window.onload = function () {
   const slideSpeed = 300;
   const startNum = 0; //슬라이드 인덱스 (0 ~ imageBoxLen-1)
   const imagesLen = 12;
-  let imageBoxLen;
   const albumLen = 3;
 
   let activitiesMain = document.getElementById('activities_main');
