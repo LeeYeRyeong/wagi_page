@@ -26,6 +26,10 @@ p {
     font-size: 30px;
 }
 
+a {
+    color: inherit;
+}
+
 /* Start of header*/
 
 #main-header {

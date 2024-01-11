@@ -18,10 +18,18 @@
         <img src="../../static/img/WAGI logo.png" alt="logo">
         <nav id="main-navigation">
             <ul class="menu">
-                <li class="menu-item">Activities</li>
-                <li class="menu-item">People</li>
-                <li class="menu-item">Join</li>
-                <li class="menu-item">Notice</li>
+                <li class="menu-item" id="">
+                    <a href="activities.html">Activities</a>
+                </li>
+                <li class="menu-item" id="">
+                    <a href="">People</a>
+                </li>
+                <li class="menu-item" id="apply">
+                    <a href={% url 'joinResult:join_button' %}>JOIN</a>
+                </li>
+                <li class="menu-item" id="">
+                    <a href="">Notice</a>
+                </li>
             </ul>
         </nav>
     </header>

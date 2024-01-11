@@ -60,11 +60,9 @@ window.onload = function () {
       //프로젝트 링크 삽입
       let imageNum = document.querySelector('#project_img_area img');
       if(imageNum) {
-        let projectLink = document.querySelectorAll('a');
-        if (activitiesMain) { //수정 버튼의 a 태그 제외
-          projectLink[0].href = 'https://naver.com';
-        }
+        let projectLink = document.querySelectorAll('.item a');
         try {
+          projectLink[0].href = 'https://naver.com';
           projectLink[1].href = 'https://naver.com';
           projectLink[2].href = 'https://naver.com';
           projectLink[3].href = 'https://naver.com';
@@ -79,7 +77,6 @@ window.onload = function () {
         } catch(e) {
         }
       }
-
     })();
 
     //mt
@@ -108,7 +105,6 @@ window.onload = function () {
       else imageBoxLen = 0;
 
       let slideContents = document.querySelectorAll('#mt_img_content');
-
       const slideLen = slideContents.length;
 
       imagesArea.style.width = slideWidth * (slideLen + 2) + "px";
@@ -285,7 +281,6 @@ window.onload = function () {
       else imageBoxLen = 0;
 
       let slideContents = document.querySelectorAll('#project_img_content');
-
       const slideLen = slideContents.length;
 
       imagesArea.style.width = slideWidth * (slideLen + 2) + "px";

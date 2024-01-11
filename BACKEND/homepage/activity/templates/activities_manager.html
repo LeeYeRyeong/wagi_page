@@ -13,20 +13,27 @@
 </head>
 
 <body>
-    <div id="activities_main" hidden></div><!--js 처리용 div-->
+    <div id="activities_manager" hidden></div><!--js 처리용 div-->
     <header id="main-header">
         <img src="../../static/img/WAGI logo.png" alt="logo">
         <nav id="main-navigation">
             <ul class="menu">
-                <li class="menu-item">Activities</li>
-                <li class="menu-item">People</li>
-                <li class="menu-item">Join</li>
-                <li class="menu-item">Notice</li>
+                <li class="menu-item" id="">
+                    <a href="activities.html">Activities</a>
+                </li>
+                <li class="menu-item" id="">
+                    <a href="">People</a>
+                </li>
+                <li class="menu-item" id="apply">
+                    <a href={% url 'joinResult:join_button' %}>JOIN</a>
+                </li>
+                <li class="menu-item" id="">
+                    <a href="">Notice</a>
+                </li>
             </ul>
         </nav>
     </header>
     <div id="content"><!--헤더 밑-->
-        <div id="modify_button_area"><!--수정 버튼 공간 (없음)--></div>
         <div id="modify_button_area"><!--수정 버튼 공간-->
             <div class="button" id="modify_button"><!--수정 버튼-->
                 <a href="activities_modify.html">수정하기</a>
