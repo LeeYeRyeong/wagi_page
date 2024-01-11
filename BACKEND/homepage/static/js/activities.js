@@ -1,7 +1,7 @@
 window.onload = function () {
 
   const slideWidth = 424.4;
-  const slideSpeed = 400;
+  const slideSpeed = 500;
   const startNum = 0; //슬라이드 인덱스 (0 ~ imageBoxLen-1)
   const imagesLen = 12;
   const albumLen = 3;
