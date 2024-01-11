@@ -9,7 +9,7 @@ window.onload = function () {
   let activitiesMain = document.getElementById('activities_main');
   let activitiesManager = document.getElementById('activities_manager');
 
-  if (activitiesMain || activitiesManager) { //activities.html일 때
+  if (activitiesMain || activitiesManager) { //activities.html, activities_manager.html일 때
     //이미지 불러오기
     (function () {
       // for (let i = 0; i < albumLen; i++) {
@@ -379,7 +379,7 @@ window.onload = function () {
       });
     })();
 
-  } else {
+  } else { //activities_modify.html일 때
     //사진 삭제
     (function () {
       // 이미지 선택을 토글하는 함수
@@ -421,6 +421,14 @@ window.onload = function () {
           e.stopPropagation(); // 이벤트 버블링 방지
         });
       });
+
+      //사진이 없을 때
+      let imageNum = document.querySelectorAll('#mt_img_box img');
+
+      if (imageNum.length == 0) {
+        let p = document.querySelector('#mt p');
+        p.classList.add('display_block');
+      }
     })();
 
     // //이미지 불러오기
