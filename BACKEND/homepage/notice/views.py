@@ -6,28 +6,17 @@ from django.http import JsonResponse
 # create
 def notice_create(request):
     if request.method == 'POST':
-        form = NotionForm(request.POST)
-        image_forms = [NotionImageForm(request.POST, request.FILES, prefix='image') for _ in range(1)]  # 5는 예시입니다. 필요한 만큼 조절해주세요.
-        file_forms = [NotionFileForm(request.POST, request.FILES, prefix='file') for _ in range(1)]
+        n = Notion()
+        ni = NotionImage()
+        n.notion_title = request.POST['notion_title']
+        n.notion_text = request.POST['notion_text']
+        NotionImage.image = request.POST['image']
+        n.save()
+        ni.save()
 
-        if form.is_valid() and all(image_form.is_valid() for image_form in image_forms) and all(file_form.is_valid() for file_form in file_forms):
-            new_notion = form.save()
+        return redirect('notice_list')
 
-            for image_form in image_forms:
-                if image_form.cleaned_data.get('image'):
-                    NotionImage.objects.create(notion=new_notion, image=image_form.cleaned_data['image'])
-
-            for file_form in file_forms:
-                if file_form.cleaned_data.get('file'):
-                    NotionFile.objects.create(notion=new_notion, file=file_form.cleaned_data['file'])
-
-            return redirect('notice_list')
-    else:
-        form = NotionForm()
-        image_forms = [NotionImageForm(prefix='image') for _ in range(1)] 
-        file_forms = [NotionFileForm(prefix='file') for _ in range(1)]  
-
-    return render(request, 'notice/Notice_manager_writing.html', {'form': form, 'image_forms': image_forms, 'file_forms': file_forms})
+    return render(request, 'Notice_manager_writing.html')
 
 def get_notices_by_category(request, category):
     category = request.GET.get('category') 
