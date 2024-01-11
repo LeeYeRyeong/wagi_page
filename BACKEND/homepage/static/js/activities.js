@@ -1,7 +1,7 @@
 window.onload = function () {
 
   const slideWidth = 424.4;
-  const slideSpeed = 300;
+  const slideSpeed = 400;
   const startNum = 0; //슬라이드 인덱스 (0 ~ imageBoxLen-1)
   const imagesLen = 12;
   const albumLen = 3;
@@ -58,26 +58,26 @@ window.onload = function () {
       // }
 
       //프로젝트 링크 삽입
-      let projectLink = document.querySelectorAll('a');
-
-      if (activitiesMain) { //수정 버튼의 a 태그 제외
-        projectLink[0].href = 'https://naver.com';
-      }
-
-      try {
-        projectLink[1].href = 'https://naver.com';
-        projectLink[2].href = 'https://naver.com';
-        projectLink[3].href = 'https://naver.com';
-        projectLink[4].href = 'https://naver.com';
-        projectLink[5].href = 'https://naver.com';
-        projectLink[6].href = 'https://naver.com';
-        projectLink[7].href = 'https://naver.com';
-        projectLink[8].href = 'https://naver.com';
-        projectLink[9].href = 'https://naver.com';
-        projectLink[10].href = 'https://naver.com';
-        projectLink[11].href = 'https://naver.com';
-      } catch (e) {
-        
+      let imageNum = document.querySelector('#project_img_area img');
+      if(imageNum) {
+        let projectLink = document.querySelectorAll('a');
+        if (activitiesMain) { //수정 버튼의 a 태그 제외
+          projectLink[0].href = 'https://naver.com';
+        }
+        try {
+          projectLink[1].href = 'https://naver.com';
+          projectLink[2].href = 'https://naver.com';
+          projectLink[3].href = 'https://naver.com';
+          projectLink[4].href = 'https://naver.com';
+          projectLink[5].href = 'https://naver.com';
+          projectLink[6].href = 'https://naver.com';
+          projectLink[7].href = 'https://naver.com';
+          projectLink[8].href = 'https://naver.com';
+          projectLink[9].href = 'https://naver.com';
+          projectLink[10].href = 'https://naver.com';
+          projectLink[11].href = 'https://naver.com';
+        } catch(e) {
+        }
       }
 
     })();
@@ -88,79 +88,87 @@ window.onload = function () {
       const mtNextBtn = document.querySelector('#mt_next_button');
       const imagesArea = document.querySelector('#mt_img_area');
 
-      let imageNum = new Array();
-      imageNum = document.querySelectorAll('#mt_img_content img');
+      let imageNum = document.querySelectorAll('#mt_img_content img');
 
       //사진 개수에 따른 슬라이드 개수 조정
-      if (imageNum.length == 0) imageBoxLen = 0;
-      else if (imageNum.length >= 1 && imageNum.length <= 4){
-        imageBoxLen = 1;
+      if (imageNum.length <= 4) {
         mtPrevBtn.classList.add('display_none');
         mtNextBtn.classList.add('display_none');
+      }
+      if (imageNum.length == 0) {
+        imageBoxLen = 0;
+        let p = document.querySelector('#mt p');
+        p.classList.add('display_block');
+      }
+      else if (imageNum.length >= 1 && imageNum.length <= 4){
+        imageBoxLen = 1;
       } 
       else if (imageNum.length >= 5 && imageNum.length <= 8) imageBoxLen = 2;
       else if (imageNum.length >= 9 && imageNum.length <= 12) imageBoxLen = 3;
       else imageBoxLen = 0;
 
-      let slideContents = new Array();
-      slideContents = document.querySelectorAll('#mt_img_content');
+      let slideContents = document.querySelectorAll('#mt_img_content');
 
       const slideLen = slideContents.length;
 
       imagesArea.style.width = slideWidth * (slideLen + 2) + "px";
 
-      // 슬라이드 복사
-      let firstChild = imagesArea.firstElementChild;
-      let lastChild = imagesArea.lastElementChild;
-      let clonedFirst = firstChild.cloneNode(true);
-      let clonedLast = lastChild.cloneNode(true);
-
-      // 슬라이드 추가
-      imagesArea.appendChild(clonedFirst);
-      imagesArea.insertBefore(clonedLast, imagesArea.firstElementChild);
-
-      // 애니메이션 효과
-      imagesArea.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
-
-      let curIndex = startNum;
-      let curSlide = slideContents[curIndex];
-      curSlide.classList.add('slide_active');
-
-      //이전 버튼
-      mtPrevBtn.addEventListener('click', function () {
-        if (curIndex >= 0) {
-          imagesArea.style.transition = slideSpeed + "ms";
-          imagesArea.style.transform = "translate3d(-" + (slideWidth * curIndex) + "px, 0px, 0px)";
-        }
-        if (curIndex === 0) {
-          setTimeout(function () {
-            imagesArea.style.transition = "0ms";
-            imagesArea.style.transform = "translate3d(-" + (slideWidth * slideLen) + "px, 0px, 0px)";
-          }, slideSpeed);
-          curIndex = slideLen;
-        }
-        curSlide.classList.remove('slide_active');
-        curSlide = slideContents[--curIndex];
+      try {
+        // 슬라이드 복사
+        let firstChild = imagesArea.firstElementChild;
+        let lastChild = imagesArea.lastElementChild;
+        let clonedFirst = firstChild.cloneNode(true);
+        let clonedLast = lastChild.cloneNode(true);
+  
+        // 슬라이드 추가
+        imagesArea.appendChild(clonedFirst);
+        imagesArea.insertBefore(clonedLast, imagesArea.firstElementChild);
+  
+        // 애니메이션 효과
+        imagesArea.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
+  
+        let curIndex = startNum;
+        let curSlide = slideContents[curIndex];
         curSlide.classList.add('slide_active');
-      });
+  
+        //이전 버튼
+        mtPrevBtn.addEventListener('click', function () {
+          if (curIndex >= 0) {
+            imagesArea.style.transition = slideSpeed + "ms";
+            imagesArea.style.transform = "translate3d(-" + (slideWidth * curIndex) + "px, 0px, 0px)";
+          }
+          if (curIndex === 0) {
+            setTimeout(function () {
+              imagesArea.style.transition = "0ms";
+              imagesArea.style.transform = "translate3d(-" + (slideWidth * slideLen) + "px, 0px, 0px)";
+            }, slideSpeed);
+            curIndex = slideLen;
+          }
+          curSlide.classList.remove('slide_active');
+          curSlide = slideContents[--curIndex];
+          curSlide.classList.add('slide_active');
+        });
+  
+        //다음 버튼
+        mtNextBtn.addEventListener('click', function () {
+          if (curIndex <= slideLen - 1) {
+            imagesArea.style.transition = slideSpeed + "ms";
+            imagesArea.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
+          }
+          if (curIndex === slideLen - 1) {
+            setTimeout(function () {
+              imagesArea.style.transition = "0ms";
+              imagesArea.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
+            }, slideSpeed);
+            curIndex = -1;
+          }
+          curSlide.classList.remove('slide_active');
+          curSlide = slideContents[++curIndex];
+          curSlide.classList.add('slide_active');
+        });
+      } catch(e) {
 
-      //다음 버튼
-      mtNextBtn.addEventListener('click', function () {
-        if (curIndex <= slideLen - 1) {
-          imagesArea.style.transition = slideSpeed + "ms";
-          imagesArea.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
-        }
-        if (curIndex === slideLen - 1) {
-          setTimeout(function () {
-            imagesArea.style.transition = "0ms";
-            imagesArea.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
-          }, slideSpeed);
-          curIndex = -1;
-        }
-        curSlide.classList.remove('slide_active');
-        curSlide = slideContents[++curIndex];
-        curSlide.classList.add('slide_active');
-      });
+      }
     })();
 
     //study
@@ -169,78 +177,86 @@ window.onload = function () {
       const studyNextBtn = document.querySelector('#study_next_button');
       const imagesArea = document.querySelector('#study_img_area');
 
-      let imageNum = new Array();
-      imageNum = document.querySelectorAll('#study_img_content img');
+      let imageNum = document.querySelectorAll('#study_img_content img');
 
       //사진 개수에 따른 슬라이드 개수 조정
-      if (imageNum.length == 0) imageBoxLen = 0;
-      else if (imageNum.length >= 1 && imageNum.length <= 4){
-        imageBoxLen = 1;
+      if (imageNum.length <= 4) {
         studyPrevBtn.classList.add('display_none');
         studyNextBtn.classList.add('display_none');
+      }
+      if (imageNum.length == 0) {
+        imageBoxLen = 0;
+        let p = document.querySelector('#study p');
+        p.classList.add('display_block');
+      }
+      else if (imageNum.length >= 1 && imageNum.length <= 4){
+        imageBoxLen = 1;
       } 
       else if (imageNum.length >= 5 && imageNum.length <= 8) imageBoxLen = 2;
       else if (imageNum.length >= 9 && imageNum.length <= 12) imageBoxLen = 3;
       else imageBoxLen = 0;
 
-      let slideContents = new Array();
-      slideContents = document.querySelectorAll('#study_img_content');
+      let slideContents = document.querySelectorAll('#study_img_content');
       const slideLen = slideContents.length;
 
       imagesArea.style.width = slideWidth * (slideLen + 2) + "px";
 
-      // 슬라이드 복사
-      let firstChild = imagesArea.firstElementChild;
-      let lastChild = imagesArea.lastElementChild;
-      let clonedFirst = firstChild.cloneNode(true);
-      let clonedLast = lastChild.cloneNode(true);
-
-      // 슬라이드 추가
-      imagesArea.appendChild(clonedFirst);
-      imagesArea.insertBefore(clonedLast, imagesArea.firstElementChild);
-
-      // 애니메이션 효과
-      imagesArea.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
-
-      let curIndex = startNum;
-      let curSlide = slideContents[curIndex];
-      curSlide.classList.add('slide_active');
-
-      //이전 버튼
-      studyPrevBtn.addEventListener('click', function () {
-        if (curIndex >= 0) {
-          imagesArea.style.transition = slideSpeed + "ms";
-          imagesArea.style.transform = "translate3d(-" + (slideWidth * curIndex) + "px, 0px, 0px)";
-        }
-        if (curIndex === 0) {
-          setTimeout(function () {
-            imagesArea.style.transition = "0ms";
-            imagesArea.style.transform = "translate3d(-" + (slideWidth * slideLen) + "px, 0px, 0px)";
-          }, slideSpeed);
-          curIndex = slideLen;
-        }
-        curSlide.classList.remove('slide_active');
-        curSlide = slideContents[--curIndex];
+      try {
+        // 슬라이드 복사
+        let firstChild = imagesArea.firstElementChild;
+        let lastChild = imagesArea.lastElementChild;
+        let clonedFirst = firstChild.cloneNode(true);
+        let clonedLast = lastChild.cloneNode(true);
+  
+        // 슬라이드 추가
+        imagesArea.appendChild(clonedFirst);
+        imagesArea.insertBefore(clonedLast, imagesArea.firstElementChild);
+  
+        // 애니메이션 효과
+        imagesArea.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
+  
+        let curIndex = startNum;
+        let curSlide = slideContents[curIndex];
         curSlide.classList.add('slide_active');
-      });
+  
+        //이전 버튼
+        studyPrevBtn.addEventListener('click', function () {
+          if (curIndex >= 0) {
+            imagesArea.style.transition = slideSpeed + "ms";
+            imagesArea.style.transform = "translate3d(-" + (slideWidth * curIndex) + "px, 0px, 0px)";
+          }
+          if (curIndex === 0) {
+            setTimeout(function () {
+              imagesArea.style.transition = "0ms";
+              imagesArea.style.transform = "translate3d(-" + (slideWidth * slideLen) + "px, 0px, 0px)";
+            }, slideSpeed);
+            curIndex = slideLen;
+          }
+          curSlide.classList.remove('slide_active');
+          curSlide = slideContents[--curIndex];
+          curSlide.classList.add('slide_active');
+        });
+  
+        //다음 버튼
+        studyNextBtn.addEventListener('click', function () {
+          if (curIndex <= slideLen - 1) {
+            imagesArea.style.transition = slideSpeed + "ms";
+            imagesArea.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
+          }
+          if (curIndex === slideLen - 1) {
+            setTimeout(function () {
+              imagesArea.style.transition = "0ms";
+              imagesArea.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
+            }, slideSpeed);
+            curIndex = -1;
+          }
+          curSlide.classList.remove('slide_active');
+          curSlide = slideContents[++curIndex];
+          curSlide.classList.add('slide_active');
+        });
+      } catch(e) {
 
-      //다음 버튼
-      studyNextBtn.addEventListener('click', function () {
-        if (curIndex <= slideLen - 1) {
-          imagesArea.style.transition = slideSpeed + "ms";
-          imagesArea.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
-        }
-        if (curIndex === slideLen - 1) {
-          setTimeout(function () {
-            imagesArea.style.transition = "0ms";
-            imagesArea.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
-          }, slideSpeed);
-          curIndex = -1;
-        }
-        curSlide.classList.remove('slide_active');
-        curSlide = slideContents[++curIndex];
-        curSlide.classList.add('slide_active');
-      });
+      } 
     })();
 
     //project
@@ -249,79 +265,87 @@ window.onload = function () {
       const projectNextBtn = document.querySelector('#project_next_button');
       const imagesArea = document.querySelector('#project_img_area');
 
-      let imageNum = new Array();
-      imageNum = document.querySelectorAll('#project_img_content img');
+      let imageNum = document.querySelectorAll('#project_img_content img');
 
       //사진 개수에 따른 슬라이드 개수 조정
-      if (imageNum.length == 0) imageBoxLen = 0;
-      else if (imageNum.length >= 1 && imageNum.length <= 4){
-        imageBoxLen = 1;
+      if (imageNum.length <= 4) {
         projectPrevBtn.classList.add('display_none');
         projectNextBtn.classList.add('display_none');
+      }
+      if (imageNum.length == 0) {
+        imageBoxLen = 0;
+        let p = document.querySelector('#project p');
+        p.classList.add('display_block');
+      }
+      else if (imageNum.length >= 1 && imageNum.length <= 4){
+        imageBoxLen = 1;
       } 
       else if (imageNum.length >= 5 && imageNum.length <= 8) imageBoxLen = 2;
       else if (imageNum.length >= 9 && imageNum.length <= 12) imageBoxLen = 3;
       else imageBoxLen = 0;
 
-      let slideContents = new Array();
-      slideContents = document.querySelectorAll('#project_img_content');
+      let slideContents = document.querySelectorAll('#project_img_content');
 
       const slideLen = slideContents.length;
 
       imagesArea.style.width = slideWidth * (slideLen + 2) + "px";
 
-      // 슬라이드 복사
-      let firstChild = imagesArea.firstElementChild;
-      let lastChild = imagesArea.lastElementChild;
-      let clonedFirst = firstChild.cloneNode(true);
-      let clonedLast = lastChild.cloneNode(true);
-
-      // 슬라이드 추가
-      imagesArea.appendChild(clonedFirst);
-      imagesArea.insertBefore(clonedLast, imagesArea.firstElementChild);
-
-      // 애니메이션 효과
-      imagesArea.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
-
-      let curIndex = startNum;
-      let curSlide = slideContents[curIndex];
-      curSlide.classList.add('slide_active');
-
-      //이전 버튼
-      projectPrevBtn.addEventListener('click', function () {
-        if (curIndex >= 0) {
-          imagesArea.style.transition = slideSpeed + "ms";
-          imagesArea.style.transform = "translate3d(-" + (slideWidth * curIndex) + "px, 0px, 0px)";
-        }
-        if (curIndex === 0) {
-          setTimeout(function () {
-            imagesArea.style.transition = "0ms";
-            imagesArea.style.transform = "translate3d(-" + (slideWidth * slideLen) + "px, 0px, 0px)";
-          }, slideSpeed);
-          curIndex = slideLen;
-        }
-        curSlide.classList.remove('slide_active');
-        curSlide = slideContents[--curIndex];
+      try {
+        // 슬라이드 복사
+        let firstChild = imagesArea.firstElementChild;
+        let lastChild = imagesArea.lastElementChild;
+        let clonedFirst = firstChild.cloneNode(true);
+        let clonedLast = lastChild.cloneNode(true);
+  
+        // 슬라이드 추가
+        imagesArea.appendChild(clonedFirst);
+        imagesArea.insertBefore(clonedLast, imagesArea.firstElementChild);
+  
+        // 애니메이션 효과
+        imagesArea.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
+  
+        let curIndex = startNum;
+        let curSlide = slideContents[curIndex];
         curSlide.classList.add('slide_active');
-      });
+  
+        //이전 버튼
+        projectPrevBtn.addEventListener('click', function () {
+          if (curIndex >= 0) {
+            imagesArea.style.transition = slideSpeed + "ms";
+            imagesArea.style.transform = "translate3d(-" + (slideWidth * curIndex) + "px, 0px, 0px)";
+          }
+          if (curIndex === 0) {
+            setTimeout(function () {
+              imagesArea.style.transition = "0ms";
+              imagesArea.style.transform = "translate3d(-" + (slideWidth * slideLen) + "px, 0px, 0px)";
+            }, slideSpeed);
+            curIndex = slideLen;
+          }
+          curSlide.classList.remove('slide_active');
+          curSlide = slideContents[--curIndex];
+          curSlide.classList.add('slide_active');
+        });
+  
+        //다음 버튼
+        projectNextBtn.addEventListener('click', function () {
+          if (curIndex <= slideLen - 1) {
+            imagesArea.style.transition = slideSpeed + "ms";
+            imagesArea.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
+          }
+          if (curIndex === slideLen - 1) {
+            setTimeout(function () {
+              imagesArea.style.transition = "0ms";
+              imagesArea.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
+            }, slideSpeed);
+            curIndex = -1;
+          }
+          curSlide.classList.remove('slide_active');
+          curSlide = slideContents[++curIndex];
+          curSlide.classList.add('slide_active');
+        });
+      } catch(e) {
 
-      //다음 버튼
-      projectNextBtn.addEventListener('click', function () {
-        if (curIndex <= slideLen - 1) {
-          imagesArea.style.transition = slideSpeed + "ms";
-          imagesArea.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
-        }
-        if (curIndex === slideLen - 1) {
-          setTimeout(function () {
-            imagesArea.style.transition = "0ms";
-            imagesArea.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
-          }, slideSpeed);
-          curIndex = -1;
-        }
-        curSlide.classList.remove('slide_active');
-        curSlide = slideContents[++curIndex];
-        curSlide.classList.add('slide_active');
-      });
+      }
     })();
 
     //모달창
@@ -368,23 +392,23 @@ window.onload = function () {
         checkbox.checked = !checkbox.checked; // 체크박스 상태를 토글
       }
 
-      // 선택된 이미지들을 삭제하는 함수
-      function deleteSelectedImages(album) {
-        var checkedCheckboxes = document.querySelectorAll(`#${album} .img-checkbox:checked`);
-        checkedCheckboxes.forEach(function (checkbox) {
-          checkbox.closest('.image-wrapper').remove(); // 이미지를 DOM에서 삭제
-        });
-      }
+      // // 선택된 이미지들을 삭제하는 함수
+      // function deleteSelectedImages(album) {
+      //   var checkedCheckboxes = document.querySelectorAll(`#${album} .img-checkbox:checked`);
+      //   checkedCheckboxes.forEach(function (checkbox) {
+      //     checkbox.closest('.image-wrapper').remove(); // 이미지를 DOM에서 삭제
+      //   });
+      // }
 
-      // 각 앨범에 대한 삭제 버튼 이벤트 리스너를 추가합니다.
-      let deleteButtons = document.querySelectorAll('[id^="delete_"]'); // id가 'delete_'로 시작하는 모든 요소
-      deleteButtons.forEach(function (btn) {
-        let album = btn.id.replace('delete_', ''); // 'delete_'를 제거하여 앨범 ID를 추출
-        btn.addEventListener('click', function (e) {
-          e.preventDefault(); // 기본 이벤트 방지
-          deleteSelectedImages(album); // 연관된 앨범의 이미지 삭제
-        });
-      });
+      // // 각 앨범에 대한 삭제 버튼 이벤트 리스너를 추가합니다.
+      // let deleteButtons = document.querySelectorAll('[id^="delete_"]'); // id가 'delete_'로 시작하는 모든 요소
+      // deleteButtons.forEach(function (btn) {
+      //   let album = btn.id.replace('delete_', ''); // 'delete_'를 제거하여 앨범 ID를 추출
+      //   btn.addEventListener('click', function (e) {
+      //     e.preventDefault(); // 기본 이벤트 방지
+      //     deleteSelectedImages(album); // 연관된 앨범의 이미지 삭제
+      //   });
+      // });
 
       // 각 이미지에 대하여 클릭 이벤트 리스너를 추가합니다.
       document.addEventListener('click', function (e) {
@@ -457,57 +481,57 @@ window.onload = function () {
     // })();
 
     //사진 업로드
-    (function () {
-      let mtFile = document.getElementById('mt_file');
-      let stydyFile = document.getElementById('study_file');
-      let projectFile = document.getElementById('project_file');
+    // (function () {
+    //   let mtFile = document.getElementById('mt_file');
+    //   let stydyFile = document.getElementById('study_file');
+    //   let projectFile = document.getElementById('project_file');
 
-      //사진 업로드 함수
-      function imageUpload(files, imageBox) {
-        for (var i = 0; i < files.length; i++) {
-          (function (file) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              var img = new Image();
-              img.src = e.target.result; // reader가 읽어들인 이미지 데이터를 src로 설정합니다.
-              var imageWrapper = document.createElement('div');
-              imageWrapper.classList.add('image-wrapper'); //class 추가
-              var imageCheckBox = document.createElement('input');
-              imageCheckBox.type = 'checkbox' //속성 추가
-              imageCheckBox.classList.add('img-checkbox') //class 추가
-              imageBox.appendChild(imageWrapper);
-              imageWrapper.appendChild(img); // 컨테이너에 이미지를 추가합니다.
-              imageWrapper.appendChild(imageCheckBox);
-            };
-            reader.readAsDataURL(file); // 파일을 Data URL 형태로 읽습니다.
-          })(files[i]);
-        }
-      }
+    //   //사진 업로드 함수
+    //   function imageUpload(files, imageBox) {
+    //     for (var i = 0; i < files.length; i++) {
+    //       (function (file) {
+    //         var reader = new FileReader();
+    //         reader.onload = function (e) {
+    //           var img = new Image();
+    //           img.src = e.target.result; // reader가 읽어들인 이미지 데이터를 src로 설정합니다.
+    //           var imageWrapper = document.createElement('div');
+    //           imageWrapper.classList.add('image-wrapper'); //class 추가
+    //           var imageCheckBox = document.createElement('input');
+    //           imageCheckBox.type = 'checkbox' //속성 추가
+    //           imageCheckBox.classList.add('img-checkbox') //class 추가
+    //           imageBox.appendChild(imageWrapper);
+    //           imageWrapper.appendChild(img); // 컨테이너에 이미지를 추가합니다.
+    //           imageWrapper.appendChild(imageCheckBox);
+    //         };
+    //         reader.readAsDataURL(file); // 파일을 Data URL 형태로 읽습니다.
+    //       })(files[i]);
+    //     }
+    //   }
 
-      //mt 사진 업로드
-      mtFile.addEventListener('change', function (event) {
-        var mtImageBox = document.getElementById('mt_img_box');
+    //   //mt 사진 업로드
+    //   mtFile.addEventListener('change', function (event) {
+    //     var mtImageBox = document.getElementById('mt_img_box');
 
-        var files = event.target.files; // 선택된 파일들을 가져옵니다.
-        imageUpload(files, mtImageBox);
-      });
+    //     var files = event.target.files; // 선택된 파일들을 가져옵니다.
+    //     imageUpload(files, mtImageBox);
+    //   });
 
-      //study 사진 업로드
-      stydyFile.addEventListener('input', function (event) {
-        var studyImageBox = document.getElementById('study_img_box');
+    //   //study 사진 업로드
+    //   stydyFile.addEventListener('input', function (event) {
+    //     var studyImageBox = document.getElementById('study_img_box');
 
-        var files = event.target.files; // 선택된 파일들을 가져옵니다.
-        imageUpload(files, studyImageBox);
-      });
+    //     var files = event.target.files; // 선택된 파일들을 가져옵니다.
+    //     imageUpload(files, studyImageBox);
+    //   });
 
-      //project 사진 업로드
-      projectFile.addEventListener('change', function (event) {
-        var projectImageBox = document.getElementById('project_img_box');
+    //   //project 사진 업로드
+    //   projectFile.addEventListener('change', function (event) {
+    //     var projectImageBox = document.getElementById('project_img_box');
 
-        var files = event.target.files; // 선택된 파일들을 가져옵니다.
-        imageUpload(files, projectImageBox);
-      });
-    })();
+    //     var files = event.target.files; // 선택된 파일들을 가져옵니다.
+    //     imageUpload(files, projectImageBox);
+    //   });
+    // })();
 
   }
 }

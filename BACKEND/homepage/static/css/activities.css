@@ -17,6 +17,15 @@ body {
     background-color: black;
 }
 
+p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 30px;
+}
+
 /* Start of header*/
 
 #main-header {

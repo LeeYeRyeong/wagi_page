@@ -65,6 +65,7 @@
                                     <img src="../../static/img/mt_images/ex12.jpg" alt="MT Image">
                                 </div>
                             </div>
+                            <p hidden>사진이 없습니다.</p>
                             <div id="mtModal" class="modal">
                                 <img class="modal-content" id="mtModalImage">
                             </div>
@@ -108,6 +109,7 @@
                                     <img src="../../static/img/study_images/ex12.jpg" alt="Study Image">
                                 </div>
                             </div>
+                            <p hidden>사진이 없습니다.</p>
                             <div id="studyModal" class="modal">
                                 <img class="modal-content" id="studyModalImage">
                             </div>
@@ -176,6 +178,7 @@
                                     </a>
                                 </div>
                             </div>
+                            <p hidden>사진이 없습니다.</p>
                             <div id="projectModal" class="modal">
                                 <img class="modal-content" id="projectModalImage">
                             </div>
@@ -183,6 +186,8 @@
                     </div>
                     <div class="album_name">MT</div> <!--앨범 이름-->
                 </div>
+                {% else %}
+                {% endif %}
             </div>
         </div>
     </div>
