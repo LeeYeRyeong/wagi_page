@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>application_success</title>
+    <link rel="stylesheet" href="{% static 'css/join_success.css' %}" />
+    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="content">
+            <div class="modal-box">
+                <img class="imgWagi" src="{% static 'img/WAGI character.png' %}">
+                <div id="underline"></div>
+                <div class="modal-content">
+                    <h2 class="message">{{name}}님!</h2>
+                    <h2 class="message">지원이 완료되었습니다.<br>서류 합격은 3월 15일 문자로 개별 연락드리겠습니다.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
