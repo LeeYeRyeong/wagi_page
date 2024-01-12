@@ -12,7 +12,6 @@ html {
 }
 
 body {
-    width: 100%;
     height: 100%;
     background-color: black;
 }
@@ -63,22 +62,12 @@ nav {
 
 #button_area {
     width: 100%;
-    height: 7%;
+    height: 10%;
 }
 
 #item_area {
     width: 100%;
-    height: 93%;
-}
-
-#item_area_padding {
-    width: 90%;
     height: 80%;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow-x: hidden;
 }
 
 .button {
@@ -102,14 +91,31 @@ nav {
     border-radius: 25px;
 }
 
-#move_button {
-    width: 169px;
-    height: 49px;
-    line-height: 49px;
-    left: 65px;
-    position: relative;
+#move_delete_button, #move_upload_button {
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
     background-color: white;
-    font-size: 25px;
+    font-size: 23px;
+}
+
+#move_delete_button {
+    left: 100px;
+}
+
+#move_upload_button {
+    left: 400px;
+}
+
+#move_button {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    background-color: white;
+    font-size: 23px;
+    left: 100px;
 }
 
 #article {
@@ -134,7 +140,6 @@ nav {
     border-radius: 25px;
     margin-bottom: 14.4px;
     position: relative;
-    overflow: hidden;
 }
 
 .size_original img:hover, .size_small img:hover {
@@ -180,9 +185,10 @@ nav {
     color: white;
 }
 
-.delete_button, .file_label {
+.delete_button, .upload_button {
     position: absolute;
     top: 50px;
+    left: 140px;
     text-align: center;
     border-radius: 25px;
     cursor: pointer;
@@ -193,14 +199,6 @@ nav {
     border: none;
 }
 
-.delete_button {
-    left: 33px;
-}
-
-.file_label {
-    right: 33px;
-}
-
 .display_block {
     display: block;
 }
@@ -209,12 +207,12 @@ nav {
     display: none;
 }
 
-.file_label:hover {
+.upload_button:hover {
     background-color: #9EA9D7;
     border-radius: 25px;
 }
 
-.delete_button, .file_label {
+.delete_button, .upload_button {
     font-size: 18px;
 }
 
