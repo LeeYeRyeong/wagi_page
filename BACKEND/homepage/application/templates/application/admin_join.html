@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <title>WAGI JOIN</title>
+    <link rel="stylesheet" href="{% static 'css/admin_join.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"/>
+    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body> 
+    <div id="page-wrapper">
+        <header id="main-header">
+            <img src="{% static 'img/WAGI logo.png' %}" alt="WAGI logo image">
+            <nav id="main-navigation">
+                <ul class="menu">
+                    <li class="menu-item">Activities</li> 
+                    <li class="menu-item">People</li>
+                    <li class="menu-item">Join</li>
+                    <li class="menu-item" id="apply">Join</li>
+                    <li class="menu-item">Notice</li>
+                </ul> 
+            </nav> 
+        </header>
+        <div id="content">
+           <div class="background">
+                <div class="DList">
+                    <table class="tbl">
+                        <colgroup>
+                            <col width="*" />
+                            <col width="*" />
+                            <col width="*" />
+                            <col width="*" />
+                            <col width="43%" />
+                        </colgroup>
+                        <thead>
+                            <th>번호</th>
+                            <th>학번</th>
+                            <th>이름</th>
+                            <th>학과</th>
+                            <th>지원서</th>
+                        </thead>
+                        <!-- 데이터 불러온 부분 -->
+                        <tbody>
+                            {% if join_list %}
+                            {% for join_objects in join_list %}
+                            <tr onclick=location.href="{% url 'application:join_detail' join_objects.id %}">
+                                <td>{{ join_objects.id }}</td>
+                                <td>{{ join_objects.user_number }}</td>
+                                <td>
+                                    {{ join_objects.user_name }}
+                                </td>
+                                <td>{{ join_objects.user_major }}</td>
+                                <td>지원서 제출 완료</td>
+                            </tr>
+                            {% endfor %}
+                            {% endif %}
+                            </tbody>
+                    </table>
+                </div>
+                <div class="paging">
+                    <!-- 이전페이지 -->
+                    {% if join_list.has_previous %}
+                    <a href="?page={{ join_list.previous_page_number }}">
+                        <i class="fa-solid fa-angle-left" id="prev_page"></i>
+                    </a>
+                    {% else %}
+                    <a tabindex="-1" aria-disabled="true" href="#">
+                        <i class="fa-solid fa-angle-left" id="prev_page"></i>
+                    </a>
+                    {% endif %}
+                    <!-- 페이지리스트 -->
+                    <div class="pages">
+                    {% for page_number in join_list.paginator.page_range %}
+                    {% if page_number >= join_list.number|add:-5 and page_number <= join_list.number|add:5 %}
+                    {% if page_number == join_list.number %}
+                    <span class="active" aria-current="page">
+                        <a href="?page={{ page_number }}">{{ page_number }}</a>
+                    </span>
+                    {% else %}
+                    <span>
+                            <a href="?page={{ page_number }}">{{ page_number }}</a>
+                    </span>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+                    <!-- 다음페이지 -->
+                    {% if join_list.has_next %}
+                    <a href="?page={{ join_list.next_page_number }}">
+                        <i class="fa-solid fa-angle-right" id="next_page"></i>
+                    </a>
+                    {% else %}
+                    <a tabindex="-1" aria-disabled="true" href="#">
+                        <i class="fa-solid fa-angle-right" id="next_page"></i>
+                    </a>
+                    {% endif %}
+                </div>
+                <!-- 페이징처리 끝 -->
+           </div>
+        </div>     
+    </div> 
+</body>
+</html>

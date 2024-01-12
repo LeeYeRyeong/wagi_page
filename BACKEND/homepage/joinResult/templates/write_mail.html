@@ -1,0 +1,13 @@
+<!doctype html>
+ <head>
+  <title>지원 기간 아님</title>
+ </head>
+ <body>
+  <!--메일 입력 받는 페이지-->
+   <form method='post' action={% url 'joinResult:writeMail' %}>
+      {% csrf_token %}
+      {{input_mail}}
+      <button type="submit">submit</button>
+   </form>
+ </body>
+</html>
