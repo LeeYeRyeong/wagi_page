@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <form action="{% url 'notice_create' %}" method="POST">
+    <form action="{% url 'notice_create' %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div id="notices" class="notice"><span>공지사항</span></div>
         <div id="writings" class="writing"><span>글 작성</span></div>

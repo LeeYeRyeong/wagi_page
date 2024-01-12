@@ -114,7 +114,7 @@ footer {
     gap: 20px;
 }
 
-.round-button.selected {
+.selected {
     background-color: gray;
     color: black;
 }

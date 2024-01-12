@@ -18,9 +18,9 @@ def notice_create(request):
         )
 
         # NotionImage 모델에 저장 (이 부분은 필요에 따라 수정)
-        image = request.POST.get('image')
-        if image:
-            NotionImage.objects.create(notion=notion, image=image)
+        images = request.FILES.getlist('image')
+        for img in images:
+            NotionImage.objects.create(notion=notion, image=img)
 
         # 이후 필요한 처리 추가...
 

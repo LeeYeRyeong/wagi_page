@@ -23,14 +23,15 @@
         <p id="titleWriting" name="message" rows="4" cols="50">
             {{ notice.notion_title }} 
         </p>
-        <p id="contentsWriting" name="message2" rows="10" cols="50">{{ notice.notion_text }}</p>
-        {% if images %}
-            <ul>
-            {% for image in images %}
-                <li><img src="{{ image.image.url }}" alt="Image"></li>
-            {% endfor %}
-            </ul>
-        {% endif %}
+        <div id="contentsWriting" name="message2" rows="10" cols="50"><p>{{ notice.notion_text }}</p>
+            {% if images %}
+                <ul>
+                {% for image in images %}
+                    <li><img src="{{ image.image.url }}" alt="Image"></li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
         <button id="editButton"><span>수정하기</span></button>
         <p id="date">{{ notice.write_time }}</p>
         
