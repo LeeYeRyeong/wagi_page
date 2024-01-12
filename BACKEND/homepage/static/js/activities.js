@@ -7,9 +7,9 @@ window.onload = function () {
   const albumLen = 3;
 
   let activitiesMain = document.getElementById('activities_main');
-  let activitiesManager = document.getElementById('activities_manager');
+  let successPage = document.getElementById('success_page');
 
-  if (activitiesMain || activitiesManager) { //activities.html, activities_manager.html일 때
+  if (activitiesMain || successPage) { //activities.html, success_page.html일 때
     //이미지 불러오기
     (function () {
       // for (let i = 0; i < albumLen; i++) {
@@ -379,7 +379,7 @@ window.onload = function () {
       });
     })();
 
-  } else { //activities_modify.html일 때
+  } else { //edit_page.html, upload_activity.html일 때
     //사진 삭제
     (function () {
       // 이미지 선택을 토글하는 함수

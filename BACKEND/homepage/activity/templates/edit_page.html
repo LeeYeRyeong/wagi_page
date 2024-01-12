@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>activities_modify</title>
+    <title>Activities edit page</title>
     <link href="{% static 'css/activities.css' %}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
     <script src="{% static 'js/activities.js' %}"></script>
@@ -39,7 +39,7 @@
         </div>
         <div id="item_area"><!--수정 버튼 밑-->
             <div id="article"><!--모든 앨범-->
-                <form action="" method="post" enctype="multipart/form-data">
+                <form method="post">
                     {% csrf_token %}
                     <!--MT-->
                     <div class="item" id="mt"><!--앨범 및 앨범 이름-->
