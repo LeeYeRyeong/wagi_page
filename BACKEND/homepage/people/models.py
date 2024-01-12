@@ -2,12 +2,10 @@ from django.db import models
 
 class People(models.Model):
     user_name = models.CharField(max_length=10)
-    use_bio = models.CharField(max_length=20)
+    user_bio = models.CharField(max_length=20)
     user_image = models.ImageField()
-    user_portfolio = models.URLField(max_length=200)
+    user_portfolio1 = models.URLField(max_length=200, default='')
+    user_portfolio2 = models.URLField(max_length=200, default='')
     generation_number = models.IntegerField()
-    
-    def __str__(self):
-        return self.name
 
 # Create your models here.
