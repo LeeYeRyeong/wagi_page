@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>activities_manager</title>
-    <link href="{% static 'css/actiivties.css' %}" rel="stylesheet" type="text/css">
+    <link href="../../static/css/activities.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
-    <script src="{% static 'js/activities.js' %}"></script>
+    <script src="../../static/js/activities.js"></script>
 </head>
 
 <body>
@@ -34,13 +34,13 @@
         </nav>
     </header>
     <div id="content"><!--헤더 밑-->
-        <div id="button_area"><!--버튼 공간 // 여기 버튼에서 경로 수정 필요-->
-            <button type="submit" class="button delete_button" id="delete_mt">
-                선택한 파일 삭제하기
-            </button>
-            <button type="submit" class="file_label" id="study_file_label">
-                사진 다시 업로드하기
-            </button>
+        <div id="button_area"><!--버튼 공간-->
+            <div class="button" id="move_delete_button"><!--삭제 페이지 이동 버튼-->
+                <a href="activities_delete_modify.html">선택한 파일 삭제하기</a>
+            </div>
+            <div class="button" id="move_upload_button"><!--업로드 페이지 이동 버튼-->
+                <a href="activities_upload_modify.html">사진 다시 업로드하기</a>
+            </div>
         </div>
         <div id="item_area"><!--수정 버튼 밑-->
             <div id="article"><!--모든 앨범-->
