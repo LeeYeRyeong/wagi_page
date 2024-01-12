@@ -5,15 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>activities_modify</title>
-    <link href="../../static/css/activities.css" rel="stylesheet" type="text/css">
-=======
     <title>Activities upload page</title>
     <link href="{% static 'css/activities.css' %}" rel="stylesheet" type="text/css">
->>>>>>> 9be7c56a60cf3919ee5828037f8fec1db91d58da
     <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
-    <script src="../../static/js/activities.js"></script>
+    <script src="{% static 'js/activities.js' %}"></script>
 </head>
 
 <body>
@@ -53,13 +48,7 @@
                             <button type="submit" class="upload_button" id="mt_upload_button">
                                 사진 다시 업로드하기
                             </button>
-                            <!--파일 선택(업로드) 버튼-->
-                            <!-- <div id="mt_file_select">
-                                <label for="mt_file" class="upload_button" id="mt_upload_button">사진 다시 업로드하기</label>
-                                <input type="file" id="mt_file" name="mt_file" multiple="multiple"
-                                    accept="image/*">
-                            </div> -->
-                            <!-- <div class="img_box_small size_small" id="mt_img_box">
+                            <div class="img_box_small size_small" id="mt_img_box">
                                 {% for image in mt_images %}
                                     {% if image.mt_image %}
                                         <div class="image-wrapper">
@@ -72,8 +61,8 @@
                                     {% endif %}
                                 {% endfor %}
                                 <p hidden>사진이 없습니다.</p>
-                            </div> -->
-                            <div class="img_box_small size_small" id="mt_img_box">
+                            </div>
+<!--                        <div class="img_box_small size_small" id="mt_img_box">
                                 <div class="image-wrapper">
                                     <img src="../../static/img/mt_images/ex1.jpg" alt="MT picture 1" onerror="this.style.display='none'">
                                     <input type="checkbox" class="img-checkbox">
@@ -123,10 +112,10 @@
                                     <input type="checkbox" class="img-checkbox">
                                 </div>
                                 <p hidden>사진이 없습니다.</p>
-                            </div>
+                            </div>-->
                         </div>
-                        <div class="album_name">MT</div> <!--앨범 이름-->
-                    </div>
+                        <div class="album_name">MT</div> 
+                    </div> 
                     <!--이하 동일-->
                     <!--study-->
                     <div class="item" id="study">
@@ -134,13 +123,7 @@
                             <button type="submit" class="upload_button" id="study_upload_button">
                                 사진 다시 업로드하기
                             </button>
-                            <!--파일 선택(업로드) 버튼-->
-                            <!-- <div id="study_file_select">
-                                <label for="study_file" class="upload_button" id="study_upload_button">사진 다시 업로드하기</label>
-                                <input type="file" id="study_file" name="study_file" multiple="multiple"
-                                    accept="image/*">
-                            </div> -->
-                            <!-- <div class="img_box_small size_small" id="study_img_box">
+                            <div class="img_box_small size_small" id="study_img_box">
                                 {% for image in study_images %}
                                     {% if image.study_image %}
                                         <div class="image-wrapper">
@@ -153,8 +136,8 @@
                                     {% endif %}
                                 {% endfor %}
                                 <p hidden>사진이 없습니다.</p>
-                            </div> -->
-                            <div class="img_box_small size_small" id="study_img_box">
+                            </div> 
+<!--                        <div class="img_box_small size_small" id="study_img_box">
                                 <div class="image-wrapper">
                                     <img src="../../static/img/study_images/ex1.jpg" alt="study picture 1"
                                         onerror="this.style.display='none'">
@@ -216,24 +199,17 @@
                                     <input type="checkbox" class="img-checkbox">
                                 </div>
                                 <p hidden>사진이 없습니다.</p>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="album_name">Study</div>
-                    </div>
+                    </div> 
                     <!--project-->
                     <div class="item" id="project">
                         <div class="album">
                             <button type="submit" class="upload_button" id="project_upload_button">
                                 사진 다시 업로드하기
                             </button>
-                            <!--파일 선택(업로드) 버튼-->
-                            <!-- <div id="project_file_select">
-                                <label for="project_file" class="upload_button" id="project_upload_button">사진 다시
-                                    업로드하기</label>
-                                <input type="file" id="project_file" name="project_file" multiple="multiple"
-                                    accept="image/*">
-                            </div> -->
-                            <!-- <div class="img_box_small size_small" id="project_img_box">
+                            <div class="img_box_small size_small" id="project_img_box">
                                 {% for image in project_images %}
                                     {% if image.project_image %}
                                         <div class="image-wrapper">
@@ -246,8 +222,8 @@
                                     {% endif %}
                                 {% endfor %}
                                 <p hidden>사진이 없습니다.</p>
-                            </div> -->
-                            <div class="img_box_small size_small" id="project_img_box">
+                            </div> 
+<!--                        <div class="img_box_small size_small" id="project_img_box">
                                 <div class="image-wrapper">
                                     <img src="../../static/img/project_images/ex1.jpg" alt="project picture 1"
                                         onerror="this.style.display='none'">
@@ -309,7 +285,7 @@
                                     <input type="checkbox" class="img-checkbox">
                                 </div>
                                 <p hidden>사진이 없습니다.</p>
-                            </div>
+                            </div>-->
                         </div>
                         <div class="album_name">Project</div>
                     </div>
