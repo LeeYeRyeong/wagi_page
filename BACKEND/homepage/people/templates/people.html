@@ -1,21 +1,22 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="{% static 'js/people_script.js' %}"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>People List</title>
+    <link rel="stylesheet" href="{% static 'css/people.css' %}">
+    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
 </head>
 <body>
-    <h1>People List</h1>
-    
-    {% for person in people_data %}
-        <div>
-            <h2>{{ person.user_name }}</h2>
-            <p>Bio: {{ person.use_bio }}</p>
-            <img src="{{ person.user_image.url }}" alt="User Image">
-            <p>Portfolio: <a href="{{ person.user_portfolio }}" target="_blank">{{ person.user_portfolio }}</a></p>
-            <p>Generation Number: {{ person.generation_number }}</p>
-        </div>
-    {% endfor %}
+    <div id="people-data" data-people="{{ people_data | safe }}"></div>
+
+    <div class="center">
+        <!-- JavaScript로 동적으로 데이터를 채움 -->
+        <script src="{% static 'js/people_script.js' %}"></script>
+    </div>
+
 </body>
 </html>

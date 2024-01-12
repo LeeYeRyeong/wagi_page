@@ -4,25 +4,25 @@
 <head>
 <meta charset="utf-8" />
 <title>WAGI JOIN</title>
-  <link rel="stylesheet"  href="{% static 'css/join_result.css' %}">
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet"  href="{% static 'css/inquiry.css' %}">
+  <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-  <script src="{% static 'js/joinResult.js' %}" data-is-date="{{ isDate }}"></script>
- </head>
- <body style="background-color: black; color: white;"> 
-   <div id="page-wrapper">
-      <header id="main-header">
-           <img src="{% static 'img/WAGI logo.png' %}" alt="WAGI logo image">
-           <nav id="main-navigation">
-               <ul class="menu">
-                   <li class="menu-item">Activities</li> 
-                   <li class="menu-item">People</li>
-                   <li class="menu-item" id="apply"><a href={% url 'joinResult:join_button' %}>JOIN</a></li>
-                   <li class="menu-item">Notice</li>
-               </ul> 
-            </nav> 
-      </header>
 
+  <script src="{% static 'js/inquiry.js' %}" data-is-date="{{ isDate }}"></script>
+</head>
+ <body> 
+    <div id="page-wrapper">
+       <header id="main-header">
+            <img src="{% static 'img/WAGI logo.png' %}" alt="WAGI logo image">
+            <nav id="main-navigation">
+                <ul class="menu">
+                    <li class="menu-item">Activities</li> 
+                    <li class="menu-item">People</li>
+                    <li class="menu-item" id="apply"><a href={% url 'joinResult:join_button' %}>JOIN</a></li>
+                    <li class="menu-item">Notice</li>
+                </ul> 
+             </nav> 
+       </header>
     <!-- 합격자 조회 버튼-->
     <div id="content">
         <div id="main-section">
@@ -33,13 +33,13 @@
                     {% if isDate == 2 %}
                     <input id="input_studentNum" type="text" name="inputId" placeholder="학번을 입력하세요.">
                     <a href="#" data-url="{% url 'joinResult:result' %}">
-                        <button id="btn_studentNum"><img src="{% static 'img/검색_아이콘.png' %}"></button>
+                        <button id="btn_studentNum"><img src="{% static 'img/search icon.png' %}"></button>
                     </a>
                     {%endif%}
                     {% if isDate == 0 or isDate == 1 %}
                     <input id="input_studentNum" type="text" name="inputId" placeholder="학번을 입력하세요.", disabled>
                     <a href="{% url 'joinResult:result' %}">
-                        <button id="btn_studentNum" disabled><img src="{% static 'img/검색_아이콘.png' %}"></button>
+                        <button id="btn_studentNum" disabled><img src="{% static 'img/search icon.png' %}"></button>
                     </a>
                     {%endif%}
                 </form>
@@ -65,7 +65,7 @@
 <!--메일 입력창-->
 <div class="modal_unavailable">
     <div class="modal-box1">
-        <img class="imgWagi" src="{% static 'img/아기와기.png' %}">
+        <img class="imgWagi" src="{% static 'img/WAGI character.png' %}">
         <button id="close-modal" style="padding-bottom: 3px;">✕</button>
         <p>
             <br>
@@ -93,13 +93,13 @@
   <!--합격자 발표창_합격-->
    <div class="modal_pass">
       <div class="modal-box2">
-          <img class="imgWagi" src="{% static 'img/아기와기.png' %}">
+          <img class="imgWagi" src="{% static 'img/WAGI character.png' %}">
           <div class="modal-content2">
               <h2 class="message"><p id="p_stdId" style="display:inline;"></p>&nbsp;<p id="p_stdName" style="display:inline;"></p>님!</h2>
               <h4 class="message">WAGI 신입부원 모집에<br>최종합격 하신 것을 진심으로 축하드립니다!</h4>
               <div class="OT_info">
                   <div class="OT_message">
-                      <h4 style="margin-top: 14px;">OT일정을 안내드립니다.</h4>
+                      <h4 style="margin-top: 10px;">OT일정을 안내드립니다.</h4>
                       <h4>
                           일시: 2024년 3월 7일 목요일 6시
                           <br>
@@ -114,11 +114,11 @@
   <!--불합격자 발표창_합격-->
   <div class="modal_fail">
       <div class="modal-box3">
-          <img class="imgWagi" src="{% static 'img/아기와기.png' %}">
+          <img class="imgWagi" src="{% static 'img/WAGI character.png' %}">
           <div class="modal-content3">
               <h2 class="message"><p id="f_stdId" style="display:inline;"></p>&nbsp;<p id="f_stdName" style="display:inline;"></p>님</h2>
               <div class="failure_message">
-                      <h4 style="margin-top: 20px;">
+                      <h4 style="margin-top: 16px;">
                           WAGI 신입부원 모집에
                           <br>
                           안타깝게 불합격 하셨습니다.
