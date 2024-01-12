@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAGI 웹 페이지</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_manager_writing' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_manager_writing.css' %}">
 </head>
 <body>
 
@@ -15,18 +15,19 @@
         {% csrf_token %}
         <div id="notices" class="notice"><span>공지사항</span></div>
         <div id="writings" class="writing"><span>글 작성</span></div>
-        <input type="button" id="regularActivity" name="regularActivity" class="round-button" onclick="showContent('regularActivity')" value="정기활동">
-        <input type="button" id="event" name="event" class="round-button" onclick="showContent('event')" value="행사">
-        <input type="button" id="competition" name="competition" class="round-button" onclick="showContent('competition')" value="공모전">        
+        <input type="button" id="regularActivity" name="regularActivity" class="round-button" onclick="updateHiddenValue(this)" value="정기활동">
+        <input type="button" id="event" name="event" class="round-button" onclick="updateHiddenValue(this)" value="행사">
+        <input type="button" id="competition" name="competition" class="round-button" onclick="updateHiddenValue(this)" value="공모전">
+        <input type="hidden" id="selectedCategory" name="selectedCategory" value="">        
         <div id="writingZone"></div>
-        <textarea id="titleWriting" name="message" rows="4" cols="50" placeholder="제목을 입력해주세요"></textarea>
-        <textarea id="contentsWriting" name="message2" rows="10" cols="50" placeholder="내용을 입력해주세요"></textarea>
+        <textarea id="titleWriting" name="notion_title" rows="4" cols="50" placeholder="제목을 입력해주세요"></textarea>
+        <textarea id="contentsWriting" name="notion_text" rows="10" cols="50" placeholder="내용을 입력해주세요"></textarea>
         <label for="profile" class="round-button" id="addPhotoLabel">
             <span>사진추가</span>
         </label>
-        <input type="file" id="profile" accept="image/png, image/jpeg" required multiple style="display: none;">
+        <input type="file" id="profile" name="image" accept="image/png, image/jpeg" required multiple style="display: none;">
 
-        <input type="button" id="signUp" value="등록하기">
+        <input type="submit" id="signUp" value="등록하기">
     </form>
 
     <script src="{% static 'js/Notice_manager_writing.js' %}"></script>

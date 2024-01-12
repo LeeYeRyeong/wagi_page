@@ -6,41 +6,51 @@ from django.http import JsonResponse
 # create
 def notice_create(request):
     if request.method == 'POST':
-        n = Notion()
-        ni = NotionImage()
-        n.notion_title = request.POST['notion_title']
-        n.notion_text = request.POST['notion_text']
-        NotionImage.image = request.POST['image']
-        n.save()
-        ni.save()
+        notion_title = request.POST.get('notion_title', '')
+        notion_text = request.POST.get('notion_text', '')
+        selected_category = request.POST.get('selectedCategory', 'general')  # 기본값은 'general'
+
+        # Notion 모델에 저장
+        notion = Notion.objects.create(
+            notion_title=notion_title,
+            notion_text=notion_text,
+            category=selected_category
+        )
+
+        # NotionImage 모델에 저장 (이 부분은 필요에 따라 수정)
+        image = request.POST.get('image')
+        if image:
+            NotionImage.objects.create(notion=notion, image=image)
+
+        # 이후 필요한 처리 추가...
 
         return redirect('notice_list')
 
     return render(request, 'Notice_manager_writing.html')
 
-def get_notices_by_category(request, category):
+def get_notices_by_category(request):
     category = request.GET.get('category') 
-    if category :
+    notices = [] 
+    if category=='regularActivity' :
         notices = Notion.objects.filter(category=category).order_by('-write_time')
-    else:
-        notices = Notion.objects.all().order_by('-write_time')
+    elif category == 'event':
+        notices = Notion.objects.filter(category=category).order_by('-write_time')
+    elif category == 'competition':
+        notices = Notion.objects.filter(category=category).order_by('-write_time')
 
-    data = [{'id': notice.id, 'title': notice.notion_title} for notice in notices]
-
-    return JsonResponse({'notices': data})
+    return render(request, 'Notice_main.html', {'notices': notices})
 
 
 # read
 
 def notice_list(request):
     notices = Notion.objects.all().order_by('-write_time')
-    return render(request, 'notice/Notice_main.html', {'notices': notices})
+    return render(request, 'Notice_main.html', {'notices': notices})
 
 
 
 def notice_detail(request, notion_id):
     notice = get_object_or_404(Notion, pk=notion_id)
     images = NotionImage.objects.filter(notion=notice)
-    files = NotionFile.objects.filter(notion=notice)
-    return render(request, 'notice_detail.html', {'notice': notice, 'images': images, 'files': files})
+    return render(request, 'Notice_manager_record.html', {'notice': notice, 'images': images})
 

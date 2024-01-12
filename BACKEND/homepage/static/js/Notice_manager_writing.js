@@ -1,23 +1,15 @@
-document.getElementById("regularActivity").addEventListener("click", function() {
-    updateButtonStyle("regularActivity");
-});
+function updateHiddenValue(button) {
+    var selectedCategoryField = document.getElementById('selectedCategory');
+    if (selectedCategoryField) {
+        selectedCategoryField.value = button.name;
+    }
 
-document.getElementById("event").addEventListener("click", function() {
-    updateButtonStyle("event");
-});
-
-document.getElementById("competition").addEventListener("click", function() {
-    updateButtonStyle("competition");
-});
-
-function updateButtonStyle(activeButton) {
+    // 모든 버튼에서 'selected' 클래스 제거
     var buttons = document.querySelectorAll('.round-button');
-    buttons.forEach(function(button) {
-        button.classList.remove('selected');
+    buttons.forEach(function(btn) {
+        btn.classList.remove('selected');
     });
 
-    var clickedButton = document.getElementById(activeButton);
-    if (clickedButton) {
-        clickedButton.classList.add('selected');
-    }
+    // 클릭된 버튼에 'selected' 클래스 추가
+    button.classList.add('selected');
 }
