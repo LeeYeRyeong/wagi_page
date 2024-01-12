@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Success</title>
+    <style>
+        .image-section {
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .image-section h4 {
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 23%; /* 4분할로 정렬하기 위해 23%로 설정 */
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+{% if images %}
+    <h3>Uploaded Images:</h3>
+
+    <div class="image-section">
+        <h4>MT Images:</h4>
+        <div class="image-container">
+            {% for image in images %}
+                {% if image.mt_image %}
+                    <img src="{{ image.mt_image.url }}" alt="MT Image">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="image-section">
+        <h4>Study Images:</h4>
+        <div class="image-container">
+            {% for image in images %}
+                {% if image.study_image %}
+                    <img src="{{ image.study_image.url }}" alt="Study Image">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="image-section">
+        <h4>Project Images:</h4>
+        <div class="image-container">
+            {% for image in images %}
+                {% if image.project_image %}
+                    <img src="{{ image.project_image.url }}" alt="Project Image">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% else %}
+    <p>No images uploaded yet.</p>
+{% endif %}
+
+<form action="{% url 'edit_page' %}" method="get">
+    <button type="submit">수정하기</button>
+</form>
+
+</body>
+</html>
