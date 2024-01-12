@@ -5,6 +5,8 @@ from activity.views import upload_activity, success_page, edit_page, edit_images
 from people.views import show_people
 from joinResult import views
 from application import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 app_name = "homepage"
 
@@ -21,3 +23,5 @@ urlpatterns = [
     path('notice/', include('notice.urls')),  
     path('application/', include('application.urls')), 
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -115,8 +115,8 @@ footer {
 }
 
 .selected {
-    background-color: gray !important;
-    color:black !important;
+    background-color: gray;
+    color: black;
 }
 
 .content {
@@ -128,4 +128,8 @@ footer {
     height: 475px;
     border-radius: 20px;
     background-color: white;
+}
+
+#allContent {
+    display: block; 
 }
