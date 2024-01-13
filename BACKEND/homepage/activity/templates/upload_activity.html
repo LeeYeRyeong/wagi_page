@@ -49,13 +49,17 @@
                         <div class="album_name">MT</div>
                         <div class="upload_album">
                             <div class="text">첨부 파일</div>
-                            <div class="select_file_area">
-                                <label for="mt_file">사진 추가</label>
-                                <input type="file" id="mt_file">
-                                <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
-                                <input class="upload_file_names" id="mt_upload_file_names" value=""
-                                    placeholder="선택된 사진이 없습니다.">
-                            </div>
+                            <form action="{% url 'upload_activity' %}" method="post" enctype="multipart/form-data">
+                                <!-- 'enctype' 속성을 'multipart/form-data'로 설정해야 파일 업로드가 가능합니다. -->
+                                <div class="select_file_area">
+                                    <label for="mt_file">사진 추가</label>
+                                    <input type="file" id="mt_file" name="file"> <!-- 'name' 속성을 'file'로 설정하면 백엔드에서 해당 필드를 인식합니다. -->
+                                    <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
+                                    <input class="upload_file_names" id="mt_upload_file_names" value=""
+                                        placeholder="선택된 사진이 없습니다.">
+                                </div>
+                                <button type="submit">사진 업로드</button>
+                            </form>
                         </div>
                     </div>
                     <!--이하 동일-->
@@ -64,13 +68,17 @@
                         <div class="album_name">Study</div>
                         <div class="upload_album">
                             <div class="text">첨부 파일</div>
-                            <div class="select_file_area">
-                                <label for="study_file">사진 추가</label>
-                                <input type="file" id="study_file">
-                                <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
-                                <input class="upload_file_names" id="study_upload_file_names" value=""
-                                    placeholder="선택된 사진이 없습니다.">
-                            </div>
+                            <form action="{% url 'upload_activity' %}" method="post" enctype="multipart/form-data">
+                                <!-- 'enctype' 속성을 'multipart/form-data'로 설정해야 파일 업로드가 가능합니다. -->
+                                <div class="select_file_area">
+                                    <label for="mt_file">사진 추가</label>
+                                    <input type="file" id="mt_file" name="file"> <!-- 'name' 속성을 'file'로 설정하면 백엔드에서 해당 필드를 인식합니다. -->
+                                    <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
+                                    <input class="upload_file_names" id="mt_upload_file_names" value=""
+                                        placeholder="선택된 사진이 없습니다.">
+                                </div>
+                                <button type="submit">사진 업로드</button>
+                            </form>
                         </div>
                     </div>
                     <!--project-->
@@ -78,13 +86,17 @@
                         <div class="album_name">Project</div>
                         <div class="upload_album">
                             <div class="text">첨부 파일</div>
-                            <div class="select_file_area">
-                                <label for="project_file">사진 추가</label>
-                                <input type="file" id="project_file">
-                                <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
-                                <input class="upload_file_names" id="project_upload_file_names" value=""
-                                    placeholder="선택된 사진이 없습니다.">
-                            </div>
+                            <form action="{% url 'upload_activity' %}" method="post" enctype="multipart/form-data">
+                                <!-- 'enctype' 속성을 'multipart/form-data'로 설정해야 파일 업로드가 가능합니다. -->
+                                <div class="select_file_area">
+                                    <label for="mt_file">사진 추가</label>
+                                    <input type="file" id="mt_file" name="file"> <!-- 'name' 속성을 'file'로 설정하면 백엔드에서 해당 필드를 인식합니다. -->
+                                    <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
+                                    <input class="upload_file_names" id="mt_upload_file_names" value=""
+                                        placeholder="선택된 사진이 없습니다.">
+                                </div>
+                                <button type="submit">사진 업로드</button>
+                            </form>
                         </div>
                     </div>
                 </div>
