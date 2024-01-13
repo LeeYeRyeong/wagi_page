@@ -1,5 +1,7 @@
 // Notice_main.js
 
+
+
 function showContent(buttonId, event) {
     event.preventDefault();
     // 모든 content div를 감춤
