@@ -8,6 +8,7 @@ window.onload = function () {
 
   let activitiesMain = document.getElementById('activities_main');
   let successPage = document.getElementById('success_page');
+  let editPage = document.getElementById('edit_page');
 
   if (activitiesMain || successPage) { //activities.html, success_page.html일 때
     //이미지 불러오기
@@ -379,24 +380,13 @@ window.onload = function () {
       });
     })();
 
-  } else { //edit_page.html, upload_activity.html일 때
-    //input 커스텀
-    let file = document.getElementById('file');
-    console.log(file);
-    
-    file.addEventListener('input', function () {
-      console.log('in');
-      var fileName = file.value;
-      // $(".upload-name").val(fileName);
-      document.querySelector('.upload_file_names').value = fileName;
-    });
-
+  } else if(editPage){ //edit_page.html일 때
     //사진 삭제
     (function () {
-      // // 이미지 선택을 토글하는 함수
-      // function toggleImageSelection(checkbox) {
-      //   checkbox.checked = !checkbox.checked; // 체크박스 상태를 토글
-      // }
+      // 이미지 선택을 토글하는 함수
+      function toggleImageSelection(checkbox) {
+        checkbox.checked = !checkbox.checked; // 체크박스 상태를 토글
+      }
 
       // // // 선택된 이미지들을 삭제하는 함수
       // // function deleteSelectedImages(album) {
@@ -416,22 +406,22 @@ window.onload = function () {
       // //   });
       // // });
 
-      // // 각 이미지에 대하여 클릭 이벤트 리스너를 추가합니다.
-      // document.addEventListener('click', function (e) {
-      //   if (e.target && e.target.tagName == 'IMG') {
-      //     let checkbox = e.target.nextElementSibling;
-      //     if (checkbox && checkbox.classList.contains('img-checkbox')) {
-      //       toggleImageSelection(checkbox); // 이미지 선택 토글
-      //     }
-      //   }
-      // });
+      // 각 이미지에 대하여 클릭 이벤트 리스너를 추가합니다.
+      document.addEventListener('click', function (e) {
+        if (e.target && e.target.tagName == 'IMG') {
+          let checkbox = e.target.nextElementSibling;
+          if (checkbox && checkbox.classList.contains('img-checkbox')) {
+            toggleImageSelection(checkbox); // 이미지 선택 토글
+          }
+        }
+      });
 
-      // // 체크박스 클릭 시 이벤트 버블링을 방지합니다.
-      // document.querySelectorAll('.img-checkbox').forEach(function (checkbox) {
-      //   checkbox.addEventListener('click', function (e) {
-      //     e.stopPropagation(); // 이벤트 버블링 방지
-      //   });
-      // });
+      // 체크박스 클릭 시 이벤트 버블링을 방지합니다.
+      document.querySelectorAll('.img-checkbox').forEach(function (checkbox) {
+        checkbox.addEventListener('click', function (e) {
+          e.stopPropagation(); // 이벤트 버블링 방지
+        });
+      });
 
       //사진이 없을 때
       let imageNum = document.querySelectorAll('#mt_img_box img');
@@ -547,6 +537,29 @@ window.onload = function () {
     //   });
     // })();
 
+  } else { //upload_activity.html일 때
+    //input 커스텀
+    let mtFile = document.getElementById('mt_file');
+    let studyFile = document.getElementById('study_file');
+    let projectFile = document.getElementById('project_file');
+
+    //mt
+    mtFile.addEventListener('input', function () {
+      let fileName = mtFile.value;
+      document.getElementById('mt_upload_file_names').value = fileName;
+    });
+
+    //study
+    studyFile.addEventListener('input', function () {
+      let fileName = studyFile.value;
+      document.getElementById('study_upload_file_names').value = fileName;
+    });
+
+    //project
+    projectFile.addEventListener('input', function () {
+      let fileName = projectFile.value;
+      document.getElementById('project_upload_file_names').value = fileName;
+    });
   }
 }
 
