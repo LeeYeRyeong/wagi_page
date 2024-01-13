@@ -423,13 +423,31 @@ window.onload = function () {
         });
       });
 
-      //사진이 없을 때
-      let imageNum = document.querySelectorAll('#mt_img_box img');
+      //사진 없을 때
+      //mt
+      let mtImageNum = document.querySelectorAll('#mt_img_box img');
 
-      if (imageNum.length == 0) {
+      if (mtImageNum.length == 0) {
         let p = document.querySelector('#mt p');
         p.classList.add('display_block');
       }
+
+      //study
+      let studyImageNum = document.querySelectorAll('#study_img_box img');
+
+      if (studyImageNum.length == 0) {
+        let p = document.querySelector('#study p');
+        p.classList.add('display_block');
+      }
+
+      //project
+      let projectImageNum = document.querySelectorAll('#project_img_box img');
+
+      if (projectImageNum.length == 0) {
+        let p = document.querySelector('#project p');
+        p.classList.add('display_block');
+      }
+      
     })();
 
     // //이미지 불러오기

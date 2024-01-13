@@ -45,15 +45,22 @@
         <div id="item_area"><!--수정 버튼 밑-->
             <div id="article"><!--모든 앨범-->
                 <!--MT-->
-                
                 <div class="item" id="mt"><!--앨범 및 앨범 이름-->
                     <div class="album"><!--앨범-->
                         <div class="prev_button" id="mt_prev_button">&lt;</div>
                         <div class="next_button" id="mt_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="mt_img_area">
-                                
-                                <div id="mt_img_content" class="img_content size_original">
+                                {% for image in images %}
+                                <div class="img_content size_original" id="mt_img_content">
+                                    {% for i in range(3) %}
+                                        {% if image.mt_image %}
+                                            <img src="{{ image.mt_image.url }}" alt="MT Image">
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                                <!-- <div id="mt_img_content" class="img_content size_original">
                                     <img src="../../static/img/mt_images/ex1.jpg" alt="MT Image">
                                     <img src="../../static/img/mt_images/ex2.jpg" alt="MT Image">
                                     <img src="../../static/img/mt_images/ex3.jpg" alt="MT Image">
@@ -70,7 +77,7 @@
                                     <img src="../../static/img/mt_images/ex10.jpg" alt="MT Image">
                                     <img src="../../static/img/mt_images/ex11.jpg" alt="MT Image">
                                     <img src="../../static/img/mt_images/ex12.jpg" alt="MT Image">
-                                </div>
+                                </div> -->
                             </div>
                             <p hidden>사진이 없습니다.</p>
                             <div id="mtModal" class="modal">
@@ -88,8 +95,16 @@
                         <div class="next_button" id="study_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="study_img_area">
-                                
-                                <div id="study_img_content" class="img_content size_original">
+                                {% for image in images %}
+                                <div class="img_content size_original" id="study_img_content">
+                                    {% for i in range(3) %}
+                                        {% if image.study_image %}
+                                            <img src="{{ image.study_image.url }}" alt="Study Image">
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                                <!-- <div id="study_img_content" class="img_content size_original">
                                     <img src="../../static/img/study_images/ex1.jpg" alt="Study Image">
                                     <img src="../../static/img/study_images/ex2.jpg" alt="Study Image">
                                     <img src="../../static/img/study_images/ex3.jpg" alt="Study Image">
@@ -106,7 +121,7 @@
                                     <img src="../../static/img/study_images/ex10.jpg" alt="Study Image">
                                     <img src="../../static/img/study_images/ex11.jpg" alt="Study Image">
                                     <img src="../../static/img/study_images/ex12.jpg" alt="Study Image">
-                                </div>
+                                </div> -->
                             </div>
                             <p hidden>사진이 없습니다.</p>
                             <div id="studyModal" class="modal">
@@ -123,8 +138,18 @@
                         <div class="next_button" id="project_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="project_img_area">
-                                
-                                <div id="project_img_content" class="img_content size_original">
+                                {% for image in images %}
+                                <div class="img_content size_original" id="project_img_content">
+                                    {% for i in range(3) %}
+                                        {% if image.project_image %}
+                                        <a href=""> 
+                                            <img src="{{ image.project_image.url }}" alt="Project Image">
+                                        </a>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                                <!-- <div id="project_img_content" class="img_content size_original">
                                     <a href="">
                                         <img src="../../static/img/project_images/ex1.jpg" alt="Project Image">
                                     </a>
@@ -165,7 +190,7 @@
                                     <a href="">
                                         <img src="../../static/img/project_images/ex12.jpg" alt="Project Image">
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                             <p hidden>사진이 없습니다.</p>
                             <div id="projectModal" class="modal">

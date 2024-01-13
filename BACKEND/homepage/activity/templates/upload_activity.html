@@ -37,7 +37,7 @@
             <div id="button_area"><!--버튼 공간-->
                 <div class="upload_button_area">
                     <button type="submit" class="button" id="upload_button">
-                        사진 업로드하기
+                        선택한 사진 업로드하기
                     </button>
                 </div>
             </div>
@@ -50,13 +50,11 @@
                         <div class="upload_album">
                             <div class="text">첨부 파일</div>
                             <div class="select_file_area">
-                                <!-- <label for="{{ mt_form.mt_image.id_for_label }}">사진 추가</label> -->
                                 <label for="mt_file">사진 추가</label>
                                 <input type="file" id="mt_file">
                                 <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
                                 <input class="upload_file_names" id="mt_upload_file_names" value=""
                                     placeholder="선택된 사진이 없습니다.">
-                                <!-- {{ mt_form.mt_image }} -->
                             </div>
                         </div>
                     </div>
@@ -67,13 +65,11 @@
                         <div class="upload_album">
                             <div class="text">첨부 파일</div>
                             <div class="select_file_area">
-                                <!-- <label for="{{ study_form.study_image.id_for_label }}">사진 추가</label> -->
                                 <label for="study_file">사진 추가</label>
                                 <input type="file" id="study_file">
                                 <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
                                 <input class="upload_file_names" id="study_upload_file_names" value=""
                                     placeholder="선택된 사진이 없습니다.">
-                                <!-- {{ study_form.study_image }} -->
                             </div>
                         </div>
                     </div>
@@ -83,13 +79,11 @@
                         <div class="upload_album">
                             <div class="text">첨부 파일</div>
                             <div class="select_file_area">
-                                <!-- <label for="{{ project_form.project_image.id_for_label }}">사진 추가</label> -->
                                 <label for="project_file">사진 추가</label>
                                 <input type="file" id="project_file">
                                 <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
                                 <input class="upload_file_names" id="project_upload_file_names" value=""
                                     placeholder="선택된 사진이 없습니다.">
-                                <!-- {{ project_form.project_image }} -->
                             </div>
                         </div>
                     </div>
