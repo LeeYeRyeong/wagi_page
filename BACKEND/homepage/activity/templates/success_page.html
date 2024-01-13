@@ -19,7 +19,7 @@
         <nav id="main-navigation">
             <ul class="menu">
                 <li class="menu-item" id="">
-                    <a href="activities.html">Activities</a>
+                    <a href={% url 'success_page' %}>Activities</a>
                 </li>
                 <li class="menu-item" id="">
                     <a href="">People</a>
@@ -36,31 +36,23 @@
     <div id="content"><!--헤더 밑-->
         <div id="button_area"><!--버튼 공간-->
             <div class="button" id="move_delete_button"><!--삭제 페이지 이동 버튼-->
-                <a href="activities_delete_modify.html">선택한 파일 삭제하기</a>
+                <a href={% url 'edit_page' %}>파일 삭제하기</a>
             </div>
             <div class="button" id="move_upload_button"><!--업로드 페이지 이동 버튼-->
-                <a href="activities_upload_modify.html">사진 다시 업로드하기</a>
+                <a href={% url 'upload_activity' %}>사진 업로드하기</a>
             </div>
         </div>
-        <div id="item_area"><!--수정 버튼 밑-->
+        <div id="item_area"><!--버튼 밑-->
             <div id="article"><!--모든 앨범-->
                 <!--MT-->
-                {% if images %}
+                
                 <div class="item" id="mt"><!--앨범 및 앨범 이름-->
                     <div class="album"><!--앨범-->
                         <div class="prev_button" id="mt_prev_button">&lt;</div>
                         <div class="next_button" id="mt_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="mt_img_area">
-                                <!-- {% for image in images %}
-                                    <div class="img_content size_original">
-                                        {% for i in range(3) %}
-                                            {% if image.mt_image %}
-                                                <img src="{{ image.mt_image.url }}" alt="MT Image">
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                {% endfor %} -->
+                                
                                 <div id="mt_img_content" class="img_content size_original">
                                     <img src="../../static/img/mt_images/ex1.jpg" alt="MT Image">
                                     <img src="../../static/img/mt_images/ex2.jpg" alt="MT Image">
@@ -96,15 +88,7 @@
                         <div class="next_button" id="study_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="study_img_area">
-                                <!-- {% for image in images %}
-                                    <div class="img_content size_original">
-                                        {% for i in range(3) %}
-                                            {% if image.study_image %}
-                                                <img src="{{ image.study_image.url }}" alt="study Image">
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                {% endfor %} -->
+                                
                                 <div id="study_img_content" class="img_content size_original">
                                     <img src="../../static/img/study_images/ex1.jpg" alt="Study Image">
                                     <img src="../../static/img/study_images/ex2.jpg" alt="Study Image">
@@ -139,17 +123,7 @@
                         <div class="next_button" id="project_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="project_img_area">
-                                <!-- {% for image in images %}
-                                    <div class="img_content size_original">
-                                        {% for i in range(3) %}
-                                            {% if image.project_image %}
-                                                <a>
-                                                    <img src="{{ image.project_image.url }}" alt="project Image">
-                                                </a>
-                                            {% endif %}
-                                        {% endfor %}
-                                    </div>
-                                {% endfor %} -->
+                                
                                 <div id="project_img_content" class="img_content size_original">
                                     <a href="">
                                         <img src="../../static/img/project_images/ex1.jpg" alt="Project Image">
@@ -201,8 +175,6 @@
                     </div>
                     <div class="album_name">Project</div> <!--앨범 이름-->
                 </div>
-                {% else %}
-                {% endif %}
             </div>
         </div>
     </div>

@@ -19,7 +19,7 @@
         <nav id="main-navigation">
             <ul class="menu">
                 <li class="menu-item" id="">
-                    <a href="activities.html">Activities</a>
+                    <a href={% url 'success_page' %}>Activities</a>
                 </li>
                 <li class="menu-item" id="">
                     <a href="">People</a>
@@ -35,7 +35,7 @@
     </header>
     <div id="content"><!--헤더 밑-->
         <div id="button_area"><!--버튼 공간 (없음)--></div>
-        <div id="item_area"><!--수정 버튼 밑-->
+        <div id="item_area"><!--버튼 밑-->
             <div id="article"><!--모든 앨범-->
                 <!--MT-->
                 {% if images %}

@@ -380,47 +380,58 @@ window.onload = function () {
     })();
 
   } else { //edit_page.html, upload_activity.html일 때
+    //input 커스텀
+    let file = document.getElementById('file');
+    console.log(file);
+    
+    file.addEventListener('input', function () {
+      console.log('in');
+      var fileName = file.value;
+      // $(".upload-name").val(fileName);
+      document.querySelector('.upload_file_names').value = fileName;
+    });
+
     //사진 삭제
     (function () {
-      // 이미지 선택을 토글하는 함수
-      function toggleImageSelection(checkbox) {
-        checkbox.checked = !checkbox.checked; // 체크박스 상태를 토글
-      }
-
-      // // 선택된 이미지들을 삭제하는 함수
-      // function deleteSelectedImages(album) {
-      //   var checkedCheckboxes = document.querySelectorAll(`#${album} .img-checkbox:checked`);
-      //   checkedCheckboxes.forEach(function (checkbox) {
-      //     checkbox.closest('.image-wrapper').remove(); // 이미지를 DOM에서 삭제
-      //   });
+      // // 이미지 선택을 토글하는 함수
+      // function toggleImageSelection(checkbox) {
+      //   checkbox.checked = !checkbox.checked; // 체크박스 상태를 토글
       // }
 
-      // // 각 앨범에 대한 삭제 버튼 이벤트 리스너를 추가합니다.
-      // let deleteButtons = document.querySelectorAll('[id^="delete_"]'); // id가 'delete_'로 시작하는 모든 요소
-      // deleteButtons.forEach(function (btn) {
-      //   let album = btn.id.replace('delete_', ''); // 'delete_'를 제거하여 앨범 ID를 추출
-      //   btn.addEventListener('click', function (e) {
-      //     e.preventDefault(); // 기본 이벤트 방지
-      //     deleteSelectedImages(album); // 연관된 앨범의 이미지 삭제
-      //   });
+      // // // 선택된 이미지들을 삭제하는 함수
+      // // function deleteSelectedImages(album) {
+      // //   var checkedCheckboxes = document.querySelectorAll(`#${album} .img-checkbox:checked`);
+      // //   checkedCheckboxes.forEach(function (checkbox) {
+      // //     checkbox.closest('.image-wrapper').remove(); // 이미지를 DOM에서 삭제
+      // //   });
+      // // }
+
+      // // // 각 앨범에 대한 삭제 버튼 이벤트 리스너를 추가합니다.
+      // // let deleteButtons = document.querySelectorAll('[id^="delete_"]'); // id가 'delete_'로 시작하는 모든 요소
+      // // deleteButtons.forEach(function (btn) {
+      // //   let album = btn.id.replace('delete_', ''); // 'delete_'를 제거하여 앨범 ID를 추출
+      // //   btn.addEventListener('click', function (e) {
+      // //     e.preventDefault(); // 기본 이벤트 방지
+      // //     deleteSelectedImages(album); // 연관된 앨범의 이미지 삭제
+      // //   });
+      // // });
+
+      // // 각 이미지에 대하여 클릭 이벤트 리스너를 추가합니다.
+      // document.addEventListener('click', function (e) {
+      //   if (e.target && e.target.tagName == 'IMG') {
+      //     let checkbox = e.target.nextElementSibling;
+      //     if (checkbox && checkbox.classList.contains('img-checkbox')) {
+      //       toggleImageSelection(checkbox); // 이미지 선택 토글
+      //     }
+      //   }
       // });
 
-      // 각 이미지에 대하여 클릭 이벤트 리스너를 추가합니다.
-      document.addEventListener('click', function (e) {
-        if (e.target && e.target.tagName == 'IMG') {
-          let checkbox = e.target.nextElementSibling;
-          if (checkbox && checkbox.classList.contains('img-checkbox')) {
-            toggleImageSelection(checkbox); // 이미지 선택 토글
-          }
-        }
-      });
-
-      // 체크박스 클릭 시 이벤트 버블링을 방지합니다.
-      document.querySelectorAll('.img-checkbox').forEach(function (checkbox) {
-        checkbox.addEventListener('click', function (e) {
-          e.stopPropagation(); // 이벤트 버블링 방지
-        });
-      });
+      // // 체크박스 클릭 시 이벤트 버블링을 방지합니다.
+      // document.querySelectorAll('.img-checkbox').forEach(function (checkbox) {
+      //   checkbox.addEventListener('click', function (e) {
+      //     e.stopPropagation(); // 이벤트 버블링 방지
+      //   });
+      // });
 
       //사진이 없을 때
       let imageNum = document.querySelectorAll('#mt_img_box img');
