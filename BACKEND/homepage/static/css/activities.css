@@ -109,7 +109,7 @@ nav {
 }
 
 #upload_button {
-    width: 150px;
+    width: 200px;
     height: 40px;
     line-height: 40px;
     border: none;
@@ -264,7 +264,7 @@ input[type="file"] {
 }
 
 .delete_button, #upload_button {
-    font-size: 18px;
+    font-size: 23px;
 }
 
 .img_box {
