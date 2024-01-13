@@ -52,157 +52,156 @@
                         <div class="img_box">
                             <div class="img_area clearfix" id="mt_img_area">
                                 {% for image in images %}
-                                <div class="img_content size_original">
+                                <div class="img_content size_original" id="mt_img_content">
                                     {% for i in range(3) %}
-                                    {% if image.mt_image %}
-                                    <img src="{{ image.mt_image.url }}" alt="MT Image">
-                                    {% endif %}
-                                    {% endfor %}
+                                        {% if image.mt_image %}
+                                            <img src="{{ image.mt_image.url }}" alt="MT Image">
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                                <!-- <div id="mt_img_content" class="img_content size_original">
+                                    <img src="../../static/img/mt_images/ex1.jpg" alt="MT Image">
+                                    <img src="../../static/img/mt_images/ex2.jpg" alt="MT Image">
+                                    <img src="../../static/img/mt_images/ex3.jpg" alt="MT Image">
+                                    <img src="../../static/img/mt_images/ex4.jpg" alt="MT Image">
                                 </div>
-                                {% endfor %}
+                                <div id="mt_img_content" class="img_content size_original">
+                                    <img src="../../static/img/mt_images/ex5.jpg" alt="MT Image">
+                                    <img src="../../static/img/mt_images/ex6.jpg" alt="MT Image">
+                                    <img src="../../static/img/mt_images/ex7.jpg" alt="MT Image">
+                                    <img src="../../static/img/mt_images/ex8.jpg" alt="MT Image">
+                                </div>
+                                <div id="mt_img_content" class="img_content size_original">
+                                    <img src="../../static/img/mt_images/ex9.jpg" alt="MT Image">
+                                    <img src="../../static/img/mt_images/ex10.jpg" alt="MT Image">
+                                    <img src="../../static/img/mt_images/ex11.jpg" alt="MT Image">
+                                    <img src="../../static/img/mt_images/ex12.jpg" alt="MT Image">
+                                </div> -->
                             </div>
-                            <!-- <div id="mt_img_content" class="img_content size_original">
-                                <img src="../../static/img/mt_images/ex1.jpg" alt="MT Image">
-                                <img src="../../static/img/mt_images/ex2.jpg" alt="MT Image">
-                                <img src="../../static/img/mt_images/ex3.jpg" alt="MT Image">
-                                <img src="../../static/img/mt_images/ex4.jpg" alt="MT Image">
+                            <p hidden>사진이 없습니다.</p>
+                            <div id="mtModal" class="modal">
+                                <img class="modal-content" id="mtModalImage">
                             </div>
-                            <div id="mt_img_content" class="img_content size_original">
-                                <img src="../../static/img/mt_images/ex5.jpg" alt="MT Image">
-                                <img src="../../static/img/mt_images/ex6.jpg" alt="MT Image">
-                                <img src="../../static/img/mt_images/ex7.jpg" alt="MT Image">
-                                <img src="../../static/img/mt_images/ex8.jpg" alt="MT Image">
-                            </div>
-                            <div id="mt_img_content" class="img_content size_original">
-                                <img src="../../static/img/mt_images/ex9.jpg" alt="MT Image">
-                                <img src="../../static/img/mt_images/ex10.jpg" alt="MT Image">
-                                <img src="../../static/img/mt_images/ex11.jpg" alt="MT Image">
-                                <img src="../../static/img/mt_images/ex12.jpg" alt="MT Image">
-                            </div> -->
-                        </div>
-                        <p hidden>사진이 없습니다.</p>
-                        <div id="mtModal" class="modal">
-                            <img class="modal-content" id="mtModalImage">
                         </div>
                     </div>
+                    <div class="album_name">MT</div> <!--앨범 이름-->
                 </div>
-                <div class="album_name">MT</div> <!--앨범 이름-->
-            </div>
-            <!--이하 동일-->
-            <!--study-->
-            <div class="item" id="study"><!--앨범 및 앨범 이름-->
-                <div class="album"><!--앨범-->
-                    <div class="prev_button" id="study_prev_button">&lt;</div>
-                    <div class="next_button" id="study_next_button">&gt;</div>
-                    <div class="img_box">
-                        <div class="img_area clearfix" id="study_img_area">
-                            {% for image in images %}
-                            <div class="img_content size_original">
-                                {% for i in range(3) %}
-                                {% if image.study_image %}
-                                <img src="{{ image.study_image.url }}" alt="Study Image">
-                                {% endif %}
+                <!--이하 동일-->
+                <!--study-->
+                <div class="item" id="study"><!--앨범 및 앨범 이름-->
+                    <div class="album"><!--앨범-->
+                        <div class="prev_button" id="study_prev_button">&lt;</div>
+                        <div class="next_button" id="study_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="study_img_area">
+                                {% for image in images %}
+                                <div class="img_content size_original" id="study_img_content">
+                                    {% for i in range(3) %}
+                                        {% if image.study_image %}
+                                            <img src="{{ image.study_image.url }}" alt="Study Image">
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
                                 {% endfor %}
+                                <!-- <div id="study_img_content" class="img_content size_original">
+                                    <img src="../../static/img/study_images/ex1.jpg" alt="Study Image">
+                                    <img src="../../static/img/study_images/ex2.jpg" alt="Study Image">
+                                    <img src="../../static/img/study_images/ex3.jpg" alt="Study Image">
+                                    <img src="../../static/img/study_images/ex4.jpg" alt="Study Image">
+                                </div>
+                                <div id="study_img_content" class="img_content size_original">
+                                    <img src="../../static/img/study_images/ex5.jpg" alt="Study Image">
+                                    <img src="../../static/img/study_images/ex6.jpg" alt="Study Image">
+                                    <img src="../../static/img/study_images/ex7.jpg" alt="Study Image">
+                                    <img src="../../static/img/study_images/ex8.jpg" alt="Study Image">
+                                </div>
+                                <div id="study_img_content" class="img_content size_original">
+                                    <img src="../../static/img/study_images/ex9.jpg" alt="Study Image">
+                                    <img src="../../static/img/study_images/ex10.jpg" alt="Study Image">
+                                    <img src="../../static/img/study_images/ex11.jpg" alt="Study Image">
+                                    <img src="../../static/img/study_images/ex12.jpg" alt="Study Image">
+                                </div> -->
                             </div>
-                            {% endfor %}
-                            <!-- <div id="study_img_content" class="img_content size_original">
-                                <img src="../../static/img/study_images/ex1.jpg" alt="Study Image">
-                                <img src="../../static/img/study_images/ex2.jpg" alt="Study Image">
-                                <img src="../../static/img/study_images/ex3.jpg" alt="Study Image">
-                                <img src="../../static/img/study_images/ex4.jpg" alt="Study Image">
+                            <p hidden>사진이 없습니다.</p>
+                            <div id="studyModal" class="modal">
+                                <img class="modal-content" id="studyModalImage">
                             </div>
-                            <div id="study_img_content" class="img_content size_original">
-                                <img src="../../static/img/study_images/ex5.jpg" alt="Study Image">
-                                <img src="../../static/img/study_images/ex6.jpg" alt="Study Image">
-                                <img src="../../static/img/study_images/ex7.jpg" alt="Study Image">
-                                <img src="../../static/img/study_images/ex8.jpg" alt="Study Image">
-                            </div>
-                            <div id="study_img_content" class="img_content size_original">
-                                <img src="../../static/img/study_images/ex9.jpg" alt="Study Image">
-                                <img src="../../static/img/study_images/ex10.jpg" alt="Study Image">
-                                <img src="../../static/img/study_images/ex11.jpg" alt="Study Image">
-                                <img src="../../static/img/study_images/ex12.jpg" alt="Study Image">
-                            </div> -->
-                        </div>
-                        <p hidden>사진이 없습니다.</p>
-                        <div id="studyModal" class="modal">
-                            <img class="modal-content" id="studyModalImage">
                         </div>
                     </div>
+                    <div class="album_name">Study</div> <!--앨범 이름-->
                 </div>
-                <div class="album_name">Study</div> <!--앨범 이름-->
-            </div>
-            <!--project-->
-            <div class="item" id="project"><!--앨범 및 앨범 이름-->
-                <div class="album"><!--앨범-->
-                    <div class="prev_button" id="project_prev_button">&lt;</div>
-                    <div class="next_button" id="project_next_button">&gt;</div>
-                    <div class="img_box">
-                        <div class="img_area clearfix" id="project_img_area">
-                            {% for image in images %}
-                            <div class="img_content size_original">
-                                {% for i in range(3) %}
-                                {% if image.project_image %}
-                                <a href="">
-                                    <img src="{{ image.project_image.url }}" alt="Project Image">
-                                </a>
-                                {% endif %}
+                <!--project-->
+                <div class="item" id="project"><!--앨범 및 앨범 이름-->
+                    <div class="album"><!--앨범-->
+                        <div class="prev_button" id="project_prev_button">&lt;</div>
+                        <div class="next_button" id="project_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="project_img_area">
+                                {% for image in images %}
+                                <div class="img_content size_original" id="project_img_content">
+                                    {% for i in range(3) %}
+                                        {% if image.project_image %}
+                                        <a href=""> 
+                                            <img src="{{ image.project_image.url }}" alt="Project Image">
+                                        </a>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </div>
                                 {% endfor %}
+                                <!-- <div id="project_img_content" class="img_content size_original">
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex1.jpg" alt="Project Image">
+                                    </a>
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex2.jpg" alt="Project Image">
+                                    </a>
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex3.jpg" alt="Project Image">
+                                    </a>
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex4.jpg" alt="Project Image">
+                                    </a>
+                                </div>
+                                <div id="project_img_content" class="img_content size_original">
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex5.jpg" alt="Project Image">
+                                    </a>
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex6.jpg" alt="Project Image">
+                                    </a>
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex7.jpg" alt="Project Image">
+                                    </a>
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex8.jpg" alt="Project Image">
+                                    </a>
+                                </div>
+                                <div id="project_img_content" class="img_content size_original">
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex9.jpg" alt="Project Image">
+                                    </a>
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex10.jpg" alt="Project Image">
+                                    </a>
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex11.jpg" alt="Project Image">
+                                    </a>
+                                    <a href="">
+                                        <img src="../../static/img/project_images/ex12.jpg" alt="Project Image">
+                                    </a>
+                                </div> -->
                             </div>
-                            {% endfor %}
-                            <!-- <div id="project_img_content" class="img_content size_original">
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex1.jpg" alt="Project Image">
-                                </a>
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex2.jpg" alt="Project Image">
-                                </a>
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex3.jpg" alt="Project Image">
-                                </a>
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex4.jpg" alt="Project Image">
-                                </a>
+                            <p hidden>사진이 없습니다.</p>
+                            <div id="projectModal" class="modal">
+                                <img class="modal-content" id="projectModalImage">
                             </div>
-                            <div id="project_img_content" class="img_content size_original">
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex5.jpg" alt="Project Image">
-                                </a>
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex6.jpg" alt="Project Image">
-                                </a>
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex7.jpg" alt="Project Image">
-                                </a>
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex8.jpg" alt="Project Image">
-                                </a>
-                            </div>
-                            <div id="project_img_content" class="img_content size_original">
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex9.jpg" alt="Project Image">
-                                </a>
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex10.jpg" alt="Project Image">
-                                </a>
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex11.jpg" alt="Project Image">
-                                </a>
-                                <a href="">
-                                    <img src="../../static/img/project_images/ex12.jpg" alt="Project Image">
-                                </a>
-                            </div> -->
-                        </div>
-                        <p hidden>사진이 없습니다.</p>
-                        <div id="projectModal" class="modal">
-                            <img class="modal-content" id="projectModalImage">
                         </div>
                     </div>
+                    <div class="album_name">Project</div> <!--앨범 이름-->
                 </div>
-                <div class="album_name">Project</div> <!--앨범 이름-->
             </div>
         </div>
-    </div>
     </div>
 </body>
 
