@@ -561,24 +561,25 @@ window.onload = function () {
     let studyFile = document.getElementById('study_file');
     let projectFile = document.getElementById('project_file');
 
-    // mt
-    mtFile.addEventListener('change', function (event) {
-      let fileName = event.target.files[0].name; // event 객체에서 선택된 파일의 이름을 가져옵니다.
-      document.getElementById('mt_upload_file_names').value = fileName; // 파일 이름을 입력 필드에 표시합니다.
-    });
+   // mt
+   mtFile.addEventListener('change', function (event) {
+    let fileName = event.target.files[0].name; // event 객체에서 선택된 파일의 이름을 가져옵니다.
+    document.getElementById('mt_upload_file_names').value = fileName; // 파일 이름을 입력 필드에 표시합니다.
+  });
 
-    // study
-    studyFile.addEventListener('change', function (event) {
-      let fileName = event.target.files[0].name; // event 객체에서 선택된 파일의 이름을 가져옵니다.
-      document.getElementById('study_upload_file_names').value = fileName; // 파일 이름을 입력 필드에 표시합니다.
-    });
+  // study
+  studyFile.addEventListener('change', function (event) {
+    let fileName = event.target.files[0].name; // event 객체에서 선택된 파일의 이름을 가져옵니다.
+    document.getElementById('study_upload_file_names').value = fileName; // 파일 이름을 입력 필드에 표시합니다.
+  });
 
-    // project
-    projectFile.addEventListener('change', function (event) {
-      let fileName = event.target.files[0].name; // event 객체에서 선택된 파일의 이름을 가져옵니다.
-      document.getElementById('project_upload_file_names').value = fileName; // 파일 이름을 입력 필드에 표시합니다.
-    });
-    
+  // project
+  projectFile.addEventListener('change', function (event) {
+    let fileName = event.target.files[0].name; // event 객체에서 선택된 파일의 이름을 가져옵니다.
+    document.getElementById('project_upload_file_names').value = fileName; // 파일 이름을 입력 필드에 표시합니다.
+  });
+  
+
 
   }
 }
