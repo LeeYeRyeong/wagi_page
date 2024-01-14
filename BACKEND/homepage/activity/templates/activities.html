@@ -1,38 +1,8 @@
+{% extends "basic.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ko">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities</title>
-    <link href="{% static 'css/actiivties.css' %}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
-    <script src="{% static 'js/activities.js' %}"></script>
-</head>
-
-<body>
+{% block content %}
     <div id="activities_main" hidden></div><!--js 처리용 div-->
-    <header id="main-header">
-        <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
-        <nav id="main-navigation">
-            <ul class="menu">
-                <li class="menu-item" id="">
-                    <a href={% url 'success_page' %}>Activities</a>
-                </li>
-                <li class="menu-item" id="">
-                    <a href="">People</a>
-                </li>
-                <li class="menu-item" id="apply">
-                    <a href={% url 'joinResult:join_button' %}>JOIN</a>
-                </li>
-                <li class="menu-item" id="">
-                    <a href="">Notice</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
     <div id="content"><!--헤더 밑-->
         <div id="button_area"><!--버튼 공간 (없음)--></div>
         <div id="item_area"><!--버튼 밑-->
@@ -131,7 +101,7 @@
                         <div class="next_button" id="project_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="project_img_area">
-                                {% for image in images %}
+                                {% for image in images %} 
                                 <div class="img_content size_original" id="project_img_content">
                                     {% for i in range(3) %}
                                         {% if image.project_image %}
@@ -196,6 +166,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+{% endblock%}

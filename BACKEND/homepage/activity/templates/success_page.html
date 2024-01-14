@@ -1,38 +1,8 @@
+{% extends "basic.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ko">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities admin</title>
-    <link href="{% static 'css/activities.css' %}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
-    <script src="{% static 'js/activities.js' %}"></script>
-</head>
-
-<body>
+{% block content %}
     <div id="success_page" hidden></div><!--js 처리용 div-->
-    <header id="main-header">
-        <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
-        <nav id="main-navigation">
-            <ul class="menu">
-                <li class="menu-item" id="">
-                    <a href={% url 'success_page' %}>Activities</a>
-                </li>
-                <li class="menu-item" id="">
-                    <a href="">People</a>
-                </li>
-                <li class="menu-item" id="apply">
-                    <a href={% url 'joinResult:join_button' %}>JOIN</a>
-                </li>
-                <li class="menu-item" id="">
-                    <a href="">Notice</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
     <div id="content"><!--헤더 밑-->
         <div id="button_area"><!--버튼 공간-->
             <div class="button" id="move_delete_button"><!--삭제 페이지 이동 버튼-->
@@ -203,6 +173,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+{% endblock%}
