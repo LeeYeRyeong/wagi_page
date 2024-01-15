@@ -1,7 +1,37 @@
-{% extends "basic.html" %}
 {% load static %}
 
-{% block content %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activities_manager</title>
+    <link href="../../static/css/activities.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+
+</head>
+<body>
+    <div id="activities_manager" hidden></div><!--js 처리용 div-->
+    <header id="main-header">
+        <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
+        <nav id="main-navigation">
+            <ul class="menu">
+                <li class="menu-item" id="">
+                    <a href="activities.html">Activities</a>
+                </li>
+                <li class="menu-item" id="">
+                    <a href="">People</a>
+                </li>
+                <li class="menu-item" id="apply">
+                    <a href={% url 'joinResult:join_button' %}>JOIN</a>
+                </li>
+                <li class="menu-item" id="">
+                    <a href="">Notice</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <div id="success_page" hidden></div><!--js 처리용 div-->
     <div id="content"><!--헤더 밑-->
         <div id="button_area"><!--버튼 공간-->
@@ -173,4 +203,5 @@
             </div>
         </div>
     </div>
-{% endblock%}
+</body>
+</html>
