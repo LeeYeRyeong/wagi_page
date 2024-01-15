@@ -15,8 +15,20 @@ function updateHiddenValue(button) {
 }
 
 
-var fileName =  document.getElementById('profile'); // 파일명 추출
-fileName.addEventListener('change', function (event) {
-    let fileName = event.target.files[0].name; // event 객체에서 선택된 파일의 이름을 가져옵니다.
-    document.getElementById('selectedImageName').value = fileName; // 파일 이름을 입력 필드에 표시합니다.
-  });
+document.getElementById('profile').addEventListener('change', function () {
+    var fileInput = document.getElementById('profile');
+    var fileDisplay = document.getElementById('file');
+    var imagePreview = document.getElementById('imagePreview');
+
+    if (fileInput.files.length > 0) {
+        var fileNames = Array.from(fileInput.files).map(function (file) {
+            return file.name;
+        }).join(', ');
+
+        fileDisplay.value = fileNames;
+        imagePreview.style.display = 'block';
+    } else {
+        fileDisplay.value = '';
+        imagePreview.style.display = 'none';
+    }
+});
