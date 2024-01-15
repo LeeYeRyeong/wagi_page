@@ -12,19 +12,19 @@
 
 </head>
 <body>
-    <div id="activities_manager" hidden></div><!--js 처리용 div-->
+    <div id="activities_main" hidden></div><!--js 처리용 div-->
     <header id="main-header">
         <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
         <nav id="main-navigation">
             <ul class="menu">
                 <li class="menu-item" id="">
-                    <a href="activities.html">Activities</a>
+                    <a href="{% url 'success_page' %}">Activities</a>
                 </li>
                 <li class="menu-item" id="">
                     <a href="">People</a>
                 </li>
                 <li class="menu-item" id="apply">
-                    <a href={% url 'joinResult:join_button' %}>JOIN</a>
+                    <a href="{% url 'joinResult:join_button' %}">JOIN</a>
                 </li>
                 <li class="menu-item" id="">
                     <a href="">Notice</a>
@@ -34,50 +34,26 @@
     </header>
     <div id="success_page" hidden></div><!--js 처리용 div-->
     <div id="content"><!--헤더 밑-->
-        <div id="button_area"><!--버튼 공간-->
-            <div class="button" id="move_delete_button"><!--삭제 페이지 이동 버튼-->
-                <a href={% url 'edit_page' %}>파일 삭제하기</a>
-            </div>
-            <div class="button" id="move_upload_button"><!--업로드 페이지 이동 버튼-->
-                <a href={% url 'upload_activity' %}>사진 업로드하기</a>
-            </div>
-        </div>
-        <div id="item_area"><!--수정 버튼 밑-->
-            <div id="article"><!--모든 앨범-->
-                <!--MT-->
-                <div class="item" id="mt"><!--앨범 및 앨범 이름-->
-                    <div class="album"><!--앨범-->
+        <div id="button_area"><!--버튼 공간 (없음)--></div>
+        <div id="item_area"><!--버튼 밑-->
+            <div id="item_area"><!--모든 앨범-->
+                <!-- MT -->
+                {% if mt_images %}
+                <div class="item" id="mt">
+                    <div class="album">
                         <div class="prev_button" id="mt_prev_button">&lt;</div>
                         <div class="next_button" id="mt_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="mt_img_area">
-                                {% for image in images %}
-                                <div class="img_content size_original" id="mt_img_content">
-                                    {% for i in range(3) %}
-                                        {% if image.mt_image %}
-                                            <img src="{{ image.mt_image.url }}" alt="MT Image">
-                                        {% endif %}
-                                        {% endfor %}
-                                    </div>
+                                {% for mt_image in mt_images %}
+                                    {% if mt_image.mt_image %}
+                                        <div id="mt_img_content" class="img_content size_original">
+                                            {% for i in "123" %}
+                                                <img src="{{ mt_image.mt_image.url }}" alt="MT Image">
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
                                 {% endfor %}
-                                <!-- <div id="mt_img_content" class="img_content size_original">
-                                    <img src="../../static/img/mt_images/ex1.jpg" alt="MT Image">
-                                    <img src="../../static/img/mt_images/ex2.jpg" alt="MT Image">
-                                    <img src="../../static/img/mt_images/ex3.jpg" alt="MT Image">
-                                    <img src="../../static/img/mt_images/ex4.jpg" alt="MT Image">
-                                </div>
-                                <div id="mt_img_content" class="img_content size_original">
-                                    <img src="../../static/img/mt_images/ex5.jpg" alt="MT Image">
-                                    <img src="../../static/img/mt_images/ex6.jpg" alt="MT Image">
-                                    <img src="../../static/img/mt_images/ex7.jpg" alt="MT Image">
-                                    <img src="../../static/img/mt_images/ex8.jpg" alt="MT Image">
-                                </div>
-                                <div id="mt_img_content" class="img_content size_original">
-                                    <img src="../../static/img/mt_images/ex9.jpg" alt="MT Image">
-                                    <img src="../../static/img/mt_images/ex10.jpg" alt="MT Image">
-                                    <img src="../../static/img/mt_images/ex11.jpg" alt="MT Image">
-                                    <img src="../../static/img/mt_images/ex12.jpg" alt="MT Image">
-                                </div> -->
                             </div>
                             <p hidden>사진이 없습니다.</p>
                             <div id="mtModal" class="modal">
@@ -85,24 +61,26 @@
                             </div>
                         </div>
                     </div>
-                    <div class="album_name">MT</div> <!--앨범 이름-->
+                    <div class="album_name">MT</div>
                 </div>
-                <!--이하 동일-->
-                <!--study-->
-                <div class="item" id="study"><!--앨범 및 앨범 이름-->
-                    <div class="album"><!--앨범-->
+                {% endif %}
+
+                <!-- Study -->
+                {% if study_images %}
+                <div class="item" id="study">
+                    <div class="album">
                         <div class="prev_button" id="study_prev_button">&lt;</div>
                         <div class="next_button" id="study_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="study_img_area">
-                                {% for image in images %}
-                                <div class="img_content size_original" id="study_img_content">
-                                    {% for i in range(3) %}
-                                        {% if image.study_image %}
-                                            <img src="{{ image.study_image.url }}" alt="Study Image">
-                                        {% endif %}
-                                        {% endfor %}
-                                    </div>
+                                {% for study_image in study_images %}
+                                    {% if study_image.study_image %}
+                                        <div id="study_img_content" class="img_content size_original">
+                                            {% for i in "123" %}
+                                                <img src="{{ study_image.study_image.url }}" alt="Study Image">
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
                                 {% endfor %}
                                 <!-- <div id="study_img_content" class="img_content size_original">
                                     <img src="../../static/img/study_images/ex1.jpg" alt="Study Image">
@@ -129,25 +107,28 @@
                             </div>
                         </div>
                     </div>
-                    <div class="album_name">Study</div> <!--앨범 이름-->
+                    <div class="album_name">Study</div>
                 </div>
-                <!--project-->
-                <div class="item" id="project"><!--앨범 및 앨범 이름-->
-                    <div class="album"><!--앨범-->
+                {% endif %}
+
+                <!-- Project -->
+                {% if project_images %}
+                <div class="item" id="project">
+                    <div class="album">
                         <div class="prev_button" id="project_prev_button">&lt;</div>
                         <div class="next_button" id="project_next_button">&gt;</div>
                         <div class="img_box">
                             <div class="img_area clearfix" id="project_img_area">
-                                {% for image in images %}
-                                <div class="img_content size_original" id="project_img_content">
-                                    {% for i in range(3) %}
-                                        {% if image.project_image %}
-                                        <a href=""> 
-                                            <img src="{{ image.project_image.url }}" alt="Project Image">
-                                        </a>
-                                        {% endif %}
-                                        {% endfor %}
-                                    </div>
+                                {% for project_image in project_images %}
+                                    {% if project_image.project_image %}
+                                        <div id="project_img_content" class="img_content size_original">
+                                            {% for i in "123" %}
+                                                <a href="">
+                                                    <img src="{{ project_image.project_image.url }}" alt="Project Image">
+                                                </a>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
                                 {% endfor %}
                                 <!-- <div id="project_img_content" class="img_content size_original">
                                     <a href="">
@@ -198,8 +179,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="album_name">Project</div> <!--앨범 이름-->
+                    <div class="album_name">Project</div>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

@@ -157,6 +157,14 @@ EMAIL_HOST_USER = '' # 송신용 gmail 계정
 EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+<<<<<<< HEAD
 #for images, files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
+=======
+#활동 이미지 파일 업로드
+MEDIA_URL = '/img/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
+
+CLEANUP_KEEP_EXTENSIONS = ['.jpg', '.jpeg', '.png', ...]
+>>>>>>> 4578adb4370b8e5db4130ff72ca9bf9f270ac51c
