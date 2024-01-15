@@ -21,6 +21,8 @@ from django.conf.urls.static import static
 from django.conf import settings
 from notice import views
 
+app_name = 'notice'
+
 urlpatterns = [
     path('', views.notice_list, name='notice_list'),
     path('0/<int:notion_id>/', views.notice_detail, name='notice_detail'),#0이 왜 필요한진 몰겠어요..; 근데 자꾸 주소에 0 붙어서 걍 함
