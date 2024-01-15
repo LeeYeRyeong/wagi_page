@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAGI 웹 페이지</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_manager_record.css' %}">
+</head>
+<body>
+
+    <a  href="{% url 'notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div>
+    <a href="{% url 'notice_create' %}"><input type="button" id="writings" class="writing" value="글 작성"></a>
+
+    <form action="{% url 'edit_notice' notion_id=notice.id %}" method="GET">
+        {% csrf_token %}
+        <input type="button" id="regularActivity" class="round-button" name="regularActivity" onclick="updateHiddenValue(this)" value="정기활동">
+        <input type="button" id="event" class="round-button" name="event" onclick="updateHiddenValue(this)" value="행사">
+        <input type="button" id="competition" class="round-button" name="competition" onclick="updateHiddenValue(this)" value="공모전">
+        <input type="hidden" id="selectedCategory" name="selectedCategory" value="{{ notice.category }}">  
+        <div id="writingZone">
+            <textarea id="titleWriting" name="notion_title" rows="4" cols="50">{{ notice.notion_title }}</textarea>
+                
+            <div id="contentsWriting" name="message2" ><textarea  name="notion_text">{{ notice.notion_text }}</textarea>
+                {% if images %}
+                    <ul>
+                    {% for image in images %}
+                        <li><img src="{{ image.image.url }}" alt="Image"></li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+        <input type="submit" id="editButton" value="수정하기">
+        
+        <p id="date">{{ notice.write_time }}</p>
+        
+        <p id="real_date" name="message2" rows="1" cols="50" readonly></p>
+    </form>
+
+    <script src="{% static 'js/Notice_manager_record.js' %}"></script>
+</body>
+</html>

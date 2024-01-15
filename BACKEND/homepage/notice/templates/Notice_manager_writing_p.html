@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div id="notices" class="notice"><span>공지사항</span></div>
+    <a  href="{% url 'notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div>
     <div id="writings" class="writing"><span>글 작성</span></div>
     <button id="regularActivity" class="round-button" onclick="showContent('regularActivity')">정기활동</button>
     <button id="event" class="round-button" onclick="showContent('event')">행사</button>

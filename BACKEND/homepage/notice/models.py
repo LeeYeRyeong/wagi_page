@@ -3,13 +3,8 @@ from django.db import models
 
 # Create your models here.
 class Notion(models.Model):
-    CATEGORY_CHOICES = (
-        ('정기활동', '정기활동'),
-        ('행사', '행사'),
-        ('공모전', '공모전'),
-    )
     write_time = models.DateTimeField(auto_now_add=True)
-    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='general')
+    category = models.CharField(max_length=20, default='general')
     notion_title = models.CharField(max_length=60)
     notion_text = models.CharField(max_length=500)
     
