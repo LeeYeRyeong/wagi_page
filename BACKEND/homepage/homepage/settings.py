@@ -157,5 +157,6 @@ EMAIL_HOST_USER = '' # 송신용 gmail 계정
 EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+#for images, files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
