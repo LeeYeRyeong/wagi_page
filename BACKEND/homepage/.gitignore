@@ -8,3 +8,10 @@ db.sqlite3
 /joinInfo/migrations/
 /joinResult/migrations/
 /login/migrations/
+/media/
+/media
+/notice/migrations/
+/people/migrations/
+/homepage/migrations/
+/activity/migrations/
+/application/migrations/
