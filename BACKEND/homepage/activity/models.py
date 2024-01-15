@@ -10,7 +10,6 @@ class Activity_mt(models.Model):
 
     def delete_image(self, image_field):
         if image_field:
-            # os.remove(image_field.path)
             image_field.delete()
 
     def __str__(self):
