@@ -213,3 +213,13 @@
     background-color: #9EA9D7 !important;
     color:black !important;
 }
+#profile{
+    display: none;
+}
+#selectedImageName{
+    color: gray;
+}
+
+#selectedImageIcon {
+    margin-right: 10px; /* 아이콘과 파일명 사이의 간격 조절 */
+}
