@@ -13,3 +13,22 @@ function updateHiddenValue(button) {
     // 클릭된 버튼에 'selected' 클래스 추가
     button.classList.add('selected');
 }
+
+
+document.getElementById('profile').addEventListener('change', function () {
+    var fileInput = document.getElementById('profile');
+    var fileDisplay = document.getElementById('file');
+    var imagePreview = document.getElementById('imagePreview');
+
+    if (fileInput.files.length > 0) {
+        var fileNames = Array.from(fileInput.files).map(function (file) {
+            return file.name;
+        }).join(', ');
+
+        fileDisplay.value = fileNames;
+        imagePreview.style.display = 'block';
+    } else {
+        fileDisplay.value = '';
+        imagePreview.style.display = 'none';
+    }
+});

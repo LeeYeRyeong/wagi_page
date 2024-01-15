@@ -25,7 +25,7 @@ def notice_create(request):
 
         # 이후 필요한 처리 추가...
 
-        return redirect('notice_list')
+        return redirect('notice:notice_list')
 
     return render(request, 'Notice_manager_writing.html')
 
@@ -74,6 +74,6 @@ def edit_notice(request, notion_id):
         for img in images:
             NotionImage.objects.create(notion=notion, image=img)
 
-        return redirect(reverse('notice_detail', kwargs={'notion_id': notice.id}))
+        return redirect(reverse('notice:notice_detail', kwargs={'notion_id': notice.id}))
 
     return render(request, 'notice_manager_edit.html' ,{'notice': notice, 'images': images})
