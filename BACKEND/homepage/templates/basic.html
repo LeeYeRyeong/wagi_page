@@ -12,10 +12,10 @@
         <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
         <nav id="main-navigation">
             <ul class="menu">
-                <li class="menu-item"><button data-url="{% url 'act success' %}">Activities</button></li>
-                <li class="menu-item"><button data-url="{% url 'people' %}">People</button></li>
-                <li class="menu-item"><button data-url="{% url 'joinResult' %}">Join</button></li>
-                <li class="menu-item"><button data-url="{% url 'notice' %}">Notice</button></li>
+                <li class="menu-item"><button data-url="{% url 'success_page' %}">Activities</button></li>
+                <li class="menu-item"><button data-url="{% url 'show_people' %}">People</button></li>
+                <li class="menu-item"><button data-url="{% url 'joinResult:result' %}">Join</button></li>
+                <li class="menu-item"><button data-url="{% url 'notice:notice_list' %}">Notice</button></li>
             </ul>
         </nav> 
     </header>

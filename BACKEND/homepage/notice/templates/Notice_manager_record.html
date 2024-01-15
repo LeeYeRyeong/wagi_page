@@ -11,10 +11,10 @@
 </head>
 <body>
 
-    <a  href="{% url 'notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div>
-    <a href="{% url 'notice_create' %}"><input type="button" id="writings" class="writing" value="글 작성"></a>
+    <a  href="{% url 'notice:notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div>
+    <a href="{% url 'notice:notice_create' %}"><input type="button" id="writings" class="writing" value="글 작성"></a>
 
-    <form action="{% url 'edit_notice' notion_id=notice.id %}" method="GET">
+    <form action="{% url 'notice:edit_notice' notion_id=notice.id %}" method="GET">
         {% csrf_token %}
         <input type="button" id="regularActivity" class="round-button" name="regularActivity" onclick="updateHiddenValue(this)" value="정기활동">
         <input type="button" id="event" class="round-button" name="event" onclick="updateHiddenValue(this)" value="행사">
