@@ -156,3 +156,9 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = '' # 송신용 gmail 계정
 EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+#활동 이미지 파일 업로드
+MEDIA_URL = '/img/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
+
+CLEANUP_KEEP_EXTENSIONS = ['.jpg', '.jpeg', '.png', ...]
