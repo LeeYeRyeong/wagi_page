@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="{% static 'js/people_script.js' %}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People List</title>
+    <link rel="stylesheet" href="{% static 'css/people.css' %}">
+    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+</head>
+<body>
+    <div id="people-data" data-people="{{ people_data | safe }}"></div>
+
+    <div class="center">
+        <!-- JavaScript로 동적으로 데이터를 채움 -->
+        <script src="{% static 'js/people_script.js' %}"></script>
+    </div>
+
+</body>
+</html>

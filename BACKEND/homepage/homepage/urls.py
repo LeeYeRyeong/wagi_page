@@ -1,32 +1,31 @@
-"""
-URL configuration for homepage project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, include
 from joinInfo.views import apply_club_user_info_view
 from activity.views import upload_activity, success_page, edit_page, edit_images
+from people.views import show_people
 from joinResult import views
+from application import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('join/', apply_club_user_info_view, name='apply_club_user_info_view'),
     path('joinResult/', include('joinResult.urls')),
-    path('login/', include('login.urls')),
+
+    path('', include('login.urls')),
+
     path('upload/', upload_activity, name='upload_activity'),
     path('success/', success_page, name='success_page'),
     path('edit/', edit_page, name='edit_page'),
-    path('edit_images/<int:image_id>/', edit_images, name='edit_images'),  
+    path('edit_images/<int:image_id>/', edit_images, name='edit_images'),
+
+    path('people/', show_people, name='show_people'),
+
+    path('notice/', include('notice.urls')),  
+
+    path('application/', include('application.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

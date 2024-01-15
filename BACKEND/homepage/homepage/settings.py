@@ -54,6 +54,9 @@ INSTALLED_APPS = [
     'joinResult',
     'login',
     'activity',
+    'people',
+    'notice',
+    'application',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +74,7 @@ ROOT_URLCONF = 'homepage.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,7 +138,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join('static'),)
 
 
 # Default primary key field type
@@ -151,3 +156,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = '' # 송신용 gmail 계정
 EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+#for images, files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR/'media'
