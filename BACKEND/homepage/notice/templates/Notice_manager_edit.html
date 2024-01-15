@@ -1,17 +1,10 @@
+{% extends 'basic.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WAGI 웹 페이지</title>
+
+    {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_manager_writing.css' %}">
-</head>
-<body>
-
-    <form action="{% url 'edit_notice' notion_id=notice.id %}" method="POST" enctype="multipart/form-data">
+    <form action="{% url 'notice:edit_notice' notion_id=notice.id %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div id="notices" class="notice"><span>공지사항</span></div>
         <div id="writings" class="writing"><span>글 작성</span></div>
@@ -31,5 +24,4 @@
     </form>
 
     <script src="{% static 'js/Notice_manager_writing.js' %}"></script>
-</body>
-</html>
+    {% endblock %}
