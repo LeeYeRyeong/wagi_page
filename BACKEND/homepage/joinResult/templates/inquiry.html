@@ -1,28 +1,15 @@
+{% extends 'basic.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8" />
-<title>WAGI JOIN</title>
+{% block content %}
+  <!--css-->
   <link rel="stylesheet"  href="{% static 'css/inquiry.css' %}">
   <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+  <!--js-->
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
   <script src="{% static 'js/inquiry.js' %}" data-is-date="{{ isDate }}"></script>
-</head>
- <body> 
+
     <div id="page-wrapper">
-       <header id="main-header">
-            <img src="{% static 'img/WAGI logo.png' %}" alt="WAGI logo image">
-            <nav id="main-navigation">
-                <ul class="menu">
-                    <li class="menu-item">Activities</li> 
-                    <li class="menu-item">People</li>
-                    <li class="menu-item" id="apply"><a href={% url 'joinResult:join_button' %}>JOIN</a></li>
-                    <li class="menu-item">Notice</li>
-                </ul> 
-             </nav> 
-       </header>
     <!-- 합격자 조회 버튼-->
     <div id="content">
         <div id="main-section">
@@ -129,5 +116,4 @@
           </div>
       </div>
   </div>
- </body>
-</html>
+{% endblock %}
