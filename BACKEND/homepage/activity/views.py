@@ -4,6 +4,21 @@ from .forms import ActivityForm_mt, ActivityForm_study, ActivityForm_project
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 
+def delete_images(model, image_ids, image_field_name):
+    for image_id in image_ids:
+        activity = get_object_or_404(model, id=image_id)
+        image_field = getattr(activity, image_field_name)
+        print(f"Deleting image {image_ids} for {model} with field {image_field_name}")
+        activity.delete_image(image_field)
+        #activity.delete()
+
+def edit_images(model, image_ids, form_class, request):
+    for image_id in image_ids:
+        activity = get_object_or_404(model, id=image_id)
+        form = form_class(request.POST, request.FILES, instance=activity)
+        if form.is_valid():
+            form.save()
+
 def upload_activity(request):
     if request.method == 'POST':
         mt_form = ActivityForm_mt(request.POST, request.FILES, prefix='mt_form')
@@ -51,11 +66,12 @@ def edit_page(request):
     mt_images = Activity_mt.objects.all()
     study_images = Activity_study.objects.all()
     project_images = Activity_project.objects.all()
+    print("에딧함수")
 
     if request.method == 'POST':
-        delete_mt_images = request.POST.getlist('delete_images')
-        delete_study_images = request.POST.getlist('delete_images')
-        delete_project_images = request.POST.getlist('delete_images')
+        delete_mt_images = request.POST.getlist('delete_mt_images')
+        delete_study_images = request.POST.getlist('delete_study_images')
+        delete_project_images = request.POST.getlist('delete_project_images')
 
         # 이미지 삭제
         delete_images(Activity_mt, delete_mt_images, 'mt_image')
@@ -68,18 +84,3 @@ def edit_page(request):
         project_images = Activity_project.objects.all()
 
     return render(request, 'edit_page.html', {'mt_images': mt_images, 'study_images': study_images, 'project_images': project_images})
-
-
-def delete_images(model, image_ids, image_field_name):
-    for image_id in image_ids:
-        activity = get_object_or_404(model, id=image_id)
-        image_field = getattr(activity, image_field_name)
-        activity.delete_image(image_field)
-        #activity.delete()
-
-def edit_images(model, image_ids, form_class, request):
-    for image_id in image_ids:
-        activity = get_object_or_404(model, id=image_id)
-        form = form_class(request.POST, request.FILES, instance=activity)
-        if form.is_valid():
-            form.save()
