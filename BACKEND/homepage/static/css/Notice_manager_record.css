@@ -1,6 +1,6 @@
 #notices {
-    position: fixed;
-    top: 167px;
+    position: absolute;
+    top: 202px;
     left: 57px;
     width: 121px;
     height: 44px;
@@ -13,8 +13,8 @@
 }
 
 #writings {
-    position: fixed;
-    top: 167px;
+    position: absolute;
+    top: 202px;
     left: 206px;
     width: 91px;
     height: 44px;
@@ -26,42 +26,80 @@
     color: black;
 }
 
-#writingZone{
-    position:fixed;
+#writingZone {
+    position: absolute; 
     width: 1014px;
     height: 514px;
-    top: 253px;
+    top: 288px;
     left: 133px;
     border-radius: 20px;
     background-color: white;
     z-index: 10;
 }
 
-#titleWriting{
-    position: fixed;
-    width: 950px;
+#titleWriting {
+    position: absolute;
+    width: 935px;
     height: 50px;
-    top: 353px;
-    left: 165px;
-    border: 1px;
-    color:black;
-    border-radius: 20px;
+    padding-top: 12px;
+    padding-left: 20px;
+    
+    top: 87px;
+    left: 32px;
     border: 1px solid black;
+    color: black;
+    border-radius: 20px;
     z-index: 30;
+    resize: none;
 }
 
-#contentsWriting{
-    position:fixed;
+#contentsWriting {
+    position: absolute;
     width: 950px;
     height: 283px;
-    top: 415px;
-    left: 165px;
-    border-radius: 20px;
-    border: 1px;
-    color:black;
-    border-radius: 20px;
+    top: 162px;
+    left: 32px;
     border: 1px solid black;
+    color: black;
+    border-radius: 20px;
     z-index: 30;
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column; 
+}
+
+#contentsWriting textarea {
+    resize: none;
+    border: none;
+    width: 100%;
+    height: 30%; 
+    box-sizing: border-box;
+    margin-left: 20px;
+    margin-top: 12px;
+}
+
+#imageContainer {
+    overflow-x: auto; 
+    white-space: nowrap; 
+}
+
+#imageContainer ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+#imageContainer li {
+    margin-right: 10px; 
+}/*사진간에 간격조절하는거에여 맘에 안든다면 맘껏 수정해주세요 -88guri-*/
+
+#imageContainer img {
+    width: 100%; 
+    height: auto;
+}
+textarea:focus{
+    outline: none;
 }
 
 #main-navigation {
@@ -73,9 +111,9 @@
     list-style: none;
 }
 
-#regularActivity{
-    position: fixed;
-    top: 268px;
+#regularActivity {
+    position: absolute;
+    top: 303px;
     left: 170px;
     width: 77.54px;
     height: 25px;
@@ -90,8 +128,8 @@
 }
 
 #event {
-    position: fixed; 
-    top: 268px;
+    position: absolute;
+    top: 303px;
     left: 264px;
     width: 77.54px;
     height: 25px;
@@ -106,8 +144,8 @@
 }
 
 #competition {
-    position: fixed;
-    top: 268px;
+    position: absolute;
+    top: 303px;
     left: 358px;
     width: 77.54px;
     height: 25px;
@@ -121,11 +159,11 @@
     z-index: 100;
 }
 
-#editButton{
-    position: fixed;
+#editButton {
+    position: absolute;
     width: 110px;
     height: 30px;
-    top: 715px;
+    top: 750px;
     left: 585px;
     border-radius: 20px;
     background-color: #9EA9D7;
@@ -134,15 +172,19 @@
     justify-content: center;
     color: black;
     z-index: 30;
-    border:  0.7px solid #9EA9D7;
-
+    border: 0.7px solid #9EA9D7;
 }
-
-#date{
-    position: fixed;
-    top: 315px;
+#datePart{
+    width: auto;
+    height: 30px;
+    position: absolute;
+    top: 335px;
     left: 190px;
-    width: 78px;
+    padding-top: 10px;
+}
+#date {
+    position: relative;
+    width: 60px;
     height: 21px;
     border-radius: 20px;
     border: 0.8px solid #9EA9D7;
@@ -152,21 +194,22 @@
     color: black;
     background-color: white;
     z-index: 100;
+    display: inline-block;
+    padding-left: 18px;
+
+}
+#realDate{
+    position: relative;
+    color: black;
+    font-size:10px;
+    z-index: 100;
+    display: inline-block;
+
 }
 
-#real_date{
-    position: fixed;
-    top: 315px;
-    left: 280px;
-    color: black;
-    z-index: 30;
-    width: 100px;
-    height: 12px;
-    font-size: 20;
-}
 
 #regularActivity {
-    margin-left: 20px; 
+    margin-left: 20px;
 }
 
 #event {
@@ -174,19 +217,26 @@
 }
 
 #competition {
-    margin-left: 20px; 
+    margin-left: 20px;
 }
 
 #regularActivityContent,
 #eventContent,
 #competitionContent {
-    position: relative; 
-    top: 0;
-    left: 0;
+    position: absolute;
+   
+}
+
+
+#allContent,
+#regularActivityContent,
+#eventContent,
+#competitionContent {
+    position: absolute;
     width: 1014px;
     height: 475px;
+    top: 327px;
+    left: 133px;
     border-radius: 20px;
     background-color: white;
-    margin-top: 20px; 
-
 }

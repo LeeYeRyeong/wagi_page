@@ -36,6 +36,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
+    z-index: 999;/*Notice main쪽 z index 설정때문에 이거 맞춰둡니다*/
 }
 
 nav {

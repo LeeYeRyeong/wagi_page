@@ -6,18 +6,58 @@
     <link rel="stylesheet" type="text/css" href="Notice_main.css">
 </head>
 <body>
-    <div id="notices" class="notice"><span>공지사항</span></div>
-
+    
     <form>
-        <button id="regularActivity" class="round-button" onclick="showContent('regularActivity', event)">정기활동</button>
-        <button id="event" class="round-button" onclick="showContent('event', event)">행사</button>
-        <button id="competition" class="round-button" onclick="showContent('competition', event)">공모전</button>
-
-        <textarea id="allContent" class="content" readonly>모든 활동 내용</textarea>
-        <textarea id="regularActivityContent" class="content" readonly>&nbsp;정기활동 내용</textarea>
-        <textarea id="eventContent" class="content" readonly>&nbsp;행사 내용</textarea>
-        <textarea id="competitionContent" class="content" readonly>&nbsp;공모전 내용</textarea>
+        <input type="button" id="writings" class="writing" value="글 작성">
     </form>
+
+    <div id="notices" class="notice"><span>공지사항</span></div>
+    <a>
+        <!-- onclick 이벤트 핸들러에 event 전달 추가 -->
+        <input type="button" id="regularActivity" class="round-button" onclick="showContent('regularActivity', event)" value="정기활동">
+    </a>
+    <a>
+        <!-- onclick 이벤트 핸들러에 event 전달 추가 -->
+        <input type="button" id="event" class="round-button" onclick="showContent('event', event)" value="행사">
+    </a>
+    <a>
+        <!-- onclick 이벤트 핸들러에 event 전달 추가 -->
+        <input type="button" id="competition" class="round-button" onclick="showContent('competition', event)" value="공모전">
+    </a>
+
+    <div id="allContent" class="content">
+        <ul>
+        {% for notice in notices %}
+            <li>
+                <div class="box">{{ notice.write_time }}</div>
+                <div class="box">{{ notice.category}}</div>
+                <a href="{% url 'notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    
+    <div id="regularActivityContent" class="content">
+        <ul>
+            {% for notice in notices %}
+                <li><a href="{% url 'notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="eventContent" class="content">
+        <ul>
+            {% for notice in notices %}
+                <li><a href="{% url 'notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="competitionContent" class="content">
+        <ul>
+            {% for notice in notices %}
+                <li><a href="{% url 'notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
 
     <script src="Notice_main.js"></script>
 </body>

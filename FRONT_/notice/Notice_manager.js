@@ -1,4 +1,5 @@
-document.getElementById("writings").addEventListener("click", function() {
+document.getElementById("writings").addEventListener("click", function(event) {
+    event.preventDefault();
     window.location.href = "Notice_manager_writing.html";
 });
 

@@ -4,10 +4,9 @@ from .models import People
 import json
 
 def show_people(request):
-    return render(request, 'people.html')
-
-def send_people_data(request):
     people_data = People.objects.values('user_name', 'user_image', 'user_bio', 'user_portfolio1','user_portfolio2', 'generation_number')
-    return JsonResponse({'people_data': people_data})
+    #for person in people_data:
+        #person['user_image'] = request.build_absolute_uri(person['user_image'])
+    return render(request, 'people.html', {'people_data':people_data})
 
 # Create your views here.
