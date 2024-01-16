@@ -42,7 +42,7 @@
                     {% if image.mt_image %}
                         <img src="{{ image.mt_image.url }}" alt="MT Image">
                         <label>
-                            <input type="checkbox" name="delete_images" value="{{ image.id }}">
+                            <input type="checkbox" name="delete_mt_images" value="{{ image.id }}">
                         </label>
                     {% endif %}
                 </li>
@@ -58,7 +58,7 @@
                     {% if image.study_image %}
                         <img src="{{ image.study_image.url }}" alt="Study Image">
                         <label>
-                            <input type="checkbox" name="delete_images" value="{{ image.id }}">
+                            <input type="checkbox" name="delete_study_images" value="{{ image.id }}">
                         </label>
                     {% endif %}
                 </li>
@@ -74,7 +74,7 @@
                     {% if image.project_image %}
                         <img src="{{ image.project_image.url }}" alt="Project Image">
                         <label>
-                            <input type="checkbox" name="delete_images" value="{{ image.id }}">
+                            <input type="checkbox" name="delete_project_images" value="{{ image.id }}">
                         </label>
                     {% endif %}
                 </li>

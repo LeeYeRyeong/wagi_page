@@ -19,13 +19,13 @@
         <nav id="main-navigation">
             <ul class="menu">
                 <li class="menu-item" id="">
-                    <a href={% url 'success_page' %}>Activities</a>
+                    <a href="{% url 'success_page' %}">Activities</a>
                 </li>
                 <li class="menu-item" id="">
                     <a href="">People</a>
                 </li>
                 <li class="menu-item" id="apply">
-                    <a href={% url 'joinResult:join_button' %}>JOIN</a>
+                    <a href="{% url 'joinResult:join_button' %}">JOIN</a>
                 </li>
                 <li class="menu-item" id="">
                     <a href="">Notice</a>
@@ -52,7 +52,7 @@
                                 <div class="image-wrapper">
                                     <img src="{{ image.mt_image.url }}" alt="MT Image">
                                     <label>
-                                        <input type="checkbox" class="img-checkbox" name="delete_images"
+                                        <input type="checkbox" class="img-checkbox" name="delete_mt_images"
                                             value="{{ image.id }}">
                                     </label>
                                 </div>
@@ -136,7 +136,7 @@
                                 <div class="image-wrapper">
                                     <img src="{{ image.study_image.url }}" alt="Study Image">
                                     <label>
-                                        <input type="checkbox" class="img-checkbox" name="delete_images"
+                                        <input type="checkbox" class="img-checkbox" name="delete_study_images"
                                             value="{{ image.id }}">
                                     </label>
                                 </div>
@@ -219,7 +219,7 @@
                                 <div class="image-wrapper">
                                     <img src="{{ image.project_image.url }}" alt="Project Image">
                                     <label>
-                                        <input type="checkbox" class="img-checkbox" name="delete_images"
+                                        <input type="checkbox" class="img-checkbox" name="delete_project_images"
                                             value="{{ image.id }}">
                                     </label>
                                 </div>

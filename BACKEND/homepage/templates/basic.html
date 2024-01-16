@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAGI WEB PAGE</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header id="main-header">
+        <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
+        <nav id="main-navigation">
+            <ul class="menu">
+                <li class="menu-item"><button data-url="{% url 'success_page' %}">Activities</button></li>
+                <li class="menu-item"><button data-url="{% url 'show_people' %}">People</button></li>
+                <li class="menu-item"><button data-url="{% url 'joinResult:result' %}">Join</button></li>
+                <li class="menu-item"><button data-url="{% url 'notice:notice_list' %}">Notice</button></li>
+            </ul>
+        </nav> 
+    </header>
+
+    {% block content %}
+
+    {% endblock%}
+    <div id="page-wrapper">
+
+        <div id="main-section">
+
+        </div>
+
+    </div> 
+    <footer id="main-footer">
+
+        <img src="{% static 'img/WAGI black.png' %}" alt="logo">
+
+        <div style="background-color: #9EA9D7;">
+            <div class="round-button"></div>
+            <div class="round-button"></div>
+            <div class="round-button"></div>
+        </div>
+
+        <p>ⓒWAGI. 2023 All rights reserved</p>
+
+        <button id="login-button" onclick="redirectButton(this)">LOGIN</button>
+    </footer>
+</body>
+</html>
