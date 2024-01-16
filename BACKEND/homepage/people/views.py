@@ -8,6 +8,6 @@ def show_people(request):
 
 def send_people_data(request):
     people_data = People.objects.values('user_name', 'user_image', 'user_bio', 'user_portfolio1','user_portfolio2', 'generation_number')
-    return JsonResponse({'people_data': people_data})
+    return redirect('people', people_data)
 
 # Create your views here.
