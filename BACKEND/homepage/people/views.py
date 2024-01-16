@@ -4,6 +4,6 @@ from .models import People
 
 def show_people(request):
     people_data = People.objects.values('user_name', 'user_image', 'user_bio', 'user_portfolio1','user_portfolio2', 'generation_number')
-    return redirect('people', people_data)
+    return render(request, 'people.html', {'people_data': people_data})
 
 # Create your views here.
