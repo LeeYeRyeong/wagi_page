@@ -1,7 +1,3 @@
-// Notice_main.js
-
-
-
 function showContent(buttonId, event) {
     event.preventDefault();
     // 모든 content div를 감춤
@@ -21,6 +17,7 @@ function showContent(buttonId, event) {
     buttons.forEach(function(button) {
         if (button.id === buttonId) {
             button.classList.add('selected');
+            console.log(`Class added to button: ${buttonId}`);
         } else {
             button.classList.remove('selected');
         }

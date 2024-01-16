@@ -16,6 +16,11 @@
     display: flex;
     gap: 20px;
 }
+a{
+    color: white ;
+    text-decoration: none ;
+    cursor: default;
+  }
 
 #main-navigation .menu-item {
     list-style: none;
@@ -117,7 +122,7 @@ footer {
     gap: 20px;
 }
 
-.selected {
+input#regularActivity.round-button.selected {
     background-color: gray;
     color: black;
 }
