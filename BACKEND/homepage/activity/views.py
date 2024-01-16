@@ -115,23 +115,3 @@ def edit_page(request):
         project_images = Activity_project.objects.all()
 
     return render(request, 'edit_page.html', {'mt_images': mt_images, 'study_images': study_images, 'project_images': project_images})
-<<<<<<< HEAD
-
-def delete_images(model, image_ids, image_field_name):
-    for image_id in image_ids:
-        # 각 이미지 모델별로 아이디를 이용하여 삭제
-        activity = get_object_or_404(model, id=image_id)
-        image_field = getattr(activity, image_field_name)
-        print(f"Deleting image {image_id} from {model.__name__}")
-        image_field.delete()
-        activity.delete()
-
-
-def edit_images(model, image_ids, form_class, request):
-    for image_id in image_ids:
-        activity = get_object_or_404(model, id=image_id)
-        form = form_class(request.POST, request.FILES, instance=activity)
-        if form.is_valid():
-            form.save()
-=======
->>>>>>> 9bf9cec0b73ef4cc75e51adc38dcfb9f39f8ccd3
