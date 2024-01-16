@@ -1,36 +1,15 @@
+{% extends 'basic.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>로그인</title>
+{% block content %}
     <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/basic.css' %}">
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'css/basic.css' %}">-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
-</head>
 
-<div id="page-wrapper">
-        <header id="main-header">
-            <img src="../../../static/img/WAGI logo.png" alt="logo">
-            <nav id="main-navigation">
-                <ul class="menu">
-                    <li class="menu-item" onclick="window.location.href='../activities/templates/activities.html'">Activities</li>
-                    <li class="menu-item" onclick="window.location.href='../people/templates/people.html'">People</li>
-                    <li class="menu-item" onclick="window.location.href='../joinResult/templates/join_result.html'">Join</li>
-                    <li class="menu-item" onclick="window.location.href='../notice/templates/Notice_main.html'">Notice</li>
-                </ul>
-            </nav>
-        </header>
-        <body>
-            <div class="admin-login-container">
-                <div class="top-bar"></div>
-
+            <div class="login-container">
                 <!-- 로그인 컨테이너 -->
                 <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
-                <div class="login-container">
-                    <div class="white-box"></div>
+                    
                     <div class="login-message">관리자모드를 이용하려면 로그인을 해주세요 🤩</div>
 
                     <!-- 아이디 입력 -->
@@ -48,9 +27,8 @@
                     <div class="in-button">
                         <button type="submit" style="top: 385px; left: 453px;">로그인</button>
                     </div>
-                </div>
+                
                 </form>
             </div>
-        </div>
-    </body>
-</html>
+
+{% endblock %}
