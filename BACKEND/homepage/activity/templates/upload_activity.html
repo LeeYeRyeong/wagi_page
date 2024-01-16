@@ -1,37 +1,11 @@
+{% extends "basic.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>activities_manager</title>
-    <link href="../../static/css/activities.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
 
-</head>
-<body>
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/activities.css' %}">    
     <div id="activities_manager" hidden></div><!--js 처리용 div-->
-    <header id="main-header">
-        <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
-        <nav id="main-navigation">
-            <ul class="menu">
-                <li class="menu-item" id="">
-                    <a href="activities.html">Activities</a>
-                </li>
-                <li class="menu-item" id="">
-                    <a href="">People</a>
-                </li>
-                <li class="menu-item" id="apply">
-                    <a href={% url 'joinResult:join_button' %}>JOIN</a>
-                </li>
-                <li class="menu-item" id="">
-                    <a href="">Notice</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
     <div id="content"><!--헤더 밑-->
         <form action="" method="post" enctype="multipart/form-data">
             <div id="button_area"><!--버튼 공간-->
@@ -51,9 +25,9 @@
                         <br>
                         <div class="album_name">MT</div>
                         <div class="upload_album">
-                            <div class="text">첨부 파일</div>
+                            <div class="text" style="color: black;">첨부 파일</div>
                             <div class="select_file_area">
-                                <label for="{{ mt_form.mt_image.id_for_label }}">사진 추가</label>
+                                <label for="{{ mt_form.mt_image.id_for_label }}" style="color: black;" >사진 추가</label>
                                 {{ mt_form.mt_image }}
                                 <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
                                 <input class="upload_file_names" id="mt_file" value="" placeholder="선택된 사진이 없습니다.">
@@ -68,9 +42,9 @@
                         <br>
                         <div class="album_name">Study</div>
                         <div class="upload_album">
-                            <div class="text">첨부 파일</div>
+                            <div class="text" style="color: black;">첨부 파일</div>
                             <div class="select_file_area">
-                                <label for="{{ study_form.study_image.id_for_label }}">사진 추가</label>
+                                <label for="{{ study_form.study_image.id_for_label }}" style="color: black;">사진 추가</label>
                                 {{ study_form.study_image }}
                                 <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
                                 <input class="upload_file_names" id="study_file" value="" placeholder="선택된 사진이 없습니다.">
@@ -84,9 +58,9 @@
                         <br>
                         <div class="album_name">Project</div>
                         <div class="upload_album">
-                            <div class="text">첨부 파일</div>
+                            <div class="text" style="color: black;">첨부 파일</div>
                             <div class="select_file_area">
-                                <label for="{{ project_form.project_image.id_for_label }}">사진 추가</label>
+                                <label for="{{ project_form.project_image.id_for_label }}" style="color: black;" >사진 추가</label>
                                 {{ project_form.project_image }}
                                 <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
                                 <input class="upload_file_names" id="project_file" value="" placeholder="선택된 사진이 없습니다.">
@@ -97,6 +71,5 @@
             </div>
         </form>
     </div>
-    <script defer src="../../static/js/activities.js"></script>
-    </body>
-</html>
+    <script defer src="{% static 'js/activities.js' %}"></script>
+{% endblock %}
