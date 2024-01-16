@@ -7,7 +7,7 @@
     <form action="{% url 'notice:edit_notice' notion_id=notice.id %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <a href="{% url 'notice:notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div></a>
-        <div id="writings" class="writing"><span>글 작성</span></div>
+        <a href="{% url 'notice:notice_create' %}"><input type="button" id="writings" class="writing" value="글 작성"></a>
         <input type="button" id="regularActivity" name="regularActivity" class="round-button" onclick="updateHiddenValue(this)" value="정기활동">
         <input type="button" id="event" name="event" class="round-button" onclick="updateHiddenValue(this)" value="행사">
         <input type="button" id="competition" name="competition" class="round-button" onclick="updateHiddenValue(this)" value="공모전">

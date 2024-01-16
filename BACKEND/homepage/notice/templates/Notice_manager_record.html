@@ -26,7 +26,9 @@
                 {% endif %}
             </div>
         </div>
+        {% if user.is_superuser %}
         <input type="submit" id="editButton" value="수정하기">
+        {% endif %}
         
         <p id="date">{{ notice.write_time }}</p>
         
