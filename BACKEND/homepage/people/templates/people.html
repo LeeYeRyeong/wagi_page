@@ -13,35 +13,43 @@
 </head>
 <body>
     <div class ="center">
+        {% for person in people_data %}
         <div class = "L_bubble">
             <div class = "L_photo">
-                <h1>사진</h1>
+                <img src="{{ person.user_image.url }}" alt="{{ person.user_name }}">
             </div>
             <div class="L_name">
-                <h2> 이름</h2>
+                <h2>{{ person.user_name }}</h2>
             </div>
             <div class = "L_rink">
-                <h2>링크자리</h2>
+                <a href="{{ person.user_portfolio1 }}"><img src="github.svg" /></a>
+                    {% if person.user_portfolio2 %}
+                    <a href="{{ person.user_portfolio2 }}"><img src="home.svg" /></a>
+                    {% endif %}
             </div>
             <div class ="L_text" >
-                <h3> 소개글 들어갈 공간입니다. </h3>
+                <p>"{{ person.user_bio }}"</p>
             </div>
         </div>
 
         <div class = "R_bubble">
             <div class = "R_photo">
-                <h1>사진</h1>
+                <img src="{{ MEDIA }}{{ person.user_image.url }}" alt="{{ person.user_name }}">
             </div>
             <div class="R_name">
-                <h2> 이름</h2>
+                <h2>{{ person.user_name }}</h2>
             </div>
             <div class = "R_rink">
-                <h2>링크자리</h2>
+                <a href="{{ person.user_portfolio1 }}"><img src="github.svg" /></a>
+                {% if person.user_portfolio2 %}
+                <a href="{{ person.user_portfolio2 }}"><img src="home.svg" /></a>
+                {% endif %}
             </div>
             <div class ="R_text" >
-                <h3> 소개글 들어갈 공간입니다. </h3>
+                <p>"{{ person.user_bio }}"</p>
             </div>
         </div>
+        {% endfor %}
     </div>
 </body>
 </html>
