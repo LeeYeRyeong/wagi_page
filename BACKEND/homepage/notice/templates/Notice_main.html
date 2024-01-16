@@ -21,37 +21,19 @@
 
     <div id="allContent" class="content">
         <ul>
-        {% for notice in notices %}
+            {% for notice in notices %}
             <li>
-                <div class="box">{{ notice.write_time }}</div>
-                <div class="box">{{ notice.category}}</div><!--피그마 보니까 카테고리랑 작성일자도 있는데 이거 넣을게 없어서 만들었어 이거 디자인 필요-->
-                <a href="{% url 'notice:notice_detail' notion_id=notice.id %}"><div class="box">{{ notice.notion_title }}</div></a>
-
+                <div class="box">
+                    <span class="write-time">{{ notice.write_time }}</span>
+                    <span class="category">{{ notice.category }}</span>
+                    <a class="notice-title" href="{% url 'notice:notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a>
+                </div>
             </li>
-        {% endfor %}
-        </ul>
+            
+            {% endfor %}
+            </ul>
     </div>
     
-    <div id="regularActivityContent" class="content">
-        <ul>
-            {% for notice in notices %}
-                <li><a href="{% url 'notice:notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div id="eventContent" class="content">
-        <ul>
-            {% for notice in notices %}
-                <li><a href="{% url 'notice:notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div id="competitionContent" class="content">
-        <ul>
-            {% for notice in notices %}
-                <li><a href="{% url 'notice:notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
+    
     <script src="{% static 'js/Notice_main.js' %}"></script>
     {% endblock %}
