@@ -14,10 +14,10 @@ def login(request):
             auth_login(request, user)
             return render(request, 'home.html')
         else:
-            return render(request, 'login/login.html', {'error': 'username or password is incorrect'})
+            return render(request, 'login.html', {'error': 'username or password is incorrect'})
         
     else:
-        return render(request, 'login/login.html')
+        return render(request, 'login.html')
     
 
 def home(request):
