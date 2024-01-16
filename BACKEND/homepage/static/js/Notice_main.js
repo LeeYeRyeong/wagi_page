@@ -1,5 +1,10 @@
-function showContent(buttonId, event) {
-    event.preventDefault();
+// Notice_main.js
+
+
+
+
+function showContent(buttonId) {
+    
     // 모든 content div를 감춤
     var allContentDivs = document.querySelectorAll('.content');
     allContentDivs.forEach(function(contentDiv) {
@@ -23,3 +28,4 @@ function showContent(buttonId, event) {
         }
     });
 }
+
