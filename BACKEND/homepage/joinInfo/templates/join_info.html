@@ -48,7 +48,7 @@
     <div class="confirm-button" id="confirm-button" onclick="confirmStudentID()">학번 확인</div>
 
     <!-- 지원서 작성하기 버튼 -->
-    <button class="enter" id="enter-button" onclick="checkForm()">지원서 작성하기</button>
+    <button class="enter" id="enter-button" onclick="checkForm()"><a href="{% url 'application:form' %}">지원서 작성하기</a></button>
 
     <!-- Include your JavaScript file -->
     <script src="{% static 'js/joinBasicInfo.js' %}"></script>
