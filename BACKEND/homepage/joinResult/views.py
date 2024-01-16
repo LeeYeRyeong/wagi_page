@@ -5,14 +5,13 @@ from joinInfo.models import JoinInfo # 유저인포 받아와서 합불여부 ht
 from django.core.mail import EmailMessage
 from django.http import JsonResponse
 
-
 #  join 버튼 눌렀을 떄
 def join_button(request):
     current_date = date.today() # 현재 날짜
     start_j_date = date(2024, 1, 1) # 지원서 제출 시작 날짜
-    end_j_date = date(2024, 1, 2) # 지원서 제 출 끝나는 날짜
-    start_r_date = date(2024, 1, 3) # 합격자 조회 시작 날짜
-    end_r_date = date(2024, 1, 16) # 합격자 조회 끝나는 날짜
+    end_j_date = date(2024, 1, 17) # 지원서 제 출 끝나는 날짜
+    start_r_date = date(2024, 1, 18) # 합격자 조회 시작 날짜
+    end_r_date = date(2024, 1, 19) # 합격자 조회 끝나는 날짜
     isDate = 0
     if start_j_date <= current_date <= end_j_date: # 지원서 제출 기간
         isDate = 1
@@ -20,10 +19,11 @@ def join_button(request):
     elif start_r_date <= current_date <= end_r_date: # 합격자 조회 기간
         isDate = 2
         return render(request, 'inquiry.html',{'isDate':isDate})
-    else :
-        isDate = 0 # 이메일 입력창 띄움
-        return render(request, 'inquiry.html', {'isDate':isDate}) 
-
+    else:
+        isDate = 0
+        if request.method=='GET':
+            data={'result':'show',}
+            return JsonResponse(data)
 
 # 메일 입력 받음
 def writeMail(request):
@@ -93,4 +93,4 @@ def result(request):
 
 # 지원서 작성 페이지로 이동
 def write_form(request):
-    return render(request, "join_info.html") 
+    return redirect('/join/') 

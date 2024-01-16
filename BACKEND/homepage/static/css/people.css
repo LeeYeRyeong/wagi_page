@@ -75,7 +75,7 @@ body {
     overflow: visible;
 
 }
-.L_rink{
+.L_link{
     width: 200px;
     height: 50px;  
     margin-bottom: 5px;
@@ -147,7 +147,7 @@ body {
     font-size: 15px;
     overflow: visible;
 }
-.R_rink{
+.R_link{
     width: 200px;
     height: 50px;  
     margin-bottom: 5px;
@@ -166,7 +166,7 @@ body {
     50% {
       opacity: 0.5;
       transform: translateY(-20px);
-    }
+    }s
     100% {
       opacity: 1;
       transform: translateY(0);
