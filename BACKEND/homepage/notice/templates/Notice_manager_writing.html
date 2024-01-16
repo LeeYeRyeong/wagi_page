@@ -1,27 +1,32 @@
 {% extends 'basic.html' %}
 {% load static %}
 
-    {% block content %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_manager_writing.css' %}">
-    <form action="{% url 'notice:notice_create' %}" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div id="notices" class="notice"><span>공지사항</span></div>
-        <div id="writings" class="writing"><span>글 작성</span></div>
-        <input type="button" id="regularActivity" name="regularActivity" class="round-button" onclick="updateHiddenValue(this)" value="정기활동">
-        <input type="button" id="event" name="event" class="round-button" onclick="updateHiddenValue(this)" value="행사">
-        <input type="button" id="competition" name="competition" class="round-button" onclick="updateHiddenValue(this)" value="공모전">
-        <input type="hidden" id="selectedCategory" name="selectedCategory" value="">        
-        <div id="writingZone"></div>
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/Notice_manager_writing.css' %}">
+<form action="{% url 'notice:notice_create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <a href="{% url 'notice:notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div></a>
+    <div id="writings" class="writing"><span>글 작성</span></div>
+    <input type="button" id="regularActivity" name="regularActivity" class="round-button" onclick="updateHiddenValue(this)" value="정기활동">
+    <input type="button" id="event" name="event" class="round-button" onclick="updateHiddenValue(this)" value="행사">
+    <input type="button" id="competition" name="competition" class="round-button" onclick="updateHiddenValue(this)" value="공모전">
+    <input type="hidden" id="selectedCategory" name="selectedCategory" value="">        
+    <div id="writingZone">
         <textarea id="titleWriting" name="notion_title" rows="4" cols="50" placeholder="제목을 입력해주세요"></textarea>
         <textarea id="contentsWriting" name="notion_text" rows="10" cols="50" placeholder="내용을 입력해주세요"></textarea>
         <label for="profile" class="round-button" id="addPhotoLabel">
             <span>사진추가</span>
         </label>
         <input type="file" id="profile" name="image" accept="image/png, image/jpeg" required multiple style="display: none;">
-
-        <input type="submit" id="signUp" value="등록하기">
-    </form>
+        <div class="ifimg" id="imagePreview" style="display: none;">    
+            <img class="img_icon" src="{% static 'img/Vector.png' %}" id="selectedImageIcon" alt="Img Icon">
+            <input class="selectedImageName" id="file" value="" placeholder="선택된 사진이 없습니다.">
+        </div>
+    </div>
+    <input type="submit" id="signUp" value="등록하기">
+</form>
+    
 
     <script src="{% static 'js/Notice_manager_writing.js' %}"></script>
     {% endblock %}

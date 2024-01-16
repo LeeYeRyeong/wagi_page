@@ -1,42 +1,16 @@
 * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    background: #000000;
-}
-
-.admin-login-container {
+.wrapper {
     position: relative;
-    width: 1280px;
-    height: 832px;
+    height: 100vh;
 }
-
-.top-bar {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 1066px;
-    top: 0px;
-}
-
 .login-container {
     position: absolute;
     width: 903px;
     height: 460px;
+    top: 30%;
     left: calc(50% - 903px/2 - 0.5px);
     background: #FFFFFF;
     border-radius: 20px;
-}
-
-.white-box {
-    position: absolute;
-    width: 100%;
-    background: white;
-    border-radius: 20px;
-    z-index: -1;
 }
 
 .login-message {

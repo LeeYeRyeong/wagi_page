@@ -1,0 +1,350 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>activities_manager</title>
+    <link href="../../static/css/activities.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+
+</head>
+<body>
+<<<<<<< HEAD
+    <div id="activities_manager" hidden></div><!--js 처리용 div-->
+    <header id="main-header">
+        <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
+        <nav id="main-navigation">
+            <ul class="menu">
+                <li class="menu-item" id="">
+                    <a href="activities.html">Activities</a>
+                </li>
+                <li class="menu-item" id="">
+                    <a href="">People</a>
+                </li>
+                <li class="menu-item" id="apply">
+                    <a href={% url 'joinResult:join_button' %}>JOIN</a>
+=======
+
+<h2>Edit Images</h2>
+
+<form method="post">
+    {% csrf_token %}
+    
+    <div class="image-container">
+        <h3>Mt Images:</h3>
+        <ul>
+            {% for image in mt_images %}
+                <li>
+                    {% if image.mt_image %}
+                        <img src="{{ image.mt_image.url }}" alt="MT Image">
+                        <label>
+                            <input type="checkbox" name="delete_mt_images" value="{{ image.id }}">
+                        </label>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="image-container">
+        <h3>Study Images:</h3>
+        <ul>
+            {% for image in study_images %}
+                <li>
+                    {% if image.study_image %}
+                        <img src="{{ image.study_image.url }}" alt="Study Image">
+                        <label>
+                            <input type="checkbox" name="delete_study_images" value="{{ image.id }}">
+                        </label>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="image-container">
+        <h3>Project Images:</h3>
+        <ul>
+            {% for image in project_images %}
+                <li>
+                    {% if image.project_image %}
+                        <img src="{{ image.project_image.url }}" alt="Project Image">
+                        <label>
+                            <input type="checkbox" name="delete_project_images" value="{{ image.id }}">
+                        </label>
+                    {% endif %}
+>>>>>>> 9bf9cec0b73ef4cc75e51adc38dcfb9f39f8ccd3
+                </li>
+                <li class="menu-item" id="">
+                    <a href="">Notice</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="edit_page" hidden></div><!--js 처리용 div-->
+    <div id="content"><!--헤더 밑-->
+        <form method="post">
+            {% csrf_token %}
+            <div id="button_area"><!--버튼 공간-->
+                <button type="submit" class="button" id="delete_button">
+                    선택한 파일 삭제하기
+                </button>
+            </div>
+            <div id="item_area"><!--이동 버튼 밑-->
+                <div id="article"><!--모든 앨범-->
+                    <!--MT-->
+                    <div class="item" id="mt"><!--앨범 및 앨범 이름-->
+                        <div class="album">
+                            <div class="img_box_small size_small" id="mt_img_box">
+                                {% for image in mt_images %}
+                                    {% if image.mt_image %}
+                                        <div class="image-wrapper">
+                                            <img src="{{ image.mt_image.url }}" alt="MT Image">
+                                            <input type="checkbox" class="img-checkbox" name="delete_images" value="{{ image.id }}">    
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                <p hidden>사진이 없습니다.</p>
+                            </div>
+                            <!-- <div class="img_box_small size_small" id="study_img_box">
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex1.jpg" alt="study picture 1"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex2.jpg" alt="study picture 2"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex3.jpg" alt="study picture 3"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex4.jpg" alt="study picture 4"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex5.jpg" alt="study picture 5"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex6.jpg" alt="study picture 6"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex7.jpg" alt="study picture 7"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex8.jpg" alt="study picture 8"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex9.jpg" alt="study picture 9"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex10.jpg" alt="study picture 10"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex11.jpg" alt="study picture 11"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex12.jpg" alt="study picture 12"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <p hidden>사진이 없습니다.</p>
+                            </div> -->
+                        </div>
+                        <div class="album_name">MT</div> <!--앨범 이름-->
+                    </div>
+                    <!--이하 동일-->
+                    <!--study-->
+                    <div class="item" id="study">
+                        <div class="album">
+                            <div class="img_box_small size_small" id="study_img_box">
+                                {% for image in study_images %}
+                                    {% if image.study_image %}
+                                        <div class="image-wrapper">
+                                            <img src="{{ image.study_image.url }}" alt="Study Image">
+                                            <input type="checkbox" name="delete_images"  class="img-checkbox" value="{{ image.id }}">
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                <p hidden>사진이 없습니다.</p>
+                            </div>
+                            <!-- <div class="img_box_small size_small" id="study_img_box">
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex1.jpg" alt="study picture 1"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex2.jpg" alt="study picture 2"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex3.jpg" alt="study picture 3"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex4.jpg" alt="study picture 4"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex5.jpg" alt="study picture 5"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex6.jpg" alt="study picture 6"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex7.jpg" alt="study picture 7"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex8.jpg" alt="study picture 8"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex9.jpg" alt="study picture 9"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex10.jpg" alt="study picture 10"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex11.jpg" alt="study picture 11"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/study_images/ex12.jpg" alt="study picture 12"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <p hidden>사진이 없습니다.</p>
+                            </div> -->
+                        </div>
+                        <div class="album_name">Study</div>
+                    </div>
+                    <!--project-->
+                    <div class="item" id="project">
+                        <div class="album">
+                            <div class="img_box_small size_small" id="project_img_box">
+                                {% for image in project_images %}
+                                    {% if image.project_image %}    
+                                        <div class="image-wrapper">
+                                            <img src="{{ image.project_image.url }}" alt="Project Image">
+                                            <input type="checkbox" name="delete_images" class="img-checkbox" value="{{ image.id }}">
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                                <p hidden>사진이 없습니다.</p>
+                            </div>
+                            <!-- <div class="img_box_small size_small" id="project_img_box">
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex1.jpg" alt="project picture 1"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex2.jpg" alt="project picture 2"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex3.jpg" alt="project picture 3"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex4.jpg" alt="project picture 4"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex5.jpg" alt="project picture 5"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex6.jpg" alt="project picture 6"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex7.jpg" alt="project picture 7"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex8.jpg" alt="project picture 8"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex9.jpg" alt="project picture 9"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex10.jpg" alt="project picture 10"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex11.jpg" alt="project picture 11"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="../../static/img/project_images/ex12.jpg" alt="project picture 12"
+                                        onerror="this.style.display='none'">
+                                    <input type="checkbox" class="img-checkbox">
+                                </div>
+                                <p hidden>사진이 없습니다.</p>
+                            </div> -->
+                        </div>
+                        <div class="album_name">Project</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<<<<<<< HEAD
+</html>
+=======
+</html>
+
+
+>>>>>>> 9bf9cec0b73ef4cc75e51adc38dcfb9f39f8ccd3

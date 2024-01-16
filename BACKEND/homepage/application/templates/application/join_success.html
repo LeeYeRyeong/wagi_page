@@ -1,14 +1,10 @@
+{% extends 'basic.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>application_success</title>
+{% block content %}
+    <!--css-->
     <link rel="stylesheet" href="{% static 'css/join_success.css' %}" />
     <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
-</head>
-<body>
+
     <div id="page-wrapper">
         <div id="content">
             <div class="modal-box">
@@ -21,5 +17,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
