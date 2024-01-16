@@ -10,7 +10,9 @@
 </head>
 <body>
     <header id="main-header">
-        <img src="{% static 'img/WAGI logo crop.png' %}" alt="logo">
+        <a href="{% url 'login:home' %}">
+            <img src="{% static 'img/WAGI logo crop.png' %}" alt="logo">
+        </a>
         <nav id="main-navigation">
             <ul class="menu">
                 <li class="menu-item"><a href="{% url 'success_page' %}">Activities</a></li>
@@ -43,7 +45,7 @@
 
         <p>ⓒWAGI. 2023 All rights reserved</p>
 
-        <button id="login-button"><a href="{% url 'login' %}">LOGIN</a></button>
+        <button id="login-button"><a href="{% url 'login:login' %}">LOGIN</a></button>
     </footer>
 </body>
 </html>
