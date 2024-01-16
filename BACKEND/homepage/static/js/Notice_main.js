@@ -1,6 +1,10 @@
 // Notice_main.js
-function showContent(buttonId) {
-    console.log(`Clicked: ${buttonId}`);
+
+
+
+
+function showContent(buttonId, event) {
+    event.preventDefault();
     // 모든 content div를 감춤
     var allContentDivs = document.querySelectorAll('.content');
     allContentDivs.forEach(function(contentDiv) {

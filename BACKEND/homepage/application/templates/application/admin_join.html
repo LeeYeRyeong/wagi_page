@@ -1,28 +1,11 @@
+{% extends 'basic.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="utf-8" />
-    <title>WAGI JOIN</title>
+{% block content %}
+    <!--css-->
     <link rel="stylesheet" href="{% static 'css/admin_join.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"/>
-    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-</head>
-<body> 
+
     <div id="page-wrapper">
-        <header id="main-header">
-            <img src="{% static 'img/WAGI logo.png' %}" alt="WAGI logo image">
-            <nav id="main-navigation">
-                <ul class="menu">
-                    <li class="menu-item">Activities</li> 
-                    <li class="menu-item">People</li>
-                    <li class="menu-item">Join</li>
-                    <li class="menu-item" id="apply">Join</li>
-                    <li class="menu-item">Notice</li>
-                </ul> 
-            </nav> 
-        </header>
         <div id="content">
            <div class="background">
                 <div class="DList">
@@ -101,5 +84,4 @@
            </div>
         </div>     
     </div> 
-</body>
-</html>
+{% endblock %}

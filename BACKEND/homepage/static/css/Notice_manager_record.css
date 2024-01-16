@@ -1,6 +1,6 @@
 #notices {
-    position: fixed;
-    top: 167px;
+    position: absolute;
+    top: 197px;
     left: 57px;
     width: 121px;
     height: 44px;
@@ -13,8 +13,8 @@
 }
 
 #writings {
-    position: fixed;
-    top: 167px;
+    position: absolute;
+    top: 197px;
     left: 206px;
     width: 91px;
     height: 44px;
@@ -26,41 +26,38 @@
     color: black;
 }
 
-#writingZone{
-    position:fixed;
+#writingZone {
+    position: absolute; 
     width: 1014px;
     height: 514px;
-    top: 253px;
+    top: 283px;
     left: 133px;
     border-radius: 20px;
     background-color: white;
     z-index: 10;
 }
 
-#titleWriting{
-    position: fixed;
+#titleWriting {
+    position: absolute;
     width: 950px;
     height: 50px;
-    top: 340px ;
-    left: 165px;
-    border: 1px;
-    color:black;
-    border-radius: 20px;
+    top: 87px;
+    left: 32px;
     border: 1px solid black;
+    color: black;
+    border-radius: 20px;
     z-index: 30;
 }
 
-#contentsWriting{
-    position:fixed;
+#contentsWriting {
+    position: absolute;
     width: 950px;
     height: 283px;
-    top: 415px;
-    left: 165px;
-    border-radius: 20px;
-    border: 1px;
-    color:black;
-    border-radius: 20px;
+    top: 162px;
+    left: 32px;
     border: 1px solid black;
+    color: black;
+    border-radius: 20px;
     z-index: 30;
 }
 
@@ -73,9 +70,9 @@
     list-style: none;
 }
 
-#regularActivity{
-    position: fixed;
-    top: 268px;
+#regularActivity {
+    position: absolute;
+    top: 298px;
     left: 170px;
     width: 77.54px;
     height: 25px;
@@ -90,8 +87,8 @@
 }
 
 #event {
-    position: fixed; 
-    top: 268px;
+    position: absolute;
+    top: 298px;
     left: 264px;
     width: 77.54px;
     height: 25px;
@@ -106,8 +103,8 @@
 }
 
 #competition {
-    position: fixed;
-    top: 268px;
+    position: absolute;
+    top: 298px;
     left: 358px;
     width: 77.54px;
     height: 25px;
@@ -121,11 +118,11 @@
     z-index: 100;
 }
 
-#editButton{
-    position: fixed;
+#editButton {
+    position: absolute;
     width: 110px;
     height: 30px;
-    top: 715px;
+    top: 745px;
     left: 585px;
     border-radius: 20px;
     background-color: #9EA9D7;
@@ -134,13 +131,12 @@
     justify-content: center;
     color: black;
     z-index: 30;
-    border:  0.7px solid #9EA9D7;
-
+    border: 0.7px solid #9EA9D7;
 }
 
-#date{
-    position: fixed;
-    top: 315px;
+#date {
+    position: absolute;
+    top: 330px;
     left: 190px;
     width: 78px;
     height: 21px;
@@ -154,9 +150,9 @@
     z-index: 100;
 }
 
-#real_date{
-    position: fixed;
-    top: 315px;
+#real_date {
+    position: absolute;
+    top: 345px;
     left: 280px;
     color: black;
     z-index: 30;
@@ -166,7 +162,7 @@
 }
 
 #regularActivity {
-    margin-left: 20px; 
+    margin-left: 20px;
 }
 
 #event {
@@ -174,19 +170,26 @@
 }
 
 #competition {
-    margin-left: 20px; 
+    margin-left: 20px;
 }
 
 #regularActivityContent,
 #eventContent,
 #competitionContent {
-    position: relative; 
-    top: 0;
-    left: 0;
+    position: absolute;
+   
+}
+
+
+#allContent,
+#regularActivityContent,
+#eventContent,
+#competitionContent {
+    position: absolute;
     width: 1014px;
     height: 475px;
+    top: 322px;
+    left: 133px;
     border-radius: 20px;
     background-color: white;
-    margin-top: 20px; 
-
 }

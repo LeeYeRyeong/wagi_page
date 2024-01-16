@@ -4,41 +4,49 @@
 <head>
     <meta charset="UTF-8">
     <title>로그인</title>
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="login.css">
 </head>
 
-<body>
-    <div id="page-wrapper">
-    <div class="admin-login-container">
-        <div class="top-bar"></div>
-
-        <!-- 로그인 컨테이너 -->
-        <div class="login-container">
-            <div class="white-box"></div>
-            <div class="login-message">관리자모드를 이용하려면 로그인을 해주세요 🤩</div>
-
-            <!-- 아이디 입력 -->
-            <div id="id-input-group" class="input-group">
-                <div class="login-button">아이디</div>
-                <input type="text" class="placeholder" placeholder="아이디를 입력하세요.">
+<div id="page-wrapper">
+        <header id="main-header">
+            <img src="img/WAGI logo.png" alt="logo">
+            <nav id="main-navigation">
+                <ul class="menu">
+                    <li class="menu-item" onclick="window.location.href='../activities/activities.html'">Activities</li>
+                    <li class="menu-item" onclick="window.location.href='../people/people.html'">People</li>
+                    <li class="menu-item" onclick="window.location.href='../join/join_result.html'">Join</li>
+                    <li class="menu-item" onclick="window.location.href='../notice/Notice_main.html'">Notice</li>
+                </ul> 
+            </nav> 
+        </header>
+        <body>
+            <div class="admin-login-container">
+                <div class="top-bar"></div>
+        
+                <!-- 로그인 컨테이너 -->
+                <div class="login-container">
+                    <div class="white-box"></div>
+                    <div class="login-message">관리자모드를 이용하려면 로그인을 해주세요 🤩</div>
+        
+                    <!-- 아이디 입력 -->
+                    <div class="id-button" style="top: 125px; left: 150px;">아이디</div>
+                    <input type="text" class="placeholder" placeholder="아이디를 입력해주세요." style="position: absolute; top: 175px; left: 150px;">
+        
+                    <div class="password-button" style="top: 245px; left: 150px;" >비밀번호</div>
+                    <input type="password" class="placeholder" placeholder="비밀번호를 입력해주세요." style="position: absolute; top: 295px; left: 150px;">
+        
+                    <!-- 이전으로 버튼 -->
+                    <div class="in-button">
+                        <button type="submit" style="top: 385px; left: 330px;">이전으로</button>
+                    </div>
+        
+                    <!-- 로그인 버튼 -->
+                    <div class="in-button">
+                        <button type="submit" style="top: 385px; left: 453px;">로그인</button>
+                    </div>
+                </div>
             </div>
-
-            <!-- 비밀번호 입력 -->
-            <div id="password-input-group" class="input-group">
-                <div class="login-button">비밀번호</div>
-                <input type="password" class="placeholder" placeholder="비밀번호를 입력하세요.">
-            </div>
-
-            <!-- 이전으로 버튼 -->
-            <div class="login-button" style="top: 385px; left: 287px;" onclick="window.location.href='basic.html'">이전으로</div>
-
-            <!-- 로그인 버튼 -->
-            <div class="login-button" style="top: 385px; left: 496px;" onclick="window.location.href='basic.html'">로그인</div>
         </div>
-    </div>
-    </div>
-
-</body>
-
+    </body>
 </html>
-

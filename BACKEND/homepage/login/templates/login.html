@@ -1,25 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Your Page Title{% endblock %}</title>
-    <!-- 추가적인 메타 태그, 스타일시트, 스크립트 등을 여기에 추가할 수 있습니다. -->
-</head>
-<body>
-
-<!-- 페이지 콘텐츠가 들어갈 자리 -->
-<div id="content">
+{% extends 'basic.html' %}
+{% load static %}
     {% block content %}
-    <h1>Login</h1>
-    <h3>안녕하쇼 {{user}}님?</h3>
-    <form action="{% url 'login' %}" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="로그인">
-    </form>
-    {% endblock %}
-</div>
+        <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+        <!--<link rel="stylesheet" type="text/css" href="{% static 'css/basic.css' %}">-->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+            <div class="wrapper">
 
-</body>
-</html>
+                <div class="login-container">
+                    <!-- 로그인 컨테이너 -->
+                    <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                        
+                        <div class="login-message">관리자모드를 이용하려면 로그인을 해주세요 🤩</div>
+
+                        <!-- 아이디 입력 -->
+                        <div class="id-button" style="top: 125px; left: 150px;">아이디</div>
+                        <input name="username" type="text" class="placeholder" placeholder="아이디를 입력해주세요." style="position: absolute; top: 175px; left: 150px;">
+
+                        <div class="password-button" style="top: 245px; left: 150px;" >비밀번호</div>
+                        <input name="password" type="password" class="placeholder" placeholder="비밀번호를 입력해주세요." style="position: absolute; top: 295px; left: 150px;">
+
+                        <div class="in-button">
+                            <button type="submit" style="top: 385px; left: 330px;">이전으로</button>
+                        </div>
+
+                        <!-- 로그인 버튼 -->
+                        <div class="in-button">
+                            <button type="submit" style="top: 385px; left: 453px;">로그인</button>
+                        </div>
+                    
+                    </form>
+                </div>
+            </div>
+
+    {% endblock %}

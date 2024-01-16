@@ -21,11 +21,14 @@ from django.conf.urls.static import static
 from django.conf import settings
 from notice import views
 
+app_name = 'notice'
+
 urlpatterns = [
     path('', views.notice_list, name='notice_list'),
     path('0/<int:notion_id>/', views.notice_detail, name='notice_detail'),#0이 왜 필요한진 몰겠어요..; 근데 자꾸 주소에 0 붙어서 걍 함
     path('create/', views.notice_create, name='notice_create'),
     path('get_notices_by_category/', views.get_notices_by_category, name='get_notices_by_category'),
+    path('edit_notice/<int:notion_id>/', views.edit_notice, name='edit_notice'),
 ]
 #for images, files/ 개발 환경에서 쓸라면 이거 추가해서 직접 서빙해줘야함.
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

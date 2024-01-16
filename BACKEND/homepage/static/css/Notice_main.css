@@ -1,6 +1,14 @@
+#parentContainer {
+    position: relative;
+}
+
+#regularActivity, #event, #competition, #allContent, #regularActivityContent, #eventContent, #competitionContent, .content, #writings {
+    position: absolute;
+}
+
 #notices {
-    position: fixed;
-    top: 167px;
+    position: absolute;
+    top: 197px;
     left: 57px;
     width: 121px;
     height: 44px;
@@ -12,18 +20,8 @@
     color: black;
 }
 
-#main-navigation {
-    display: flex;
-    gap: 20px;
-}
-
-#main-navigation .menu-item {
-    list-style: none;
-}
-
-#regularActivity{
-    position: fixed;
-    top: 224px;
+#regularActivity {
+    top: 254px;
     left: 163px;
     width: 102px;
     height: 39px;
@@ -37,8 +35,7 @@
 }
 
 #event {
-    position: fixed; 
-    top: 224px;
+    top: 254px;
     left: 282px;
     width: 102px;
     height: 39px;
@@ -52,8 +49,7 @@
 }
 
 #competition {
-    position: fixed;
-    top: 224px;
+    top: 254px;
     left: 401px;
     width: 102px;
     height: 39px;
@@ -66,76 +62,28 @@
     background-color: black;
 }
 
-#regularActivity {
-    margin-left: 20px; 
-}
-
-#event {
-    margin-left: 20px;
-}
-
-#competition {
-    margin-left: 20px; 
-}
-
-#allContent{
-    position: fixed; 
-    width: 1014px;
-    height: 475px;
-    top: 292px;
-    left: 133px;
-    border-radius: 20px;
-    background-color: white;
-    margin-top: 20px; 
-}
-
-#regularActivityContent,
-#eventContent,
-#competitionContent {
-    position: fixed; 
-    width: 1014px;
-    height: 475px;
-    top: 292px;
-    left: 133px;
-    border-radius: 20px;
-    background-color: white;
-    margin-top: 20px; 
-
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#main-footer div {
-    display: flex;
-    gap: 20px;
-}
-
-.selected {
-    background-color: gray;
-    color: black;
-}
-
-.content {
-    display: none;
-    position: absolute;
-    top: 292px;
-    left: 133px;
-    width: 1014px;
-    height: 475px;
-    border-radius: 20px;
-    background-color: white;
-}
-
 #allContent {
-    display: block; 
+    width: 1014px;
+    height: 475px;
+    top: 322px;
+    left: 133px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 20px; 
 }
+
+#regularActivityContent, #eventContent, #competitionContent {
+    width: 1014px;
+    height: 475px;
+    top: 322px;
+    left: 133px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 20px; 
+}
+
 #writings {
-    position: fixed;
-    top: 167px;
+    top: 197px;
     left: 206px;
     width: 91px;
     height: 44px;
@@ -147,6 +95,7 @@ footer {
     color: black;
     border: 0.7px solid white;
 }
+
 #writings span {
     font-size: 16.2px; 
 }
