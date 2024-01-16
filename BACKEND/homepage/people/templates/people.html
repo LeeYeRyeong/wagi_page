@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="{% static 'js/people_script.js' %}"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>People List</title>
@@ -13,13 +12,37 @@
     <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
 </head>
 <body>
-    <div id="people-data" data-people="{{ people_data | safe }}"></div>
+    <div class ="center">
+        <div class = "L_bubble">
+            <div class = "L_photo">
+                <h1>사진</h1>
+            </div>
+            <div class="L_name">
+                <h2> 이름</h2>
+            </div>
+            <div class = "L_rink">
+                <h2>링크자리</h2>
+            </div>
+            <div class ="L_text" >
+                <h3> 소개글 들어갈 공간입니다. </h3>
+            </div>
+        </div>
 
-    <div class="center">
-        <!-- JavaScript로 동적으로 데이터를 채움 -->
-        <script src="{% static 'js/people_script.js' %}"></script>
+        <div class = "R_bubble">
+            <div class = "R_photo">
+                <h1>사진</h1>
+            </div>
+            <div class="R_name">
+                <h2> 이름</h2>
+            </div>
+            <div class = "R_rink">
+                <h2>링크자리</h2>
+            </div>
+            <div class ="R_text" >
+                <h3> 소개글 들어갈 공간입니다. </h3>
+            </div>
+        </div>
     </div>
-
 </body>
 </html>
 
