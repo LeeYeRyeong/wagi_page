@@ -1,13 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>WAGI WEB PAGE</title>
-    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 </head>
 <body> 
-    <div id="page-wrapper">
+    <divid="page-wrapper">
         <header id="main-header">
-            <img src="img/WAGI logo.png" alt="logo">
+            <img src="../../../static/img/WAGI logo.png" alt="logo">
             <nav id="main-navigation">
                 <ul class="menu">
                     <li class="menu-item"><button onclick="window.location.href='../activities/activities.html'">Activities</button></li>
@@ -22,7 +23,7 @@
         </div>
         <footer id="main-footer">
 
-            <img src="img/WAGI black.png" alt="logo">
+            <img src="../../../static/img/WAGI balck.png" alt="logo">
             
             <div style="background-color: #9EA9D7;">
                 <div class="round-button"></div>
