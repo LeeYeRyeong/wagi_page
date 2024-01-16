@@ -13,8 +13,8 @@ $(document).ready(function () {
                 $(".modal_unavailable").hide();
                 input.value=null; //이메일 입력하다가 모달창 닫았을 때 input창 리셋
                 // 모달창 닫으면 메인페이지로 돌아감
-                var mainPage = '/home.html';
-                window.location.href = mainPage;
+                
+                window.location.href = "{% url 'home' %}";
             });
         }
     });
