@@ -25,7 +25,8 @@
             <li>
                 <div class="box">{{ notice.write_time }}</div>
                 <div class="box">{{ notice.category}}</div><!--피그마 보니까 카테고리랑 작성일자도 있는데 이거 넣을게 없어서 만들었어 이거 디자인 필요-->
-                <a href="{% url 'notice:notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a>
+                <a href="{% url 'notice:notice_detail' notion_id=notice.id %}"><div class="box">{{ notice.notion_title }}</div></a>
+
             </li>
         {% endfor %}
         </ul>
