@@ -1,11 +1,8 @@
-document.getElementById("signUp").addEventListener("click", function() {
+
+document.getElementById("signUp").addEventListener("click", function(event) {
+    event.preventDefault();
     window.location.href = "Notice_manager_record.html";
 });
-
-document.getElementById("signUp").addEventListener("click", function() {
-    window.location.href = "Notice_manager_record.html";
-});
-
 document.getElementById("regularActivity").addEventListener("click", function() {
     document.getElementById("titleWriting").value = "정기활동 제목을 입력해주세요";
     document.getElementById("contentsWriting").value = "정기활동 내용을 입력해주세요";
