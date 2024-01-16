@@ -17,16 +17,20 @@
         <input type="hidden" id="selectedCategory" name="selectedCategory" value="{{ notice.category }}">
         <div id="writingZone">
             <textarea id="titleWriting" name="notion_title" rows="4" cols="50" readonly>{{ notice.notion_title }}</textarea>
-                
-            <div id="contentsWriting" name="message2" ><textarea  name="notion_text" readonly>{{ notice.notion_text }}</textarea>
+            <!---->
+            <div id="contentsWriting" name="message2">
+                <textarea name="notion_text" readonly>{{ notice.notion_text }}</textarea>
                 {% if images %}
-                    <ul>
-                    {% for image in images %}
-                        <img src="{{ image.image.url }}" alt="Image" width="30%">
-                    {% endfor %}
-                    </ul>
+                    <div id="imageContainer"> <!-- 부모 요소 추가했음용가리 -->
+                        <ul>
+                            {% for image in images %}
+                                <li><img src="{{ image.image.url }}" alt="Image" width="5%"></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
                 {% endif %}
             </div>
+            <!---->
         </div>
         {% if user.is_superuser %}
         <input type="submit" id="editButton" value="수정하기">

@@ -60,6 +60,38 @@
     color: black;
     border-radius: 20px;
     z-index: 30;
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column; 
+}
+
+#contentsWriting textarea {
+    resize: none;
+    border: none;
+    width: 100%;
+    height: 30%; 
+    box-sizing: border-box;
+}
+
+#imageContainer {
+    overflow-x: auto; 
+    white-space: nowrap; 
+}
+
+#imageContainer ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+}
+
+#imageContainer li {
+    margin-right: 10px; 
+}/*사진간에 간격조절하는거에여 맘에 안든다면 맘껏 수정해주세요 -88guri-*/
+
+#imageContainer img {
+    width: 100%; 
+    height: auto;
 }
 
 #main-navigation {
