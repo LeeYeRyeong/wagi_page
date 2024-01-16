@@ -19,6 +19,7 @@ section {
         padding: 0 20%;
             
 }
+
 .fixed-image {
       position: absolute;
 }
@@ -35,22 +36,22 @@ section {
 
 .fixed-image:nth-child(1) {
     top: 180px;
-    left: 190px;
+    left: 210px;
 }
 
 .fixed-image:nth-child(2) {
     top: 200px;
-    left: 110px;
+    left: 130px;
 }
 
 .fixed-image:nth-child(3) {
     top: 290px;
-    left: 103px;
+    left: 123px;
 }
 
 .fixed-image:nth-child(4) {
     top: 310px;
-    left: 170px;
+    left: 190px;
 }
 @keyframes flyIn {
     to {
@@ -202,7 +203,7 @@ section {
     position: absolute;
     font-size: 20px;
     color:white;
-    left:350px;
+    left:400px;
     top:100px;
     font-weight: bold;
 }
