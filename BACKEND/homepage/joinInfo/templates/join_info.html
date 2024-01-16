@@ -1,4 +1,4 @@
-
+{% extends 'basic.html' %}
 {% load static %}
 {% block content %}
 
@@ -6,39 +6,39 @@
 <html>
 <head>
     <title>Apply for Club</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/join_info.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/joinBasicInfo.css' %}">
 </head>
 <body>
-    <div class="info-box" id="info-box">
-        <div class="info-text">
-            지원자 정보
-        </div>
+    <div class="info-box" style="background-color: #9EA9D7;">
+    <div class="info-text">
+        지원자 정보
     </div>
+</div>
 
-    <div class="input-box" id="input-box">
-        <div class="basic-info" id="basic-info">
+    <div class="input-box">
+        <div class="basic-info">
             기본 정보
             <span class="required-text"> (필수)</span>
         </div>
     
-        <div class="input-container" id="input-container">
+        <div class="input-container">
             <!-- 이름 입력 -->
             <label for="name" style="color: #999898;">이름</label>
-            <input type="text" id="name" oninput="handleInput(this)" required value="{{ form.user_name.value }}" {{ form.user_name.attrs }}>
+            {{ form.user_name }}
             <div class="warning-message" id="warningName">{{ form.user_name.errors }}</div>
 
             <!-- 학번 입력 -->
-            <label for="id_user_number" class="input-label">학번</label>
+            <label for="studentID" style="color: #999898;">학번</label>
             {{ form.user_number }}
             <div class="warning-message" id="warningStudentID">{{ form.user_number.errors }}</div>
 
             <!-- 학과 입력 -->
-            <label for="id_user_major" class="input-label">학과</label>
+            <label for="id_user_major" style="color: #999898;"class="input-label">학과</label>
             {{ form.user_major }}
             <div class="warning-message" id="warningDepartment">{{ form.user_major.errors }}</div>
 
             <!-- 전화번호 입력 -->
-            <label for="id_user_phone_number" class="input-label">전화번호('-'없이 입력해 주세요)</label>
+            <label for="id_user_phone_number" style="color: #999898;" class="input-label">전화번호('-'없이 입력해 주세요)</label>
             {{ form.user_phone_number }}
             <div class="warning-message" id="warningPhoneNumber">{{ form.user_phone_number.errors }}</div>
         </div>
