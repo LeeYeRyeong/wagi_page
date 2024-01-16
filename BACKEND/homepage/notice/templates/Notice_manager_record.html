@@ -14,9 +14,9 @@
         <input type="button" id="competition" class="round-button" name="competition" onclick="updateHiddenValue(this)" value="공모전">
         <input type="hidden" id="selectedCategory" name="selectedCategory" value="{{ notice.category }}">  
         <div id="writingZone">
-            <textarea id="titleWriting" name="notion_title" rows="4" cols="50">{{ notice.notion_title }}</textarea>
+            <textarea id="titleWriting" name="notion_title" rows="4" cols="50" readonly>{{ notice.notion_title }}</textarea>
                 
-            <div id="contentsWriting" name="message2" ><textarea  name="notion_text">{{ notice.notion_text }}</textarea>
+            <div id="contentsWriting" name="message2" ><textarea  name="notion_text" readonly>{{ notice.notion_text }}</textarea>
                 {% if images %}
                     <ul>
                     {% for image in images %}

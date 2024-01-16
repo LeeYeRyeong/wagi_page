@@ -1,6 +1,6 @@
 #notices {
     position: absolute;
-    top: 197px;
+    top: 202px;
     left: 57px;
     width: 121px;
     height: 44px;
@@ -15,7 +15,7 @@
 
 #writings {
     position: absolute;
-    top: 197px;
+    top: 202px;
     left: 206px;
     width: 91px;
     height: 44px;
@@ -32,7 +32,7 @@
     position:absolute;
     width: 1014px;
     height: 514px;
-    top: 283px;
+    top: 288px;
     left: 133px;
     border-radius: 20px;
     background-color: white;
@@ -78,7 +78,7 @@
 
 #regularActivity{
     position: absolute;
-    top: 298px;
+    top: 303px;
     left: 170px;
     width: 77.54px;
     height: 25px;
@@ -94,7 +94,7 @@
 
 #event {
     position: absolute; 
-    top: 298px;
+    top: 303px;
     left: 264px;
     width: 77.54px;
     height: 25px;
@@ -110,7 +110,7 @@
 
 #competition {
     position: absolute;
-    top: 298px;
+    top: 303px;
     left: 358px;
     width: 77.54px;
     height: 25px;
@@ -128,7 +128,7 @@
     position: absolute;
     width: 81px;
     height: 21px;
-    top: 409px;
+    top: 414px;
     left: 32px;
     border-radius: 20px;
     border: 0.8px solid #9EA9D7;
@@ -145,7 +145,7 @@
     position: absolute;
     width: 110px;
     height: 30px;
-    top: 745px;
+    top: 750px;
     left: 585px;
     border-radius: 20px;
     background-color: #9EA9D7;
@@ -216,13 +216,13 @@
 }
 .selectedImageName{
     position: absolute;
-    top: 730px;
+    top: 735px;
     left: 190px;
 }
 
 #selectedImageIcon {
     margin-right: 10px;
     position: absolute;
-    top: 730px;
+    top: 735px;
     left: 165px; /* 아이콘과 파일명 사이의 간격 조절 */
 }
