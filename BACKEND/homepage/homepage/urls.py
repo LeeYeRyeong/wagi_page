@@ -20,10 +20,7 @@ urlpatterns = [
     path('success/', success_page, name='success_page'),
     path('edit/', edit_page, name='edit_page'),
     path('edit_images/<int:image_id>/', edit_images, name='edit_images'),
-<<<<<<< HEAD
-=======
-path('activities/', activities_page, name='activities_page'),
->>>>>>> 4578adb4370b8e5db4130ff72ca9bf9f270ac51c
+    path('activities/', activities_page, name='activities_page'),
 
     path('people/', show_people, name='show_people'),
 
