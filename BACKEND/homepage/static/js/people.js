@@ -5,7 +5,13 @@ window.onload = function() {
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-  fetch('people')
+  fetch('people',{
+    headers: {
+	    Accept: "application / json",
+	  },
+	  method: "GET",
+
+  })
   .then(response => response.json())
   .then(data => {
     const peopleData = data;
