@@ -8,7 +8,7 @@
 
                 <div class="login-container">
                     <!-- 로그인 컨테이너 -->
-                    <form action="{% url 'login' %}" method="POST">
+                    <form action="{% url 'login:login' %}" method="POST">
                     {% csrf_token %}
                         
                         <div class="login-message">관리자모드를 이용하려면 로그인을 해주세요 🤩</div>
