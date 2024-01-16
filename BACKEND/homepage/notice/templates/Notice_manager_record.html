@@ -21,19 +21,19 @@
         <input type="button" id="competition" class="round-button" value="공모전">
         <div id="writingZone"></div>
         <p id="titleWriting" name="message" rows="4" cols="50">
-            {{ notice.notion_title }} 
+            &nbsp;{{ notice.notion_title }} 
         </p>
-        <div id="contentsWriting" name="message2" rows="10" cols="50"><p>{{ notice.notion_text }}</p>
+        <div id="contentsWriting" name="message2" rows="10" cols="50"><p> &nbsp;{{ notice.notion_text }}</p>
             {% if images %}
                 <ul>
                 {% for image in images %}
-                    <li><img src="{{ image.image.url }}" alt="Image"></li>
+                    <img src="{{ image.image.url }}" alt="Image" width="30%">
                 {% endfor %}
                 </ul>
             {% endif %}
         </div>
         <button id="editButton"><span>수정하기</span></button>
-        <p id="date">{{ notice.write_time }}</p>
+        <p id="date" style="font-size: 5px;" >{{ notice.write_time }}</p>
         
         <p id="real_date" name="message2" rows="1" cols="50" readonly></p>
     </form>

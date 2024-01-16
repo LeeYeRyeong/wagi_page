@@ -7,10 +7,15 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_main.css' %}">
 </head>
 <body>
+    <form>
+        <input type="button" id="writings" class="writing" value="글 작성">
+    </form>
     <div id="notices" class="notice"><span>공지사항</span></div>
+    
     <a href="{% url 'get_notices_by_category' %}?category=regularActivity">
         <input type="button" id="regularActivity" class="round-button" onclick="showContent('regularActivity')" value="정기활동">
     </a>
+    
     <a href="{% url 'get_notices_by_category' %}?category=event">
         <input type="button" id="event" class="round-button" onclick="showContent('event')" value="행사">
     </a>
@@ -23,9 +28,9 @@
         <ul>
         {% for notice in notices %}
             <li>
-                <div class="box">{{ notice.write_time }}</div>
-                <div class="box">{{ notice.category}}</div><!--피그마 보니까 카테고리랑 작성일자도 있는데 이거 넣을게 없어서 만들었어 이거 디자인 필요-->
-                <a href="{% url 'notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a>
+                <div class="box">{{ notice.write_time }}</div><!--작성시간/디자인 필요-->
+                <div class="box">{{ notice.category}}</div><!--카테고리/디자인 필요-->
+                <a href="{% url 'notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a><!--글 제목 받아오기-->
             </li>
         {% endfor %}
         </ul>
