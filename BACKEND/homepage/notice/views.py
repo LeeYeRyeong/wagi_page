@@ -9,7 +9,7 @@ def notice_create(request):
     if request.method == 'POST':
         notion_title = request.POST.get('notion_title', '')
         notion_text = request.POST.get('notion_text', '')
-        selected_category = request.POST.get('selectedCategory', 'general')  # 기본값은 'general'
+        selected_category = request.POST.get('selectedCategory', 'general')
 
         # Notion 모델에 저장
         notion = Notion.objects.create(
@@ -18,12 +18,12 @@ def notice_create(request):
             category=selected_category
         )
 
-        # NotionImage 모델에 저장 (이 부분은 필요에 따라 수정)
+       
         images = request.FILES.getlist('image')
         for img in images:
             NotionImage.objects.create(notion=notion, image=img)
 
-        # 이후 필요한 처리 추가...
+
 
         return redirect('notice:notice_list')
 
@@ -64,12 +64,12 @@ def edit_notice(request, notion_id):
     if request.method == 'POST':
         notion.notion_title = request.POST['notion_title']
         notion.notion_text = request.POST['notion_text']
-        notion.category = request.POST['selectedCategory'] # 기본값은 'general'
+        notion.category = request.POST['selectedCategory'] 
 
         # Notion 모델에 저장
         notion.save()
 
-        # NotionImage 모델에 저장 (이 부분은 필요에 따라 수정)
+        # NotionImage 모델에 저장
         images = request.FILES.getlist('image')
         for img in images:
             NotionImage.objects.create(notion=notion, image=img)
