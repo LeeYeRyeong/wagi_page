@@ -88,6 +88,9 @@
     background-color: white;
     margin-top: 20px; 
 }
+.box{
+    color: black;
+}
 
 #regularActivityContent,
 #eventContent,
@@ -115,8 +118,8 @@ footer {
 }
 
 .selected {
-    background-color: gray !important;
-    color:black !important;
+    background-color: gray;
+    color: black;
 }
 
 .content {
@@ -128,4 +131,43 @@ footer {
     height: 475px;
     border-radius: 20px;
     background-color: white;
+}
+
+#allContent {
+    display: block; 
+}
+#writings {
+    position: fixed;
+    top: 167px;
+    left: 206px;
+    width: 91px;
+    height: 44px;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border: 0.7px solid white;
+}
+#writings span {
+    font-size: 16.2px; 
+}
+
+#writings {
+    position: fixed;
+    top: 167px;
+    left: 206px;
+    width: 91px;
+    height: 44px;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border: 0.7px solid white;
+}
+#writings span {
+    font-size: 16.2px; 
 }

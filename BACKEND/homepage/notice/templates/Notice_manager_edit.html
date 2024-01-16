@@ -1,0 +1,31 @@
+{% extends 'basic.html' %}
+{% load static %}
+
+    {% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_manager_writing.css' %}">
+    <form action="{% url 'notice:edit_notice' notion_id=notice.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <a href="{% url 'notice:notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div></a>
+        <a href="{% url 'notice:notice_create' %}"><input type="button" id="writings" class="writing" value="글 작성"></a>
+        <input type="button" id="regularActivity" name="regularActivity" class="round-button" onclick="updateHiddenValue(this)" value="정기활동">
+        <input type="button" id="event" name="event" class="round-button" onclick="updateHiddenValue(this)" value="행사">
+        <input type="button" id="competition" name="competition" class="round-button" onclick="updateHiddenValue(this)" value="공모전">
+        <input type="hidden" id="selectedCategory" name="selectedCategory" value="{{ notice.category }}">      
+        <div id="writingZone">
+        <textarea id="titleWriting" name="notion_title" rows="4" cols="50" >{{ notice.notion_title }} </textarea>
+        <textarea id="contentsWriting" name="notion_text" rows="10" cols="50" >{{ notice.notion_text }}</textarea>
+        <label for="profile" class="round-button" id="addPhotoLabel">
+            <span>사진추가</span>
+        </label>
+        <input type="file" id="profile" name="image" accept="image/png, image/jpeg" required multiple style="display: none;">
+        <div class="ifimg" id="imagePreview" style="display: none;">    
+            <img class="img_icon" src="{% static 'img/Vector.png' %}" id="selectedImageIcon" alt="Img Icon">
+            <input class="selectedImageName" id="file" value="" placeholder="선택된 사진이 없습니다.">
+        </div>
+        </div>
+        <input type="submit" id="signUp" value="등록하기">
+    </form>
+
+    <script src="{% static 'js/Notice_manager_writing.js' %}"></script>
+    {% endblock %}

@@ -1,3 +1,4 @@
+
 #notices {
     position: fixed;
     top: 167px;
@@ -122,7 +123,7 @@
     z-index: 100;
 }
 
-#addPhoto{
+#addPhotoLabel{
     position: fixed;
     width: 81px;
     height: 21px;
@@ -200,20 +201,6 @@
     height: 30px;
 }
 
-#addPhoto {
-    width: 81px;
-    height: 21px;
-    border-radius: 20px;
-    border: 0.8px solid #9EA9D7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:black;
-    background-color: white;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
 #regularActivity:hover, #event:hover, #competition:hover, #addPhoto:hover, #signUp:hover {
     background-color: #9EA9D7;
 }
@@ -225,4 +212,16 @@
 .selected {
     background-color: #9EA9D7 !important;
     color:black !important;
+}
+.selectedImageName{
+    position: fixed;
+    top: 700px;
+    left: 190px;
+}
+
+#selectedImageIcon {
+    margin-right: 10px;
+    position: fixed;
+    top: 700px;
+    left: 165px; /* 아이콘과 파일명 사이의 간격 조절 */
 }

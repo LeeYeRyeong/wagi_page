@@ -12,12 +12,12 @@ def login(request):
         
         if user is not None: 
             auth_login(request, user)
-            return render(request, 'login/basic.html')
+            return render(request, 'home.html')
         else:
-            return render(request, 'login/login.html', {'error': 'username or password is incorrect'})
+            return render(request, 'login.html', {'error': 'username or password is incorrect'})
         
     else:
-        return render(request, 'login/login.html')
+        return render(request, 'login.html')
     
 
 def home(request):
