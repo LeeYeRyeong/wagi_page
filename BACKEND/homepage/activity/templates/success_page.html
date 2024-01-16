@@ -1,62 +1,37 @@
 {% extends "basic.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>activities_manager</title>
-    <link href="../../static/css/activities.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
 
-</head>
-<body>
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/activities.css' %}"> 
     <div id="activities_main" hidden></div><!--js 처리용 div-->
-    <header id="main-header">
-        <img src="{% static 'img/WAGI logo.png' %}" alt="logo">
-        <nav id="main-navigation">
-            <ul class="menu">
-                <li class="menu-item" id="">
-                    <a href="{% url 'success_page' %}">Activities</a>
-                </li>
-                <li class="menu-item" id="">
-                    <a href="">People</a>
-                </li>
-                <li class="menu-item" id="apply">
-                    <a href="{% url 'joinResult:join_button' %}">JOIN</a>
-                </li>
-                <li class="menu-item" id="">
-                    <a href="">Notice</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
     <div id="success_page" hidden></div><!--js 처리용 div-->
     <div id="content"><!--헤더 밑-->
         <div id="button_area"><!--버튼 공간 (없음)--></div>
-        <div id="item_area"><!--버튼 밑-->
+        <div id="item_area"><!--버튼 밑-->    
             <div id="item_area"><!--모든 앨범-->
                 <!-- MT -->
-                {% if mt_images %}
                 <div class="item" id="mt">
+                    <br>
                     <div class="album">
                         <div class="prev_button" id="mt_prev_button">&lt;</div>
                         <div class="next_button" id="mt_next_button">&gt;</div>
                         <div class="img_box">
-                            <div class="img_area clearfix" id="mt_img_area">
-                                {% for mt_image in mt_images %}
-                                    {% if mt_image.mt_image %}
-                                        <div id="mt_img_content" class="img_content size_original">
-                                            {% for i in "123" %}
-                                                <img src="{{ mt_image.mt_image.url }}" alt="MT Image">
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                            <p hidden>사진이 없습니다.</p>
+                            {% if images %}
+                                <div class="img_area clearfix" id="mt_img_area">
+                                    {% for image in images %}
+                                        {% if image.mt_image %}
+                                                <div id="mt_img_content" class="img_content size_original">
+                                                    {% for i in "1234" %}
+                                                        <img src="{{ image.mt_image.url }}" alt="MT Image">
+                                                    {% endfor %}
+                                                </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <p hidden>사진이 없습니다.</p>
+                            {% endif %}
                             <div id="mtModal" class="modal">
                                 <img class="modal-content" id="mtModalImage">
                             </div>
@@ -64,45 +39,30 @@
                     </div>
                     <div class="album_name">MT</div>
                 </div>
-                {% endif %}
-
                 <!-- Study -->
-                {% if study_images %}
                 <div class="item" id="study">
+                    <br>
+                    <br>
+                    <br>
                     <div class="album">
                         <div class="prev_button" id="study_prev_button">&lt;</div>
                         <div class="next_button" id="study_next_button">&gt;</div>
                         <div class="img_box">
-                            <div class="img_area clearfix" id="study_img_area">
-                                {% for study_image in study_images %}
-                                    {% if study_image.study_image %}
-                                        <div id="study_img_content" class="img_content size_original">
-                                            {% for i in "123" %}
-                                                <img src="{{ study_image.study_image.url }}" alt="Study Image">
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
-                                <!-- <div id="study_img_content" class="img_content size_original">
-                                    <img src="../../static/img/study_images/ex1.jpg" alt="Study Image">
-                                    <img src="../../static/img/study_images/ex2.jpg" alt="Study Image">
-                                    <img src="../../static/img/study_images/ex3.jpg" alt="Study Image">
-                                    <img src="../../static/img/study_images/ex4.jpg" alt="Study Image">
+                            {% if images %}
+                                <div class="img_area clearfix" id="study_img_area">
+                                    {% for image in images %}
+                                        {% if image.study_image %}
+                                            <div id="study_img_content" class="img_content size_original">
+                                                {% for i in "1234" %}
+                                                    <img src="{{ image.study_image.url }}" alt="Study Image">
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}    
                                 </div>
-                                <div id="study_img_content" class="img_content size_original">
-                                    <img src="../../static/img/study_images/ex5.jpg" alt="Study Image">
-                                    <img src="../../static/img/study_images/ex6.jpg" alt="Study Image">
-                                    <img src="../../static/img/study_images/ex7.jpg" alt="Study Image">
-                                    <img src="../../static/img/study_images/ex8.jpg" alt="Study Image">
-                                </div>
-                                <div id="study_img_content" class="img_content size_original">
-                                    <img src="../../static/img/study_images/ex9.jpg" alt="Study Image">
-                                    <img src="../../static/img/study_images/ex10.jpg" alt="Study Image">
-                                    <img src="../../static/img/study_images/ex11.jpg" alt="Study Image">
-                                    <img src="../../static/img/study_images/ex12.jpg" alt="Study Image">
-                                </div> -->
-                            </div>
-                            <p hidden>사진이 없습니다.</p>
+                            {% else %}
+                                <p hidden>사진이 없습니다.</p>
+                            {% endif %}
                             <div id="studyModal" class="modal">
                                 <img class="modal-content" id="studyModalImage">
                             </div>
@@ -110,71 +70,28 @@
                     </div>
                     <div class="album_name">Study</div>
                 </div>
-                {% endif %}
-
                 <!-- Project -->
-                {% if project_images %}
                 <div class="item" id="project">
+                    <br>
                     <div class="album">
                         <div class="prev_button" id="project_prev_button">&lt;</div>
                         <div class="next_button" id="project_next_button">&gt;</div>
                         <div class="img_box">
-                            <div class="img_area clearfix" id="project_img_area">
-                                {% for project_image in project_images %}
-                                    {% if project_image.project_image %}
-                                        <div id="project_img_content" class="img_content size_original">
-                                            {% for i in "123" %}
-                                                <a href="">
-                                                    <img src="{{ project_image.project_image.url }}" alt="Project Image">
-                                                </a>
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                {% endfor %}
-                                <!-- <div id="project_img_content" class="img_content size_original">
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex1.jpg" alt="Project Image">
-                                    </a>
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex2.jpg" alt="Project Image">
-                                    </a>
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex3.jpg" alt="Project Image">
-                                    </a>
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex4.jpg" alt="Project Image">
-                                    </a>
+                            {% if images %}
+                                <div class="img_area clearfix" id="project_img_area">
+                                    {% for image in images %}
+                                        {% if image.project_image %}
+                                            <div id="project_img_content" class="img_content size_original">
+                                                {% for i in "1234" %}
+                                                    <img src="{{ image.project_image.url }}" alt="Project Image">
+                                                {% endfor %}   
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
-                                <div id="project_img_content" class="img_content size_original">
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex5.jpg" alt="Project Image">
-                                    </a>
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex6.jpg" alt="Project Image">
-                                    </a>
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex7.jpg" alt="Project Image">
-                                    </a>
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex8.jpg" alt="Project Image">
-                                    </a>
-                                </div>
-                                <div id="project_img_content" class="img_content size_original">
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex9.jpg" alt="Project Image">
-                                    </a>
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex10.jpg" alt="Project Image">
-                                    </a>
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex11.jpg" alt="Project Image">
-                                    </a>
-                                    <a href="">
-                                        <img src="../../static/img/project_images/ex12.jpg" alt="Project Image">
-                                    </a>
-                                </div> -->
-                            </div>
-                            <p hidden>사진이 없습니다.</p>
+                            {% else %} 
+                                <p hidden>사진이 없습니다.</p>
+                            {% endif %}
                             <div id="projectModal" class="modal">
                                 <img class="modal-content" id="projectModalImage">
                             </div>
@@ -182,9 +99,8 @@
                     </div>
                     <div class="album_name">Project</div>
                 </div>
-                {% endif %}
-            </div>
+            </div>    
         </div>
     </div>
-</body>
-</html>
+    <script defer src="{% static 'js/activities.js' %}"></script>
+{% endblock %}
