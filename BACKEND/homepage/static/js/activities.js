@@ -13,50 +13,6 @@ window.onload = function () {
   if (activitiesMain || successPage) { //activities.html, success_page.html일 때
     //이미지 불러오기
     (function () {
-      // for (let i = 0; i < albumLen; i++) {
-      //   let imageNum = 0;
-      //   let albumName;
-
-      //   if (i == 0) {
-      //     albumName = 'mt';
-      //   } else if (i == 1) {
-      //     albumName = 'study';
-      //   } else {
-      //     albumName = 'project'
-      //   }
-
-      //   for (let j = 0; j < imageBoxLen; j++) {
-      //     let imgContent = document.createElement('div');
-      //     let imgAreaSrc = document.getElementById(albumName + "_img_area");
-      //     imgAreaSrc.appendChild(imgContent);
-
-      //     imgContent.id = albumName + '_img_content_' + (j + 1); //id, class 추가
-      //     imgContent.classList.add('img_content');
-      //     imgContent.classList.add('size_original');
-
-      //     let imageSrc = document.getElementById(albumName + '_img_content_' + (j + 1));
-
-      //     for (let k = 0; k < imagesLen / imageBoxLen; k++) {
-      //       let image = document.createElement("img");
-
-      //       image.src = "img/" + albumName + "/ex" + (imageNum + 1) + ".jpg"; //속성 추가
-      //       image.alt = albumName + " picture " + (imageNum + 1);
-
-      //       //onerror="this.style.display='none'"
-      //       // image.onerror = "this.style.display='none'"
-      //       // console.log(image.onerror)
-
-      //       if (i < albumLen - 1) imageSrc.appendChild(image);
-      //       else {
-      //         let aSrc = document.createElement('a');
-      //         imageSrc.appendChild(aSrc);
-      //         aSrc.appendChild(image);
-      //       }
-
-      //       imageNum++;
-      //     }
-      //   }
-      // }
 
       //프로젝트 링크 삽입
       let imageNum = document.querySelector('#project_img_area img');
@@ -89,7 +45,7 @@ window.onload = function () {
       let imageNum = document.querySelectorAll('#mt_img_content img');
 
       //사진 개수에 따른 슬라이드 개수 조정
-      if (imageNum.length <= 4) {
+      if (imageNum.length < 4) {
         mtPrevBtn.classList.add('display_none');
         mtNextBtn.classList.add('display_none');
       }
@@ -105,7 +61,7 @@ window.onload = function () {
       else if (imageNum.length >= 9 && imageNum.length <= 12) imageBoxLen = 3;
       else imageBoxLen = 0;
 
-      let slideContents = document.querySelectorAll('#mt_img_content');
+      let slideContents = document.querySelectorAll('.img_content.size_original');
       const slideLen = slideContents.length;
 
       imagesArea.style.width = slideWidth * (slideLen + 2) + "px";
@@ -193,7 +149,7 @@ window.onload = function () {
       else if (imageNum.length >= 9 && imageNum.length <= 12) imageBoxLen = 3;
       else imageBoxLen = 0;
 
-      let slideContents = document.querySelectorAll('#study_img_content');
+      let slideContents = document.querySelectorAll('.img_content.size_original');
       const slideLen = slideContents.length;
 
       imagesArea.style.width = slideWidth * (slideLen + 2) + "px";
@@ -281,7 +237,7 @@ window.onload = function () {
       else if (imageNum.length >= 9 && imageNum.length <= 12) imageBoxLen = 3;
       else imageBoxLen = 0;
 
-      let slideContents = document.querySelectorAll('#project_img_content');
+      let slideContents = document.querySelectorAll('.img_content.size_original');
       const slideLen = slideContents.length;
 
       imagesArea.style.width = slideWidth * (slideLen + 2) + "px";
@@ -347,37 +303,27 @@ window.onload = function () {
     //모달창
     (function () {
       // 모달을 표시하는 함수
-      function showModal(modalId, imgSrc) {
-        var modal = document.getElementById(modalId);
-        var modalImage = modal.querySelector(".modal-content");
-        modalImage.src = imgSrc; // 클릭한 이미지의 소스를 모달 이미지 소스로 설정
-        modal.style.display = "block"; // 모달 창을 표시
-      }
-
-      // 모달을 숨기는 함수
-      function hideModal(modal) {
-        modal.style.display = "none"; // 모달 창을 숨김
-      }
-
-      // 각 앨범 아이템에 대해 모달 표시 로직 설정
-      ['mt', 'study'].forEach(function (album) {
-        var imgArea = document.getElementById(album + '_img_area');
-        var modalId = album + 'Modal';
-        var modal = document.getElementById(modalId);
-        var modalImage = modal.querySelector(".modal-content");
-
-        // 이미지 클릭 시 모달 표시
-        imgArea.addEventListener("click", function (event) {
-          if (event.target.tagName === 'IMG') {
-            showModal(modalId, event.target.src);
-          }
+      function setupModal(album) {
+        const imgs = document.querySelectorAll(`#${album}_img_area img`);
+        const modal = document.getElementById(`${album}Modal`);
+        const modalImg = modal.querySelector('.modal-content');
+      
+        imgs.forEach(img => {
+          img.addEventListener('click', () => {
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+          });
         });
-
-        // 모달 컨텐츠 클릭 시 모달 숨기기
-        modalImage.addEventListener("click", function () {
-          hideModal(modal);
+      
+        modal.addEventListener('click', () => {
+          modal.style.display = 'none';
         });
-      });
+      }
+      
+      // 모달 기능을 각 앨범에 설정
+      setupModal('mt');
+      setupModal('study');
+      setupModal('project');
     })();
 
   } else if(editPage){ //edit_page.html일 때
@@ -388,25 +334,7 @@ window.onload = function () {
         checkbox.checked = !checkbox.checked; // 체크박스 상태를 토글
       }
 
-      // // // 선택된 이미지들을 삭제하는 함수
-      // // function deleteSelectedImages(album) {
-      // //   var checkedCheckboxes = document.querySelectorAll(`#${album} .img-checkbox:checked`);
-      // //   checkedCheckboxes.forEach(function (checkbox) {
-      // //     checkbox.closest('.image-wrapper').remove(); // 이미지를 DOM에서 삭제
-      // //   });
-      // // }
-
-      // // // 각 앨범에 대한 삭제 버튼 이벤트 리스너를 추가합니다.
-      // // let deleteButtons = document.querySelectorAll('[id^="delete_"]'); // id가 'delete_'로 시작하는 모든 요소
-      // // deleteButtons.forEach(function (btn) {
-      // //   let album = btn.id.replace('delete_', ''); // 'delete_'를 제거하여 앨범 ID를 추출
-      // //   btn.addEventListener('click', function (e) {
-      // //     e.preventDefault(); // 기본 이벤트 방지
-      // //     deleteSelectedImages(album); // 연관된 앨범의 이미지 삭제
-      // //   });
-      // // });
-
-      // 각 이미지에 대하여 클릭 이벤트 리스너를 추가합니다.
+      // 각 이미지에 대하여 클릭 이벤트 리스너를 추가.
       document.addEventListener('click', function (e) {
         if (e.target && e.target.tagName == 'IMG') {
           let checkbox = e.target.nextElementSibling;
@@ -416,7 +344,7 @@ window.onload = function () {
         }
       });
 
-      // 체크박스 클릭 시 이벤트 버블링을 방지합니다.
+      // 체크박스 클릭 시 이벤트 버블링을 방지.
       document.querySelectorAll('.img-checkbox').forEach(function (checkbox) {
         checkbox.addEventListener('click', function (e) {
           e.stopPropagation(); // 이벤트 버블링 방지
@@ -450,110 +378,6 @@ window.onload = function () {
       
     })();
 
-    // //이미지 불러오기
-    // (function () {
-
-    //   for (let i = 0; i < albumLen; i++) {
-    //     let imageNum = 0;
-    //     let albumName;
-    //     let imgContentSrc = document.getElementById(albumName + "_img_content");
-
-    //     if (i == 0) {
-    //       albumName = 'mt';
-    //     } else if (i == 1) {
-    //       albumName = 'study';
-    //     } else {
-    //       albumName = 'project'
-    //     }
-
-    //     for (let j = 0; j < imagesLen; j++) {
-    //       let box = document.createElement("div");
-
-    //       //id, class 추가
-    //       box.id = albumName + '_box_' + (j + 1);
-    //       box.classList.add('box');
-
-    //       let checkButton = document.createElement("span");
-
-    //       //class 추가
-    //       // checkButton.id = albumName + '_check_button_' + (k + 1);
-    //       checkButton.classList.add('check_button');
-    //       checkButton.classList.add('button');
-    //       checkButton.innerText='✓';
-
-    //       let image = document.createElement("img");
-
-    //       //속성 추가
-    //       image.src = "../project/image/" + albumName + "/ex" + (imageNum + 1) + ".jpg"; //폴더 구조 및 파일 이름 변경 시 수정 필요
-    //       image.alt = albumName + " picture " + (imageNum + 1);
-
-    //       let boxSrc = document.getElementById(albumName + '_box_' + (j + 1));
-    //       console.log(boxSrc);
-
-    //       //error
-
-    //       imgContentSrc.appendChild(box);
-    //       boxSrc.appendChild(checkButton);
-    //       boxSrc.appendChild(image);
-
-    //       imageNum++;
-    //     }
-    //   }
-
-    // })();
-
-    //사진 업로드
-    // (function () {
-    //   let mtFile = document.getElementById('mt_file');
-    //   let stydyFile = document.getElementById('study_file');
-    //   let projectFile = document.getElementById('project_file');
-
-    //   //사진 업로드 함수
-    //   function imageUpload(files, imageBox) {
-    //     for (var i = 0; i < files.length; i++) {
-    //       (function (file) {
-    //         var reader = new FileReader();
-    //         reader.onload = function (e) {
-    //           var img = new Image();
-    //           img.src = e.target.result; // reader가 읽어들인 이미지 데이터를 src로 설정합니다.
-    //           var imageWrapper = document.createElement('div');
-    //           imageWrapper.classList.add('image-wrapper'); //class 추가
-    //           var imageCheckBox = document.createElement('input');
-    //           imageCheckBox.type = 'checkbox' //속성 추가
-    //           imageCheckBox.classList.add('img-checkbox') //class 추가
-    //           imageBox.appendChild(imageWrapper);
-    //           imageWrapper.appendChild(img); // 컨테이너에 이미지를 추가합니다.
-    //           imageWrapper.appendChild(imageCheckBox);
-    //         };
-    //         reader.readAsDataURL(file); // 파일을 Data URL 형태로 읽습니다.
-    //       })(files[i]);
-    //     }
-    //   }
-
-    //   //mt 사진 업로드
-    //   mtFile.addEventListener('change', function (event) {
-    //     var mtImageBox = document.getElementById('mt_img_box');
-
-    //     var files = event.target.files; // 선택된 파일들을 가져옵니다.
-    //     imageUpload(files, mtImageBox);
-    //   });
-
-    //   //study 사진 업로드
-    //   stydyFile.addEventListener('input', function (event) {
-    //     var studyImageBox = document.getElementById('study_img_box');
-
-    //     var files = event.target.files; // 선택된 파일들을 가져옵니다.
-    //     imageUpload(files, studyImageBox);
-    //   });
-
-    //   //project 사진 업로드
-    //   projectFile.addEventListener('change', function (event) {
-    //     var projectImageBox = document.getElementById('project_img_box');
-
-    //     var files = event.target.files; // 선택된 파일들을 가져옵니다.
-    //     imageUpload(files, projectImageBox);
-    //   });
-    // })();
 
   } else { //upload_activity.html일 때
       //input 커스텀

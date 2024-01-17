@@ -16,19 +16,17 @@
                         <div class="next_button" id="mt_next_button">&gt;</div>
                         <div class="img_box">
                             {% if images %}
-                                <div class="img_area clearfix" id="mt_img_area">
+                                <div class="image-grid" id="mt_img_area">
                                     {% for image in images %}
                                         {% if image.mt_image %}
-                                                <div id="mt_img_content" class="img_content size_original">
-                                                    {% for i in "1234" %}
-                                                        <img src="{{ image.mt_image.url }}" alt="MT Image">
-                                                    {% endfor %}
-                                                </div>
+                                            <div class="img_content size_original">
+                                                <img src="{{ image.mt_image.url }}" alt="MT Image">
+                                            </div>
                                         {% endif %}
                                     {% endfor %}
                                 </div>
                             {% else %}
-                                <p hidden>사진이 없습니다.</p>
+                                <p class="no-images">사진이 없습니다.</p>
                             {% endif %}
                             <div id="mtModal" class="modal">
                                 <img class="modal-content" id="mtModalImage">
@@ -44,19 +42,17 @@
                         <div class="next_button" id="study_next_button">&gt;</div>
                         <div class="img_box">
                             {% if images %}
-                                <div class="img_area clearfix" id="study_img_area">
+                                <div class="image-grid" id="study_img_area">
                                     {% for image in images %}
                                         {% if image.study_image %}
-                                            <div id="study_img_content" class="img_content size_original">
-                                                {% for i in "1234" %}
-                                                    <img src="{{ image.study_image.url }}" alt="Study Image">
-                                                {% endfor %}
+                                            <div class="img_content size_original">
+                                                <img src="{{ image.study_image.url }}" alt="Study Image">
                                             </div>
                                         {% endif %}
-                                    {% endfor %}    
+                                    {% endfor %}
                                 </div>
                             {% else %}
-                                <p hidden>사진이 없습니다.</p>
+                                <p class="no-images">사진이 없습니다.</p>
                             {% endif %}
                             <div id="studyModal" class="modal">
                                 <img class="modal-content" id="studyModalImage">
@@ -72,19 +68,17 @@
                         <div class="next_button" id="project_next_button">&gt;</div>
                         <div class="img_box">
                             {% if images %}
-                                <div class="img_area clearfix" id="project_img_area">
+                                <div class="image-grid" id="project_img_area">    
                                     {% for image in images %}
                                         {% if image.project_image %}
-                                            <div id="project_img_content" class="img_content size_original">
-                                                {% for i in "1234" %}
-                                                    <img src="{{ image.project_image.url }}" alt="Project Image">
-                                                {% endfor %}   
+                                            <div class="img_content size_original">
+                                                <img src="{{ image.project_image.url }}" alt="Project Image">
                                             </div>
                                         {% endif %}
                                     {% endfor %}
                                 </div>
-                            {% else %} 
-                                <p hidden>사진이 없습니다.</p>
+                            {% else %}
+                                <p class="no-images">사진이 없습니다.</p>
                             {% endif %}
                             <div id="projectModal" class="modal">
                                 <img class="modal-content" id="projectModalImage">
