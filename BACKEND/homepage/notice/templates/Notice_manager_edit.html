@@ -4,6 +4,7 @@
     {% block content %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_manager_writing.css' %}">
+    <div id="realContent">
     <form action="{% url 'notice:edit_notice' notion_id=notice.id %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <a href="{% url 'notice:notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div></a>
@@ -26,6 +27,7 @@
         </div>
         <input type="submit" id="signUp" value="등록하기">
     </form>
+    </div>
 
     <script src="{% static 'js/Notice_manager_writing.js' %}"></script>
     {% endblock %}
