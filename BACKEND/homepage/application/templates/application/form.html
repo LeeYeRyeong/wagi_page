@@ -8,14 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/joinSelfintro.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <link rel="stylesheet" href="../../../static/css/form.css">
+    <link rel="stylesheet" href="../../../static/css/base.css">
     <style>
         .inputmodel {
             outline:none;
             width: calc(100% - 20px);
             box-sizing: border-box;
             border: none;
+            overflow-y: auto;  /* 세로 스크롤을 추가 */
+            max-height: 152px;  /* 내용의 최대 높이를 설정*/
         }
     </style>
 
@@ -29,28 +32,28 @@
                 <p style="margin: 0;">1. 자기소개를 해주세요. (500자 내외)</p>
             </div>
             <div class="answer-box">
-                <div class="input-box">{{ form.introduction|default_if_none:'' }}</div>
+                {{ form.introduction|default_if_none:'' }}
             </div>
         
             <div class="question-box">
                 <p style="margin: 0;">2. 지원동기를 작성해주세요. (500자 내외)</p>
             </div>
             <div class="answer-box">
-                <div class="input-box">{{ form.motivation|default_if_none:'' }}</div>
+                {{ form.motivation|default_if_none:'' }}
             </div>
         
             <div class="question-box">
                 <p style="margin: 0;">3. 프로젝트 관련 경험이 있다면 작성해주세요. (800자 내외)</p>
             </div>
             <div class="answer-box">
-                <div class="input-box">{{ form.project_experience|default_if_none:'' }}</div>
+                {{ form.project_experience|default_if_none:'' }}
             </div>
         
             <div class="question-box">
                 <p style="margin: 0;">4. 개발과 관련한 공부를 한 경험이 있다면 작성해주세요. (700자 내외)</p>
             </div>
             <div class="answer-box">
-                <div class="input-box">{{ form.study_experience|default_if_none:'' }}</div>
+                {{ form.study_experience|default_if_none:'' }}
             </div>
         
         </div>
