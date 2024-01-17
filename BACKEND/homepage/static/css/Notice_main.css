@@ -10,7 +10,7 @@
     position: absolute;
     top: 202px;
     left: 57px;
-    width: 121px;
+    width: 120px;
     height: 44px;
     border-radius: 20px;
     background-color: #9EA9D7;
@@ -19,6 +19,7 @@
     justify-content: center;
     color: black;
 }
+
 
 #regularActivity {
     top: 259px;
@@ -63,19 +64,24 @@
 }
 
 #allContent {
-    width: 1014px;
-    height: 475px;
-    top: 327px;
-    left: 133px;
+    width: 1500px;
+    height: 500px;
+    top: 33%;
+    left: 50%;
+    margin-left: -750px;
     border-radius: 20px;
     background-color: white;
     margin-top: 20px; 
     overflow-y: hidden;
+    overflow-x: hidden;
+}
+#realContent{
+    margin-bottom: 80px;
 }
 .box{
     color: black;
     position: absolute;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .box a {
@@ -100,6 +106,7 @@
     
     
 }
+
 .notice-title {
     left: 350px;
     position: absolute;
@@ -141,16 +148,6 @@
 
 }
 
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#main-footer div {
-    display: flex;
-    gap: 20px;
-}
 
 .selected {
     background-color: gray;

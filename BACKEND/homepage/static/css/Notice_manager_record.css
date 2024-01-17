@@ -81,6 +81,7 @@
 #imageContainer {
     overflow-x: auto; 
     white-space: nowrap; 
+    margin-left: 15px;
 }
 
 #imageContainer ul {
@@ -102,13 +103,8 @@ textarea:focus{
     outline: none;
 }
 
-#main-navigation {
-    display: flex;
-    gap: 20px;
-}
-
-#main-navigation .menu-item {
-    list-style: none;
+#realContent{
+    margin-bottom: 80px;
 }
 
 #regularActivity {
