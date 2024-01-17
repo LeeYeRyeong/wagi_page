@@ -10,38 +10,44 @@
     <title>People List</title>
     <link rel="stylesheet" href="{% static 'css/people.css' %}">
     <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+    <script src="{% static 'js/people.js' %}"></script>
 </head>
 <body>
+    
     <div class ="center">
+        {% for person in peopleData %}
         <div class = "L_bubble">
             <div class = "L_photo">
-                <h1>사진</h1>
+                <h1>{{ person.photo }}</h1>
             </div>
             <div class="L_name">
-                <h2> 이름</h2>
+                <h2> {{ person.name }}</h2>
             </div>
-            <div class = "L_rink">
-                <h2>링크자리</h2>
+            <div class = "L_link">
+                <div><a href="{{ person.github }}"><img src="{% static 'img/github.png' %}"></a>
+                    <a href="{{ person.home }}"> <img src="{% static 'img/home.png' %}"></a></div>
             </div>
             <div class ="L_text" >
-                <h3> 소개글 들어갈 공간입니다. </h3>
+                <h3> {{ person.intro }} </h3>
             </div>
         </div>
 
         <div class = "R_bubble">
             <div class = "R_photo">
-                <h1>사진</h1>
+                <h1>{{ person.photo }}</h1>
             </div>
             <div class="R_name">
-                <h2> 이름</h2>
+                <h2> {{ person.name }}</h2>
             </div>
             <div class = "R_rink">
-                <h2>링크자리</h2>
+                <h2><a href="{{ person.github }}"><img src="{% static 'img/github.png' %}"></a>
+                    <a href="{{ person.home }}"> <img src="{% static 'img/home.png' %}"></a></h2>
             </div>
             <div class ="R_text" >
-                <h3> 소개글 들어갈 공간입니다. </h3>
+                <h3> {{ person.intro }} </h3>
             </div>
         </div>
+        {% endfor %}
     </div>
 </body>
 </html>
