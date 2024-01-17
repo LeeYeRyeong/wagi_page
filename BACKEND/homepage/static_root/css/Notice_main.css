@@ -1,0 +1,195 @@
+#parentContainer {
+    position: relative;
+}
+
+#regularActivity, #event, #competition, #allContent, #regularActivityContent, #eventContent, #competitionContent, .content {
+    position: absolute;
+}
+
+#notice {
+
+    margin-left: 130px;
+
+    margin-top: 40px;
+    top: 202px;
+    left: 57px;
+    width: 120px;
+    height: 44px;
+    line-height : 40px;
+    border-radius: 20px;
+    background-color: #9EA9D7;
+    display: inline-block;
+    text-align: center;
+    color: black;
+}
+#writings {
+    position: relative;
+    margin-left: 20px;
+    width: 91px;
+    height: 43px;
+    line-height : 40px;
+    border-radius: 20px;
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    color: black;
+    border: 0.7px solid white;
+}
+
+
+#regularActivity {
+    top: 250px;
+    left: 163px;
+    width: 102px;
+    height: 39px;
+    border-radius: 20px;
+    border: 0.7px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+}
+
+#event {
+    top: 250px;
+    left: 282px;
+    width: 102px;
+    height: 39px;
+    border-radius: 20px;
+    border: 0.7px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+}
+
+#competition {
+    top: 250px;
+    left: 401px;
+    width: 102px;
+    height: 39px;
+    border-radius: 20px;
+    border: 0.7px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black;
+}
+
+#allContent {
+    width: 80%;
+    height: 475px;
+    top: 327px;
+    left: 133px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 20px; 
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+#realContent{
+    margin-bottom: 50px;
+}
+.box{
+    color: black;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.box a {
+    
+    text-decoration: none; 
+    background-color: transparent; 
+    display: inline;
+}
+
+.category {
+    left: 35px;
+    color: #9EA9D7;
+    width: 80px;
+    height: 20px;
+    border: 0.8px solid #9EA9D7;
+    position: relative;
+}
+/*글자 안보이는거 해결용!*/
+.notitle{
+    color: black;
+    width: 500px;
+    
+    
+}
+
+.notice-title {
+    left: 350px;
+    position: absolute;
+    width: 500px;
+    
+}
+
+
+#allContent ul li {
+    margin-bottom: 56px;
+    margin-left: 30px;
+    position: relative;
+    left: 35px;
+}
+
+#allContent ul li::after {
+    content: "";
+    position: absolute;
+
+    width: 95%;
+
+    top: 69px; 
+    left: 44%; 
+    transform: translateX(-50%); 
+    border: 1.2px solid #000000;
+}
+
+
+.write-time {
+    left: 42px; 
+}
+
+
+#regularActivityContent, #eventContent, #competitionContent {
+    width: 1014px;
+    height: 475px;
+    top: 327px;
+    left: 133px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 20px; 
+
+}
+
+
+.selected {
+    background-color: gray;
+    color: black;
+}
+
+.content {
+    display: none;
+    position: absolute;
+    top: 297px;
+    left: 133px;
+    width: 1014px;
+    height: 475px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+#allContent {
+    display: block; 
+}
+
+
+#writings span {
+    font-size: 16.2px; 
+
+   
+}
