@@ -254,7 +254,7 @@ input[type="file"] {
 
 .img_area {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2개의 이미지가 한 줄에 표시됩니다. */
+    grid-template-columns: repeat(2, 2fr); /* 2개의 이미지가 한 줄에 표시됩니다. */
     gap: 10px; /* 이미지 사이의 간격 */
 }
 

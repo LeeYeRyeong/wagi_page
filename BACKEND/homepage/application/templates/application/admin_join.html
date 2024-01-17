@@ -45,11 +45,11 @@
                 <div class="paging">
                     <!-- 이전페이지 -->
                     {% if join_list.has_previous %}
-                    <a href="?page={{ join_list.previous_page_number }}">
+                    <a class="link" href="?page={{ join_list.previous_page_number }}">
                         <i class="fa-solid fa-angle-left" id="prev_page"></i>
                     </a>
                     {% else %}
-                    <a tabindex="-1" aria-disabled="true" href="#">
+                    <a class="link" tabindex="-1" aria-disabled="true" href="#">
                         <i class="fa-solid fa-angle-left" id="prev_page"></i>
                     </a>
                     {% endif %}
@@ -59,11 +59,11 @@
                     {% if page_number >= join_list.number|add:-5 and page_number <= join_list.number|add:5 %}
                     {% if page_number == join_list.number %}
                     <span class="active" aria-current="page">
-                        <a href="?page={{ page_number }}">{{ page_number }}</a>
+                        <a class="link" href="?page={{ page_number }}">{{ page_number }}</a>
                     </span>
                     {% else %}
                     <span>
-                            <a href="?page={{ page_number }}">{{ page_number }}</a>
+                            <a class="link" href="?page={{ page_number }}">{{ page_number }}</a>
                     </span>
                     {% endif %}
                     {% endif %}
@@ -71,11 +71,11 @@
                     </div>
                     <!-- 다음페이지 -->
                     {% if join_list.has_next %}
-                    <a href="?page={{ join_list.next_page_number }}">
+                    <a class="link" href="?page={{ join_list.next_page_number }}">
                         <i class="fa-solid fa-angle-right" id="next_page"></i>
                     </a>
                     {% else %}
-                    <a tabindex="-1" aria-disabled="true" href="#">
+                    <a class="link" tabindex="-1" aria-disabled="true" href="#">
                         <i class="fa-solid fa-angle-right" id="next_page"></i>
                     </a>
                     {% endif %}
