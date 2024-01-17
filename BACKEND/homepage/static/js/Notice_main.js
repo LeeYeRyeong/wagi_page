@@ -1,7 +1,18 @@
 // Notice_main.js
 
+// Notice_main.js
 
+$(document).ready(function() {
+  // allContent 영역에 스크롤바 감추기
+  $("#allContent").css("overflow-y", "hidden");
 
+  // 스크롤이 생겼을 때 스크롤바 감추기
+  $("#allContent").on("mouseenter", function() {
+    $(this).css("overflow-y", "scroll");
+  }).on("mouseleave", function() {
+    $(this).css("overflow-y", "hidden");
+  });
+});
 
 function showContent(buttonId) {
     
