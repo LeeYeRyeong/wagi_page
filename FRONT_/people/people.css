@@ -55,13 +55,14 @@ body {
 }
 .L_text{
     width: 330px;
-    height: 80px;
+    height: 40px;
     float: inline-start;
     text-align: center;
     font-weight: bold ;
     margin-left: 3px;
     font-size: 18px;
     overflow: visible;  
+    margin-top: -30px;
 }
 .L_name{
     width: 70px;
@@ -79,7 +80,7 @@ body {
     width: 200px;
     height: 50px;  
     margin-bottom: 5px;
-    margin-top: 7px;
+    margin-top: 15px;
     margin-left: 3px;
     float: inline-start; 
     text-align: left;
@@ -127,14 +128,15 @@ body {
 }
 .R_text{
     width: 330px;
-    height: 80px;
+    height: 40px;
     float: inline-start;
     text-align: center;
     font-weight: bold ;
     
     margin-left: 3px;
     font-size: 18px;
-    overflow: visible;  
+    overflow: visible; 
+    margin-top: -30px; 
 }
 .R_name{
     width: 70px;
