@@ -14,115 +14,60 @@ window.onload = function () {
     //이미지 불러오기
     (function () {
 
-      //프로젝트 링크 삽입
-      let imageNum = document.querySelector('#project_img_area img');
-      if(imageNum) {
-        let projectLink = document.querySelectorAll('.item a');
-        try {
-          projectLink[0].href = 'https://naver.com';
-          projectLink[1].href = 'https://naver.com';
-          projectLink[2].href = 'https://naver.com';
-          projectLink[3].href = 'https://naver.com';
-          projectLink[4].href = 'https://naver.com';
-          projectLink[5].href = 'https://naver.com';
-          projectLink[6].href = 'https://naver.com';
-          projectLink[7].href = 'https://naver.com';
-          projectLink[8].href = 'https://naver.com';
-          projectLink[9].href = 'https://naver.com';
-          projectLink[10].href = 'https://naver.com';
-          projectLink[11].href = 'https://naver.com';
-        } catch(e) {
-        }
-      }
+        // 이미지 컨테이너 선택
+      let imgContainer = document.getElementById('project_img_area');
+
+      // imgContainer 내의 모든 이미지 선택
+      let images = imgContainer.getElementsByTagName('img');
+
+      // 각 이미지에 대해 반복
+      //for (let img of images) {
+          // a 태그 생성
+          //let link = document.createElement('a');
+          // href 속성 설정 (여기서는 모두 네이버로 설정)
+          //link.href = 'https://naver.com';
+          // target 속성을 설정하여 새 탭에서 링크를 열도록 함
+          //link.target = '_blank';
+          // 이미지를 a 태그의 자식으로 설정
+          //link.appendChild(img.cloneNode(true));
+          // 원본 이미지를 DOM에서 제거
+          //imgContainer.removeChild(img);
+          // a 태그를 이미지 컨테이너에 추가
+          //imgContainer.appendChild(link);
+      //}
     })();
 
     //mt
     (function () {
       const mtPrevBtn = document.querySelector('#mt_prev_button');
       const mtNextBtn = document.querySelector('#mt_next_button');
-      const imagesArea = document.querySelector('#mt_img_area');
-
-      let imageNum = document.querySelectorAll('#mt_img_content img');
-
-      //사진 개수에 따른 슬라이드 개수 조정
-      if (imageNum.length < 4) {
-        mtPrevBtn.classList.add('display_none');
-        mtNextBtn.classList.add('display_none');
-      }
-      if (imageNum.length == 0) {
-        imageBoxLen = 0;
-        let p = document.querySelector('#mt p');
-        p.classList.add('display_block');
-      }
-      else if (imageNum.length >= 1 && imageNum.length <= 4){
-        imageBoxLen = 1;
-      } 
-      else if (imageNum.length >= 5 && imageNum.length <= 8) imageBoxLen = 2;
-      else if (imageNum.length >= 9 && imageNum.length <= 12) imageBoxLen = 3;
-      else imageBoxLen = 0;
-
-      let slideContents = document.querySelectorAll('.img_content.size_original');
+      const imagesArea = document.querySelector('.img_area');
+      const slideContents = document.querySelectorAll('#mt_img_content');
       const slideLen = slideContents.length;
-
-      imagesArea.style.width = slideWidth * (slideLen + 2) + "px";
-
-      try {
-        // 슬라이드 복사
-        let firstChild = imagesArea.firstElementChild;
-        let lastChild = imagesArea.lastElementChild;
-        let clonedFirst = firstChild.cloneNode(true);
-        let clonedLast = lastChild.cloneNode(true);
+      const slideWidth = slideContents[0].offsetWidth; // 슬라이드 하나의 너비를 가져옵니다.
+      const slideSpeed = 300; // 원하는 애니메이션 속도를 밀리초 단위로 설정합니다.
+      const startNum = 0; // 시작할 슬라이드의 인덱스입니다.
   
-        // 슬라이드 추가
-        imagesArea.appendChild(clonedFirst);
-        imagesArea.insertBefore(clonedLast, imagesArea.firstElementChild);
+      imagesArea.style.width = `${slideWidth * slideLen}px`; // 전체 슬라이드 영역의 너비를 설정합니다.
   
-        // 애니메이션 효과
-        imagesArea.style.transform = "translate3d(-" + (slideWidth * (startNum + 1)) + "px, 0px, 0px)";
+      let curIndex = startNum; // 현재 활성화된 슬라이드 인덱스를 초기화합니다.
   
-        let curIndex = startNum;
-        let curSlide = slideContents[curIndex];
-        curSlide.classList.add('slide_active');
-  
-        //이전 버튼
-        mtPrevBtn.addEventListener('click', function () {
-          if (curIndex >= 0) {
-            imagesArea.style.transition = slideSpeed + "ms";
-            imagesArea.style.transform = "translate3d(-" + (slideWidth * curIndex) + "px, 0px, 0px)";
+      mtPrevBtn.addEventListener('click', function () {
+          if (curIndex > 0) {
+              imagesArea.style.transition = `${slideSpeed}ms`;
+              imagesArea.style.transform = `translate3d(-${slideWidth * (curIndex - 1)}px, 0px, 0px)`;
+              curIndex--;
           }
-          if (curIndex === 0) {
-            setTimeout(function () {
-              imagesArea.style.transition = "0ms";
-              imagesArea.style.transform = "translate3d(-" + (slideWidth * slideLen) + "px, 0px, 0px)";
-            }, slideSpeed);
-            curIndex = slideLen;
-          }
-          curSlide.classList.remove('slide_active');
-          curSlide = slideContents[--curIndex];
-          curSlide.classList.add('slide_active');
-        });
+      });
   
-        //다음 버튼
-        mtNextBtn.addEventListener('click', function () {
-          if (curIndex <= slideLen - 1) {
-            imagesArea.style.transition = slideSpeed + "ms";
-            imagesArea.style.transform = "translate3d(-" + (slideWidth * (curIndex + 2)) + "px, 0px, 0px)";
+      mtNextBtn.addEventListener('click', function () {
+          if (curIndex < slideLen - 1) {
+              imagesArea.style.transition = `${slideSpeed}ms`;
+              imagesArea.style.transform = `translate3d(-${slideWidth * (curIndex + 1)}px, 0px, 0px)`;
+              curIndex++;
           }
-          if (curIndex === slideLen - 1) {
-            setTimeout(function () {
-              imagesArea.style.transition = "0ms";
-              imagesArea.style.transform = "translate3d(-" + slideWidth + "px, 0px, 0px)";
-            }, slideSpeed);
-            curIndex = -1;
-          }
-          curSlide.classList.remove('slide_active');
-          curSlide = slideContents[++curIndex];
-          curSlide.classList.add('slide_active');
-        });
-      } catch(e) {
-
-      }
-    })();
+      });
+  })();
 
     //study
     (function () {
@@ -302,28 +247,55 @@ window.onload = function () {
 
     //모달창
     (function () {
-      // 모달을 표시하는 함수
-      function setupModal(album) {
-        const imgs = document.querySelectorAll(`#${album}_img_area img`);
-        const modal = document.getElementById(`${album}Modal`);
-        const modalImg = modal.querySelector('.modal-content');
-      
-        imgs.forEach(img => {
-          img.addEventListener('click', () => {
-            modal.style.display = 'block';
-            modalImg.src = img.src;
+      /// 모달을 표시하는 함수
+      function showModal(modalId, imgSrc) {
+        var modal = document.getElementById(modalId);
+        if (!modal) {
+          console.error('Modal with ID ' + modalId + ' not found.');
+          return;
+        }
+        var modalImage = modal.querySelector(".modal-content");
+        modalImage.src = imgSrc; // 클릭한 이미지의 소스를 모달 이미지 소스로 설정
+        modal.style.display = "block"; // 모달 창을 표시
+      }
+
+      // 모달을 숨기는 함수
+      function hideModal(modal) {
+        modal.style.display = "none"; // 모달 창을 숨김
+      }
+
+      // 페이지에 이미지가 로드된 후에 이벤트 리스너를 바인딩
+      document.addEventListener('DOMContentLoaded', function() {
+        // 각 앨범 아이템에 대해 모달 표시 로직 설정
+        ['mt', 'study', 'project'].forEach(function (album) {
+          var imgArea = document.getElementById(album + '_img_area');
+          if (!imgArea) {
+            console.error('Image area with ID ' + album + '_img_area' + ' not found.');
+            return;
+          }
+
+          var modalId = album + 'Modal';
+          var modal = document.getElementById(modalId);
+          if (!modal) {
+            console.error('Modal with ID ' + modalId + ' not found.');
+            return;
+          }
+
+          // 이미지 클릭 시 모달 표시
+          imgArea.addEventListener("click", function (event) {
+            if (event.target.tagName === 'IMG') {
+              showModal(modalId, event.target.src);
+            }
+          });
+
+          // 모달 컨텐츠 클릭 시 모달 숨기기
+          var modalImage = modal.querySelector(".modal-content");
+          modalImage.addEventListener("click", function () {
+            hideModal(modal);
           });
         });
-      
-        modal.addEventListener('click', () => {
-          modal.style.display = 'none';
-        });
-      }
-      
-      // 모달 기능을 각 앨범에 설정
-      setupModal('mt');
-      setupModal('study');
-      setupModal('project');
+      });
+
     })();
 
   } else if(editPage){ //edit_page.html일 때

@@ -253,8 +253,9 @@ input[type="file"] {
 }
 
 .img_area {
-    width: 100%;
-    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2개의 이미지가 한 줄에 표시됩니다. */
+    gap: 10px; /* 이미지 사이의 간격 */
 }
 
 .img_content {
@@ -315,7 +316,6 @@ img {
 .image-wrapper {
     position: relative;
     display: inline-block;
-    float: left;
     /* 이미지 래퍼에 필요한 추가 스타일링이 있으면 여기에 추가 */
 }
 
@@ -332,7 +332,6 @@ img {
     border-radius: 50%; /* 원형으로 만들기 위해 50% 설정 */
     background-color: rgba(215, 215, 215, 0.7); /* 체크박스 배경색 */
     cursor: pointer; /* 마우스 오버 시 커서 변경 */
-    /* content 속성은 ::after와 함께 사용되어야 합니다 */
 }
 
 .img-checkbox::after {
@@ -395,12 +394,6 @@ img {
     left: 50%; /* 수평 중앙 */
     transform: translate(-50%, -50%); /* 중앙 정렬을 위한 변환 */
     cursor: pointer; /*커서 활성화*/
-}
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2개의 이미지가 한 줄에 표시됩니다. */
-    gap: 10px; /* 이미지 사이의 간격 */
 }
 
 .img_content {
