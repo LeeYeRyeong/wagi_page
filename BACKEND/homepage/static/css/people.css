@@ -6,6 +6,7 @@ body {
     width: auto;
     overflow: scroll;
     position: relative;
+
 }
 
 .center {
@@ -15,7 +16,8 @@ body {
     left: 50%;
     top: 100px;
     margin-left: -400px;
-    padding-bottom: 500px;
+    margin-bottom: 120vh;
+    margin-top: 10%;
   }
   
 
@@ -76,10 +78,10 @@ body {
 
 }
 .L_link{
-    width: 200px;
-    height: 50px;  
+    width: 100px;
+    height: 30px;  
     margin-bottom: 5px;
-    margin-top: 7px;
+    margin-top: 9px;
     margin-left: 3px;
     float: inline-start; 
     text-align: left;
@@ -148,37 +150,34 @@ body {
     overflow: visible;
 }
 .R_link{
-    width: 200px;
-    height: 50px;  
+    width: 100px;
+    height: 30px;  
     margin-bottom: 5px;
-    margin-top: 7px;
+    margin-top: 9px;
     margin-left: 3px;
     float: inline-start; 
     text-align: left;
     
 }
-
 @keyframes bubbleFadeIn {
     0% {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     50% {
-      opacity: 0.5;
-      transform: translateY(-20px);
-    }s
-    100% {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 0.5;
+        transform: translateY(-20px);
     }
-  }
-  
-  .L_bubble, .R_bubble {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.L_bubble,
+.R_bubble {
     opacity: 0;
     animation-name: bubbleFadeIn;
-    animation-duration: 0.8s; /* 애니메이션 지속 시간을 조정합니다. */
-    animation-fill-mode: forwards; /* 애니메이션 완료 후 상태를 유지합니다. */
-  }
-
-  
-  
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}

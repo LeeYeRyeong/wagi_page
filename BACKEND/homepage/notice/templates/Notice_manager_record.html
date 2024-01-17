@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_manager_record.css' %}">
     <a  href="{% url 'notice:notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div>
         {% if user.is_superuser %}
-        <a href="{% url 'notice:notice_create' %}"><input type="button" id="writings" class="writing" value="글 작성"></a>
+        <a href="{% url 'notice:notice_create' %}"><div id="writings" class="writing">글 작성</div></a>
         {% endif %}
-
+<div id="realContent">
     <form action="{% url 'notice:edit_notice' notion_id=notice.id %}" method="GET">
         {% csrf_token %}
         <div id="regularActivity" class="round-button" name="regularActivity">정기활동</div>
@@ -41,6 +41,7 @@
         </div>
         
     </form>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{% static 'js/Notice_manager_record.js' %}"></script>

@@ -9,74 +9,66 @@
     <div id="content"><!--헤더 밑-->
         <div id="button_area"><!--버튼 공간 (없음)-->
             <div id="delete_button_area">
-                <button type="submit" class="button" id="delete_button">
-                    <a href="/edit/">수정하기</a>
+                <button type="button" class="button" id="delete_button">
+                    <a href ="/edit/">수정하기</a>
                 </button>
             </div>
-            <br>
-            <br>
+        </div> 
+        <br>
+        <br>
+        <div id="button_area"><!--버튼 공간 (없음)-->
             <div id="upload_button_area">
-                <button type="submit" class="button" id="upload_button">
-                    <a href="/upload/">업로드하기</a>
+                <button type="button" class="button" id="upload_button">
+                    <a href ="/upload/">업로드 하기</a>
                 </button>
             </div>
         </div>
         <div id="item_area"><!--버튼 밑-->    
-            <div id="item_area"><!--모든 앨범-->
+            <div id="article"><!--모든 앨범-->
                 <!-- MT -->
                 <div class="item" id="mt">
-                    <br>
                     <div class="album">
                         <div class="prev_button" id="mt_prev_button">&lt;</div>
                         <div class="next_button" id="mt_next_button">&gt;</div>
                         <div class="img_box">
                             {% if images %}
-                                <div class="img_area clearfix" id="mt_img_area">
+                                <div class="img_area"> 
                                     {% for image in images %}
                                         {% if image.mt_image %}
-                                                <div id="mt_img_content" class="img_content size_original">
-                                                    {% for i in "1234" %}
-                                                        <img src="{{ image.mt_image.url }}" alt="MT Image">
-                                                    {% endfor %}
-                                                </div>
+                                            <div id="mt_img_content" class="img_content size_original">
+                                                <img src="{{ image.mt_image.url }}" alt="MT Image">
+                                            </div>
                                         {% endif %}
                                     {% endfor %}
                                 </div>
+                                <div id="mtModal" class="modal">
+                                    <img class="modal-content" id="mtModalImage">
+                                </div>
                             {% else %}
-                                <p hidden>사진이 없습니다.</p>
+                                <p class="no-images">사진이 없습니다.</p>
                             {% endif %}
-                            <div id="mtModal" class="modal">
-                                <img class="modal-content" id="mtModalImage">
-                            </div>
                         </div>
                     </div>
                     <div class="album_name">MT</div>
                 </div>
                 <!-- Study -->
                 <div class="item" id="study">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
                     <div class="album">
                         <div class="prev_button" id="study_prev_button">&lt;</div>
                         <div class="next_button" id="study_next_button">&gt;</div>
                         <div class="img_box">
                             {% if images %}
-                                <div class="img_area clearfix" id="study_img_area">
+                                <div class="img_area"> 
                                     {% for image in images %}
                                         {% if image.study_image %}
                                             <div id="study_img_content" class="img_content size_original">
-                                                {% for i in "1234" %}
-                                                    <img src="{{ image.study_image.url }}" alt="Study Image">
-                                                {% endfor %}
+                                                <img src="{{ image.study_image.url }}" alt="Study Image">
                                             </div>
                                         {% endif %}
-                                    {% endfor %}    
+                                    {% endfor %}
                                 </div>
                             {% else %}
-                                <p hidden>사진이 없습니다.</p>
+                                <p class="no-images">사진이 없습니다.</p>
                             {% endif %}
                             <div id="studyModal" class="modal">
                                 <img class="modal-content" id="studyModalImage">
@@ -87,29 +79,25 @@
                 </div>
                 <!-- Project -->
                 <div class="item" id="project">
-                    <br>
                     <div class="album">
                         <div class="prev_button" id="project_prev_button">&lt;</div>
                         <div class="next_button" id="project_next_button">&gt;</div>
                         <div class="img_box">
                             {% if images %}
-                                <div class="img_area clearfix" id="project_img_area">
+                                <div class="img_area">     <!--image-grid랑 img_area랑 같게 해보기로 하자-->
                                     {% for image in images %}
                                         {% if image.project_image %}
-                                            <div id="project_img_content" class="img_content size_original">
-                                                {% for i in "1234" %}
+                                            <a href="https://www.naver.com/" class="img_link"> <!-- 일단 네이버로 링크함 -->
+                                                <div id="project_img_content" class="img_content size_original">
                                                     <img src="{{ image.project_image.url }}" alt="Project Image">
-                                                {% endfor %}   
-                                            </div>
+                                                </div>
+                                            </a>
                                         {% endif %}
                                     {% endfor %}
                                 </div>
-                            {% else %} 
-                                <p hidden>사진이 없습니다.</p>
+                            {% else %}
+                                <p class="no-images">사진이 없습니다.</p>
                             {% endif %}
-                            <div id="projectModal" class="modal">
-                                <img class="modal-content" id="projectModalImage">
-                            </div>
                         </div>
                     </div>
                     <div class="album_name">Project</div>
