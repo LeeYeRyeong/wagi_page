@@ -11,7 +11,7 @@ body {
     width: 100%;
     max-width: 1006px;
     margin: 0 auto;
-    margin-top: 218px;
+    margin-top: 190px;
     overflow: hidden;
 }
 
@@ -52,13 +52,18 @@ body {
     margin-top: 10px;
     background-color: white;
     color: black;
+    
+    overflow-y: auto;  /* 세로 스크롤을 추가 */
+    max-height: 152px;  /* 내용의 최대 높이를 설정*/
+    
+    
 
 }
 
 .submit-button {
     width: 722px;
     height: 88px;
-    top: 580px;
+    top: 200px;
     position: absolute;
     left: 50%;
     transform: translate(-50%,-50%);

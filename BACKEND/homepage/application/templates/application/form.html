@@ -1,15 +1,16 @@
+{% extends 'basic.html' %}
 {% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application</title>
-
-
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/joinSelfintro.css' %}">
     <link rel="stylesheet" href="../../../static/css/joinSelfintro.css">
+    <link rel="stylesheet" href="../../../static/css/base.css">
     <style>
         .inputmodel {
             outline:none;
@@ -17,28 +18,13 @@
             box-sizing: border-box;
             border: none;
         }
-
-        
     </style>
 
 </head>
 <body>
-    <header id="main-header">
-        <img src="{% static 'img/WAGI logo.png' %}" alt="WAGI logo image">
-        <nav id="main-navigation">
-            <ul class="menu">
-                <li class="menu-item">Activities</li> 
-                <li class="menu-item">People</li>
-                <li class="menu-item">Join</li>
-                <li class="menu-item">Notice</li>
-            </ul> 
-        </nav>
-    </header>
-</head>
-<body>
     <form method="post" action="{% url 'application:form' %}">
         {% csrf_token %}
- 
+
         <div class="container">
             <div class="question-box">
                 <p style="margin: 0;">1. 자기소개를 해주세요. (500자 내외)</p>
@@ -68,8 +54,6 @@
                 <div class="input-box">{{ form.study_experience|default_if_none:'' }}</div>
             </div>
         
-    
-            <!-- 나머지 질문과 답변을 추가하세요 -->
         </div>
 
         <div class="container2">
@@ -81,3 +65,4 @@
 
 </body>
 </html>
+{% endblock %}
