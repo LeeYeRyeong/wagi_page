@@ -10,49 +10,51 @@
 </head>
 <body>
     <div class="info-box" style="background-color: #9EA9D7;">
-    <div class="info-text">
-        지원자 정보
-    </div>
-</div>
-
-    <div class="input-box">
-        <div class="basic-info">
-            기본 정보
-            <span class="required-text"> (필수)</span>
-        </div>
-    
-        <div class="input-container">
-            <!-- 이름 입력 -->
-            <label for="name" style="color: #999898;">이름</label>
-            {{ form.user_name }}
-            <div class="warning-message" id="warningName">{{ form.user_name.errors }}</div>
-
-            <!-- 학번 입력 -->
-            <label for="studentID" style="color: #999898;">학번</label>
-            {{ form.user_number }}
-            <div class="warning-message" id="warningStudentID">{{ form.user_number.errors }}</div>
-
-            <!-- 학과 입력 -->
-            <label for="id_user_major" style="color: #999898;"class="input-label">학과</label>
-            {{ form.user_major }}
-            <div class="warning-message" id="warningDepartment">{{ form.user_major.errors }}</div>
-
-            <!-- 전화번호 입력 -->
-            <label for="id_user_phone_number" style="color: #999898;" class="input-label">전화번호('-'없이 입력해 주세요)</label>
-            {{ form.user_phone_number }}
-            <div class="warning-message" id="warningPhoneNumber">{{ form.user_phone_number.errors }}</div>
+        <div class="info-text">
+            지원자 정보
         </div>
     </div>
 
-    <!-- 학번 확인 버튼 -->
-    <div class="confirm-button" id="confirm-button" onclick="confirmStudentID()">학번 확인</div>
+    <form method="post" action="{% url 'apply_club_user_info_view' %}">
+        {% csrf_token %}
+        <div class="input-box">
+            <div class="basic-info">
+                기본 정보
+                <span class="required-text"> (필수)</span>
+            </div>
+        
+            <div class="input-container">
+                <!-- 이름 입력 -->
+                <label for="name" style="color: #999898;">이름</label>
+                {{ form.user_name }}
+                <div class="warning-message" id="warningName">{{ form.user_name.errors }}</div>
 
-    <!-- 지원서 작성하기 버튼 -->
-    <button class="enter" id="enter-button" onclick="checkForm()"><a href="{% url 'application:form' %}">지원서 작성하기</a></button>
+                <!-- 학번 입력 -->
+                <label for="studentID" style="color: #999898;">학번</label>
+                {{ form.user_number }}
+                <div class="warning-message" id="warningStudentID">{{ form.user_number.errors }}</div>
+
+                <!-- 학과 입력 -->
+                <label for="id_user_major" style="color: #999898;" class="input-label">학과</label>
+                {{ form.user_major }}
+                <div class="warning-message" id="warningDepartment">{{ form.user_major.errors }}</div>
+
+                <!-- 전화번호 입력 -->
+                <label for="id_user_phone_number" style="color: #999898;" class="input-label">전화번호('-'없이 입력해 주세요)</label>
+                {{ form.user_phone_number }}
+                <div class="warning-message" id="warningPhoneNumber">{{ form.user_phone_number.errors }}</div>
+            </div>
+        </div>
+
+        <!-- 학번 확인 버튼 -->
+        <div class="confirm-button" id="confirm-button" onclick="confirmStudentID()">학번 확인</div>
+
+        <!-- 지원서 작성하기 버튼 -->
+        <button type="submit" class="enter" id="enter-button">지원서 작성하기</button>
+    </form>
 
     <!-- Include your JavaScript file -->
     <script src="{% static 'js/joinBasicInfo.js' %}"></script>
 {% endblock %}
-
 </body>
 </html>

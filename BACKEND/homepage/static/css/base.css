@@ -22,7 +22,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 120vh;
 }
 
 #main-header {
@@ -38,7 +38,9 @@ a {
     padding: 0 40px;
     z-index: 999;/*Notice main쪽 z index 설정때문에 이거 맞춰둡니다*/
 }
-
+#main-header>a{
+    margin-top: 40px;
+}
 nav {
     float: right;
 }

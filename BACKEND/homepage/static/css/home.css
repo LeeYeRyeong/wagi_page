@@ -40,7 +40,7 @@ section {
 .fixed-image:nth-child(1) {
    
     top: 200px;
-    left: 290px;
+    left: 320px;
 }
 
 .fixed-image:nth-child(2) {
@@ -68,78 +68,76 @@ section {
     position: relative;
     left:140px;
     color:white;
+    font-size: 45px;
+    font-weight: bold; 
 
 }
-.top-box {
-        top: 30px;
-        left: 50px;
-        align-items: center;
-        justify-content: space-between;
-        
-   
-    }
-.image-container{
-    margin :0 auto;
+
+.text1 #p1{
+    font-weight: bold;
 }
 .top-box .box1 {
-    width: 450px;
-    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px; 
+    height: 250px; 
     background-color: white;
     margin: 20px;
     border-radius: 20px;
     display: flex;
-    position:relative;
-  
+    position: relative;
 }
 
 .top-box .box2 {
-    width: 450px;
-    height: 200px;
+     width: 600px; 
+    height: 250px; 
     background-color: white;
     margin: 20px;
     border-radius: 20px;
     display: flex;
-    position:relative;
-    
+    position: relative;
 }
 
-.bottom-box {
-    top: 30px;
-    left: 50px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.bottom-box >.box3 {
-    width: 450px;
-    height: 200px;
+.bottom-box .box3 {
+     width: 600px; 
+    height: 250px; 
     background-color: white;
     margin: 20px;
     border-radius: 20px;
     display: flex;
-    position:relative;
-    
-  
+    position: relative;
 }
-
-.bottom-box .box4 {
-    width: 450px;
-    height: 200px;
+#s1{
+    font-weight: bold;
+}
+#s2{
+ letter-spacing: -5px;
+ line-height: 1.2;
+}
+ .bottom-box .box4 {
+     width: 600px; 
+    height: 250px; 
     background-color: white;
     margin: 20px;
     border-radius: 20px;
     display: flex;
-    position:relative;
-   
+    position: relative;
+}
+
+.box1 h1,
+.box2 h1,
+.box3 h1,
+.box4 h1 {
     
+    margin: 2px; /* 텍스트 간격 조절 */
 }
 
 .text1{
    
-    left:200px;
-    top:100px;
-     margin-top: 80px;
-    margin-left: 30px;
+    left:180px;
+    top:90px;
+    
 }
 .text2{
    
@@ -148,12 +146,23 @@ section {
     margin-top: 50px;
     margin-left: 60px;
 }
+.text3{
+   
+    left:200px;
+    top:150px;
+    margin-top: 8px;
+    margin-left: 60px;
+}
 #h1{
-  left:200px;
-    top:100px;
-    margin-top: 20px;
-    margin-left: 70px;
+    left:180px;
+    top:90px;
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 50px;
        
+}
+#s3{
+    font-weight: bold;
 }
 .text4{
    
@@ -168,7 +177,9 @@ section {
 .box4 h1 {
     margin: 2px; /* Adjust the text spacing */
 }
-
+#s2{
+    font-weight: bold;
+}
 #p {
     font-size: 10px;
 }
@@ -186,16 +197,11 @@ section {
             
         }
         
-.move-img{
-    position: relative;
-    top:30px;
-    left:10px;
-    
-}
+
 .move-img1{
     position: relative;
     top:30px;
-    left:20px;
+    left:10px;
     
 }
 .move-img2{
@@ -206,8 +212,9 @@ section {
 .move-img3{
     position: relative;
     top:30px;
-    left:20px;
+    left:10px;
 }
+
 #news{
     position: absolute;
     font-size: 20px;

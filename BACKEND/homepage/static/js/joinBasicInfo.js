@@ -192,3 +192,26 @@ function handleInput(input) {
       input.style.borderBottom = '1px solid #333';
   }
 }
+
+
+function checkForm() {
+  // 폼 요소들 참조
+  var userName = document.getElementById('id_user_name').value;
+  var userNumber = document.getElementById('id_user_number').value;
+  var userMajor = document.getElementById('id_user_major').value;
+  var userPhoneNumber = document.getElementById('id_user_phone_number').value;
+
+  // 모든 필드가 비어있는지 확인
+  if (userName === '' || userNumber === '' || userMajor === '' || userPhoneNumber === '') {
+    alert('모두 입력해주세요.');
+  } else {
+    // 폼이 올바르게 입력되었을 때
+    alert('제출되었습니다. 감사합니다~');
+    
+  }
+}
+
+
+
+
+
