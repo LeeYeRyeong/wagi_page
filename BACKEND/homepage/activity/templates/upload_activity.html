@@ -1,35 +1,67 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Upload Activity Images</title>
-</head>
-<body>
+{% extends "basic.html" %}
+{% load static %}
 
-<h2>Upload Activity Images</h2>
 
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    
-    <!-- MT 이미지 업로드 -->
-    <div class="form-group">
-        <label for="{{ mt_form.mt_image.id_for_label }}">MT Image:</label>
-        {{ mt_form.mt_image }}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/activities.css' %}">    
+    <div id="activities_manager" hidden></div><!--js 처리용 div-->
+    <div id="content"><!--헤더 밑-->
+        <form action="" method="post" enctype="multipart/form-data">
+            <div id="button_area"><!--버튼 공간-->
+                <div class="upload_button_area">
+                    <button type="submit" class="button" id="upload_button">
+                        사진 업로드하기
+                    </button>
+                </div>
+            </div>
+            <br>
+            <div id="item_area"><!--이동 버튼 밑-->
+                <div id="article"><!--모든 앨범-->
+                    {% csrf_token %}
+                    <!--MT-->
+                    <div class="item" id="mt"><!--앨범 및 앨범 이름-->
+                        <div class="album_name">MT</div>
+                        <div class="upload_album">
+                            <div class="text" style="color: black;">첨부 파일</div>
+                            <div class="select_file_area">
+                                <label for="{{ mt_form.mt_image.id_for_label }}" style="color: black;" >사진 추가</label>
+                                {{ mt_form.mt_image }}
+                                <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
+                                <input class="upload_file_names" id="mt_file" value="" placeholder="선택된 사진이 없습니다.">
+                            </div>
+                        </div>
+                    </div>
+                    <!--이하 동일-->
+                    <!--study-->
+                    <div class="item" id="study"><!--앨범 및 앨범 이름-->
+                        <div class="album_name">Study</div>
+                        <div class="upload_album">
+                            <div class="text" style="color: black;">첨부 파일</div>
+                            <div class="select_file_area">
+                                <label for="{{ study_form.study_image.id_for_label }}" style="color: black;">사진 추가</label>
+                                {{ study_form.study_image }}
+                                <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
+                                <input class="upload_file_names" id="study_file" value="" placeholder="선택된 사진이 없습니다.">
+                            </div>
+                        </div>
+                    </div>
+                    <!--project-->
+                    <div class="item" id="project"><!--앨범 및 앨범 이름-->
+                        <div class="album_name">Project</div>
+                        <div class="upload_album">
+                            <div class="text" style="color: black;">첨부 파일</div>
+                            <div class="select_file_area">
+                                <label for="{{ project_form.project_image.id_for_label }}" style="color: black;" >사진 추가</label>
+                                {{ project_form.project_image }}
+                                <img class="img_icon" src="{% static 'img/img icon.png' %}" alt="Img Icon">
+                                <input class="upload_file_names" id="project_file" value="" placeholder="선택된 사진이 없습니다.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-
-    <!-- Study 이미지 업로드 -->
-    <div class="form-group">
-        <label for="{{ study_form.study_image.id_for_label }}">Study Image:</label>
-        {{ study_form.study_image }}
-    </div>
-
-    <!-- Project 이미지 업로드 -->
-    <div class="form-group">
-        <label for="{{ project_form.project_image.id_for_label }}">Project Image:</label>
-        {{ project_form.project_image }}
-    </div>
-
-    <button type="submit" class="btn btn-primary">이미지 업로드하기</button>
-</form>
-
-</body>
-</html>
+    <script defer src="{% static 'js/activities.js' %}"></script>
+{% endblock %}

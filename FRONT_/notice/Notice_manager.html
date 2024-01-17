@@ -10,20 +10,20 @@
     <form>
         <div id="notices" class="notice"><span>공지사항</span></div>
 
-        <button id="writings" class="writing"><span>글 작성</span></button>
-        
-        <button id="regularActivity" class="round-button" onclick="showContent('regularActivity')">정기활동</button>
-        <button id="event" class="round-button" onclick="showContent('event')">행사</button>
-        <button id="competition" class="round-button" onclick="showContent('competition')">공모전</button>
-
-        <textarea id="allContent" readonly>모든 활동 내용</textarea>
-
-        <textarea id="regularActivityContent" class="content" readonly>&nbsp;정기활동 내용</textarea>
-
-        <textarea id="eventContent" class="content" readonly>&nbsp;행사 내용</textarea>
-
-        <textarea id="competitionContent" class="content" readonly>&nbsp;공모전 내용</textarea>
+        <input type="button" id="writings" class="writing" value="글 작성">
     </form>
+    
+    <input type="button" id="regularActivity" class="round-button" onclick="showContent('regularActivity')" value="정기활동">
+    <input type="button" id="event" class="round-button" onclick="showContent('event')" value="행사">
+    <input type="button" id="competition" class="round-button" onclick="showContent('competition')" value="공모전">
+
+    <textarea id="allContent" readonly>모든 활동 내용</textarea>
+
+    <textarea id="regularActivityContent" class="content" readonly>&nbsp;정기활동 내용</textarea>
+
+    <textarea id="eventContent" class="content" readonly>&nbsp;행사 내용</textarea>
+
+    <textarea id="competitionContent" class="content" readonly>&nbsp;공모전 내용</textarea>
 
     <script src="Notice_manager.js"></script>
    
