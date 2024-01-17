@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         photo: "../static/img/people/전민선.png",
         bio: "즐거운 코딩 ~.~",
         link_1: "https://github.com/mminnn28",
+        link_2: "https://mminnn28.tistory.com/",
       },
       {
         name: "김지희",
@@ -127,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         name: "김다예",
         photo: "../static/img/people/김다예.png",
-        bio: "성신 최고 개발 동아리 WAGI 부원입니다 :D",
+        bio: "WAGI 1기 부원입니다. :D",
         link_1: "https://github.com/kdy09687",
       },
       

@@ -75,6 +75,7 @@ section {
 
 .text1 #p1{
     font-weight: bold;
+
 }
 .top-box .box1 {
     display: flex;
@@ -135,22 +136,26 @@ section {
 
 .text1{
    
-    left:180px;
+    left:170px;
     top:90px;
     
+}
+.text1 > #p {
+    margin-left: -20px;
 }
 .text2{
    
     left:200px;
     top:150px;
-    margin-top: 50px;
+    margin-top: 70px;
     margin-left: 60px;
+
 }
 .text3{
    
     left:200px;
     top:150px;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-left: 60px;
 }
 #h1{
@@ -168,7 +173,7 @@ section {
    
     left:200px;
     top:100px;
-    margin-top: 50px;
+    margin-top: 70px;
     margin-left: 60px;
 }
 .box1 h1,
@@ -185,7 +190,7 @@ section {
 }
 #p1{
      font-size: 12px;
-     text-align: left;
+     text-align: center;
 }
 #p2{
     font-size: 30px;
@@ -197,7 +202,9 @@ section {
             
         }
         
-
+.move-img{
+    margin-left: -20px;
+}
 .move-img1{
     position: relative;
     top:30px;
@@ -220,9 +227,11 @@ section {
     font-size: 20px;
     color:white;
     left:350px;
-    top:100px;
+    top:180px;
     font-weight: bold;
+    margin-bottom: 30px;
 }
+
 
 
 #instagram1>#p1{
