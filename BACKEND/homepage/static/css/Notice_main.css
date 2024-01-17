@@ -10,7 +10,7 @@
     position: absolute;
     top: 202px;
     left: 57px;
-    width: 121px;
+    width: 120px;
     height: 44px;
     border-radius: 20px;
     background-color: #9EA9D7;
@@ -64,10 +64,11 @@
 }
 
 #allContent {
-    width: 1014px;
-    height: 475px;
-    top: 327px;
-    left: 133px;
+    width: 1500px;
+    height: 500px;
+    top: 33%;
+    left: 50%;
+    margin-left: -750px;
     border-radius: 20px;
     background-color: white;
     margin-top: 20px; 
@@ -80,7 +81,7 @@
 .box{
     color: black;
     position: absolute;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .box a {
