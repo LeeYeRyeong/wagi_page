@@ -26,7 +26,7 @@
                 <div class="box">
                     <span class="write-time">{{ notice.write_time }}</span>
                     <span class="category">{{ notice.category }}</span>
-                    <a class="notice-title" href="{% url 'notice:notice_detail' notion_id=notice.id %}">{{ notice.notion_title }}</a>
+                    <a class="notice-title" href="{% url 'notice:notice_detail' notion_id=notice.id %}"><span class="notitle">{{ notice.notion_title }}</span></a>
                 </div>
             </li>
             

@@ -215,14 +215,14 @@
     color:black !important;
 }
 .selectedImageName{
-    position: absolute;
-    top: 735px;
-    left: 190px;
+    position: relative;
+    margin-top: 460px;
 }
 
 #selectedImageIcon {
+    margin-left: 10px;
     margin-right: 10px;
-    position: absolute;
-    top: 735px;
-    left: 165px; /* 아이콘과 파일명 사이의 간격 조절 */
+    position: relative;
+    margin-top: 460px;
+     /*아이콘과 파일명 사이의 간격 조절 */
 }

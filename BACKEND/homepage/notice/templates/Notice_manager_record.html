@@ -35,10 +35,11 @@
         {% if user.is_superuser %}
         <input type="submit" id="editButton" value="수정하기">
         {% endif %}
+        <di id="datePart">
+            <div id="date">작성일</div>
+            <p id="realDate" >{{ notice.write_time }}</p>
+        </div>
         
-        <p id="date" style="font-size:10px">{{ notice.write_time }}</p>
-        
-        <p id="real_date" name="message2" rows="1" cols="50" readonly></p>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

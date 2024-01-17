@@ -34,8 +34,8 @@ section {
 }
 
 .fixed-image:nth-child(1) {
-    top: 180px;
-    left: 190px;
+    top: 200px;
+    left: 200px;
 }
 
 .fixed-image:nth-child(2) {

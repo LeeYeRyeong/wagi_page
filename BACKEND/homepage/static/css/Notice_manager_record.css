@@ -40,14 +40,18 @@
 
 #titleWriting {
     position: absolute;
-    width: 950px;
+    width: 935px;
     height: 50px;
+    padding-top: 12px;
+    padding-left: 20px;
+    
     top: 87px;
     left: 32px;
     border: 1px solid black;
     color: black;
     border-radius: 20px;
     z-index: 30;
+    resize: none;
 }
 
 #contentsWriting {
@@ -71,6 +75,8 @@
     width: 100%;
     height: 30%; 
     box-sizing: border-box;
+    margin-left: 20px;
+    margin-top: 12px;
 }
 
 #imageContainer {
@@ -92,6 +98,9 @@
 #imageContainer img {
     width: 100%; 
     height: auto;
+}
+textarea:focus{
+    outline: none;
 }
 
 #main-navigation {
@@ -166,12 +175,17 @@
     z-index: 30;
     border: 0.7px solid #9EA9D7;
 }
-
-#date {
+#datePart{
+    width: auto;
+    height: 30px;
     position: absolute;
     top: 335px;
     left: 190px;
-    width: 78px;
+    padding-top: 10px;
+}
+#date {
+    position: relative;
+    width: 60px;
     height: 21px;
     border-radius: 20px;
     border: 0.8px solid #9EA9D7;
@@ -181,18 +195,19 @@
     color: black;
     background-color: white;
     z-index: 100;
+    display: inline-block;
+    padding-left: 18px;
+
+}
+#realDate{
+    position: relative;
+    color: black;
+    font-size:10px;
+    z-index: 100;
+    display: inline-block;
+
 }
 
-#real_date {
-    position: absolute;
-    top: 350px;
-    left: 280px;
-    color: black;
-    z-index: 30;
-    width: 100px;
-    height: 12px;
-    font-size: 20;
-}
 
 #regularActivity {
     margin-left: 20px;

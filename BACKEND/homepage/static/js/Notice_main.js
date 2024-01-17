@@ -3,8 +3,8 @@
 
 
 
-function showContent(buttonId, event) {
-    event.preventDefault();
+function showContent(buttonId) {
+    
     // 모든 content div를 감춤
     var allContentDivs = document.querySelectorAll('.content');
     allContentDivs.forEach(function(contentDiv) {
@@ -22,14 +22,10 @@ function showContent(buttonId, event) {
     buttons.forEach(function(button) {
         if (button.id === buttonId) {
             button.classList.add('selected');
+            console.log(`Class added to button: ${buttonId}`);
         } else {
             button.classList.remove('selected');
         }
     });
 }
 
-//글작성 버튼 클릭시 페이지 이동
-document.getElementById("writings").addEventListener("click", function(event) {
-    event.preventDefault();
-    window.location.href = "Notice_manager_writing.html";
-});
