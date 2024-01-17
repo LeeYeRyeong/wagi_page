@@ -354,6 +354,7 @@ img {
 
 #mt {
     float: left;
+    left : 5%;
 }
 
 #study {
@@ -365,6 +366,7 @@ img {
 
 #project {
     float: right;
+    right: 5%;
 }
 
 /* 모달 컨테이너 스타일 */
