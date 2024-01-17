@@ -42,6 +42,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
+    border: 1px;
 }
 
 /* 비밀번호 버튼 */
@@ -60,6 +61,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
+
 }
 
 .in-button > button {
@@ -76,6 +78,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
+    border: 0px;
 }
 a{
     color: white;
