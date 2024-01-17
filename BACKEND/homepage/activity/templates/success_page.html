@@ -1,76 +1,121 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Upload Success</title>
-    <style>
-        .image-section {
-            margin-bottom: 20px;
-        }
+{% extends "basic.html" %}
+{% load static %}
 
-        .image-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
 
-        .image-section h4 {
-            text-align: center;
-        }
-
-        .image-container img {
-            width: 23%; /* 4분할로 정렬하기 위해 23%로 설정 */
-            margin: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 5px;
-        }
-    </style>
-</head>
-<body>
-
-{% if images %}
-    <h3>Uploaded Images:</h3>
-
-    <div class="image-section">
-        <h4>MT Images:</h4>
-        <div class="image-container">
-            {% for image in images %}
-                {% if image.mt_image %}
-                    <img src="{{ image.mt_image.url }}" alt="MT Image">
-                {% endif %}
-            {% endfor %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/activities.css' %}"> 
+    <div id="activities_main" hidden></div><!--js 처리용 div-->
+    <div id="success_page" hidden></div><!--js 처리용 div-->
+    <div id="content"><!--헤더 밑-->
+        <div id="button_area"><!--버튼 공간 (없음)-->
+            <div id="delete_button_area">
+                <button type="submit" class="button" id="delete_button">
+                    <a href="/edit/">수정하기</a>
+                </button>
+            </div>
+            <br>
+            <br>
+            <div id="upload_button_area">
+                <button type="submit" class="button" id="upload_button">
+                    <a href="/upload/">업로드하기</a>
+                </button>
+            </div>
+        </div>
+        <div id="item_area"><!--버튼 밑-->    
+            <div id="item_area"><!--모든 앨범-->
+                <!-- MT -->
+                <div class="item" id="mt">
+                    <br>
+                    <div class="album">
+                        <div class="prev_button" id="mt_prev_button">&lt;</div>
+                        <div class="next_button" id="mt_next_button">&gt;</div>
+                        <div class="img_box">
+                            {% if images %}
+                                <div class="img_area clearfix" id="mt_img_area">
+                                    {% for image in images %}
+                                        {% if image.mt_image %}
+                                                <div id="mt_img_content" class="img_content size_original">
+                                                    {% for i in "1234" %}
+                                                        <img src="{{ image.mt_image.url }}" alt="MT Image">
+                                                    {% endfor %}
+                                                </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <p hidden>사진이 없습니다.</p>
+                            {% endif %}
+                            <div id="mtModal" class="modal">
+                                <img class="modal-content" id="mtModalImage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album_name">MT</div>
+                </div>
+                <!-- Study -->
+                <div class="item" id="study">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="album">
+                        <div class="prev_button" id="study_prev_button">&lt;</div>
+                        <div class="next_button" id="study_next_button">&gt;</div>
+                        <div class="img_box">
+                            {% if images %}
+                                <div class="img_area clearfix" id="study_img_area">
+                                    {% for image in images %}
+                                        {% if image.study_image %}
+                                            <div id="study_img_content" class="img_content size_original">
+                                                {% for i in "1234" %}
+                                                    <img src="{{ image.study_image.url }}" alt="Study Image">
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}    
+                                </div>
+                            {% else %}
+                                <p hidden>사진이 없습니다.</p>
+                            {% endif %}
+                            <div id="studyModal" class="modal">
+                                <img class="modal-content" id="studyModalImage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album_name">Study</div>
+                </div>
+                <!-- Project -->
+                <div class="item" id="project">
+                    <br>
+                    <div class="album">
+                        <div class="prev_button" id="project_prev_button">&lt;</div>
+                        <div class="next_button" id="project_next_button">&gt;</div>
+                        <div class="img_box">
+                            {% if images %}
+                                <div class="img_area clearfix" id="project_img_area">
+                                    {% for image in images %}
+                                        {% if image.project_image %}
+                                            <div id="project_img_content" class="img_content size_original">
+                                                {% for i in "1234" %}
+                                                    <img src="{{ image.project_image.url }}" alt="Project Image">
+                                                {% endfor %}   
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            {% else %} 
+                                <p hidden>사진이 없습니다.</p>
+                            {% endif %}
+                            <div id="projectModal" class="modal">
+                                <img class="modal-content" id="projectModalImage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album_name">Project</div>
+                </div>
+            </div>    
         </div>
     </div>
-
-    <div class="image-section">
-        <h4>Study Images:</h4>
-        <div class="image-container">
-            {% for image in images %}
-                {% if image.study_image %}
-                    <img src="{{ image.study_image.url }}" alt="Study Image">
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-
-    <div class="image-section">
-        <h4>Project Images:</h4>
-        <div class="image-container">
-            {% for image in images %}
-                {% if image.project_image %}
-                    <img src="{{ image.project_image.url }}" alt="Project Image">
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
-
-{% else %}
-    <p>No images uploaded yet.</p>
-{% endif %}
-
-<form action="{% url 'edit_page' %}" method="get">
-    <button type="submit">수정하기</button>
-</form>
-
-</body>
-</html>
+    <script defer src="{% static 'js/activities.js' %}"></script>
+{% endblock %}

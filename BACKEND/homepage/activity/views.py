@@ -61,6 +61,37 @@ def success_page(request):
 
     return render(request, 'success_page.html', {'images': images})
 
+def activities_page(request):
+    mt_images = Activity_mt.objects.all()
+    study_images = Activity_study.objects.all()
+    project_images = Activity_project.objects.all()
+
+    if request.method == 'POST':
+        mt_form = ActivityForm_mt(request.POST, request.FILES, prefix='mt_form')
+        study_form = ActivityForm_study(request.POST, request.FILES, prefix='study_form')
+        project_form = ActivityForm_project(request.POST, request.FILES, prefix='project_form')
+
+        if mt_form.is_valid() and study_form.is_valid() and project_form.is_valid():
+            mt_instance = mt_form.save()
+            study_instance = study_form.save()
+            project_instance = project_form.save()
+
+            return redirect('activities')
+    else:
+        mt_form = ActivityForm_mt(prefix='mt_form')
+        study_form = ActivityForm_study(prefix='study_form')
+        project_form = ActivityForm_project(prefix='project_form')
+
+    context = {
+        'mt_images': mt_images,
+        'study_images': study_images,
+        'project_images': project_images,
+        'mt_form': mt_form,
+        'study_form': study_form,
+        'project_form': project_form,
+    }
+
+    return render(request, 'activities.html', context)
 
 def edit_page(request):
     mt_images = Activity_mt.objects.all()

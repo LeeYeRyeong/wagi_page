@@ -1,0 +1,93 @@
+{% extends "basic.html" %}
+{% load static %}
+
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/activities.css' %}">
+    <div id="activities_main" hidden></div><!--js 처리용 div-->
+    <div id="content"><!--헤더 밑-->
+        <div id="button_area"><!--버튼 공간 (없음)--></div>
+        <div id="item_area"><!--버튼 밑-->
+            <div id="article"><!--모든 앨범-->
+                <!--MT-->
+                <div class="item" id="mt"><!--앨범 및 앨범 이름-->
+                    <div class="album"><!--앨범-->
+                        <div class="prev_button" id="mt_prev_button">&lt;</div>
+                        <div class="next_button" id="mt_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="mt_img_area">
+                                {% for image in images %}
+                                    {% if image.mt_image %}
+                                        <div class="img_content size_original">
+                                            {% for i in image.mt_image.all %}
+                                                <img src="{{ i.url }}" alt="MT Image">
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <p hidden>사진이 없습니다.</p>
+                            <div id="mtModal" class="modal">
+                                <img class="modal-content" id="mtModalImage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album_name">MT</div> <!--앨범 이름-->
+                </div>
+                <!--이하 동일-->
+                <!--study-->
+                <div class="item" id="study"><!--앨범 및 앨범 이름-->
+                    <div class="album"><!--앨범-->
+                        <div class="prev_button" id="study_prev_button">&lt;</div>
+                        <div class="next_button" id="study_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="study_img_area">
+                                {% for image in images %}
+                                    {% if image.study_image %}
+                                        <div class="img_content size_original">
+                                            {% for i in image.study_image.all %}
+                                                <img src="{{ i.url }}" alt="Study Image">
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <p hidden>사진이 없습니다.</p>
+                            <div id="studyModal" class="modal">
+                                <img class="modal-content" id="studyModalImage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album_name">Study</div> <!--앨범 이름-->
+                </div>
+                <!--project-->
+                <div class="item" id="project"><!--앨범 및 앨범 이름-->
+                    <div class="album"><!--앨범-->
+                        <div class="prev_button" id="project_prev_button">&lt;</div>
+                        <div class="next_button" id="project_next_button">&gt;</div>
+                        <div class="img_box">
+                            <div class="img_area clearfix" id="project_img_area">
+                                {% for image in images %}
+                                    {% if image.project_image %}
+                                        <div class="img_content size_original">
+                                            {% for i in image.project_image.all %}
+                                                <img src="{{ i.url }}" alt="Project Image">
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <p hidden>사진이 없습니다.</p>
+                            <div id="projectModal" class="modal">
+                                <img class="modal-content" id="projectModalImage">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="album_name">Project</div> <!--앨범 이름-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script defer src="{% static 'js/activities.js' %}"></script>
+{% endblock %}
