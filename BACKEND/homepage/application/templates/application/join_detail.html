@@ -3,28 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>지원서</title>
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="managerJoinSelf.css">
+    <link rel="stylesheet" href="../../../../../FRONT_/joinFirst/managerJoinSelf.css">
+    <link rel="stylesheet" href="../../../../../FRONT_/base/base.css">
 </head>
-<body>
-    <!-- 데이터 불러온 부분 -->
-    {% if application_info %}
-    번호 : {{join_info.id}}<br>
-    학과 : {{join_info.user_major}}<br>
-    제출일시 : {{application_info.submit_date}}<br>
-    이름 : {{join_info.user_name}}<br>
-    학번 : {{join_info.user_number}}<br>
-    
-    1. 자기소개를 해주세요.(500자 내외)<br>
-    {{ application_info.introduction }}<br>
-    2. 지원동기를 작성해주세요.(500자 내외)<br>
-    {{ application_info.motivation }}<br>
-    3. 프로젝트 관련 경험이 있다면 작성해주세요.(800자 내외)<br>
-    {{ application_info.project_experience }}<br>
-    4. 개발과 관련한 공부를 한 경험이 있다면 작성해주세요.(700자 내외)<br>
-    {{ application_info.study_experience }}
+<style>
+ .container {
+  width: 1014px;
+  height: 1178px;
+  top: 198px;
+  left: 133px;
+  border-radius: 20px;
+  position: absolute;  /* 위치 지정을 위해 절대 위치 지정 */
 
-    {% else %}
-    상세페이지가 없습니다.
-    {% endif %}
+}
+
+  .container1 {
+  display: flex;  /* flexbox를 사용하여 가로로 배치*/
+}
+
+.box1, .box2, .box3, .box4, .box5 {
+  margin-right: 10px;  /* 각 상자 사이의 간격 조절 */
+}
+.question-box {
+  display: flex;
+  align-items: center;  /* 수직으로 중앙 정렬 */
+  text-align: center;
+
+}
+
+.question-box p {
+  margin: 0;
+}
+.answer-box {
+  overflow: auto; 
+}
+
+
+
+</style>
+
+
+<body>
+    <header id="main-header">
+        <img src="../join/img/WAGI logo.png" alt="WAGI logo image">
+        <nav id="main-navigation">
+            <ul class="menu">
+                <li class="menu-item">Activities</li> 
+                <li class="menu-item">People</li>
+                <li class="menu-item">Join</li>
+                <li class="menu-item">Notice</li>
+            </ul> 
+        </nav> 
+    </header>
+
+    <div class="container" >
+        {% if application_info %}
+        <div class="container1">
+            <div class="box1" >번호  {{join_info.id}}</div>
+            <div class="box2" >학과  {{join_info.user_major}}</div>
+            <div class="box3" >제출일시  {{application_info.submit_date}}</div>
+            <div class="box4" >이름  {{join_info.user_name}}</div>
+            <div class="box5" >학번  {{join_info.user_number}}</div>
+        </div>
+
+    <!-- 데이터 불러온 부분 -->
+
+    
+        <div class="question-box " >
+            <p  style="margin: 0">1. 자기소개를 해주세요. (500자 내외)</p>
+        </div>
+        <div class="answer-box" >
+            {{ application_info.introduction }}
+        </div>
+
+        <div class="question-box">
+            <p style="margin: 0;">2. 지원동기를 작성해주세요. (500자 내외)</p>
+        </div>
+        <div class="answer-box" >
+            {{ application_info.motivation }}
+        </div>
+    
+        <div class="question-box">
+            <p style="margin: 0;">3. 프로젝트 관련 경험이 있다면 작성해주세요. (800자 내외)</p>
+        </div>
+        <div class="answer-box">
+            {{ application_info.project_experience }}
+        </div>
+    
+        <div class="question-box" >
+            <p style="margin: 0;">4. 개발과 관련한 공부를 한 경험이 있다면 작성해주세요. (700자 내외)</p>
+        </div>
+        <div class="answer-box">
+            {{ application_info.study_experience }}
+        </div>
+
+        {% else %}
+        상세페이지가 없습니다.
+        {% endif %}
+
+    </div>
 </body>
 </html>

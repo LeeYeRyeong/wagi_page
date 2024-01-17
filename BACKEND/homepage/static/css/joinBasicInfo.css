@@ -12,7 +12,7 @@ input {
     width: 188px;
     height: 60px;
     top: 185px;
-    left: 20px;
+    left: 500px;
     background-color: #e0e0e0;
     border: 1px solid #000000;
     border-radius: 20px;
@@ -34,7 +34,7 @@ input {
     width: 1006px;
     height: 446px;
     top: 271px;
-    left: 20px; /* 변경된 위치 */
+    left: 500px; /* 변경된 위치 */
     border: 1px solid #000000;
     border-radius: 20px;
     box-sizing: border-box;
@@ -43,6 +43,7 @@ input {
     flex-direction: column;
     align-items: center;
     color: black;
+    
 }
 
 .input-container {
@@ -88,7 +89,7 @@ color: black;
     width: 375px;
     height: 65px;
     top: 734px;
-    left: 453px;
+    left: 1000px;
     border: 1.5px solid #999898;
     border-radius: 20px;
     background-color: #999898;
@@ -133,9 +134,11 @@ background-color: white;
   height: 65px;
   position:absolute;
   top: 734px;
-  left: 453px;
+  left: 850px;
   border-radius: 20px;
   background-color:  #9EA9D7;
+  cursor: pointer;
+
 }
 
 .confirm-button {
@@ -143,7 +146,7 @@ background-color: white;
     width: 115px;
     height: 40px;
     top: 480px;
-    left: 890px;
+    left: 1350px;
     border: 1.5px solid #999898;
     border-radius: 20px;
     background-color: #999898;

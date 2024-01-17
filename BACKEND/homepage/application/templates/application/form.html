@@ -1,19 +1,82 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application</title>
+
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/joinSelfintro.css' %}">
+    <link rel="stylesheet" href="../../../static/css/joinSelfintro.css">
+    <style>
+        .inputmodel {
+            outline:none;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+            border: none;
+        }
+
+        
+    </style>
+
 </head>
 <body>
-    <h2>Application</h2>
+    <header id="main-header">
+        <img src="{% static 'img/WAGI logo.png' %}" alt="WAGI logo image">
+        <nav id="main-navigation">
+            <ul class="menu">
+                <li class="menu-item">Activities</li> 
+                <li class="menu-item">People</li>
+                <li class="menu-item">Join</li>
+                <li class="menu-item">Notice</li>
+            </ul> 
+        </nav>
+    </header>
+</head>
+<body>
     <form method="post" action="{% url 'application:form' %}">
         {% csrf_token %}
-        {{ form.as_p }}
+ 
+        <div class="container">
+            <div class="question-box">
+                <p style="margin: 0;">1. 자기소개를 해주세요. (500자 내외)</p>
+            </div>
+            <div class="answer-box">
+                <div class="input-box">{{ form.introduction|default_if_none:'' }}</div>
+            </div>
+        
+            <div class="question-box">
+                <p style="margin: 0;">2. 지원동기를 작성해주세요. (500자 내외)</p>
+            </div>
+            <div class="answer-box">
+                <div class="input-box">{{ form.motivation|default_if_none:'' }}</div>
+            </div>
+        
+            <div class="question-box">
+                <p style="margin: 0;">3. 프로젝트 관련 경험이 있다면 작성해주세요. (800자 내외)</p>
+            </div>
+            <div class="answer-box">
+                <div class="input-box">{{ form.project_experience|default_if_none:'' }}</div>
+            </div>
+        
+            <div class="question-box">
+                <p style="margin: 0;">4. 개발과 관련한 공부를 한 경험이 있다면 작성해주세요. (700자 내외)</p>
+            </div>
+            <div class="answer-box">
+                <div class="input-box">{{ form.study_experience|default_if_none:'' }}</div>
+            </div>
+        
+    
+            <!-- 나머지 질문과 답변을 추가하세요 -->
+        </div>
 
-        <a href="{% url 'application:join_success' %}">
-            <button type="submit">Submit</button>
-        </a>
+        <div class="container2">
+            <a href="{% url 'application:join_success' %}">
+                <button type="submit" class="submit-button">지원서 제출</button>
+            </a>
+        </div>
     </form>
 
 </body>
