@@ -6,8 +6,9 @@
     position: absolute;
 }
 
-#notices {
-    position: absolute;
+#notice {
+    margin-left: 120px;
+    margin-top: 40px;
     top: 202px;
     left: 57px;
     width: 120px;
@@ -64,11 +65,10 @@
 }
 
 #allContent {
-    width: 1500px;
-    height: 500px;
-    top: 33%;
-    left: 50%;
-    margin-left: -750px;
+    width: 80%;
+    height: 475px;
+    top: 327px;
+    left: 133px;
     border-radius: 20px;
     background-color: white;
     margin-top: 20px; 
@@ -124,7 +124,7 @@
 #allContent ul li::after {
     content: "";
     position: absolute;
-    width: 944px;
+    width: 90%;
     top: 69px; 
     left: 44%; 
     transform: translateX(-50%); 
