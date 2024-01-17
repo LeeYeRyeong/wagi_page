@@ -1,0 +1,58 @@
+* { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
+
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    background-color: black; 
+    color: white;
+}
+.link {
+    text-decoration-line: none;
+    color: black;
+}
+.background {
+    background-color: white;
+    width: 1100px;
+    height: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -36%);
+    border-radius: 20px;
+}
+.tbl {
+  width: 1020px;
+  color: black; 
+  margin: 20px 40px;
+  text-align: left;
+  border-collapse: collapse;
+}
+th, td {   /*열 간격 조정*/
+    padding: 20px;
+    border-bottom: 1.5px solid black;
+    text-align: left;
+}
+div.paging {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+    color: black;
+}
+div.paging > i, 
+div.paging > div.pages{
+    margin: 0 12px;
+}
+div.paging > i, 
+div.paging > div.pages > span {
+    margin: 0 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+span.active {
+    text-decoration: underline;
+}
+
+
