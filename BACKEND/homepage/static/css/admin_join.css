@@ -5,9 +5,9 @@ body {
     background-color: black; 
     color: white;
 }
-a {
+.link {
     text-decoration-line: none;
-    color: black;
+    color: wh;
 }
 #main-header { 
     width: 100%;
