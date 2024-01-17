@@ -82,6 +82,9 @@ a{
     text-decoration: none;
     cursor: default;
   }
+.in-button a {
+    color: black;
+}
 .input-group {
     position: absolute;
     width: 653px;
