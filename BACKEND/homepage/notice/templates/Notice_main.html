@@ -18,22 +18,22 @@
         <input type="button" id="competition" class="round-button" onclick="showContent('competition')" value="공모전">
     </a>
     
-
-    <div id="allContent" class="content">
-        <ul>
-            {% for notice in notices %}
-            <li>
-                <div class="box">
-                    <span class="write-time">{{ notice.write_time }}</span>
-                    <span class="category">{{ notice.category }}</span>
-                    <a class="notice-title" href="{% url 'notice:notice_detail' notion_id=notice.id %}"><span class="notitle">{{ notice.notion_title }}</span></a>
-                </div>
-            </li>
-            
-            {% endfor %}
-            </ul>
+    <div id="realContent">
+        <div id="allContent" class="content">
+            <ul>
+                {% for notice in notices %}
+                <li>
+                    <div class="box">
+                        <span class="write-time">{{ notice.write_time }}</span>
+                        <span class="category">{{ notice.category }}</span>
+                        <a class="notice-title" href="{% url 'notice:notice_detail' notion_id=notice.id %}"><span class="notitle">{{ notice.notion_title }}</span></a>
+                    </div>
+                </li>
+                
+                {% endfor %}
+                </ul>
+        </div>
     </div>
-    
     
     <script src="{% static 'js/Notice_main.js' %}"></script>
     {% endblock %}

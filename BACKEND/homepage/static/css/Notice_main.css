@@ -20,6 +20,7 @@
     color: black;
 }
 
+
 #regularActivity {
     top: 259px;
     left: 163px;
@@ -71,6 +72,10 @@
     background-color: white;
     margin-top: 20px; 
     overflow-y: hidden;
+    overflow-x: hidden;
+}
+#realContent{
+    margin-bottom: 80px;
 }
 .box{
     color: black;
@@ -100,6 +105,7 @@
     
     
 }
+
 .notice-title {
     left: 350px;
     position: absolute;
@@ -141,16 +147,6 @@
 
 }
 
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#main-footer div {
-    display: flex;
-    gap: 20px;
-}
 
 .selected {
     background-color: gray;
