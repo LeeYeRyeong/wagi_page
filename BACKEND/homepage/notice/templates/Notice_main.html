@@ -5,7 +5,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_main.css' %}">
     <a href="{% url 'notice:notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div></a>
+    {% if user.is_superuser %}
     <a href="{% url 'notice:notice_create' %}"><input type="button" id="writings" class="writing" value="글 작성"></a>
+    {% endif %}
     <a href="{% url 'notice:get_notices_by_category' %}?category=regularActivity">
         <input type="button" id="regularActivity" class="round-button" onclick="showContent('regularActivity')" value="정기활동">
     </a>
