@@ -1,0 +1,243 @@
+#notices {
+    position: fixed;
+    top: 167px;
+    left: 57px;
+    width: 121px;
+    height: 44px;
+    border-radius: 20px;
+    background-color: #9EA9D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+#writings {
+    position: fixed;
+    top: 167px;
+    left: 206px;
+    width: 91px;
+    height: 44px;
+    border-radius: 20px;
+    background-color: #9EA9D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+#writingZone{
+    position:fixed;
+    width: 1014px;
+    height: 514px;
+    top: 253px;
+    left: 133px;
+    border-radius: 20px;
+    background-color: white;
+    z-index: 10;
+}
+
+#titleWriting{
+    position: fixed;
+    width: 950px;
+    height: 50px;
+    top: 309px;
+    left: 165px;
+    border: 1px;
+    color:black;
+    border-radius: 20px;
+    border: 1px solid black;
+    z-index: 30;
+}
+
+#contentsWriting{
+    position:fixed;
+    width: 950px;
+    height: 283px;
+    top: 371px;
+    left: 165px;
+    border-radius: 20px;
+    border: 1px;
+    color:black;
+    border-radius: 20px;
+    border: 1px solid black;
+    z-index: 30;
+
+}
+
+#main-navigation {
+    display: flex;
+    gap: 20px;
+}
+
+#main-navigation .menu-item {
+    list-style: none;
+}
+
+#regularActivity{
+    position: fixed;
+    top: 268px;
+    left: 170px;
+    width: 77.54px;
+    height: 25px;
+    border-radius: 20px;
+    border: 0.8px solid #9EA9D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: white;
+    z-index: 100;
+}
+
+#event {
+    position: fixed; 
+    top: 268px;
+    left: 264px;
+    width: 77.54px;
+    height: 25px;
+    border-radius: 20px;
+    border: 0.8px solid #9EA9D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: white;
+    z-index: 100;
+}
+
+#competition {
+    position: fixed;
+    top: 268px;
+    left: 358px;
+    width: 77.54px;
+    height: 25px;
+    border-radius: 20px;
+    border: 0.8px solid #9EA9D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: white;
+    z-index: 100;
+}
+
+#addPhoto{
+    position: fixed;
+    width: 81px;
+    height: 21px;
+    top: 662px;
+    left: 165px;
+    border-radius: 20px;
+    border: 0.8px solid #9EA9D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:black;
+    background-color: white;
+    z-index: 30;
+
+}
+
+#signUp{
+    position: fixed;
+    width: 110px;
+    height: 30px;
+    top: 715px;
+    left: 585px;
+    border-radius: 20px;
+    background-color: #9EA9D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    z-index: 30;
+
+}
+
+#Vector{
+    position: fixed;
+    width: 17px;
+    height: 17px;
+    top: 710px;
+    left: 170px;
+    z-index: 30;
+}
+
+#img_name{
+    position: fixed;
+    top: 710px;
+    left: 189px;
+    z-index: 30;
+    width: 100px;
+    height: 12px;
+    color:black;
+    font-size: 12px;
+}
+#regularActivity {
+    margin-left: 20px; 
+}
+
+#event {
+    margin-left: 20px;
+}
+
+#competition {
+    margin-left: 20px; 
+}
+
+#regularActivityContent,
+#eventContent,
+#competitionContent {
+    position: relative; 
+    top: 0;
+    left: 0;
+    width: 1014px;
+    height: 475px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 20px; 
+
+}
+
+#regularActivity, #event, #competition, #signUp {
+    width: 77.54px;
+    height: 25px;
+    border-radius: 20px;
+    border: 0.8px solid #9EA9D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+#signUp {
+    width: 110px;
+    height: 30px;
+}
+
+#addPhoto {
+    width: 81px;
+    height: 21px;
+    border-radius: 20px;
+    border: 0.8px solid #9EA9D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:black;
+    background-color: white;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#regularActivity:hover, #event:hover, #competition:hover, #addPhoto:hover, #signUp:hover {
+    background-color: #9EA9D7;
+}
+
+.selected {
+    background-color: #9EA9D7 !important;
+    color:black !important;
+}
