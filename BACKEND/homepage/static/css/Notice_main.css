@@ -70,6 +70,7 @@
     border-radius: 20px;
     background-color: white;
     margin-top: 20px; 
+    overflow-y: hidden;
 }
 .box{
     color: black;
