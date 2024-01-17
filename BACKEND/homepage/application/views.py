@@ -1,3 +1,4 @@
+from datetime import timezone
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import Http404
 from django import forms
@@ -12,6 +13,12 @@ class ApplicantInfo(forms.ModelForm):
     class Meta:
         model = Application
         fields = ['introduction', 'motivation', 'project_experience', 'study_experience']
+
+        widgets = {'introduction': forms.Textarea(attrs={'class':'inputmodel', 'placeholder':'내용을 입력하세요'}),
+            'motivation': forms.Textarea(attrs={'class':'inputmodel', 'placeholder': '내용을 입력하세요'}),
+            'project_experience': forms.Textarea(attrs={'class':'inputmodel', 'placeholder':'내용을 입력하세요'}),
+            'study_experience': forms.Textarea(attrs={'class':'inputmodel', 'placeholder': '내용을 입력하세요'})
+            }
 
 # 지원자 정보를 입력받는 뷰 함수
 def applicant_form(request):
@@ -42,7 +49,7 @@ def join_success(request):
 def admin_join(request):
     page = request.GET.get('page', '1')  # 페이징 기능 추가
     join_list = JoinInfo.objects.order_by('id')
-    paginator = Paginator(join_list, 6)  # 페이지당 10개씩 보여주기
+    paginator = Paginator(join_list, 6)  # 페이지당 6개씩 보여주기
     page_obj = paginator.get_page(page)
     context = {'join_list':page_obj}
     return render(request, 'application/admin_join.html', context)

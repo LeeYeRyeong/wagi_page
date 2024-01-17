@@ -1,30 +1,65 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>지원서</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/join_detail.css' %}">
 </head>
-<body>
-    <!-- 데이터 불러온 부분 -->
-    {% if application_info %}
-    번호 : {{join_info.id}}<br>
-    학과 : {{join_info.user_major}}<br>
-    제출일시 : {{application_info.submit_date}}<br>
-    이름 : {{join_info.user_name}}<br>
-    학번 : {{join_info.user_number}}<br>
-    
-    1. 자기소개를 해주세요.(500자 내외)<br>
-    {{ application_info.introduction }}<br>
-    2. 지원동기를 작성해주세요.(500자 내외)<br>
-    {{ application_info.motivation }}<br>
-    3. 프로젝트 관련 경험이 있다면 작성해주세요.(800자 내외)<br>
-    {{ application_info.project_experience }}<br>
-    4. 개발과 관련한 공부를 한 경험이 있다면 작성해주세요.(700자 내외)<br>
-    {{ application_info.study_experience }}
 
-    {% else %}
-    상세페이지가 없습니다.
-    {% endif %}
+<body>
+
+    <div class="container" >
+        {% if application_info %}
+        <div class="container1">
+            <div class="box1" >번호</div><div class="joininfo">{{join_info.id}}</div>
+            <div class="box2" >학과</div><div class="joininfo">{{join_info.user_major}}</div>
+            <div class="box3" >제출일시</div><div class="joininfo">{{application_info.submit_date}}</div>
+            <br>
+            <div class="box4" >이름</div><div class="joininfo">{{join_info.user_name}}</div>
+            <div class="box5" >학번</div><div class="joininfo">{{join_info.user_number}}</div>
+        </div>
+
+    <!-- 데이터 불러온 부분 -->
+
+    
+        <div class="question-box " >
+            <p  style="margin: 0">1. 자기소개를 해주세요. (500자 내외)</p>
+        </div>
+        <div class="answer-box" >
+            {{ application_info.introduction }}
+        </div>
+
+        <div class="question-box">
+            <p style="margin: 0;">2. 지원동기를 작성해주세요. (500자 내외)</p>
+        </div>
+        <div class="answer-box" >
+            {{ application_info.motivation }}
+        </div>
+    
+        <div class="question-box">
+            <p style="margin: 0;">3. 프로젝트 관련 경험이 있다면 작성해주세요. (800자 내외)</p>
+        </div>
+        <div class="answer-box">
+            {{ application_info.project_experience }}
+        </div>
+    
+        <div class="question-box" >
+            <p style="margin: 0;">4. 개발과 관련한 공부를 한 경험이 있다면 작성해주세요. (700자 내외)</p>
+        </div>
+        <div class="answer-box">
+            {{ application_info.study_experience }}
+        </div>
+
+        {% else %}
+        상세페이지가 없습니다.
+        {% endif %}
+
+    </div>
 </body>
 </html>
+{% endblock %}

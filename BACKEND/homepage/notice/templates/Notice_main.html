@@ -5,10 +5,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_main.css' %}">
     <div id="realContent">
-    <a href="{% url 'notice:notice_list' %}"><div id="notice" class="notice"><span>공지사항</span></div></a>
+
+    <a href="{% url 'notice:notice_list' %}"><div id="notice" class="notice">공지사항</div></a>
+
     {% if user.is_superuser %}
-    <a href="{% url 'notice:notice_create' %}"><input type="button" id="writings" class="writing" value="글 작성"></a>
+    <a href="{% url 'notice:notice_create' %}"><div id="writings" class="writing">글 작성</div></a>
     {% endif %}
+    <div id="realContent">
     <a href="{% url 'notice:get_notices_by_category' %}?category=regularActivity">
         <input type="button" id="regularActivity" class="round-button" onclick="showContent('regularActivity')" value="정기활동">
     </a>
@@ -35,6 +38,7 @@
                 </ul>
         </div>
     </div>
+</div>
     
     <script src="{% static 'js/Notice_main.js' %}"></script>
     {% endblock %}
