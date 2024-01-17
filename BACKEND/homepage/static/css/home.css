@@ -6,6 +6,7 @@ body {
             overflow-x: hidden; 
             background-color: black;
             
+            
         }
    
 section {
@@ -21,6 +22,8 @@ section {
 }
 .fixed-image {
       position: absolute;
+       width: 300px;
+    height: 300px;
 }
    
 
@@ -28,29 +31,31 @@ section {
 .fixed-image:nth-child(2),
 .fixed-image:nth-child(3),
 .fixed-image:nth-child(4) {
+    position: absolute;
     opacity: 0;
     animation: flyIn 1s forwards;
     transform: translate(-100px, 0); 
 }
 
 .fixed-image:nth-child(1) {
+   
     top: 200px;
-    left: 200px;
+    left: 290px;
 }
 
 .fixed-image:nth-child(2) {
     top: 200px;
-    left: 110px;
+    left: 190px;
 }
 
 .fixed-image:nth-child(3) {
     top: 290px;
-    left: 103px;
+    left: 163px;
 }
 
 .fixed-image:nth-child(4) {
     top: 310px;
-    left: 170px;
+    left: 290px;
 }
 @keyframes flyIn {
     to {
@@ -58,10 +63,10 @@ section {
         transform: translate(0, 0);
     }
 }
-#section1 >.context{
+
+.context{
     position: relative;
     left:140px;
-    font-size: 30px;
     color:white;
 
 }
@@ -73,12 +78,14 @@ section {
         
    
     }
-
+.image-container{
+    margin :0 auto;
+}
 .top-box .box1 {
     width: 450px;
     height: 200px;
     background-color: white;
-    margin: 30px;
+    margin: 20px;
     border-radius: 20px;
     display: flex;
     position:relative;
@@ -166,13 +173,14 @@ section {
     font-size: 10px;
 }
 #p1{
-     font-size: 10px;
+     font-size: 12px;
      text-align: left;
 }
 #p2{
     font-size: 30px;
 
 }
+
 #section3 a {
             margin-right: 40px; /* 각 이미지 사이의 간격을 조절할 수 있습니다. */
             
@@ -182,11 +190,13 @@ section {
     position: relative;
     top:30px;
     left:10px;
+    
 }
 .move-img1{
     position: relative;
     top:30px;
     left:20px;
+    
 }
 .move-img2{
     position: relative;
@@ -207,20 +217,22 @@ section {
     font-weight: bold;
 }
 
+
 #instagram1>#p1{
     
     top:10px;
     color:white;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bold;
 
 }
+
 
 #instagram1>#p2{
     
     position: absolute;
     color:white;
-    font-size: 12px;
+    font-size: 18px;
 
 }
 #instagram2>#p1{
