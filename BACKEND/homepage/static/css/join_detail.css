@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 0;
@@ -11,7 +10,7 @@ body {
   width: 100%;
   max-width: 1006px;
   margin: 0 auto;
-  margin-top: 218px;
+  margin-top: 80px;
   overflow: hidden;
  
 }
@@ -61,36 +60,39 @@ color:black;
 }
 
 
-
-
-
-
-
 .container{
-  width: 1030px;
+  width: 1014px;
   height: 1178px;
   top: 198px;
   left: 133px;
   border-radius: 20px;
   background-color: white; 
   border-radius: 20px;
+  position:absolute;
 
 }
 .container1{
-  display: flex; 
-  flex-wrap: wrap;
-   margin: 10px;
-   background-color: white;
-   color: black;
-
+  margin: 30px;
+  background-color: white;
+  color: black;
 }
+
+.joininfo {
+  background-color: white;
+  width:200px;
+  height: 23px;
+  display: inline-block;
+}
+
 .question-box{
   border: 1px solid black;
   background-color: white;
   height: 50px;
   width: 999px;
   margin: 5px;
-  
+  display:flex;
+  align-items: center;
+  text-align: center;
   
 }
 
@@ -105,11 +107,11 @@ color:black;
   width:41px;
   height: 23px;
   top: 233px;
-  left: 174px;
   border: 0.7px solid black; 
-  margin-right: 50px; 
-  margin-bottom: 10px;
+  margin-right: 10px; 
+  margin-bottom: 30px;
   color: black;
+  display: inline-block;
 
 }
 .box2{
@@ -117,11 +119,11 @@ color:black;
   width:41px;
   height: 23px;
   top: 233px;
-  left: 372px;
   border: 0.7px solid black; 
-  margin-right: 50px;
-  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
   color: black;
+  display: inline-block;
 
 }
 .box3{
@@ -129,39 +131,38 @@ color:black;
   width:75px;
   height: 23px;
   top: 233px;
-  left: 591px;
   border: 0.7px solid black; 
-  margin-right: 50px;  
-  margin-bottom: 10px;
+  margin-right: 10px;  
+  margin-bottom: 30px;
   color: black;
+  display: inline-block;
 
 }
 .box4{
   background-color: white;
-  width:75px;
+  width:41px;
   height: 23px;
   top: 272px;
-  left: 591px;
   border: 0.7px solid black; 
-  margin-bottom: 10px; 
-  margin-right: 50px;
+  margin-right: 10px;
   color: black;
+  display: inline-block;
 
 }
 .box5{
   background-color: white;
-  width:75px;
- height: 23px;
- top: 233px;
- left: 591px;
- border: 0.7px solid black; 
- margin-bottom: 10px; 
- margin-right: 50px;
+  width:41px;
+  height: 23px;
+  top: 233px;
+  border: 0.7px solid black; 
+  margin-right: 10px;
 color: black;
-}
-*{
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
-
+display: inline-block;
 }
 
-
+.question-box p {
+  margin: 0;
+}
+.answer-box {
+  overflow: auto; 
+}
