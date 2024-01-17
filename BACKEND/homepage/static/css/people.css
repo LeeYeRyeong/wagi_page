@@ -2,21 +2,18 @@
 
 body {
     background-color: black;
-    height: auto;
     width: auto;
-    overflow: scroll;
-    position: relative;
-
+    height: auto;
 }
 
+
 .center {
+    background-color: black;
     width: 800px;
-    height: auto;
-    position: absolute;  
+    position: relative;  
     left: 50%;
     top: 100px;
     margin-left: -400px;
-    margin-bottom: 120vh;
     margin-top: 10%;
   }
   
@@ -53,10 +50,11 @@ body {
     height: 110px;
     float: left;
     text-align: center;
+    margin: 10px;
     
 }
 .L_text{
-    width: 330px;
+    width: 310px;
     height: 80px;
     float: inline-start;
     text-align: center;
@@ -64,6 +62,7 @@ body {
     margin-left: 3px;
     font-size: 18px;
     overflow: visible;  
+    margin-top: -20px;
 }
 .L_name{
     width: 70px;
@@ -78,13 +77,13 @@ body {
 
 }
 .L_link{
-    width: 100px;
-    height: 30px;  
+    width: 200px;
+    height: 50px;  
     margin-bottom: 5px;
-    margin-top: 9px;
+    margin-top: -20px;
     margin-left: 3px;
     float: inline-start; 
-    text-align: left;
+    text-align: right;
     
 }
 
@@ -101,6 +100,7 @@ body {
     align-self: flex-end;
     color: black;
     clear: both;
+
 
 }
 
@@ -126,14 +126,15 @@ body {
     height: 110px;
     float: left;
     text-align: center;
+    margin: 10px;
 }
 .R_text{
-    width: 330px;
+    width: 310px;
     height: 80px;
     float: inline-start;
     text-align: center;
     font-weight: bold ;
-    
+    margin-top: -20px;
     margin-left: 3px;
     font-size: 18px;
     overflow: visible;  
@@ -150,10 +151,10 @@ body {
     overflow: visible;
 }
 .R_link{
-    width: 100px;
-    height: 30px;  
+    width: 200px;
+    height: 50px;  
     margin-bottom: 5px;
-    margin-top: 9px;
+    margin-top: 7px;
     margin-left: 3px;
     float: inline-start; 
     text-align: left;

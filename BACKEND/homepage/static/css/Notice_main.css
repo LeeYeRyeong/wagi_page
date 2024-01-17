@@ -7,7 +7,9 @@
 }
 
 #notice {
+
     margin-left: 130px;
+
     margin-top: 40px;
     top: 202px;
     left: 57px;
@@ -138,7 +140,9 @@
 #allContent ul li::after {
     content: "";
     position: absolute;
+
     width: 95%;
+
     top: 69px; 
     left: 44%; 
     transform: translateX(-50%); 
@@ -186,5 +190,6 @@
 
 #writings span {
     font-size: 16.2px; 
+
    
 }
