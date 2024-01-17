@@ -1,77 +1,88 @@
-window.onload = function() {
-  setTimeout(function(){
-      window.scrollTo(0, 0);
-  }, 100);
-};
 
-document.addEventListener('DOMContentLoaded', function() {
-  fetch('people',{
-    headers: {
-	    Accept: "application / json",
-	  },
-	  method: "GET",
 
-  })
-  .then(response => response.json())
-  .then(data => {
-    const peopleData = data;
-    console.log('Fetched data:', peopleData);
+$(document).ready(function () {
 
-      const container = document.querySelector('.center');
-      let visibleBubbles = 0;
+  //새로고침하면 맨위로 올라가는 코드임둥
+  $(window).on('beforeunload', function () {
+    $(window).scrollTop(0);
+  });
 
-      function createBubble(person, isLeft) {
-          const bubble = document.createElement('div');
-          bubble.classList.add(isLeft ? 'L_bubble' : 'R_bubble');
+  var peopleData = [
+      { photo: "사진1", name: "이름1", github: "링크1", home: "링크2", intro: "소개글1" },
+      { photo: "사진2", name: "이름2", github: "링크3", home: "링크4", intro: "소개글2" },
+      { photo: "사진1", name: "이름1", github: "링크1", home: "링크2", intro: "소개글1" },
+      { photo: "사진2", name: "이름2", github: "링크3", home: "링크4", intro: "소개글2" },
 
-          bubble.style.animation = 'bubbleFadeIn 0.7s forwards';
+  ];
 
-          const photo = document.createElement('div');
-          photo.classList.add(isLeft ? 'L_photo' : 'R_photo');
-          const img = document.createElement('img');
-          img.src = person.user_image;  // user_image 필드를 사용하여 이미지 경로 설정
-          img.alt = person.user_image;
-          img.style.maxHeight = "130px";
-          img.style.maxWidth = "130px";
-          photo.appendChild(img);
+//왼쪽 말풍선
+  function createLeft(person) {
+      var personHTML = `
+          <div class="L_bubble">
+              <div class="L_photo">
+                  <h1>${person.photo}</h1>
+              </div>
+              <div class="L_name">
+                  <h2>${person.name}</h2>
+              </div>
+              <div class="L_link">
+                  <div><a href="${person.github}"><img src='../static/img/github.svg'></a> 
+                  <a href="${person.home}"><img src= '../static/img/home.svg' ></a></div>
+              </div>
+              <div class="L_text">
+                  <h3>${person.intro}</h3>
+              </div>
+          </div>
+      `;
+      return personHTML;
+  }
+  //오른쪽 말풍선임
+  function createRight(person) {
+    var personHTML = `
+        <div class="R_bubble">
+            <div class="R_photo">
+                <h1>${person.photo}</h1>
+            </div>
+            <div class="R_name">
+                <h2>${person.name}</h2>
+            </div>
+            <div class="R_link">
+                <div><a href="${person.github}"><img src='../static/img/github.svg'></a> 
+                <a href="${person.home}"><img src= '../static/img/home.svg' ></a></div>
+            </div>
+            <div class="R_text">
+                <h3>${person.intro}</h3>
+            </div>
+        </div>
+    `;
+    return personHTML;
+}
 
-          const name = document.createElement('div');
-          name.classList.add(isLeft ? 'L_name' : 'R_name');
-          name.innerHTML = `<h2>${person.user_name}</h2>`;
 
-          const link = document.createElement('div');
-          link.classList.add(isLeft ? 'L_rink' : 'R_rink');
-          
-          // 포트폴리오 링크 추가
-          link.innerHTML = `<a href="${person.user_portfolio1}"><img src="github.svg" /></a>
-                            <a href="${person.user_portfolio2}"><img src="home.svg" /></a>`;
+function appendPerson(person) {
+  var centerDiv = $('.center');
+  if (centerDiv.children().length % 2 === 0) {
+    var personElement = createLeft(person);
+    centerDiv.append(personElement);
+  } else {
+    var personElement = createRight(person);
+    centerDiv.append(personElement);
+  }
+}
+//초기 세팅 2개 말풍선 띄워놓기
+appendPerson(peopleData[0]);
+appendPerson(peopleData[1]);
 
-          const text = document.createElement('div');
-          text.classList.add(isLeft ? 'L_text' : 'R_text');
-          text.innerHTML = `<p>"${person.user_bio}"</p>`;
+function handleWheelEvent(event) {
+  if (event.originalEvent.deltaY > 0) {
+    if (currentIndex < peopleData.length) {
+      appendPerson(peopleData[currentIndex]);
+      currentIndex++;
+    }
+  }
+}
 
-          bubble.appendChild(photo);
-          bubble.appendChild(name);
-          bubble.appendChild(link);
-          bubble.appendChild(text);
+var currentIndex = 2; //초기2개 이후부터 시작
 
-          container.appendChild(bubble);
-      }
-
-      for (let i = 0; i < 2 && i < peopleData.length; i++) {
-          const person = peopleData[i];
-          createBubble(person, i % 2 === 0);    
-      }
-
-      window.addEventListener('wheel', function (event) {
-          const deltaY = event.deltaY;
-
-          if (deltaY > 30 && visibleBubbles < peopleData.length) {
-              const person = peopleData[visibleBubbles];
-              createBubble(person, visibleBubbles % 2 === 0);
-              visibleBubbles++;
-          }
-      });
-  })
-  .catch(error => console.error('Error fetching data:', error));
+$(window).on('mousewheel', handleWheelEvent);
 });
