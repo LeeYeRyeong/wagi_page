@@ -62,7 +62,7 @@ body {
     margin-left: 3px;
     font-size: 18px;
     overflow: visible;  
-    margin-top: -20px;
+    margin-top: -10px;
 }
 .L_name{
     width: 70px;
@@ -117,7 +117,7 @@ body {
     border-left: 0;
     margin-left: -10px;
     margin-bottom: -20px;
-    transform: matrix(10);
+    transform: matrix(-80);
     
 }
 
@@ -134,7 +134,7 @@ body {
     float: inline-start;
     text-align: center;
     font-weight: bold ;
-    margin-top: -20px;
+    margin-top: -10px;
     margin-left: 3px;
     font-size: 18px;
     overflow: visible;  

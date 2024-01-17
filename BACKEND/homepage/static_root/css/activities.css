@@ -1,0 +1,412 @@
+* {font-family: 'Spoqa Han Sans Neo', 'sans-serif';}
+
+
+/* Start of header*/
+
+#main-header {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+}
+
+nav {
+    float: right;
+}
+
+.menu-item { 
+    display: inline-block;
+    padding-right: 120px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* End of header */
+
+#content {
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+#button_area {
+    width: 100%;
+    height: 10%;
+    padding-left:5%;
+
+}
+
+#item_area {
+    width: 100%;
+    height: 80%;
+    padding-top:20%;
+    padding-left:10%;
+}
+
+.button {
+    border-radius: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button > a {
+    display: block;
+    color: black;
+}
+
+.button:hover, .button > a:hover{
+    background-color : #9EA9D7;
+    border-radius: 25px;
+}
+
+.button:active, .button > a:active{
+    background-color : #9EA9D7;
+    border-radius: 25px;
+}
+
+#move_delete_button, #move_upload_button {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    background-color: white;
+    font-size: 23px;
+}
+
+#move_delete_button {
+    left: 100px;
+}
+
+#move_upload_button {
+    left: 350px;
+}
+
+#upload_button {
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    position: absolute;
+    left: 100px;
+}
+
+#delete_button {
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    position: absolute;
+    left: 100px;
+}
+
+#article {
+    width: 1720px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    margin-top : 20%;
+}
+
+.item {
+    width: 485px;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+.album {
+    width: 100%;
+    height: 494px;
+    background-color: white;
+    border-radius: 25px;
+    position: relative;
+}
+
+.upload_album {
+    background-color: white;
+    border-radius: 25px;
+    position: relative;
+    padding: 30px;
+}
+
+.text {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+}
+
+.img_icon {
+    display: inline;
+}
+
+.upload_file_names {
+    display: inline;
+    width: 94%;
+    border: none;
+    pointer-events: none;
+    margin-left: 2.5px;
+    font-size: 15px;
+}
+
+label {
+    display: block;
+    border: 2px solid #9EA9D7;
+    text-align: center;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+
+input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.size_original img:hover, .size_small img:hover {
+    opacity: 0.8;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+    float: none;
+}
+
+.prev_button, .next_button {
+    position: absolute;
+    top: 45%;
+    font-size: 30px;
+    color: #9EA9D7;
+    cursor: pointer;
+}
+
+.prev_button {
+
+}
+
+.next_button {
+    right: 5px;
+}
+
+.prev_button:hover, .next_button:hover {
+    opacity: 0.5;
+}
+
+.select_file_area {
+    width: 100%;
+}
+
+.album_name {
+    width: 30%;
+    height: 55px;
+    line-height: 55px;
+    background-color: #9EA9D7;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    margin: 20px auto;
+}
+
+.display_block {
+    display: block;
+}
+
+.display_none {
+    display: none;
+}
+
+#delete_button, #upload_button {
+    font-size: 23px;
+}
+
+.img_box {
+    width: 87.5%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.img_box_small {
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    padding: 0px 39px;
+}
+
+.img_area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2개의 이미지가 한 줄에 표시됩니다. */
+    gap: 10px; /* 이미지 사이의 간격 */
+}
+
+.img_content {
+    width: 424.375px;
+    float: left;
+}
+
+img {
+    object-fit: cover;
+}
+
+.size_original img {
+    width: 185px;
+    height: 185px;
+    float: left;
+    cursor: pointer;
+}
+
+.size_original img:nth-child(2n-1), .size_original a:nth-child(2n-1) img {
+    margin-left: 0px;
+    margin-right: 27px;
+}
+
+.size_original img:nth-child(2n), .size_original a:nth-child(2n) img {
+    margin-left: 27px;
+    margin-right: 0px;
+}
+
+.size_original img:first-child, .size_original img:nth-child(2),
+.size_original a:first-child img, .size_original a:nth-child(2) img {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.size_original img:nth-child(3), .size_original img:nth-child(4),
+.size_original a:nth-child(3) img, .size_original a:nth-child(4) img {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.size_small img {
+    width: 94px;
+    height: 94px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.size_small .image-wrapper:nth-child(4n) > img {
+    margin-right: 0px;
+}
+
+.box {
+    position: relative;
+    display: inline-block;
+}
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    /* 이미지 래퍼에 필요한 추가 스타일링이 있으면 여기에 추가 */
+}
+
+.img-checkbox {
+    appearance: none; /* 기본 체크박스 스타일 제거 */
+    -webkit-appearance: none; /* 크롬과 사파리에서 기본 스타일 제거 */
+    -moz-appearance: none; /* 파이어폭스에서 기본 스타일 제거 */
+    position: absolute;
+    top: -10px; /* 원하는 위치에 따라 조정 */
+    left: -10px; /* 원하는 위치에 따라 조정 */
+    z-index: 10; /* 이미지 위에 표시되도록 z-index 설정 */
+    width: 20px; /* 체크박스의 크기 */
+    height: 20px; /* 체크박스의 크기 */
+    border-radius: 50%; /* 원형으로 만들기 위해 50% 설정 */
+    background-color: rgba(215, 215, 215, 0.7); /* 체크박스 배경색 */
+    cursor: pointer; /* 마우스 오버 시 커서 변경 */
+}
+
+.img-checkbox::after {
+    content: '✓'; /* 체크 표시 */
+    position: absolute;
+    top: 50%; /* 체크 표시를 중앙에 위치 */
+    left: 50%; /* 체크 표시를 중앙에 위치 */
+    transform: translate(-50%, -50%); /* 체크 표시를 정중앙에 위치시킴 */
+    color: black; /* 체크 표시 색상 */
+    font-size: 14px; /* 체크 표시 크기 */
+}
+
+.img-checkbox:checked::after {
+    /* 체크박스가 체크됐을 때에만 표시 */
+    display: block;
+}
+
+.img-checkbox:checked {
+    background-color: #5379a177; /* 체크됐을 때 배경색 */
+    border-color: #5379a177; /* 체크됐을 때 테두리 색상 */
+}
+
+#mt {
+    float: left;
+    left : 5%;
+}
+
+#study {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#project {
+    float: right;
+    right: 5%;
+}
+
+/* 모달 컨테이너 스타일 */
+.modal {
+    display: none; /* 기본적으로 숨겨짐 */
+    position: absolute; /* 고정 위치 */
+    z-index: 1; /* 다른 요소 위에 표시 */
+    left: 0;
+    top: 0;
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 높이 */
+}
+
+/* 모달 컨텐츠 기본 스타일 */
+.modal-content {
+    display: block;
+    width: 426px;
+    height: 398px;
+    margin-top : 0%;
+    margin-left: 0%;
+    position: fixed;
+    top: 50%; /* 수직 중앙 */
+    left: 50%; /* 수평 중앙 */
+    transform: translate(-50%, -50%); /* 중앙 정렬을 위한 변환 */
+    cursor: pointer; /*커서 활성화*/
+}
+
+.img_content {
+    position: relative; /* 상대 위치 */
+    width: 100%; /* 부모 컨테이너의 전체 너비 */
+    padding-top: 100%; /* 상단 패딩을 너비와 동일하게 하여 정사각형 형태를 만듭니다. */
+}
+
+.img_content img {
+    position: absolute; /* 절대 위치 */
+    top: 0;
+    left: 0;
+    width: 100%; /* 컨테이너의 전체 너비 */
+    height: 98%; /* 컨테이너의 전체 높이 */
+    object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너를 채움 */
+}
