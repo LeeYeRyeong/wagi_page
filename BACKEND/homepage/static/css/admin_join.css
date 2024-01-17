@@ -7,26 +7,7 @@ body {
 }
 .link {
     text-decoration-line: none;
-    color: wh;
-}
-#main-header { 
-    width: 100%;
-    height: 20%;
-    position: relative;
-}
-nav {
-    float: right;
-    position: absolute;
-    top: 42%;
-    right: 7%;
-    transform: translate(0%, -50%);
-}
-.menu-item {
-    list-style: none;
-    display: inline-block;
-    padding-right: 120px;
-    font-weight: bold;
-    font-size: 22px;
+    color: black;
 }
 .background {
     background-color: white;
@@ -73,3 +54,5 @@ div.paging > div.pages > span {
 span.active {
     text-decoration: underline;
 }
+
+
