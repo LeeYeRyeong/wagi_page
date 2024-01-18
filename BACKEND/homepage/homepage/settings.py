@@ -40,7 +40,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     ".ap-northeast-2.compute.amazonaws.com",
-    ".sswu-wagi.com",
+    #".sswu-wagi.com",
     ]
 
 
