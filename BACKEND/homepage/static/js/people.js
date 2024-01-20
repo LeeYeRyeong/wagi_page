@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const container = document.querySelector('.center');
-    let visibleBubbles = 2;
+    let visibleBubbles = 3;
 
   
     function createBubble(person, isLeft) {
@@ -183,20 +183,24 @@ document.addEventListener('DOMContentLoaded', function() {
       container.appendChild(bubble);
     }
   
-    for (let i = 0; i < 2 && i < peopleData.length; i++) {
+    for (let i = 0; i < 3 && i < peopleData.length; i++) {
       const person = peopleData[i];
       createBubble(person, i % 2 === 0);    
     }
-  
 
-    window.addEventListener('wheel', function (event) {
-      const deltaY = event.deltaY;
-      
-      if (deltaY > 60 && visibleBubbles < peopleData.length) {
+    
+    var Y = 100;
+  
+    window.addEventListener('scroll', function () {
+      var winY = window.scrollY;
+      if (winY > Y*1.5) {
         const person = peopleData[visibleBubbles];
         createBubble(person, visibleBubbles % 2 === 0);
         visibleBubbles++;
+        Y = Y + 140;
       }
     });
+    
+
 
   });
