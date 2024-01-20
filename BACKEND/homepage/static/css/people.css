@@ -10,11 +10,13 @@ body {
 .center {
     background-color: black;
     width: 800px;
+    height: 4300px;
     position: relative;  
     left: 50%;
     top: 100px;
     margin-left: -400px;
-    margin-top: 10%;
+    margin-top: 8%;
+    overflow: hidden;
   }
   
 
