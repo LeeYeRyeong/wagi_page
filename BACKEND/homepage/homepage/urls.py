@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from joinInfo.views import apply_club_user_info_view
 from activity.views import upload_activity, success_page, edit_page, edit_images, activities_page
-from people.views import show_people
+from people.views import show_people_1, show_people_2
 from joinResult import views
 from application import views
 from django.conf.urls.static import static
@@ -22,7 +22,8 @@ urlpatterns = [
     path('edit_images/<int:image_id>/', edit_images, name='edit_images'),
     path('activities/', activities_page, name='activities_page'),
 
-    path('people/', show_people, name='show_people'),
+    path('people_1/', show_people_1, name='show_people_1'),
+    path('people_2/', show_people_2, name='show_people_2'),
 
     path('notice/', include('notice.urls')),  
 
