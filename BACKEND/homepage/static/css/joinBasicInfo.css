@@ -1,4 +1,3 @@
-
 /* CSS 스타일 */
 body {
     background-color: black; /* 화면 바탕색을 검은색으로 설정 */
@@ -12,7 +11,7 @@ input {
     width: 188px;
     height: 60px;
     top: 185px;
-    left: 500px;
+    left: 400px;
     background-color: #e0e0e0;
     border: 1px solid #000000;
     border-radius: 20px;
@@ -34,7 +33,7 @@ input {
     width: 1006px;
     height: 446px;
     top: 271px;
-    left: 500px; /* 변경된 위치 */
+    left: 400px; /* 변경된 위치 */
     border: 1px solid #000000;
     border-radius: 20px;
     box-sizing: border-box;
@@ -89,10 +88,10 @@ color: black;
     width: 375px;
     height: 65px;
     top: 734px;
-    left: 1000px;
+    left: 700px;
     border: 1.5px solid #999898;
     border-radius: 20px;
-    background-color: #999898;
+    background-color: hsl(0, 0%, 60%);
     color: #ffffff;
     cursor: pointer;
 }
@@ -134,7 +133,7 @@ background-color: white;
   height: 65px;
   position:absolute;
   top: 734px;
-  left: 850px;
+  left: 750px;
   border-radius: 20px;
   background-color:  #9EA9D7;
   cursor: pointer;
@@ -146,7 +145,7 @@ background-color: white;
     width: 115px;
     height: 40px;
     top: 480px;
-    left: 1350px;
+    left: 1260px;
     border: 1.5px solid #999898;
     border-radius: 20px;
     background-color: #999898;
@@ -237,20 +236,4 @@ input:focus {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
