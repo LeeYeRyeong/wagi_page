@@ -15,6 +15,7 @@
         <div id="main-section">
             <div id="result_section">
                 <h1 id="title">합격자 조회</h1>
+                <div id="result_box">
                 <form id="search" method='post' action="{% url 'joinResult:result' %}">
                     {% csrf_token %}
                     {% if isDate == 2 %}
@@ -30,6 +31,7 @@
                     </a>
                     {%endif%}
                 </form>
+            </div>
             </div>
   
             <!--지원서 제출 버튼-->
