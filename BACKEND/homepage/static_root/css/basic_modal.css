@@ -15,6 +15,7 @@ body {
     height:100%;
 
     background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
     z-index: 5;
 }
 .imgWagi {
@@ -85,7 +86,7 @@ body {
     height: 53px;
     outline: none;
     float: left;
-    padding-left: 40px;
+    padding-left: 20px;
     margin: 0;
     text-align: left;
     border-radius: 17px;
