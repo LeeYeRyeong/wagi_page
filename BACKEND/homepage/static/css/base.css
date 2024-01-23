@@ -39,9 +39,13 @@
         padding: 0 40px;
         z-index: 999;/*Notice main쪽 z index 설정때문에 이거 맞춰둡니다*/
     }
+
+    
     #main-header>a{
         margin-top: 40px;
     }
+    
+
     #main-navigation {
         float: left; 
     }
@@ -68,6 +72,7 @@
         display: flex;
         
     }
+
 
     #title {
         text-align: center;
@@ -162,7 +167,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        overflow: hidden;
+        overflow-x: hidden;
     }
     
     a {
@@ -181,19 +186,23 @@
     #main-header {
         position: sticky;
         top: 0;
-        z-index: 1;
-        width: 180%; /**/
+        width: 100%; /**/
         height: 10%;
         background-color: black;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 40px;
         z-index: 999;
     }
         
     #main-header>a {
-        margin-top: 40px;
+        margin-top: 30px;
+    }
+    #main-header > a> img {
+        width: 100px;
+        margin-left: 30px;
+        max-height: 40px;
+        margin-bottom: 10px;
     }
     
     nav {
@@ -202,10 +211,10 @@
     
     #category_button {
         width: 40px;/**/
-        height: 40px;/**/
+        height: 35px;/**/
         top: 16px;
         left: 15px; 
-        padding: 8.75px 3.75px;
+
     }
     
     #main-navigation {
@@ -227,10 +236,10 @@
     
     #main-footer {
         background-color: #9EA9D7;
-        padding: 7px;
         text-align: center;
         color: white;
-        position: fixed;
+        position: flex;
+        transform : translateY(0%);
         bottom: 0;
         width: 100%;
         display: flex;
@@ -248,7 +257,14 @@
         width: 110px;
         background-color: #9EA9D7;
     }
+
+
+    #main-footer div {
+        display: flex;
+        justify-content: center;
+    }
     
+
     .link {
         display: flex;
         gap: 20px;
@@ -279,12 +295,16 @@
         width: 100%;
         position: fixed;
         left: -100%;
-        top: 110px;
+
+        top: 79px;
+
         right: 0;
         bottom: 0;
         transition: top 0.5s;
         background-color: black;
-        max-height: 20%;
+
+        max-height: 30%;
+
     }
         
     .slide.on {
