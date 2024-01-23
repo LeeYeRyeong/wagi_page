@@ -49,3 +49,56 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+@media (max-width : 450px) {
+    .modal-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;  
+        height:170px;  
+        
+        text-align: center;
+    
+        background-color: #79809F;
+        
+        border-radius: 20px; 
+        box-shadow:0 2px 3px 0 rgba(34,36,38,0.15); 
+    
+    
+        color: black;
+    }
+    .imgWagi {
+        width: 180px;
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .modal-content {
+        position: absolute;
+        top: 94%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+        width: 630px;
+        height: 230px;
+    }
+    #underline {
+        background-color: rgba(255, 255, 255, 0.27);
+        width: 85px;
+        height: 13px;
+        border-radius: 7px;
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .modal-content .message:first-child {
+        font-size: 14px;
+    }
+    .message {
+        font-size: 12px;
+    }
+}
