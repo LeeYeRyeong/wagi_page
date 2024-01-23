@@ -7,6 +7,9 @@
     transform: translate(-50%, -50%);
     flex-direction: column;
 }
+.join-title {
+    display: none;
+}
 #title {
     text-align: center;
     font-weight: 500;
@@ -183,6 +186,22 @@
         transform: translate(-50%, -50%);
         flex-direction: column;
         width: 100vw;
+    }
+    .join-title {
+        display: block;
+        align-self: flex-start;
+        margin: 20px;
+    }
+    .star{
+        margin-top: 6px;
+        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+        float: left;
+    }
+    .title1{
+        display: inline;
+        font-size: 20px;
     }
     #title {
         text-align: center;
