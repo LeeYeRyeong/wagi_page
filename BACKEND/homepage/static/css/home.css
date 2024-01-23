@@ -259,7 +259,7 @@ section {
 }
 
 /*Pc*/
-@media(min-width: 450px){
+@media(min-width: 451px){
     body {
         margin: 0;
         padding: 0;
