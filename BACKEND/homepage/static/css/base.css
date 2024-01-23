@@ -39,6 +39,7 @@
         padding: 0 40px;
         z-index: 999;/*Notice main쪽 z index 설정때문에 이거 맞춰둡니다*/
     }
+
     
     #main-header>a{
         margin-top: 40px;
@@ -70,6 +71,7 @@
         display: flex;
         
     }
+
 
     #title {
         text-align: center;
@@ -255,11 +257,6 @@
         background-color: #9EA9D7;
     }
 
-    #main-footer div {
-        display: flex;
-        justify-content: center;
-    }
-    
     .link {
         display: flex;
         gap: 20px;
@@ -290,12 +287,16 @@
         width: 100%;
         position: fixed;
         left: -100%;
+
         top: 79px;
+
         right: 0;
         bottom: 0;
         transition: top 0.5s;
         background-color: black;
+
         max-height: 30%;
+
     }
         
     .slide.on {
