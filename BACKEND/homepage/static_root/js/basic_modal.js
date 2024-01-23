@@ -1,6 +1,6 @@
 $(document).ready(function () {
     
-    $("#apply").click(function (e){
+    $("#apply").on('click touchstarat', function (e){
         e.preventDefault();
         showModal();
         const closeModal = document.querySelector('#close-modal'); // 모달 닫기 버튼 
@@ -13,6 +13,21 @@ $(document).ready(function () {
         });      
         
     });
+
+    $("#input_email").on('keyup', function (e) {
+        if (e.which === 13) {
+            e.preventDefault();
+            var userEmail = $("#input_email").val();
+            sendAjaxRequest(userEmail);
+        }
+    });
+
+    $(document).on('click touchstart', '#close-modal', function () {
+        $('.message_2').css('opacity', '100');
+        $('.email').css('display', 'flex');
+        $('.out_text').removeClass('on');
+    });
+    
     function showModal(){
         $.ajax({
             url: '/joinResult/join_button/',
