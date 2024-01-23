@@ -212,50 +212,50 @@ document.addEventListener('DOMContentLoaded', function() {
         let visibleBubbles = 3;
 
         function createBubble(person, isLeft) {
-        const bubble = document.createElement('div');
-        bubble.classList.add(isLeft ? 'L_bubble' : 'R_bubble');
-    
-        bubble.style.animation = 'bubbleFadeIn 0.7s forwards';
-    
-        const photo = document.createElement('div');
-        photo.classList.add(isLeft ? 'L_photo' : 'R_photo');
-        const img = document.createElement('img');
-        img.src = person.photo;
-        img.alt = person.name;
-        img.style.maxHeight = "95px";
-        img.style.maxWidth = "95px";
-        photo.appendChild(img);
-    
-        const name = document.createElement('div');
-        name.classList.add(isLeft ? 'L_name' : 'R_name');
-        name.innerHTML = `<h2>${person.name}</h2>`;
-    
-        const rink = document.createElement('div');
-        rink.classList.add(isLeft ? 'L_rink' : 'R_rink');
-        //링크가 2개일때랑 1개일때 구분해서 생성하는 코드 
-        if (person.link_2) {
-          rink.innerHTML = `
-                  <a href="${person.link_1}" style = "margin-left : 5px;"><img src ="../static/img/github.svg" /></a>
-                  <a href="${person.link_2}"><img src ="../static/img/home.svg" /></a>
-        `;
-        } 
-        else {
-          rink.innerHTML = `
-            <a href="${person.link_1}"  style = "margin-left : 5px;"><img src ="../static/img/github.svg" /></a>`;
-        }
+          const bubble = document.createElement('div');
+          bubble.classList.add(isLeft ? 'L_bubble' : 'R_bubble');
       
+          bubble.style.animation = 'bubbleFadeIn 0.7s forwards';
+      
+          const photo = document.createElement('div');
+          photo.classList.add(isLeft ? 'L_photo' : 'R_photo');
+          const img = document.createElement('img');
+          img.src = person.photo;
+          img.alt = person.name;
+          img.style.maxHeight = "95px";
+          img.style.maxWidth = "95px";
+          photo.appendChild(img);
+      
+          const name = document.createElement('div');
+          name.classList.add(isLeft ? 'L_name' : 'R_name');
+          name.innerHTML = `<h2>${person.name}</h2>`;
+      
+          const rink = document.createElement('div');
+          rink.classList.add(isLeft ? 'L_rink' : 'R_rink');
+          //링크가 2개일때랑 1개일때 구분해서 생성하는 코드 
+          if (person.link_2) {
+            rink.innerHTML = `
+                    <a href="${person.link_1}" style = "margin-left : 5px;"><img src ="../static/img/github.svg" /></a>
+                    <a href="${person.link_2}"><img src ="../static/img/home.svg" /></a>
+          `;
+          } 
+          else {
+            rink.innerHTML = `
+              <a href="${person.link_1}"  style = "margin-left : 5px;"><img src ="../static/img/github.svg" /></a>`;
+          }
+        
 
-        const text = document.createElement('div');
-        text.classList.add(isLeft ? 'L_text' : 'R_text');
-        text.innerHTML = `<p>"${person.bio}"</p>`;
-    
-        bubble.appendChild(photo);
-        bubble.appendChild(name);
-        bubble.appendChild(rink);
-        bubble.appendChild(text);
-    
-        container.appendChild(bubble);
-      }
+          const text = document.createElement('div');
+          text.classList.add(isLeft ? 'L_text' : 'R_text');
+          text.innerHTML = `<p>"${person.bio}"</p>`;
+      
+          bubble.appendChild(photo);
+          bubble.appendChild(name);
+          bubble.appendChild(rink);
+          bubble.appendChild(text);
+      
+          container.appendChild(bubble);
+        }
     
       for (let i = 0; i < 3 && i < peopleData.length; i++) {
         const person = peopleData[i];
