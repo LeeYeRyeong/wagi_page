@@ -1,15 +1,69 @@
 * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
-body {
-            margin: 0;
-            padding: 0;
-            color:black;
-            overflow-x: hidden; 
-            background-color: black;
-            
-            
-        }
-   
-section {
+
+/*모바일*/
+
+@media(max-width: 450px){
+    #section1{
+        height: 800px;
+    }
+
+    .context_1{
+        margin-top: 100px;
+        margin-right: 20px;
+        font-size: 25px;
+        font-weight: 500;
+        float: right;
+        line-height: 50px;
+    }
+    
+    .context_2{display: none;}
+
+    .image-container{
+        float: inline-start;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+    .fixed-image{
+        width: fit-content;
+        position: absolute;
+    }
+    .cloud > img {
+        width: 180px;
+    }
+    .heart>img , .book> img { width: 120px;}
+    .thumbs > img{ width: 140px; }
+    .heart{
+        margin-left: 110px;
+        margin-top: 15px;
+    }
+    .cloud{
+        margin-top: 50px;
+        margin-left: 10px;
+    }
+    .book{
+        margin-top: 120px;
+        margin-left: 125px;
+    }
+  
+
+}
+
+/*Pc*/
+@media(min-width: 450px){
+    body {
+        margin: 0;
+        padding: 0;
+        color:black;
+        overflow-x: hidden; 
+        background-color: black;
+        
+        
+    }
+
+    section {
         height: 100vh;
         display: flex;
         justify-content: center;
@@ -17,269 +71,278 @@ section {
         text-align: center;
         opacity: 0;
         position: relative;
-        padding: 0 20%;
-            
-}
-.fixed-image {
-      position: absolute;
-       width: 300px;
-    height: 300px;
-}
-   
-
-.fixed-image:nth-child(1),
-.fixed-image:nth-child(2),
-.fixed-image:nth-child(3),
-.fixed-image:nth-child(4) {
-    position: absolute;
-    opacity: 0;
-    animation: flyIn 1s forwards;
-    transform: translate(-100px, 0); 
-}
-
-.fixed-image:nth-child(1) {
-   
-    top: 200px;
-    left: 320px;
-}
-
-.fixed-image:nth-child(2) {
-    top: 200px;
-    left: 190px;
-}
-
-.fixed-image:nth-child(3) {
-    top: 290px;
-    left: 163px;
-}
-
-.fixed-image:nth-child(4) {
-    top: 310px;
-    left: 290px;
-}
-@keyframes flyIn {
-    to {
-        opacity: 1;
-        transform: translate(0, 0);
+        padding: 0 20%;      
     }
-}
 
-.context{
-    position: relative;
-    left:140px;
-    color:white;
-    font-size: 45px;
-    font-weight: bold; 
 
-}
-
-.text1 #p1{
-    font-weight: bold;
-
-}
-.top-box .box1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 600px; 
-    height: 250px; 
-    background-color: white;
-    margin: 20px;
-    border-radius: 20px;
-    display: flex;
-    position: relative;
-}
-
-.top-box .box2 {
-     width: 600px; 
-    height: 250px; 
-    background-color: white;
-    margin: 20px;
-    border-radius: 20px;
-    display: flex;
-    position: relative;
-}
-
-.bottom-box .box3 {
-     width: 600px; 
-    height: 250px; 
-    background-color: white;
-    margin: 20px;
-    border-radius: 20px;
-    display: flex;
-    position: relative;
-}
-#s1{
-    font-weight: bold;
-}
-#s2{
- letter-spacing: -5px;
- line-height: 1.2;
-}
- .bottom-box .box4 {
-     width: 600px; 
-    height: 250px; 
-    background-color: white;
-    margin: 20px;
-    border-radius: 20px;
-    display: flex;
-    position: relative;
-}
-
-.box1 h1,
-.box2 h1,
-.box3 h1,
-.box4 h1 {
-    
-    margin: 2px; /* 텍스트 간격 조절 */
-}
-
-.text1{
-   
-    left:170px;
-    top:90px;
-    
-}
-.text1 > #p {
-    margin-left: -20px;
-}
-.text2{
-   
-    left:200px;
-    top:150px;
-    margin-top: 70px;
-    margin-left: 60px;
-
-}
-.text3{
-   
-    left:200px;
-    top:150px;
-    margin-top: 10px;
-    margin-left: 60px;
-}
-#h1{
-    left:180px;
-    top:90px;
-    margin-top: 10px;
-    margin-left: 30px;
-    font-size: 50px;
-       
-}
-#s3{
-    font-weight: bold;
-}
-.text4{
-   
-    left:200px;
-    top:100px;
-    margin-top: 70px;
-    margin-left: 60px;
-}
-.box1 h1,
-.box2 h1,
-.box3 h1,
-.box4 h1 {
-    margin: 2px; /* Adjust the text spacing */
-}
-#s2{
-    font-weight: bold;
-}
-#p {
-    font-size: 10px;
-}
-#p1{
-     font-size: 12px;
-     text-align: center;
-}
-#p2{
-    font-size: 30px;
-
-}
-
-#section3 a {
-            margin-right: 40px; /* 각 이미지 사이의 간격을 조절할 수 있습니다. */
-            
+    .fixed-image {
+        position: absolute;
+         width: 300px;
+      height: 300px;
+    }
+     
+  
+    .fixed-image:nth-child(1),
+    .fixed-image:nth-child(2),
+    .fixed-image:nth-child(3),
+    .fixed-image:nth-child(4) {
+      position: absolute;
+      opacity: 0;
+      animation: flyIn 1s forwards;
+      transform: translate(-100px, 0); 
+      
+     }
+     .fixed-image:nth-child(1) > img,
+    .fixed-image:nth-child(2) >img,
+    .fixed-image:nth-child(3) >img,
+    .fixed-image:nth-child(4) > img{
+        width: 220px;
+    }
+  
+    .fixed-image:nth-child(1) {
+     
+      top: 200px;
+      left: 320px;
+     }
+  
+     .fixed-image:nth-child(2) {
+      top: 200px;
+      left: 190px;
+     }
+  
+    .fixed-image:nth-child(3) {
+      top: 290px;
+      left: 163px;
+     }
+  
+    .fixed-image:nth-child(4) {
+      top: 310px;
+      left: 290px;
+    }
+    @keyframes flyIn {
+      to {
+          opacity: 1;
+          transform: translate(0, 0);
         }
+     }
+     .context_1{
+        display: none;
+     }
+  
+    .context_2{
+      position: relative;
+      left:140px;
+      color:white;
+      font-size: 45px;
+      font-weight: bold; 
+  
+    }
+  
+    .text1 #p1{
+      font-weight: bold;
+  
+    }
+    .top-box .box1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 600px; 
+      height: 250px; 
+      background-color: white;
+      margin: 20px;
+      border-radius: 20px;
+      display: flex;
+      position: relative;
+    }
+  
+    .top-box .box2 {
+       width: 600px; 
+      height: 250px; 
+      background-color: white;
+      margin: 20px;
+      border-radius: 20px;
+      display: flex;
+      position: relative;
+     }
+  
+    .bottom-box .box3 {
+       width: 600px; 
+      height: 250px; 
+      background-color: white;
+      margin: 20px;
+      border-radius: 20px;
+      display: flex;
+      position: relative;
+    }
+  #s1{
+      font-weight: bold;
+     }
+      #s2{
+    letter-spacing: -5px;
+    line-height: 1.2;
+    }
+     .bottom-box .box4 {
+       width: 600px; 
+      height: 250px; 
+      background-color: white;
+      margin: 20px;
+      border-radius: 20px;
+      display: flex;
+      position: relative;
+    }
+  
+    .box1 h1,
+    .box2 h1,
+    .box3 h1,
+    .box4 h1 {
         
-.move-img{
-    margin-left: -20px;
-}
-.move-img1{
-    position: relative;
-    top:30px;
-    left:10px;
+      margin: 2px; /* 텍스트 간격 조절 */
+     }
+  
+     .text1{
+     
+      left:170px;
+      top:90px;
+      
+    }
+    .text1 > #p {
+      margin-left: -20px;
+     }
+     .text2{
+     
+      left:200px;
+      top:150px;
+      margin-top: 70px;
+      margin-left: 60px;
+  
+     }
+    .text3{
+     
+      left:200px;
+      top:150px;
+      margin-top: 10px;
+      margin-left: 60px;
+    }
+     #h1{
+      left:180px;
+      top:90px;
+      margin-top: 10px;
+      margin-left: 30px;
+      font-size: 50px;
+         
+    }
+    #s3{
+        font-weight: bold;
+    }
+    .text4{
+
+      left:200px;
+      top:100px;
+      margin-top: 70px;
+      margin-left: 60px;
+    }
+    .box1 h1,
+    .box2 h1,
+    .box3 h1,
+    .box4 h1 {
+        margin: 2px; /* Adjust the text spacing */
+    }
+     #s2{
+         font-weight: bold;
+    }
+    #p {
+      font-size: 10px;
+     }
+    #p1{
+       font-size: 12px;
+       text-align: center;
+    }
+     #p2{
+      font-size: 30px;
+  
+    }
+  
+    #section3 a {
+              margin-right: 40px; /* 각 이미지 사이의 간격을 조절할 수 있습니다. */
+              
+          }
+          
+    .move-img{
+        margin-left: -20px;
+    }
+    .move-img1{
+      position: relative;
+      top:30px;
+      left:10px;
+      
+    }
+     .move-img2{
+      position: relative;
+      top:30px;
+      left:10px;
+    }
+    .move-img3{
+     position: relative;
+      top:30px;
+      left:10px;
+     }
+  
+     #news{
+      position: absolute;
+      font-size: 20px;
+      color:white;
+      left:350px;
+      top:180px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      }
+  
+  
+  
+     #instagram1>#p1{
+      
+      top:10px;
+      color:white;
+      font-size: 30px;
+      font-weight: bold;
+  
+    }
+    #instagram1>#p2{
+      
+      position: absolute;
+      color:white;
+      font-size: 18px;
+  
+    }
+    #instagram2>#p1{
+     
+      top:10px;
+      color:white;
+      font-size: 18px;
+      font-weight: bold;
+  
+     }
+     #instagram2>#p2{
+      
+      position: absolute;
+      color:white;
+      font-size: 12px;
+  
+     }
+     #instagram3>#p1{
+      
+      top:10px;
+      color:white;
+      font-size: 18px;
+      font-weight: bold;
+  
+     }
+     #instagram3>#p2{
+      
+      position: absolute;
+      color:white;
+      font-size: 12px;
+  
+    }
     
 }
-.move-img2{
-    position: relative;
-    top:30px;
-    left:10px;
-}
-.move-img3{
-    position: relative;
-    top:30px;
-    left:10px;
-}
-
-#news{
-    position: absolute;
-    font-size: 20px;
-    color:white;
-    left:350px;
-    top:180px;
-    font-weight: bold;
-    margin-bottom: 30px;
-}
-
-
-
-#instagram1>#p1{
-    
-    top:10px;
-    color:white;
-    font-size: 30px;
-    font-weight: bold;
-
-}
-
-
-#instagram1>#p2{
-    
-    position: absolute;
-    color:white;
-    font-size: 18px;
-
-}
-#instagram2>#p1{
-   
-    top:10px;
-    color:white;
-    font-size: 18px;
-    font-weight: bold;
-
-}
-#instagram2>#p2{
-    
-    position: absolute;
-    color:white;
-    font-size: 12px;
-
-}
-#instagram3>#p1{
-    
-    top:10px;
-    color:white;
-    font-size: 18px;
-    font-weight: bold;
-
-}
-#instagram3>#p2{
-    
-    position: absolute;
-    color:white;
-    font-size: 12px;
-
-}
-
-
