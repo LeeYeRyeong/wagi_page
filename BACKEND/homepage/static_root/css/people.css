@@ -16,7 +16,7 @@
     }
     .People-title{
         margin-top: 5%;
-        margin-left: 14px;
+        margin-left: 20px;
     }
     .star{
         margin-top: 6px;
@@ -30,18 +30,21 @@
         font-size: 20px;
     }
     .seoson > a {
-        text-decoration: underline;   
+        text-decoration: underline; 
+        font-size: 17px;  
+        font-weight: 500;
     }
     .seoson1{
         display: inline;
-        float: inline-start;              
+        float: left;           
     }
     .seoson2{
         display: inline;
-        float: left;
-        margin-left: 35px;
-        margin-right: 10px; 
+        float: inline-start;
+        margin-left: 45px;
+        margin-right: 20px;   
     }
+    
     .L_bubble{
         position: relative;
         width: 355px;
