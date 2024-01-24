@@ -68,7 +68,6 @@ def notice_list(request):
     rightIndex = (int(page)+2)
     if rightIndex > paginator.num_pages:
         rightIndex = paginator.num_pages
-
     custom_range = range(leftIndex, rightIndex+1)
 
     return render(request, 'Notice_main.html', {'notices': notices, 'page_obj':page_obj, 'paginator':paginator, 'custom_range':custom_range})
