@@ -1,6 +1,7 @@
 $(document).ready(function () {
     
-    $("#apply").on('click touchstarat', function (e){
+
+    $("#apply, #apply_").click(function (e){
         e.preventDefault();
         showModal();
         const closeModal = document.querySelector('#close-modal'); // 모달 닫기 버튼 
