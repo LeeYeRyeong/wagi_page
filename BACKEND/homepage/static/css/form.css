@@ -1,18 +1,9 @@
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-}
-
 .container {
     position: relative;
     width: 100%;
     max-width: 1006px;
     margin: 0 auto;
     margin-top: 130px;
-    overflow: hidden;
 }
 
 .question-box, .answer-box {
@@ -29,7 +20,6 @@ body {
     background-color: #9EA9D7;
     padding: 20px;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 .answer-box {
@@ -39,7 +29,6 @@ body {
     background-color: #FFFFFF;
     padding: 20px;
     box-sizing: border-box;
-    overflow: hidden;
    
 }
 
@@ -60,6 +49,14 @@ body {
 
 }
 
+.inputmodel {
+    outline:none;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    border: none;
+    overflow-y: auto;  /* 세로 스크롤을 추가 */
+    max-height: 152px;  /* 내용의 최대 높이를 설정*/
+}
 .submit-button {
     width: 722px;
     height: 88px;
@@ -108,30 +105,6 @@ body {
 
 } */
 
-
-#main-header { 
-width: 100%;
-height: 20%;
-position: relative;
-}
-nav {
-float: right;
-position: absolute;
-top: 50%;
-right: 7%;
-transform: translate(0%, -50%);
-}
-.menu-item {
-list-style: none;
-display: inline-block;
-padding-right: 120px; /*상대적으로 어케하징...*/
-font-weight: bold;
-font-size: 20px;
-}
-.menu-item{
-color: white;
-}
-
 p{
     background-color: #9EA9D7;
     color: black;
@@ -144,11 +117,167 @@ p{
     resize: vertical; /* 사용자가 수직으로 조절할 수 있도록 설정 */
 }
 
-*{
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
+@media (max-width : 450px) {
+    body {
+        height: 100%;
+        overflow: visible;
+    }
+    #page-wrapper1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 120vh;
+    }
+    .join-title {
+        display: block;
+        align-self: flex-start;
+        margin: 20px;
+        top:0;
+    }
+    .star{
+        margin-top: 6px;
+        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+        float: left;
+    }
+    .title1{
+        display: inline;
+        font-size: 20px;
+    }
+    #main-section1 {
+        margin-top: 80px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        flex-direction: column;
+        width: 100vw;
+    }
 
+    .container {
+        position: relative;
+        width: 90vw;
+        margin: 50px auto 30px;
+    }
+    
+    .question-box, .answer-box {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 20px;
+        margin-top: 10px;
+        position: relative;
+        color: #000;
+    }
+    
+    .question-box {
+        height: 40px;
+        line-height: 40px;
+        background-color: #9EA9D7;
+        padding: 0 15px;
+        box-sizing: border-box;
+        font-size: 10.5px;
+        font-weight: 500;
+        overflow: hidden;
+    }
+    
+    .answer-box {
+        max-height: 152px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        background-color: #FFFFFF;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-sizing: border-box;
+        overflow: auto;
+       
+    }
+    
+    .input-box {
+        width: calc(100% - 20px);
+        box-sizing: border-box;
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: white;
+        color: black;
+        
+        overflow-y: auto;  /* 세로 스크롤을 추가 */
+        max-height: 152px;  /* 내용의 최대 높이를 설정*/
+        
+        
+    
+    }
+    .inputmodel {
+        outline:none;
+        width: 100%;
+        box-sizing: border-box;
+        border: none;
+        overflow-y: auto;  /* 세로 스크롤을 추가 */
+        height: 103px;  /* 내용의 최대 높이를 설정*/
+    }
+    .submit-button {
+        width: 65vw;
+        height: 43px;
+        position: relative;
+        top: 0;
+       
+        border: none;
+        border-radius: 20px;
+        background-color: white;
+        color: #000;
+        cursor: pointer;
+        display: block;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 50px 0;
+        
+        /* display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: #000;
+        display: grid;
+        place-content: center; */
+       
+    }
+    .submit-button:hover {
+        background-color: #9EA9D7;
+    }
+    .container2{
+        position: relative;
+        width: 100vw;
+        height: 100px;
+        margin: 0 auto;
+    }
+    
+    /* .submit-text {
+        width: 150px;
+        height: 88px;
+        font-family: 'Pretendard Variable', sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 35.8px;
+        color: #000000;
+        background-color: #9EA9D7;
+        position: absolute;
+        top: 1280px;
+        left: 279px;
+        border-radius: 20px;
+    
+    } */
+    
+    p{
+        background-color: #9EA9D7;
+        color: black;
+    }
+    
+    .input-box {
+        width: 100%;
+        height: 50px; /* 초기 세로 높이를 원하는 값으로 설정 */
+        box-sizing: border-box;
+        resize: vertical; /* 사용자가 수직으로 조절할 수 있도록 설정 */
+    }
 }
-
-
-
-

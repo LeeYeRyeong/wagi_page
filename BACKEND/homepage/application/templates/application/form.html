@@ -1,70 +1,57 @@
 {% extends 'basic.html' %}
 {% load static %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application</title>
+
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/form.css' %}">
-    <link rel="stylesheet" href="../../../static/css/form.css">
-    <link rel="stylesheet" href="../../../static/css/base.css">
-    <style>
-        .inputmodel {
-            outline:none;
-            width: calc(100% - 20px);
-            box-sizing: border-box;
-            border: none;
-            overflow-y: auto;  /* 세로 스크롤을 추가 */
-            max-height: 152px;  /* 내용의 최대 높이를 설정*/
-        }
-    </style>
 
-</head>
-<body>
-    <form method="post" action="{% url 'application:form' %}">
-        {% csrf_token %}
-
-        <div class="container">
-            <div class="question-box">
-                <p style="margin: 0;">1. 자기소개를 해주세요. (500자 내외)</p>
-            </div>
-            <div class="answer-box">
-                {{ form.introduction|default_if_none:'' }}
-            </div>
+    <div class="page-wrapper1">
+        <div class="join-title">
+            <img class="star" src="{% static 'img/people/star.png' %}">
+            <h1 class="title1">join</h1>
+        </div>
+        <div class="main-section1">
+            <form method="post" action="{% url 'application:form' %}">
+                {% csrf_token %}
         
-            <div class="question-box">
-                <p style="margin: 0;">2. 지원동기를 작성해주세요. (500자 내외)</p>
-            </div>
-            <div class="answer-box">
-                {{ form.motivation|default_if_none:'' }}
-            </div>
+                <div class="container">
+                    <div class="question-box">
+                        <p style="margin: 0;">1. 자기소개를 해주세요. (500자 내외)</p>
+                    </div>
+                    <div class="answer-box">
+                        {{ form.introduction|default_if_none:'' }}
+                    </div>
+                
+                    <div class="question-box">
+                        <p style="margin: 0;">2. 지원동기를 작성해주세요. (500자 내외)</p>
+                    </div>
+                    <div class="answer-box">
+                        {{ form.motivation|default_if_none:'' }}
+                    </div>
+                
+                    <div class="question-box">
+                        <p style="margin: 0;">3. 프로젝트 관련 경험이 있다면 작성해주세요. (800자 내외)</p>
+                    </div>
+                    <div class="answer-box">
+                        {{ form.project_experience|default_if_none:'' }}
+                    </div>
+                
+                    <div class="question-box">
+                        <p style="margin: 0;">4. 개발과 관련한 공부를 한 경험이 있다면 작성해주세요. (700자 내외)</p>
+                    </div>
+                    <div class="answer-box">
+                        {{ form.study_experience|default_if_none:'' }}
+                    </div>
+                
+                </div>
         
-            <div class="question-box">
-                <p style="margin: 0;">3. 프로젝트 관련 경험이 있다면 작성해주세요. (800자 내외)</p>
-            </div>
-            <div class="answer-box">
-                {{ form.project_experience|default_if_none:'' }}
-            </div>
-        
-            <div class="question-box">
-                <p style="margin: 0;">4. 개발과 관련한 공부를 한 경험이 있다면 작성해주세요. (700자 내외)</p>
-            </div>
-            <div class="answer-box">
-                {{ form.study_experience|default_if_none:'' }}
-            </div>
+                <div class="container2">
+                    <a href="{% url 'application:join_success' %}">
+                        <button type="submit" class="submit-button">지원서 제출</button>
+                    </a>
+                </div>
+            </form>
         
         </div>
-
-        <div class="container2">
-            <a href="{% url 'application:join_success' %}">
-                <button type="submit" class="submit-button">지원서 제출</button>
-            </a>
-        </div>
-    </form>
-
-</body>
-</html>
+    </div>
 {% endblock %}
