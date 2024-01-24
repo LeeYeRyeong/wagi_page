@@ -1,6 +1,6 @@
 $(document).ready(function () {
     
-    $("#apply").click(function (e){
+    $("#apply, #apply_").click(function (e){
         e.preventDefault();
         showModal();
         const closeModal = document.querySelector('#close-modal'); // 모달 닫기 버튼 
