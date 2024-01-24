@@ -76,6 +76,17 @@
     border: none;
     position: absolute;
     left: 100px;
+    top: 120px;
+}
+#delete_button2 {
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    position: absolute;
+    left: 100px;
+    top: 170px;
+    font-size: 23px;
 }
 
 #article {
@@ -235,7 +246,7 @@ input[type="file"] {
     float: left;
 }
 
-img {
+.img_content img {
     object-fit: cover;
 }
 
@@ -396,7 +407,7 @@ img {
     cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 450px) {
     
 
     #content {
@@ -404,11 +415,11 @@ img {
         width: 100%;
         overflow-y: scroll;
         margin:0;
+        padding-top: 90px;
     }
 
     #article {
         width: 100%;
-        
         margin-top: 600px;
         position: relative;
         height: 100%;
@@ -423,7 +434,7 @@ img {
 
     .album {
         width: 90%;
-        height: 60%;
+        height: 70%;
         border-radius: 25px;
     }
 
@@ -433,9 +444,8 @@ img {
     }
     #mt {
         width: 90%;
-        
         float: none;
-        
+        margin-bottom: 50px;
         margin-left: 20px;
         margin-right: 0;
         margin-top: 130px;
@@ -450,12 +460,10 @@ img {
         position: relative;
         float: left;
         margin-left: 20px;
-        margin-bottom: 40px;
         padding-top: 25px;
         height: 500px;
         flex: 1; 
         margin-top: 130px;
-       
     }
     
     #project {
@@ -466,7 +474,7 @@ img {
         padding-top: 25px;
         height: 500px;
         flex: 1;
-        margin-top: 240px;
+        margin-top: 360px;
     }
     #item_area {
         width: 100%;
@@ -493,12 +501,20 @@ img {
        
     }
     .underline {
-        
         position: absolute;
         left: 10%;
         top: 10%;
         height: 10px;
         width: 59px;
+        border-radius: 100px; 
+        background-color: #CCE2FFB0;
+    }
+    #mt .underline {
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        height: 10px;
+        width: 33px;
         border-radius: 100px; 
         background-color: #CCE2FFB0;
     }
@@ -531,7 +547,7 @@ img {
         float: left;
     }
     
-    img {
+    .img_content img {
         object-fit: cover;
     }
     
@@ -577,6 +593,5 @@ img {
         display: none;
         height: 0;
     }
-        
-    
+         
 }

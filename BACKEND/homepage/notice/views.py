@@ -3,6 +3,7 @@ from .models import Notion, NotionImage, NotionFile
 from .forms import NotionForm, NotionImageForm, NotionFileForm
 from django.http import JsonResponse
 from django.urls import reverse
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 # create
 def notice_create(request):
@@ -46,7 +47,30 @@ def get_notices_by_category(request):
 
 def notice_list(request):
     notices = Notion.objects.all().order_by('-write_time')
-    return render(request, 'Notice_main.html', {'notices': notices})
+
+    #pagination처리
+    page = request.GET.get('page')
+    paginator = Paginator(notices, 8)
+    try:
+        page_obj = paginator.page(page)
+    except PageNotAnInteger: #page 선택 안 했을 때
+        page = 1
+        page_obj = paginator.page(page)
+    except EmptyPage: #notices수 보다 더 큰 page 입력했을 때 
+        page = paginator.num_pages
+        page_obj = paginator.page(page)
+    
+    #page수 많으면 그 뒤에 넘기는 거 '>'로 보이게
+    leftIndex = (int(page)-2)
+    if leftIndex <1:
+        leftIndex = 1
+    
+    rightIndex = (int(page)+2)
+    if rightIndex > paginator.num_pages:
+        rightIndex = paginator.num_pages
+    custom_range = range(leftIndex, rightIndex+1)
+
+    return render(request, 'Notice_main.html', {'notices': notices, 'page_obj':page_obj, 'paginator':paginator, 'custom_range':custom_range})
 
 
 

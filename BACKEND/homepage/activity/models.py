@@ -2,7 +2,7 @@ from django.db import models
 import os
 
 class Activity_mt(models.Model):
-    mt_image = models.ImageField(upload_to='mt_images/')
+    mt_image = models.ImageField(upload_to='mt_images/', blank=True)
 
     def delete(self, *args, **kwargs):
         self.delete_image(self.mt_image)
@@ -17,7 +17,7 @@ class Activity_mt(models.Model):
 
 
 class Activity_study(models.Model):
-    study_image = models.ImageField(upload_to='study_images/')
+    study_image = models.ImageField(upload_to='study_images/', blank=True)
 
     def delete(self, *args, **kwargs):
         self.delete_image(self.study_image)
@@ -33,7 +33,7 @@ class Activity_study(models.Model):
 
 
 class Activity_project(models.Model):
-    project_image = models.ImageField(upload_to='project_images/')
+    project_image = models.ImageField(upload_to='project_images/', blank=True)
 
     def delete(self, *args, **kwargs):
         self.delete_image(self.project_image)
