@@ -5,6 +5,7 @@ from activity.views import upload_activity, success_page, edit_page, edit_images
 from people.views import show_people_1, show_people_2
 from joinResult import views
 from application import views
+from makers.views import show_makers
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -28,6 +29,8 @@ urlpatterns = [
     path('notice/', include('notice.urls')),  
 
     path('application/', include('application.urls')),
+
+    path('makers/', show_makers, name='show_makers'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

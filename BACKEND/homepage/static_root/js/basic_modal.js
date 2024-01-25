@@ -1,5 +1,6 @@
 $(document).ready(function () {
     
+
     $("#apply, #apply_").click(function (e){
         e.preventDefault();
         showModal();
@@ -13,6 +14,21 @@ $(document).ready(function () {
         });      
         
     });
+
+    $("#input_email").on('keyup', function (e) {
+        if (e.which === 13) {
+            e.preventDefault();
+            var userEmail = $("#input_email").val();
+            sendAjaxRequest(userEmail);
+        }
+    });
+
+    $(document).on('click touchstart', '#close-modal', function () {
+        $('.message_2').css('opacity', '100');
+        $('.email').css('display', 'flex');
+        $('.out_text').removeClass('on');
+    });
+    
     function showModal(){
         $.ajax({
             url: '/joinResult/join_button/',

@@ -87,11 +87,11 @@
                                 <div class="img_area">     <!--image-grid랑 img_area랑 같게 해보기로 하자-->
                                     {% for image in images %}
                                         {% if image.project_image %}
-                                            <a href="https://www.naver.com/" class="img_link"> <!-- 일단 네이버로 링크함 -->
+                                            
                                                 <div id="project_img_content" class="img_content size_original">
                                                     <img src="{{ image.project_image.url }}" alt="Project Image">
                                                 </div>
-                                            </a>
+                                            
                                         {% endif %}
                                     {% endfor %}
                                 </div>

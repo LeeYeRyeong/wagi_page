@@ -39,8 +39,9 @@ SECRET_KEY = get_secret("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    #".ap-northeast-2.compute.amazonaws.com",
-    #".sswu-wagi.com",
+    ".ap-northeast-2.compute.amazonaws.com",
+    ".sswu-wagi.com",
+    "127.0.0.1",
     ]
 
 
@@ -60,6 +61,7 @@ INSTALLED_APPS = [
     'people',
     'notice',
     'application',
+    'makers',
 ]
 
 MIDDLEWARE = [
