@@ -32,9 +32,7 @@
                     {%endif%}
                     {% if isDate == 0 or isDate == 1 %}
                     <input id="input_studentNum" type="text" name="inputId" placeholder="학번을 입력하세요.", disabled>
-                    <a href="{% url 'joinResult:result' %}">
                         <button id="btn_studentNum" disabled><img src="{% static 'img/search icon.png' %}"></button>
-                    </a>
                     {%endif%}
                 </form>
             </div>
