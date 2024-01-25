@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'people',
     'notice',
     'application',
+    'makers',
 ]
 
 MIDDLEWARE = [

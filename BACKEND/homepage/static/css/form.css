@@ -122,11 +122,11 @@ p{
         height: 100%;
         overflow: visible;
     }
+    #page-wrapper {
+        display: none;
+        /*basic.html 로직 때문에 밑에 빈칸 생기는거 없앰*/
+    }
     #page-wrapper1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         height: 120vh;
     }
     .join-title {
