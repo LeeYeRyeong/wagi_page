@@ -232,11 +232,9 @@
         border-radius: 15px;
     }
     #btn_studentNum {
-        position: absolute;
         border: 0;
         width: 50px;
         height: 50px;
-        float: right;
         outline: none;
         background-color: transparent;
     }
@@ -258,6 +256,7 @@
         font-size: 18px;
         margin-top: 10px;
         margin-left: 7.5vw;
+        color: black;
     }
     .imgWagi {
         width: 155px;

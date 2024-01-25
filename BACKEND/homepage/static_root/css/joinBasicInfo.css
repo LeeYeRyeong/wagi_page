@@ -235,12 +235,7 @@ input:focus {
         font-size: 20px;
     }
     #main-section1 {
-        margin-top: 80px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        flex-direction: column;
+        margin-top: 50px;
         width: 100vw;
     }
     #form_box {
@@ -354,6 +349,7 @@ input:focus {
       cursor: pointer;
       font-size: 20px;
       font-weight: 500;
+      color: black;
     
     }
     .enter:hover {
