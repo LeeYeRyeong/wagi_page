@@ -11,7 +11,7 @@ def join_button(request):
     start_j_date = date(2024, 1, 1) # 지원서 제출 시작 날짜
     end_j_date = date(2024, 1, 17) # 지원서 제 출 끝나는 날짜
     start_r_date = date(2024, 1, 18) # 합격자 조회 시작 날짜
-    end_r_date = date(2024, 1, 20) # 합격자 조회 끝나는 날짜
+    end_r_date = date(2024, 1, 27) # 합격자 조회 끝나는 날짜
     isDate = 0
     if start_j_date <= current_date <= end_j_date: # 지원서 제출 기간
         isDate = 1
