@@ -1,11 +1,23 @@
 {% extends 'basic.html' %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_main.css' %}">
-    <div id="realContent">
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_main.css'%}">
+    </head>
+    <body>
+        <div id="realContent">
 
     <a href="{% url 'notice:notice_list' %}"><div id="notice" class="notice">공지사항</div></a>
+
+    <div id="Notice_title">
+        <img id="star" src="..\static\img\people\star.png" >
+        <h1 id="title">Notice</h1>
+    </div>
 
     {% if user.is_superuser %}
     <a href="{% url 'notice:notice_create' %}"><div id="writings" class="writing">글 작성</div></a>
@@ -40,27 +52,27 @@
                     {% if page_obj.has_other_pages %} <!--1페이지만 있을 땐 페이지수 안 보이게 if문 달긔-->
                         <ul style="display: flex;list-style: none;">
         
-                            {% if page_obj.has_previous %} <!--이전으로 버튼-->
-                                <li style="margin:3px"><a style="text-decoration: none; color: red;" href="?page={{page_obj.previous_page_number}}">&#10094; Prev</a></li>
+                            {% if page_obj.has_previous %}<!-- 이전으로 버튼-->
+                                <li style="margin:3px"><a style="text-decoration: none; color: black;" href="?page={{page_obj.previous_page_number}}">&#10094; Prev</a></li>
                             {% endif %}
         
-                            {% for page in paginator.page_range %} <!--page숫자 구현부-->
+                            {% for page in paginator.page_range %}<!-- page숫자 구현부-->
                                 {% if page == page_obj.number %} <!--현재페이지 강조, 색변화-->
-                                    <li style="margin:3px"><a style="text-decoration: none; color: orange;" href="?page={{page}}">{{page}}</a></li>
-                                {% else %} <!--그 외 (분기문. 구리야 뭔말인지 알즤)-->
-                                    <li style="margin:3px"><a style="text-decoration: none; color: red;" href="?page={{page}}">{{page}}</a></li>
+                                    <li style="margin:3px"><a style="text-decoration: none; color:#9EA9D7;" href="?page={{page}}">{{page}}</a></li>
+                                {% else %} <!--그 외 (분기문. 야 뭔말인지 알즤)-->
+                                    <li style="margin:3px"><a style="text-decoration: none; color: black;" href="?page={{page}}">{{page}}</a></li>
                                 {% endif %}
                             {% endfor %}
         
                             {% if page_obj.has_next %} <!--next버튼-->
-                                <li style="margin:3px"><a style="text-decoration: none; color: red;" href="?page={{page_obj.next_page_number}}">&#10095; Next</a></li>
+                                <li style="margin:3px"><a style="text-decoration: none; color: black;" href="?page={{page_obj.next_page_number}}">&#10095; Next</a></li>
                             {% endif %}
                         </ul>
                     {% endif %}
-                </div>
+                </div> 
         </div>
     </div>
 </div>
-    
+</body> 
     <script src="{% static 'js/Notice_main.js' %}"></script>
 {% endblock %}
