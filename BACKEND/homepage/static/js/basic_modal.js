@@ -41,6 +41,9 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.result === 'show') {
                     $(".modal_unavailable").show();
+                    /*모바일버전 네비바 닫기*/
+                    $("#burgur").removeClass('on');
+                    $("#slide").removeClass('on');
                 }
             },
             error: function (error) {
