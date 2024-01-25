@@ -167,3 +167,5 @@ MEDIA_URL = '/img/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
 
 CLEANUP_KEEP_EXTENSIONS = ['.jpg', '.jpeg', '.png', ...]
+
+ALLOWED_HOSTS = []
