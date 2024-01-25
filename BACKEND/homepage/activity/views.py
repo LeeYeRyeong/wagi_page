@@ -3,42 +3,39 @@ from .models import Activity_mt, Activity_study, Activity_project
 from .forms import ActivityForm_mt, ActivityForm_study, ActivityForm_project
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
-from django.views.decorators.csrf import csrf_exempt
 
-@csrf_exempt #POSTMAN사용때매 설정
 def upload_activity(request):
     if request.method == 'POST':
         mt_form = ActivityForm_mt(request.POST, request.FILES, prefix='mt_form')
         study_form = ActivityForm_study(request.POST, request.FILES, prefix='study_form')
         project_form = ActivityForm_project(request.POST, request.FILES, prefix='project_form')
 
-        if mt_form.is_valid():
-            for mt_image in request.FILES.getlist('mt_form-mt_image'):#이미지 여러개면 for문 돌려서 다 저장
-                mt_instance = Activity_mt.objects.create(mt_image=mt_image)
-                # 이미지 모델 저장 후에 ID 설정(istance만들어서 id주는건 원본에서 하길래 그대로 유지함)
-                mt_instance.image_id = mt_instance.id
-                mt_instance.save()
+        if mt_form.is_valid() and study_form.is_valid() and project_form.is_valid():
+            mt_instance = mt_form.save(commit=False)
+            study_instance = study_form.save(commit=False)
+            project_instance = project_form.save(commit=False)
 
-        if study_form.is_valid():
-            for study_image in request.FILES.getlist('study_form-study_image'):
-                study_instance = Activity_study.objects.create(study_image=study_image)
-                study_instance.image_id = study_instance.id
-                study_instance.save()
+            # 각 이미지 모델에 대한 추가 로직 수행 (필요하면)
+            mt_instance.save()
+            study_instance.save()
+            project_instance.save()
 
-        if project_form.is_valid():
-            for project_image in request.FILES.getlist('project_form-project_image'):
-                project_instance = Activity_project.objects.create(project_image=project_image)
-                project_instance.image_id = project_instance.id
-                project_instance.save()
-        
-        return redirect('success_page')
+            # 이미지 모델들이 저장된 후에 이미지 ID 설정
+            mt_instance.image_id = mt_instance.id
+            study_instance.image_id = study_instance.id
+            project_instance.image_id = project_instance.id
+
+            mt_instance.save()
+            study_instance.save()
+            project_instance.save()
+
+            return redirect('success_page')
     else:
         mt_form = ActivityForm_mt(prefix='mt_form')
         study_form = ActivityForm_study(prefix='study_form')
         project_form = ActivityForm_project(prefix='project_form')
 
     return render(request, 'upload_activity.html', {'mt_form': mt_form, 'study_form': study_form, 'project_form': project_form})
-
 
 def success_page(request):
     mt_images = Activity_mt.objects.all()
