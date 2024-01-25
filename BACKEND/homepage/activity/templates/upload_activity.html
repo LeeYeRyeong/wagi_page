@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/activities.css' %}">    
     <div id="activities_manager" hidden></div><!--js 처리용 div-->
     <div id="content"><!--헤더 밑-->
-        <form action="{% url 'upload_activity' %}" method="post" enctype="multipart/form-data">
+        <form action="{% url 'upload_activity' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
             <div id="button_area"><!--버튼 공간-->
                 <div class="upload_button_area">
                     <button type="submit" class="button" id="upload_button">
@@ -18,7 +18,7 @@
             <br>
             <div id="item_area"><!--이동 버튼 밑-->
                 <div id="article"><!--모든 앨범-->
-                    {% csrf_token %}
+                    
                     <!--MT-->
                     <div class="item" id="mt"><!--앨범 및 앨범 이름-->
                         <div class="album_name">MT</div>

@@ -1,4 +1,3 @@
-
 let editPage = document.getElementById('edit_page');
 
 //activities.html, success_page.html일 때
@@ -131,20 +130,22 @@ let editPage = document.getElementById('edit_page');
 
       // mt
       mtFile.addEventListener('change', function (event) {
-        let fileName = event.target.files[0].name; // event 객체에서 선택된 파일의 이름을 가져옵니다.
-        document.getElementById('mt_file').value = fileName; // 파일 이름을 입력 필드에 표시합니다.
+        handleFileChange(event, 'mt_file');
       });
 
       // study
       studyFile.addEventListener('change', function (event) {
-        let fileName = event.target.files[0].name; // event 객체에서 선택된 파일의 이름을 가져옵니다.
-        document.getElementById('study_file').value = fileName; // 파일 이름을 입력 필드에 표시합니다.
+        handleFileChange(event, 'study_file');
       });
 
       // project
       projectFile.addEventListener('change', function (event) {
-        let fileName = event.target.files[0].name; // event 객체에서 선택된 파일의 이름을 가져옵니다.
-        document.getElementById('project_file').value = fileName; // 파일 이름을 입력 필드에 표시합니다.
-    });
+        handleFileChange(event, 'project_file');
+      });
+
+      function handleFileChange(event, targetElementId) {
+        let fileNames = Array.from(event.target.files).map(file => file.name).join(', ');
+        document.getElementById(targetElementId).value = fileNames;
+      }
+
   }
-  
