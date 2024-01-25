@@ -406,6 +406,9 @@ input[type="file"] {
     float: left;
     cursor: pointer;
 }
+#phoneName{
+    display: none;
+}
 
 @media screen and (max-width: 450px) {
     
@@ -499,6 +502,13 @@ input[type="file"] {
         background-color: transparent;
         margin: 0;
        
+    }
+    #phoneName{
+        display: inline;
+        
+    }
+    #pcName{
+        display: none;
     }
     .underline {
         position: absolute;
