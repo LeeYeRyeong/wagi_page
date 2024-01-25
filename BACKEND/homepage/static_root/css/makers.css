@@ -1,0 +1,112 @@
+@media(max-width: 450px){
+    * { font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
+    body{
+        background-color: black;
+    } 
+    .makers{
+        height: 2300px;
+        color: white;
+        align-items: center;
+        text-align: center;
+    }
+    .title{
+        height: 50px;
+        margin-top: 10%;
+        }
+    .star{
+        display: inline;
+        float: left; 
+        margin: 12px 5px;   
+    }
+    .title_Makers{
+        float: left;
+        font-size: 17px;
+        font-weight: 900;
+        margin: 10px 5px;   
+        
+    }
+    .bar{
+        margin-top: 20px;
+        margin-bottom: 10px
+    }
+    .PM{
+        font-size: 17px;
+        margin-left: 5%;
+        width: 100%;
+        text-align: left;
+        font-weight: 500;
+    }
+    .people_card{
+        width: 165px;
+        height: 226px;
+        margin: 10px;
+        overflow: hidden;
+        display: inline; 
+        float: left;  
+    }
+    .PM > .people_card{
+        display: block;
+        
+    }
+    .photo{
+        margin-bottom: 0;
+        width: 165px;
+        border-radius: 15px 15px 0 0;
+    }
+    .profile{
+        background-color: white;
+        color: black;
+      
+        height: 94px;  
+        margin-top: -5px;
+        border-radius: 0 0 15px 15px;
+        border-color: none;
+        
+    }
+    .name, .major, .part{
+        margin: 0px 10px;
+        text-align: left;
+    }
+    .name{
+        font-size: 15px;
+        font-weight: 900;
+        line-height: 15px;
+    }
+    .major{
+        font-size: 8px;
+        line-height: 20px;
+        font-weight: 500;
+    }
+    .part{
+        font-size: 11px;
+        font-weight: 600;
+    }
+    .Front{
+        font-size: 17px;
+        margin-left: 5%;
+        width: 200px;
+        text-align: left;
+        font-weight: 500;
+        line-height: 40px;
+    }
+    .Back{
+        font-size: 17px;
+        margin-left: 5%;
+        width: 200px;
+        text-align: left;
+        font-weight: 500;
+        line-height: 40px;
+    }
+    .memoji{
+        background-color: white;
+    }
+   
+
+}
+@media(min-width: 450px){
+    .makers *{
+        display: none;
+    }
+
+}
+
