@@ -301,14 +301,14 @@
         .box{
             color: black;
             position: absolute;
-            margin-top: 10px;
+            margin-top: 3%;
             font-size:1%;
         }
         
         .box a {
             text-decoration: none; 
             background-color: transparent; 
-            display: inline;
+            display: inline-block;
         }
         
         .category {
@@ -328,11 +328,16 @@
         }
         
         .notice-title {
-            left: 195px;
+            left: 192px;
             position: absolute;
             width: 100px;
-            text-overflow:ellipsis;
+            text-overflow: hidden;
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block; 
+            height: 12px;
         }
+        
 
         #allContent ul{
             padding-inline-start: 30px;
@@ -348,10 +353,10 @@
             content: "";
             position: absolute;
             width: 100%;
-            top: 40px; 
+            top: 170%; 
             left: 44%; 
             transform: translateX(-50%); 
-            border: 1.0px solid #000000;
+            border: 0.5px solid #000000;
         }
 
         #page ul li::after {
