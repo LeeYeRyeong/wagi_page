@@ -41,25 +41,24 @@
     .PM{
         font-size: 17px;
         margin-left: 5%;
-        width: 80%;
+        width: 200px;
         text-align: left;
         font-weight: 500;
     }
     .people_card{
-        width: 165px;
-        height: 226px;
-        margin: 10px;
+        width: 40%;
+        height: 60%;
+        margin-bottom: 5%;
         overflow: hidden;
         display: inline; 
-        float: left;  
     }
     .PM > .people_card{
-        display: block;
-        
+        display: block; 
     }
+    
     .photo{
         margin-bottom: 0;
-        width: 165px;
+        width: 100%;
         border-radius: 15px 15px 0 0;
     }
     .profile{
@@ -86,7 +85,7 @@
         font-weight: 500;
     }
     .part{
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 600;
     }
     .Front{
@@ -115,7 +114,35 @@
         float: inline-start;
         margin: 8% 0;
     }
+    .section_1 .people_card{
+        margin-left: 6%; float: left;}
 
+    .section_2 .people_card:nth-child(2n+1){
+        float:inline-start;  
+        margin-left: 7%;}
+
+    .section_3 .people_card:nth-child(2n+1){
+        float:inline-start;
+         margin-left: 7%;}
+
+    .section_2 .people_card:nth-child(2n){ 
+        float: inline-end;
+        margin-right: 7%;}
+
+    .section_3 .people_card:nth-child(2n){ 
+        float: inline-end;
+        margin-right: 7%;
+    }
+    #bluestar{
+        width: 10px;
+
+        margin-left: 4px;
+       
+    }
+    
+        
+    
+    
 }
 @media(min-width: 450px){
     .makers *{
