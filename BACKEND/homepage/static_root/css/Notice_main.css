@@ -301,7 +301,6 @@
         .box{
             color: black;
             position: absolute;
-            margin-top: 3%;
             font-size:1%;
         }
         
@@ -353,7 +352,7 @@
             content: "";
             position: absolute;
             width: 100%;
-            top: 170%; 
+            top: 120%; 
             left: 44%; 
             transform: translateX(-50%); 
             border: 0.5px solid #000000;
