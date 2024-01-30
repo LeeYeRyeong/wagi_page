@@ -348,6 +348,7 @@
             padding: 14px 0 8px 10px;
             position: relative;
             border-bottom: 1px solid #000;
+            box-sizing: border-box;
         }
         
         
