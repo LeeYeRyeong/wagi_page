@@ -346,7 +346,7 @@
         #allContent ul li {
             padding-top: 1px;
             margin-bottom: 20px;
-            position: static;
+            position: sticky;
         }
         
         #allContent li::after {
