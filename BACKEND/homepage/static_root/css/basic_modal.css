@@ -110,6 +110,7 @@
         opacity: 1;
     }
     
+
     .input_email{
         border: 0;
         font-size: 17px;
@@ -176,6 +177,7 @@
         background-color: rgba(0,0,0,0.5);
         backdrop-filter: blur(8px);
         z-index: 5;
+        -webkit-backdrop-filter: blur(8px);
         
     }
     .imgWagi {
@@ -269,6 +271,9 @@
         text-align: left;
         border-radius: 20px;
         background-color:rgb(255, 255, 255, 0);
+        appearance: none;
+        -webkit-appearance: none;
+        -webkit-border-radius: 0;
     }
     
     .up {
@@ -297,15 +302,13 @@
     #close-modal {
         float: right;
         margin-right: 12px;
-        margin-top: 12px;
+        margin-top: 12;
         outline: none;
         border: 0;
-        border-radius: 7px;
+        border-radius: 3px;
         background-color: white;
         font-weight: bold;
-        width: 22px;
-        height: 22px;
-        color: black;
+        border-radius: 7px;
     }
     
     .message {
@@ -319,3 +322,4 @@
     }
 
     }
+
