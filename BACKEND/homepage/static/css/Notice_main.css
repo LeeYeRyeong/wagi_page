@@ -322,14 +322,14 @@
         .notitle{
             color: black;
             width: 500px;
-            text-align: left;
+            
             
         }
         
         .notice-title {
-            left: 130px;
+            left: 140px;
             position: absolute;
-            width: 151px;
+            width: 100px;
             text-overflow: hidden;
             overflow: hidden;
             white-space: nowrap;
@@ -339,19 +339,25 @@
         
 
         #allContent ul{
-            padding: 0 20px;
-            margin: 13px 0;
+            padding-inline-start: 30px;
         }
         
         
         #allContent ul li {
-            padding: 14px 0 8px 10px;
-            position: relative;
-            border-bottom: 1px solid #000;
-           box-sizing: border-box;
+            padding-top: 1px;
+            margin-bottom: 20px;
+            position: sticky;
         }
         
-        
+        #allContent li::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            top: 120%; 
+            left: 44%; 
+            transform: translateX(-50%); 
+            border: 0.5px solid #000000;
+        }
 
         #page ul li::after {
             content: none;
