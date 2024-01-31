@@ -344,6 +344,13 @@
         }
         
         
+        html[xmlns*=""] body:last-child #allContent ul li {
+            padding: 12px 0 5px 10px;
+            position: sticky;
+            border-bottom: 1px solid #000;
+            box-sizing: border-box;
+        }
+        
         #allContent ul li {
             padding: 12px 0 5px 10px;
             position: sticky;
