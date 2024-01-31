@@ -409,8 +409,28 @@ input[type="file"] {
 #phoneName{
     display: none;
 }
+.People-title{
+    display: none;
+}
 
 @media screen and (max-width: 450px) {
+    .People-title{
+        display: block;
+        margin-top: 5%;
+        margin-left: 20px;
+        margin-top: 230px;
+    }
+    .star{
+        margin-top: 6px;
+        margin-right: 5px;
+        width: 18px;
+        height: 18px;
+        float: left;
+    }
+    .title{
+        display: inline;
+        font-size: 20px;
+    }
     
 
     #content {
@@ -451,7 +471,7 @@ input[type="file"] {
         margin-bottom: 50px;
         margin-left: 20px;
         margin-right: 0;
-        margin-top: 130px;
+        margin-top: 60px;
         padding-top: 25px;
         height: 500px;
         flex: 1;
