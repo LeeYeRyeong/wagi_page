@@ -21,8 +21,12 @@ def notice_create(request):
 
        
         images = request.FILES.getlist('image')
+        files = request.FILES.getlist('file')
         for img in images:
             NotionImage.objects.create(notion=notion, image=img)
+            images = request.FILES.getlist('image')
+        for file in files:
+            NotionFile.objects.create(notion=notion, file=file)
 
 
 
@@ -100,7 +104,8 @@ def notice_list(request):
 def notice_detail(request, notion_id):
     notice = get_object_or_404(Notion, pk=notion_id)
     images = NotionImage.objects.filter(notion=notice)
-    return render(request, 'Notice_manager_record.html', {'notice': notice, 'images': images})
+    files = NotionFile.objects.filter(notion=notice)
+    return render(request, 'Notice_manager_record.html', {'notice': notice, 'images': images, 'files': files})
 
 def edit_notice(request, notion_id):
     notice = get_object_or_404(Notion, pk=notion_id)

@@ -45,6 +45,16 @@
                         </ul>
                     </div>
                 {% endif %}
+                {% if files %}
+                <div id="fileContainer"> <!-- 부모 요소 추가했음용가리 -->
+                    <ul>
+                        {% for file in files %}
+                        
+                            <li><img id="file_star" src="{% static 'img/Vector.png'%}" ><a href="{{ file.file.url }}" download>{{ file.file.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+           {% endif %}
             </div>
             <!---->
         </div>
