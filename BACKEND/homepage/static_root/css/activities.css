@@ -90,7 +90,7 @@
 }
 
 #article {
-    width: 1720px;
+    width: 1420px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -100,15 +100,15 @@
 }
 
 .item {
-    width: 485px;
+    width: 30%;
     height: 100%;
     position: relative;
     float: left;
 }
 
 .album {
-    width: 100%;
-    height: 494px;
+    width: 90%;
+    height: 440px;
     background-color: white;
     border-radius: 25px;
     position: relative;
