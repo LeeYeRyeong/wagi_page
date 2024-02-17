@@ -10,6 +10,7 @@ function checkForm() {
   var studentID = document.getElementById('studentID').value;
   var department = document.getElementById('department').value;
   var phoneNumber = document.getElementById('phoneNumber').value;
+  
 
   // 경고 메시지 초기화
   document.getElementById('warningName').innerHTML = '';
@@ -212,6 +213,25 @@ function checkForm() {
 }
 
 
+
+
+document.getElementById('id_user_file').addEventListener('change', function () {
+  handleFileSelection('id_user_file', 'file2', 'filePreview');
+});
+
+function handleFileSelection(inputId, displayId, previewId) {
+  var fileInput = document.getElementById(inputId);
+  var fileDisplay = document.getElementById(displayId);
+  var preview = document.getElementById(previewId);
+
+  if (fileInput.files.length > 0) {
+      var fileNames = Array.from(fileInput.files).map(function (file) {
+          return file.name;
+      }).join(', ');
+
+      fileDisplay.value = fileNames;
+  } 
+}
 
 
 
