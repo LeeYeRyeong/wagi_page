@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div id="form_box">
-            <form method="post" action="{% url 'apply_club_user_info_view' %}">
+            <form method="post" action="{% url 'apply_club_user_info_view' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="input-box">
                     <div class="basic-info">
@@ -45,16 +45,21 @@
                         <label for="id_user_phone_number" style="color: #999898;" class="input-label">전화번호('-'없이 입력해 주세요)</label>
                         {{ form.user_phone_number }}
                         <div class="warning-message" id="warningPhoneNumber">{{ form.user_phone_number.errors }}</div>
+                        <!--지원서 업로드-->
+                        <label for="id_user_file" id="addFileLabel" style="color: #999898;">지원서 업로드</label>
+                        {{ form.user_file }}
+                        <div class="warning-message" id="warningFile">{{ form.user_file.errors }}</div>
+                        <div class="iffile" id="filePreview" >
+                            <input class="selectedFileName" id="file2" value="" placeholder="선택된 파일이 없습니다." readonly>
+                        </div>
                     </div>
                 </div>
-
-
-
                 <!-- 지원서 작성하기 버튼 -->
-                <button type="submit" class="enter" id="enter-button">지원서 작성하기</button>
+                <button type="submit" class="enter" id="enter-button">지원서 제출하기</button>
             </form>
         </div>
         </div>
     </div>
     </div>
+    <script src="{% static 'js/joinBasicInfo.js' %}"></script>
 {% endblock %}
