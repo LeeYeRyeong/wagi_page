@@ -114,12 +114,11 @@
     }
     
     .category {
-        left: 35px;
         color: #9EA9D7;
-        width: 80px;
-        height: 20px;
+        width: 90px;
+        padding: 2px;
         border: 0.8px solid #9EA9D7;
-        position: relative;
+        text-align: center;
     }
     /*글자 안보이는거 해결용!*/
     .notitle{
@@ -154,12 +153,6 @@
         border: 1.2px solid #000000;
     }
     
-    
-    .write-time {
-        left: 42px; 
-    }
-    
-    
     #regularActivityContent, #eventContent, #competitionContent {
         width: 1014px;
         height: 475px;
@@ -170,7 +163,18 @@
         margin-top: 20px; 
     
     }
-    
+    .tbl {
+        width: calc(100% - 80px);
+        color: black; 
+        margin: 20px 40px;
+        text-align: left;
+        border-collapse: collapse;
+      }
+      th, td {   /*열 간격 조정*/
+          padding: 20px;
+          border-bottom: 1.5px solid black;
+          text-align: left;
+      }
     
     .selected {
         background-color: gray;
@@ -286,7 +290,7 @@
         
         #allContent {
             width: 90%;
-            height: 475px;
+            height: 520px;
             top: 170px;
             left: 21px;
             border-radius: 20px;
@@ -298,10 +302,42 @@
         /*#realContent{
             margin-bottom: 50px;
         }*/
+        .DList {
+            width: 100%;
+        }
+        .tbl {
+            width: calc(100% - 40px);
+            height: 90%;
+            color: black; 
+            margin: 10px 20px;
+            text-align: left;
+            border-collapse: collapse;
+            font-size: 13px;
+          }
+          th, td {   /*열 간격 조정*/
+              padding: 15px 5px 15px 13px;
+              border-bottom: 1px solid black;
+              text-align: left;
+          }
+    
+          .category {
+            color: #9EA9D7;
+            width: 50px;
+            padding: 2px;
+            border: 0.8px solid #9EA9D7;
+            text-align: center;
+        }
+        .overflow {
+            max-width: 162px;
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+        }
         .box{
             color: black;
             position: absolute;
             font-size:1%;
+
         }
         
         .box a {
@@ -310,31 +346,23 @@
             display: inline-block;
         }
         
-        .category {
-            left: 10px;
-            color: #9EA9D7;
-            width: 80px;
-            height: 20px;
-            border: 0.8px solid #9EA9D7;
-            position: relative;
-        }
         /*글자 안보이는거 해결용!*/
         .notitle{
             color: black;
-            width: 500px;
             text-align: left;
+            display: inline-block; /* 또는 display: block; */
+            max-width: 165px; /* 허용할 최대 너비 설정 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             
         }
         
         .notice-title {
-            left: 140px;
-            position: absolute;
-            width: 151px;
-            text-overflow: hidden;
-            overflow: hidden;
-            white-space: nowrap;
-            display: inline-block; 
+            position: relative;
+            width: 165px;
             height: 12px;
+            margin-left: 20px;
         }
         
 
@@ -358,11 +386,6 @@
             box-sizing: border-box;
         }
         
-
-        
-        .write-time {
-            left: 42px; 
-        }
         
         
         #regularActivityContent, #eventContent, #competitionContent {
@@ -403,12 +426,21 @@
         }
 
         #page{
-            margin-top: 20%;
-            margin-left:25%;
+            position: absolute;
+            width: 100%;
+            bottom: 12px;
+            align-items: center;
+            display: inline-flex;
+            flex-direction: column;
+
+
         }
         
          #page ul li {
             border-bottom: none;
         }
-        
+        #page-wrapper {
+            height: 100vh;
+            /*basic 오류 때문에... */
+        }
         }

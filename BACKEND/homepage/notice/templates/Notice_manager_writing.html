@@ -9,9 +9,9 @@
     {% csrf_token %}
     <a href="{% url 'notice:notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div></a>
     <div id="writings" class="writing"><span>글 작성</span></div>
-    <input type="button" id="regularActivity" name="regularActivity" class="round-button" onclick="updateHiddenValue(this)" value="정기활동">
-    <input type="button" id="event" name="event" class="round-button" onclick="updateHiddenValue(this)" value="행사">
-    <input type="button" id="competition" name="competition" class="round-button" onclick="updateHiddenValue(this)" value="공모전">
+    <input type="button" id="regularActivity" name="정기활동" class="round-button" onclick="updateHiddenValue(this)" value="정기활동">
+    <input type="button" id="event" name="행사" class="round-button" onclick="updateHiddenValue(this)" value="행사">
+    <input type="button" id="competition" name="공모전" class="round-button" onclick="updateHiddenValue(this)" value="공모전">
     <input type="hidden" id="selectedCategory" name="selectedCategory" value="">        
     <div id="writingZone">
         <textarea id="titleWriting" name="notion_title" rows="4" cols="50" placeholder="제목을 입력해주세요"></textarea>
