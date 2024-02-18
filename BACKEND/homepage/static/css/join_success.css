@@ -44,6 +44,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.join-title {
+    display: none;
+}
 
 @media (max-width : 450px) {
     #page-wrapper {

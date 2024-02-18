@@ -37,11 +37,11 @@ def notice_create(request):
 def get_notices_by_category(request):
     category = request.GET.get('category') 
     notices = [] 
-    if category=='regularActivity' :
+    if category=='정기활동' :
         notices = Notion.objects.filter(category=category).order_by('-write_time')
-    elif category == 'event':
+    elif category == '행사':
         notices = Notion.objects.filter(category=category).order_by('-write_time')
-    elif category == 'competition':
+    elif category == '공모전':
         notices = Notion.objects.filter(category=category).order_by('-write_time')
 
      #pagination처리
