@@ -23,6 +23,6 @@ def login(request):
 
 def home(request):
     return render(request, 'home.html')
-def heath(request):
+def health(request):
     return HttpResponse(status=200)
 
