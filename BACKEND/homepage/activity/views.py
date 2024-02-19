@@ -84,7 +84,7 @@ def edit_page(request):
         project_images = Activity_project.objects.all()
 
     return render(request, 'edit_page.html', {'mt_images': mt_images, 'study_images': study_images, 'project_images': project_images})
-@login_required(login_url='/login/')
+
 def delete_images(model, image_ids, image_field_name):
     for image_id in image_ids:
         # 각 이미지 모델별로 아이디를 이용하여 삭제
@@ -94,7 +94,7 @@ def delete_images(model, image_ids, image_field_name):
         image_field.delete()
         activity.delete()
 
-@login_required(login_url='/login/')
+
 def edit_images(model, image_ids, form_class, request):
     for image_id in image_ids:
         activity = get_object_or_404(model, id=image_id)
