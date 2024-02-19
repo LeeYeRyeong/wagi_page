@@ -194,16 +194,20 @@ input[type="file"] {
 }
 
 .album_name {
-    width: 30%;
+    width: 40%;
     height: 55px;
     line-height: 55px;
     background-color: #9EA9D7;
     border-radius: 20px;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     margin: 20px auto;
 }
+#n{
+    width: 100px;
+}
+
 
 .display_block {
     display: block;
