@@ -5,6 +5,7 @@ from django import forms
 from django.core.paginator import Paginator
 from .models import Application
 from joinInfo.models import JoinInfo
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -46,6 +47,7 @@ def join_success(request):
     return render(request, 'application/join_success.html')
 
 #각 지원자 정보
+@login_required(login_url='/login/')
 def admin_join(request):
     page = request.GET.get('page', '1')  # 페이징 기능 추가
     join_list = JoinInfo.objects.order_by('id')
@@ -56,6 +58,7 @@ def admin_join(request):
 
 
 #각 지원자당 상세페이지
+@login_required(login_url='/login/')
 def join_detail(request, join_id):
     join_info = get_object_or_404(JoinInfo, pk=join_id)
     application_info = get_object_or_404(Application, pk=join_id)

@@ -4,8 +4,10 @@ from .forms import ActivityForm_mt, ActivityForm_study, ActivityForm_project
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 
 @csrf_exempt #POSTMAN사용때매 설정
+@login_required(login_url='/login/')
 def upload_activity(request):
     if request.method == 'POST':
         mt_form = ActivityForm_mt(request.POST, request.FILES, prefix='mt_form')
@@ -39,7 +41,7 @@ def upload_activity(request):
 
     return render(request, 'upload_activity.html', {'mt_form': mt_form, 'study_form': study_form, 'project_form': project_form})
 
-
+@login_required(login_url='/login/')
 def success_page(request):
     mt_images = Activity_mt.objects.all()
     study_images = Activity_study.objects.all()
@@ -60,7 +62,7 @@ def activities_page(request):
     return render(request, 'activities.html', {'images': images})
 
 
-
+@login_required(login_url='/login/')
 def edit_page(request):
     mt_images = Activity_mt.objects.all()
     study_images = Activity_study.objects.all()
@@ -82,7 +84,7 @@ def edit_page(request):
         project_images = Activity_project.objects.all()
 
     return render(request, 'edit_page.html', {'mt_images': mt_images, 'study_images': study_images, 'project_images': project_images})
-
+@login_required(login_url='/login/')
 def delete_images(model, image_ids, image_field_name):
     for image_id in image_ids:
         # 각 이미지 모델별로 아이디를 이용하여 삭제
@@ -92,7 +94,7 @@ def delete_images(model, image_ids, image_field_name):
         image_field.delete()
         activity.delete()
 
-
+@login_required(login_url='/login/')
 def edit_images(model, image_ids, form_class, request):
     for image_id in image_ids:
         activity = get_object_or_404(model, id=image_id)

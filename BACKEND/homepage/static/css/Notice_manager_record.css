@@ -406,6 +406,35 @@ textarea:focus{
         #imageContainer::-webkit-scrollbar-track {
             background-color: transparent;
         }
+        #fileContainer {
+            overflow-x: auto; 
+            white-space: nowrap; 
+            margin-left: 15px;
+            display: block;
+            position: absolute;
+            bottom: 5%;
+        }
+        
+        #fileContainer ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: block;
+        }
+        
+        #fileContainer li {
+            margin-top: 7px; 
+        }/*사진간에 간격조절하는거에여 맘에 안든다면 맘껏 수정해주세요 -88guri-*/
+        
+        #fileContainer a {
+            width: 100%; 
+            height: auto;
+            color: black;
+            font-size: 12px;
+        }
+        #file_star{
+            margin-right: 10px;
+        }
 
         textarea:focus{
             outline: none;
