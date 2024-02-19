@@ -4,8 +4,10 @@ from .forms import NotionForm, NotionImageForm, NotionFileForm
 from django.http import JsonResponse
 from django.urls import reverse
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.contrib.auth.decorators import login_required
 
 # create
+@login_required(login_url='/login/')
 def notice_create(request):
     if request.method == 'POST':
         notion_title = request.POST.get('notion_title', '')
@@ -107,6 +109,7 @@ def notice_detail(request, notion_id):
     files = NotionFile.objects.filter(notion=notice)
     return render(request, 'Notice_manager_record.html', {'notice': notice, 'images': images, 'files': files})
 
+@login_required(login_url='/login/')
 def edit_notice(request, notion_id):
     notice = get_object_or_404(Notion, pk=notion_id)
     images = NotionImage.objects.filter(notion=notice)
