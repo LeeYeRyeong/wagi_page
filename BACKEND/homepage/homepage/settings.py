@@ -38,7 +38,10 @@ SECRET_KEY = get_secret("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    ".ap-northeast-2.compute.amazonaws.com",
+    ".sswu-wagi.com",
+    ]
 
 def is_ec2_linux():
     """Detect if we are running on an EC2 Linux Instance
