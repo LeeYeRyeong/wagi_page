@@ -111,8 +111,8 @@
     white-space: nowrap; 
     margin-left: 15px;
     display: block;
-    position: relative;
-    
+    position: absolute;
+    bottom: 5%;
 }
 
 #fileContainer ul {
