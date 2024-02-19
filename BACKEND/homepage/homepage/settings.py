@@ -41,6 +41,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     ".ap-northeast-2.compute.amazonaws.com",
     ".sswu-wagi.com",
+    "ip-172-31-5-146.ap-northeast-2.compute.internal",
     ]
 
 
