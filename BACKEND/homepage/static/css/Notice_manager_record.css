@@ -78,7 +78,7 @@
     resize: none;
     border: none;
     width: 100%;
-    height: 30%; 
+    height: 60%; 
     box-sizing: border-box;
     margin-left: 20px;
     margin-top: 12px;
@@ -156,7 +156,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 100;
+    z-index: 40;
 }
 
 #event {
@@ -172,7 +172,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 100;
+    z-index: 40;
 }
 
 #competition {
@@ -188,7 +188,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 100;
+    z-index: 40;
 }
 
 #editButton {
@@ -225,7 +225,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 100;
+    z-index: 40;
     display: inline-block;
     padding-left: 18px;
 
@@ -234,7 +234,7 @@ textarea:focus{
     position: relative;
     color: black;
     font-size:10px;
-    z-index: 100;
+    z-index: 40;
     display: inline-block;
 
 }
