@@ -35,7 +35,7 @@
 #writingZone {
     position: absolute; 
     width: 80%;
-    height: 540px;
+    height: 514px;
     top: 288px;
     left: 133px;
     border-radius: 20px;
@@ -69,16 +69,14 @@
     color: black;
     border-radius: 20px;
     z-index: 30;
-    overflow: scroll;
-    display: flex; 
-    flex-direction: column; 
+    overflow: hidden;
 }
 
 #contentsWriting textarea {
     resize: none;
     border: none;
     width: 100%;
-    height: 500%; 
+    height: 70%;
     box-sizing: border-box;
     margin-left: 20px;
     margin-top: 12px;
@@ -105,36 +103,6 @@
     width: 100%; 
     height: auto;
 }
-
-#fileContainer {
-    overflow-x: auto; 
-    white-space: nowrap; 
-    margin-left: 15px;
-    display: block;
-    position: absolute;
-    bottom: 5%;
-}
-
-#fileContainer ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: block;
-}
-
-#fileContainer li {
-    margin-top: 7px; 
-}/*사진간에 간격조절하는거에여 맘에 안든다면 맘껏 수정해주세요 -88guri-*/
-
-#fileContainer a {
-    width: 100%; 
-    height: auto;
-    color: black;
-    font-size: 12px;
-}
-#file_star{
-    margin-right: 10px;
-}
 textarea:focus{
     outline: none;
 }
@@ -156,7 +124,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 40;
+    z-index: 100;
 }
 
 #event {
@@ -172,7 +140,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 40;
+    z-index: 100;
 }
 
 #competition {
@@ -188,7 +156,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 40;
+    z-index: 100;
 }
 
 #editButton {
@@ -225,7 +193,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 40;
+    z-index: 100;
     display: inline-block;
     padding-left: 18px;
 
@@ -234,7 +202,7 @@ textarea:focus{
     position: relative;
     color: black;
     font-size:10px;
-    z-index: 40;
+    z-index: 100;
     display: inline-block;
 
 }
@@ -347,28 +315,25 @@ textarea:focus{
         #contentsWriting {
             position: absolute;
             width: 90%;
-            height: 370px;
+            height: 400px;
             top: 85px;
             left: 15px;
-            border:none;
+            border: none;
             color: black;
             border-radius: 20px;
             z-index: 30;
             overflow: hidden;
-            display: flex; 
-            flex-direction: column; 
         }
         
         #contentsWriting textarea {
             resize: none;
             border: none;
             width: 100%;
-            height: 500%; 
+            height: 70%;
             box-sizing: border-box;
             margin-left: 1px;
             margin-top: 12px;
         }
-
         #imageContainer {
             white-space: nowrap;
             margin-left: 15px;
@@ -405,35 +370,6 @@ textarea:focus{
         
         #imageContainer::-webkit-scrollbar-track {
             background-color: transparent;
-        }
-        #fileContainer {
-            overflow-x: auto; 
-            white-space: nowrap; 
-            margin-left: 15px;
-            display: block;
-            position: absolute;
-            bottom: 5%;
-        }
-        
-        #fileContainer ul {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            display: block;
-        }
-        
-        #fileContainer li {
-            margin-top: 7px; 
-        }/*사진간에 간격조절하는거에여 맘에 안든다면 맘껏 수정해주세요 -88guri-*/
-        
-        #fileContainer a {
-            width: 100%; 
-            height: auto;
-            color: black;
-            font-size: 12px;
-        }
-        #file_star{
-            margin-right: 10px;
         }
 
         textarea:focus{

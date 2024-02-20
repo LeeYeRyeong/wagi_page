@@ -154,13 +154,14 @@ input {
 .selectedFileName{
     display: inline;
     font-style: italic;
+    font-size: 15px;
 }
 #addFileLabel{
     color: #999898;
     border: 1px solid #999898;
     border-radius: 10px;
     width: fit-content;
-    padding: 7px;
+    padding: 5px;
 }
 
 /* ========== */
@@ -262,6 +263,7 @@ input:focus {
     #main-section1 {
         margin-top: 50px;
         width: 100vw;
+   
     }
     #form_box {
         display: block;
@@ -361,6 +363,7 @@ input:focus {
     
     .input-box{
     background-color: white;
+    height: 72vh;
     }
     
     .enter{
@@ -456,7 +459,9 @@ input:focus {
         color: red;
     }
     
-    
+    .selectedFileName{
+        font-size: 15px;
+    }
     
     .warning-message{
         background-color: white;
