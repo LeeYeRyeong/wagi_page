@@ -10,6 +10,14 @@
             <h1 class="title1">join</h1>
         </div>
         <div class="content">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}
+                style="color: rgb(204, 45, 45); font-size: larger;">{{ message|safe }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
         <div id="main-section1">
             <div class="info-box" style="background-color: #9EA9D7;">
                 <div class="info-text">
