@@ -40,7 +40,7 @@
                         <div class="warning-message" id="warningName">{{ form.user_name.errors }}</div>
 
                         <!-- 학번 입력 -->
-                        <label for="studentID" style="color: #999898;">학번</label>
+                        <label for="studentID" style="color: #999898;">학번(수험번호)</label>
                         <input type="text" name="{{ form.user_number.name }}" placeholder="신입생은 무조건 '수험번호'로 입력 바랍니다" id="{{ form.user_number.id_for_label }}" class="input-n">
                         <div class="warning-message" id="warningStudentID">{{ form.user_number.errors }}</div>
 
