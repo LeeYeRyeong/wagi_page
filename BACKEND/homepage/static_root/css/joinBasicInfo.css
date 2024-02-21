@@ -234,6 +234,15 @@ input:focus {
 #id_user_file{
     display: none;
 }
+.input-n {
+    padding-top: 15px;
+    font-size: 13px;
+    
+}
+
+.input-n:focus {
+    font-size: 20px; /* 입력된 텍스트 색상 */
+}
 
 @media (max-width : 450px) {
     #page-wrapper {
@@ -408,6 +417,8 @@ input:focus {
         outline: none;
         transition: border-bottom-width 0.3s ease-out;
     }
+  
+    
     
     /* ========== */
     
