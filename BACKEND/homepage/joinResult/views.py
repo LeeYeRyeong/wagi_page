@@ -81,7 +81,9 @@ def result(request):
         inputId_int = int(inputId)
         if PassId.objects.filter(studentId=inputId).exists(): # 합격자일 때
             join_info_object = JoinInfo.objects.get(user_number=inputId_int)
-            data = {'result': 'pass', 'number': inputId, 'name': join_info_object.user_name}
+            time_object=PassId.objects.get(studentId=inputId)
+            time=time_object.time
+            data = {'result': 'pass', 'number': inputId, 'name': join_info_object.user_name, 'time': time}
             return JsonResponse(data)
         elif FailId.objects.filter(studentId=inputId).exists(): # 불합격자일 때
             join_info_object = JoinInfo.objects.get(user_number=inputId_int)
