@@ -122,14 +122,22 @@
 }
 .OT_info {
     position: absolute;
-    top: 60%;
+    top: 57%;
     left: 50%;
     transform: translate(-50%, -50%);
     
     background-color: rgb(255, 255, 255, 0.58);
     border-radius: 20px;
+    width: 330px;
+    height: 173px;
+}
+#interview_message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 300px;
-    height: 150px;
+    font-weight: 500;
 }
 .modal_fail{
     position:absolute;
@@ -329,18 +337,22 @@
     }
     .OT_info {
         position: absolute;
-        top: 70%;
+        top: 67%;
         left: 50%;
         transform: translate(-50%, -50%);
         
         background-color: rgb(255, 255, 255, 0.58);
         border-radius: 20px;
-        width: 230px;
-        height: 120px;
+        width: 245px;
+        height: 132px;
         font-size: 14px;
     }
     .OT_message h4 {
         margin: 5px;
+    }
+    #interview_message {
+        font-size: 12px;
+        font-weight: 500;
     }
     .modal_fail{
         position:absolute;
