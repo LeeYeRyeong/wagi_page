@@ -20,6 +20,7 @@ body {
 
     background-color: rgba(0,0,0,0.5);
     backdrop-filter: blur(8px);
+
     z-index: 60;
     
 }
@@ -158,8 +159,6 @@ body {
     background-color: white;
     font-weight: bold;
 }
-
-
 
 @media (max-width: 450px) {
 
@@ -326,4 +325,3 @@ body {
 }
 
 }
-
