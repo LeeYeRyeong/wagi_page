@@ -3,6 +3,7 @@ from django.db import models
 # 합격자 학번
 class PassId(models.Model):
     studentId = models.CharField(max_length=20, unique=True)
+    time=models.CharField(max_length=40, null=True)
     
     def __str__(self):
         return self.studentId

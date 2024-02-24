@@ -23,6 +23,8 @@ $(document).ready(function () {
                 if (data.result === 'pass') {
                     $("#p_stdId").text(data.number);
                     $("#p_stdName").text(data.name);
+                    $("#p_stdName2").text(data.name);
+                    $("#p_stdTime").text(data.time);
                     $(".modal_pass").show();
                 } else if (data.result === 'fail') {
                     $("#f_stdId").text(data.number);
