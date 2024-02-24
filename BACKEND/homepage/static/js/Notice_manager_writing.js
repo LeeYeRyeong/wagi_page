@@ -16,9 +16,17 @@ function updateHiddenValue(button) {
 
 
 document.getElementById('profile').addEventListener('change', function () {
-    var fileInput = document.getElementById('profile');
-    var fileDisplay = document.getElementById('file');
-    var imagePreview = document.getElementById('imagePreview');
+    handleFileSelection('profile', 'file', 'imagePreview');
+});
+
+document.getElementById('profile2').addEventListener('change', function () {
+    handleFileSelection('profile2', 'file2', 'filePreview');
+});
+
+function handleFileSelection(inputId, displayId, previewId) {
+    var fileInput = document.getElementById(inputId);
+    var fileDisplay = document.getElementById(displayId);
+    var preview = document.getElementById(previewId);
 
     if (fileInput.files.length > 0) {
         var fileNames = Array.from(fileInput.files).map(function (file) {
@@ -26,9 +34,7 @@ document.getElementById('profile').addEventListener('change', function () {
         }).join(', ');
 
         fileDisplay.value = fileNames;
-        imagePreview.style.display = 'block';
-    } else {
-        fileDisplay.value = '';
-        imagePreview.style.display = 'none';
-    }
-});
+    } 
+}
+
+

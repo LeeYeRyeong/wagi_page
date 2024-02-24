@@ -3,18 +3,25 @@
 {% block content %}
   <!--css-->
   <link rel="stylesheet"  href="{% static 'css/inquiry.css' %}">
-  <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+  <link rel="stylesheet" href="https:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
   <!--js-->
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
   <script src="{% static 'js/inquiry.js' %}"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 
     <div id="page-wrapper">
+        <div class="join-title">
+            <img class="star" src="{% static 'img/people/star.png' %}">
+            <h1 class="title1">join</h1>
+        </div>
     <!-- 합격자 조회 버튼-->
     <div id="content">
         <div id="main-section">
-            <div id="합격자 조회">
+            <div id="result_section">
                 <h1 id="title">합격자 조회</h1>
+                <div id="result_box">
                 <form id="search" method='post' action="{% url 'joinResult:result' %}">
                     {% csrf_token %}
                     {% if isDate == 2 %}
@@ -25,11 +32,10 @@
                     {%endif%}
                     {% if isDate == 0 or isDate == 1 %}
                     <input id="input_studentNum" type="text" name="inputId" placeholder="학번을 입력하세요.", disabled>
-                    <a href="{% url 'joinResult:result' %}">
                         <button id="btn_studentNum" disabled><img src="{% static 'img/search icon.png' %}"></button>
-                    </a>
                     {%endif%}
                 </form>
+            </div>
             </div>
   
             <!--지원서 제출 버튼-->
@@ -48,9 +54,32 @@
             </form>
         </div>
     </div>
-    
-
-  <!--합격자 발표창_합격-->
+<!--1차 합격 발표-->
+    <div class="modal_pass">
+        <div class="modal-box2">
+            <img class="imgWagi" src="{% static 'img/WAGI character.png' %}">
+            <div class="modal-content2">
+                <h2 class="message"><p id="p_stdId" style="display:inline;"></p>&nbsp;<p id="p_stdName" style="display:inline;"></p>님!</h2>
+                <h4 class="message">WAGI 신입부원 모집에 1차 합격하셨습니다.</h4>
+                <div class="OT_info">
+                    <div class="OT_message" id="interview_message">
+                        <div>
+                        <p id="p_stdName" style="display:inline;"></p>님의 면접 시간은 
+                        <br>{}입니다.
+                        <br>
+                        <br>
+                        면접 시작 시간 10분전에 비대면 면접을 위한
+                        <br>
+                        구글 미트 링크를 보내드릴 예정입니다. 
+                        <br>
+                        미리 로그인하셔서 면접 준비 부탁드립니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--최종 합격 발표
    <div class="modal_pass">
       <div class="modal-box2">
           <img class="imgWagi" src="{% static 'img/WAGI character.png' %}">
@@ -71,7 +100,7 @@
           </div>
       </div>
   </div>
-  <!--불합격자 발표창_합격-->
+-->
   <div class="modal_fail">
       <div class="modal-box3">
           <img class="imgWagi" src="{% static 'img/WAGI character.png' %}">
@@ -81,7 +110,7 @@
                       <h4 style="margin-top: 16px;">
                           WAGI 신입부원 모집에
                           <br>
-                          안타깝게 불합격 하셨습니다.
+                          안타깝게 불합격하셨습니다.
                           <br>
                           당신의 미래를 응원합니다.
                       </h4>
@@ -89,4 +118,5 @@
           </div>
       </div>
   </div>
+
 {% endblock %}

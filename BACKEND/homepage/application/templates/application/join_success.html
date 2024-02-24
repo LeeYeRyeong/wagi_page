@@ -3,16 +3,20 @@
 {% block content %}
     <!--css-->
     <link rel="stylesheet" href="{% static 'css/join_success.css' %}" />
-    <link rel="stylesheet" href="http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+    <link rel="stylesheet" href="https:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
 
     <div id="page-wrapper">
+        <div class="join-title">
+            <img class="star" src="{% static 'img/people/star.png' %}">
+            <h1 class="title1">join</h1>
+        </div>
         <div id="content">
             <div class="modal-box">
                 <img class="imgWagi" src="{% static 'img/WAGI character.png' %}">
                 <div id="underline"></div>
                 <div class="modal-content">
                     <h2 class="message">{{name}}님!</h2>
-                    <h2 class="message">지원이 완료되었습니다.<br>서류 합격은 3월 15일 문자로 개별 연락드리겠습니다.</h2>
+                    <h2 class="message">지원이 완료되었습니다.<br>1차 합격자 조회 기간은<br>3월 6일 00:00 - 23:59 입니다. </h2>
                 </div>
             </div>
         </div>

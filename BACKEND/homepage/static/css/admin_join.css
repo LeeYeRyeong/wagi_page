@@ -44,6 +44,7 @@ div.paging {
 div.paging > i, 
 div.paging > div.pages{
     margin: 0 12px;
+    display: flex;
 }
 div.paging > i, 
 div.paging > div.pages > span {

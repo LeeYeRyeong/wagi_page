@@ -1,0 +1,193 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/makers.css' %}">
+    <link rel="stylesheet" href="https:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+    <title>makers</title>
+</head>
+<body>
+    <div class="makers">
+        <div class="title">
+            <img class="star" src="{% static 'img/makers/star.svg' %}" alt="star">
+            <h3 class="title_Makers">Makers</h3>
+        </div>
+
+        <img class="bar" src="{% static 'img/makers/makers_bar.svg' %}"alt="bar">
+
+        <div class="makers_people">
+            
+            <div class="PM">&nbsp;PM  &  Design  & Director </div>
+            <br>
+            <section class="section_1"> <!--pm파트 프로필카드-->
+                <div class="people_card">
+                    <img class="photo" src="{% static 'img/makers/김현수.png' %}"alt="김현수">
+                    <div class="profile">
+                        <br>
+                        <p class="name">김현수</p>
+                        <p class="major">컴퓨터공학과 22</p>
+                        <p class="part">기획, 디자인 및 전체 총괄</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="margin"></div>
+
+            <div class="Front">&nbsp;Front-End </div>
+
+            <section class="section_2"> <!--front파트 프로필카드-->
+
+                <div class="people_card" >
+                    <img class="photo" src="{% static 'img/makers/이나경.png' %}" alt="이나경">
+                    <div class="profile">
+                        <br>
+                        <p class="name">이나경</p>
+                        <p class="major">컴퓨터공학과 22</p>
+                        <p class="part">Login 페이지</p>
+                    </div>
+                </div>
+
+                <div class="people_card" >
+                    <img class="photo" src="{% static 'img/makers/강채연.png' %}"alt="강채연">
+                    <div class="profile">
+                        <br>
+                        <p class="name">강채연</p>
+                        <p class="major">컴퓨터공학과 22</p>
+                        <p class="part">Main 페이지</p>
+                    </div>
+                </div>
+
+                <div class="people_card" >
+                    <img class="photo" src="{% static 'img/makers/박시현.png' %}"alt="박시현">
+                    <div class="profile">
+                        <br>
+                        <p class="name">박시현</p>
+                        <p class="major">컴퓨터공학과 23</p>
+                        <p class="part">Notice 페이지, 모바일 버전<img id="bluestar" src="{% static 'img/makers/blue_border.png' %}"></p>
+                    </div>
+                </div>
+
+                <div class="people_card" >
+                    <img class="photo" src="{% static 'img/makers/이현수.png' %}" alt="이현수">
+                    <div class="profile">
+                        <br>
+                        <p class="name">이현수</p>
+                        <p class="major">컴퓨터공학과 23</p>
+                        <p class="part">Join 페이지</p>
+                    </div>
+                </div>
+
+                <div class="people_card" >
+                    <img class="photo" src="{% static 'img/makers/최수진.png' %}"alt="최수진">
+                    <div class="profile">
+                        <br>
+                        <p class="name">최수진</p>
+                        <p class="major">컴퓨터공학과 23</p>
+                        <p class="part">People 페이지, 모바일 버전<img id="bluestar" src="{% static 'img/makers/blue_border.png' %}"></p>
+                    </div>
+                </div>
+
+                <div class="people_card" >
+                    <img class="photo" src="{% static 'img/makers/전민선.png' %}"alt="전민선">
+                    <div class="profile">
+                        <br>
+                        <p class="name">전민선</p>
+                        <p class="major">컴퓨터공학과 23</p>
+                        <p class="part">Join 페이지, 모바일 버전 <img id="bluestar" src="{% static 'img/makers/blue_border.png' %}"></p>
+                    </div>
+                </div>
+                
+                <div class="people_card" >
+                    <img class="photo memoji" src="{% static 'img/makers/정은혜.svg' %}" alt="정은혜">
+                    <div class="profile">
+                        <br>
+                        <p class="name">정은혜</p>
+                        <p class="major">컴퓨터공학과 23</p>
+                        <p class="part">Activities</p>
+                    </div>
+                </div>
+
+                <div class="people_card" >
+                    <img class="photo memoji" src="{% static 'img/makers/김다예.svg' %}" alt="김다예">
+                    <div class="profile">
+                        <br>
+                        <p class="name">김다예</p>
+                        <p class="major">컴퓨터공학과 23</p>
+                        <p class="part">Activities</p>
+                </div>
+
+            </section>
+
+        </div>
+
+        <div class="margin"></div>
+
+        <div class="Back">&nbsp;Back-End</div>
+
+        <section class="section_3"> <!--back파트 프로필카드-->
+
+            <div class="people_card" >
+                <img class="photo" src="{% static 'img/makers/이예령.png' %}" alt="이예령">
+                <div class="profile">
+                    <br>
+                    <p class="name">이예령</p>
+                    <p class="major">컴퓨터공학과 22</p>
+                    <p class="part">백엔드 총괄 및 지원자 정보 <br>모바일 버전<img id="bluestar" src="{% static 'img/makers/blue_border.png' %}"></p>
+                </div>
+            </div>
+
+            <div class="people_card" >
+                <img class="photo" src="{% static 'img/makers/강다인.png' %}" alt="강다인">
+                <div class="profile">
+                    <br>
+                    <p class="name">강다인</p>
+                    <p class="major">컴퓨터공학과 22</p>
+                    <p class="part">Activities 백엔드</p>
+                </div>
+            </div>
+
+            <div class="people_card" >
+                <img class="photo" src="{% static 'img/makers/채서연.png' %}" alt="채서연">
+                <div class="profile">
+                    <br>
+                    <p class="name">채서연</p>
+                    <p class="major">컴퓨터공학과 22</p>
+                    <p class="part">합격자 조회 및 메일 백엔드</p>
+                </div>
+            </div>
+            
+            <div class="people_card" >
+                <img class="photo" src="{% static 'img/makers/조수빈.png' %}" alt="조수빈">
+                <div class="profile">
+                    <br>
+                    <p class="name">조수빈</p>
+                    <p class="major">컴퓨터공학과 23</p>
+                    <p class="part">관리자 로그인, Notice 백엔드 &nbsp;모바일 버전<img id="bluestar" src="{% static 'img/makers/blue_border.png' %}"></p>
+                </div>
+            </div>
+
+            <div class="people_card" >
+                <img class="photo" src="{% static 'img/makers/김지희.png' %}" alt="김지희">
+                <div class="profile">
+                    <br>
+                    <p class="name">김지희</p>
+                    <p class="major">컴퓨터공학과 23</p>
+                    <p class="part">지원서 작성 및 조회</p>
+            </div>
+        </section>
+
+        <div class="margin"></div>
+
+
+
+    </div>
+</body>
+</html>
+
+{% endblock %}

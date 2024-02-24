@@ -1,6 +1,7 @@
 $(document).ready(function () {
     
-    $("#apply").click(function (e){
+
+    $("#apply, #apply_").click(function (e){
         e.preventDefault();
         showModal();
         const closeModal = document.querySelector('#close-modal'); // 모달 닫기 버튼 
@@ -13,6 +14,21 @@ $(document).ready(function () {
         });      
         
     });
+
+    $("#input_email").on('keyup', function (e) {
+        if (e.which === 13) {
+            e.preventDefault();
+            var userEmail = $("#input_email").val();
+            sendAjaxRequest(userEmail);
+        }
+    });
+
+    $(document).on('click touchstart', '#close-modal', function () {
+        $('.message_2').css('opacity', '100');
+        $('.email').css('display', 'flex');
+        $('.out_text').removeClass('on');
+    });
+    
     function showModal(){
         $.ajax({
             url: '/joinResult/join_button/',
@@ -25,6 +41,9 @@ $(document).ready(function () {
             success: function (data) {
                 if (data.result === 'show') {
                     $(".modal_unavailable").show();
+                    /*모바일버전 네비바 닫기*/
+                    $("#burgur").removeClass('on');
+                    $("#slide").removeClass('on');
                 }
             },
             error: function (error) {

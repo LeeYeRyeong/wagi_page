@@ -8,10 +8,10 @@ from django.http import JsonResponse
 #  join 버튼 눌렀을 떄
 def join_button(request):
     current_date = date.today() # 현재 날짜
-    start_j_date = date(2024, 3, 1) # 지원서 제출 시작 날짜
-    end_j_date = date(2024, 3, 17) # 지원서 제 출 끝나는 날짜
-    start_r_date = date(2024, 1, 18) # 합격자 조회 시작 날짜
-    end_r_date = date(2024, 1, 19) # 합격자 조회 끝나는 날짜
+    start_j_date = date(2024, 2, 20) # 지원서 제출 시작 날짜
+    end_j_date = date(2024, 3, 5) # 지원서 제 출 끝나는 날짜
+    start_r_date = date(2024, 3, 6) # 합격자 조회 시작 날짜
+    end_r_date = date(2024, 3, 7) # 합격자 조회 끝나는 날짜
     isDate = 0
     if start_j_date <= current_date <= end_j_date: # 지원서 제출 기간
         isDate = 1

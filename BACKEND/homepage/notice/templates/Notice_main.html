@@ -1,44 +1,100 @@
 {% extends 'basic.html' %}
 {% load static %}
-
-    {% block content %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_main.css' %}">
-    <div id="realContent">
+{% block content %}
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/Notice_main.css'%}">
+    </head>
+    <body>
+        <div id="realContent">
 
     <a href="{% url 'notice:notice_list' %}"><div id="notice" class="notice">공지사항</div></a>
+
+    <div id="Notice_title">
+        <img id="star" src="{% static 'img/people/star.svg'%}" >
+        <h1 id="title">Notice</h1>
+    </div>
 
     {% if user.is_superuser %}
     <a href="{% url 'notice:notice_create' %}"><div id="writings" class="writing">글 작성</div></a>
     {% endif %}
     <div id="realContent">
-    <a href="{% url 'notice:get_notices_by_category' %}?category=regularActivity">
+    <a href="{% url 'notice:get_notices_by_category' %}?category=정기활동">
         <input type="button" id="regularActivity" class="round-button" onclick="showContent('regularActivity')" value="정기활동">
     </a>
-    <a href="{% url 'notice:get_notices_by_category' %}?category=event">
+    <a href="{% url 'notice:get_notices_by_category' %}?category=행사">
         <input type="button" id="event" class="round-button" onclick="showContent('event')" value="행사">
     </a>
-    <a href="{% url 'notice:get_notices_by_category' %}?category=competition">
+    <a href="{% url 'notice:get_notices_by_category' %}?category=공모전">
         <input type="button" id="competition" class="round-button" onclick="showContent('competition')" value="공모전">
     </a>
     
     
-        <div id="allContent" class="content">
-            <ul>
-                {% for notice in notices %}
-                <li>
+    <div id="allContent" class="content">
+        <div class="DList">
+            <table class="tbl">
+                <colgroup>
+                    <col width="10%" />
+                    <col width="10%" />
+                    <col width="80%" />
+                </colgroup>
+                <!-- 데이터 불러온 부분 -->
+                <tbody>
+                    {% for notice in page_obj %}
                     <div class="box">
-                        <span class="write-time">{{ notice.write_time }}</span>
-                        <span class="category">{{ notice.category }}</span>
-                        <a class="notice-title" href="{% url 'notice:notice_detail' notion_id=notice.id %}"><span class="notitle">{{ notice.notion_title }}</span></a>
+                    <tr onclick=location.href="{% url 'notice:notice_detail' notion_id=notice.id %}">
+                        <td class="write-time">{{ notice.write_time|date:"Y.m.d" }}</td>
+                        <td><div class="category">{{ notice.category }}</div></td>
+                        <td><div class="overflow">{{ notice.notion_title }}</div></td>
+                    </tr>
                     </div>
-                </li>
-                
-                {% endfor %}
-                </ul>
+                    {% endfor %}
+                    </tbody>
+            </table>
         </div>
+        <!--
+        <ul>
+            {% for notice in page_obj %}
+            <li>
+                <div class="box">
+                    <span class="write-time">{{ notice.write_time|date:"Y.m.d" }}</span>
+                    <span class="category">{{ notice.category }}</span>
+                    <a class="notice-title" href="{% url 'notice:notice_detail' notion_id=notice.id %}"><span class="notitle">{{ notice.notion_title }}</span></a>
+                </div>
+            </li>
+            
+            {% endfor %}
+        </ul>
+        -->
+            <div id="page">
+                {% if page_obj.has_other_pages %} <!--1페이지만 있을 땐 페이지수 안 보이게 if문 달긔-->
+                    <ul style="display: flex;list-style: none;">
+    
+                        {% if page_obj.has_previous %}<!-- 이전으로 버튼-->
+                            <li style="margin:3px"><a style="text-decoration: none; color: black;" href="?page={{page_obj.previous_page_number}}">&#10094; Prev</a></li>
+                        {% endif %}
+    
+                        {% for page in paginator.page_range %}<!-- page숫자 구현부-->
+                            {% if page == page_obj.number %} <!--현재페이지 강조, 색변화-->
+                                <li style="margin:3px"><a style="text-decoration: none; color:#9EA9D7;" href="?page={{page}}">{{page}}</a></li>
+                            {% else %} <!--그 외 (분기문. 야 뭔말인지 알즤)-->
+                                <li style="margin:3px"><a style="text-decoration: none; color: black;" href="?page={{page}}">{{page}}</a></li>
+                            {% endif %}
+                        {% endfor %}
+    
+                        {% if page_obj.has_next %} <!--next버튼-->
+                            <li style="margin:3px"><a style="text-decoration: none; color: black;" href="?page={{page_obj.next_page_number}}">&#10095; Next</a></li>
+                        {% endif %}
+                    </ul>
+                {% endif %}
+            </div> 
     </div>
 </div>
-    
-    <script src="{% static 'js/Notice_main.js' %}"></script>
-    {% endblock %}
+</div>
+</body> 
+<script src="{% static 'js/Notice_main.js' %}"></script>
+{% endblock %}

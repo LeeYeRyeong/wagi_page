@@ -43,6 +43,36 @@ ALLOWED_HOSTS = [
     ".sswu-wagi.com",
     ]
 
+def is_ec2_linux():
+    """Detect if we are running on an EC2 Linux Instance
+       See http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/identify_ec2_instances.html
+    """
+    if os.path.isfile("/sys/hypervisor/uuid"):
+        with open("/sys/hypervisor/uuid") as f:
+            uuid = f.read()
+            return uuid.startswith("ec2")
+    return False
+
+
+def get_linux_ec2_private_ip():
+    """Get the private IP Address of the machine if running on an EC2 linux server"""
+    from urllib.request import urlopen
+    if not is_ec2_linux():
+        return None
+    try:
+        response = urlopen('http://169.254.169.254/latest/meta-data/local-ipv4')
+        ec2_ip = response.read().decode('utf-8')
+        if response:
+            response.close()
+        return ec2_ip
+    except Exception as e:
+        print(e)
+        return None
+        
+private_ip = get_linux_ec2_private_ip()
+if private_ip:
+    ALLOWED_HOSTS.append(private_ip)
+
 
 # Application definition
 
@@ -60,6 +90,7 @@ INSTALLED_APPS = [
     'people',
     'notice',
     'application',
+    'makers',
 ]
 
 MIDDLEWARE = [
@@ -131,7 +162,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -161,7 +192,7 @@ EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 #활동 이미지 파일 업로드
-MEDIA_URL = '/img/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'img')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CLEANUP_KEEP_EXTENSIONS = ['.jpg', '.jpeg', '.png', ...]

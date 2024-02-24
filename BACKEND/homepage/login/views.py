@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
 from django.contrib import auth 
+from django.http import HttpResponse
 
 # Create your views here.
 def login(request):
@@ -22,3 +23,6 @@ def login(request):
 
 def home(request):
     return render(request, 'home.html')
+def health(request):
+    return HttpResponse(status=200)
+

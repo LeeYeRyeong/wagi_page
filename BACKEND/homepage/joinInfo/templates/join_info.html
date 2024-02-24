@@ -1,59 +1,73 @@
 {% extends 'basic.html' %}
 {% load static %}
 {% block content %}
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Apply for Club</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/joinBasicInfo.css' %}">
-</head>
-<body>
-    <div class="info-box" style="background-color: #9EA9D7;">
-        <div class="info-text">
-            지원자 정보
+    <script src="{% static 'js/joinBasicInfo.js' %}"></script>
+
+    <div id="page-wrapper1">
+        <div class="join-title">
+            <img class="star" src="{% static 'img/people/star.png' %}">
+            <h1 class="title1">join</h1>
+        </div>
+        <div class="content">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}
+                style="color: rgb(204, 45, 45); font-size: larger;">{{ message|safe }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        <div id="main-section1">
+            <div class="info-box" style="background-color: #9EA9D7;">
+                <div class="info-text">
+                    지원자 정보
+                </div>
+            </div>
+            <div id="form_box">
+            <form method="post" action="{% url 'apply_club_user_info_view' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-box">
+                    <div class="basic-info">
+                        기본 정보
+                        <span class="required-text">필수</span>
+                    </div>
+                
+                    <div class="input-container">
+                        <!-- 이름 입력 -->
+                        <label for="name" style="color: #999898;">이름</label>
+                        {{ form.user_name }}
+                        <div class="warning-message" id="warningName">{{ form.user_name.errors }}</div>
+
+                        <!-- 학번 입력 -->
+                        <label for="studentID" style="color: #999898;">학번(수험번호)</label>
+                        <input type="text" name="{{ form.user_number.name }}" placeholder="신입생은 무조건 '수험번호'로 입력 바랍니다" id="{{ form.user_number.id_for_label }}" class="input-n">
+                        <div class="warning-message" id="warningStudentID">{{ form.user_number.errors }}</div>
+
+                        <!-- 학과 입력 -->
+                        <label for="id_user_major" style="color: #999898;" class="input-label">학과</label>
+                        {{ form.user_major }}
+                        <div class="warning-message" id="warningDepartment">{{ form.user_major.errors }}</div>
+
+                        <!-- 전화번호 입력 -->
+                        <label for="id_user_phone_number" style="color: #999898;" class="input-label">전화번호('-'없이 입력해 주세요)</label>
+                        {{ form.user_phone_number }}
+                        <div class="warning-message" id="warningPhoneNumber">{{ form.user_phone_number.errors }}</div>
+                        <!--지원서 업로드-->
+                        <label for="id_user_file" id="addFileLabel" style="color: #999898;">지원서 업로드</label>
+                        {{ form.user_file }}
+                        <div class="warning-message" id="warningFile">{{ form.user_file.errors }}</div>
+                        <div class="iffile" id="filePreview" >
+                            <input class="selectedFileName" id="file2" value="" placeholder="선택된 파일이 없습니다." readonly>
+                        </div>
+                    </div>
+                </div>
+                <!-- 지원서 작성하기 버튼 -->
+                <button type="submit" class="enter" id="enter-button">지원서 제출하기</button>
+            </form>
+        </div>
         </div>
     </div>
-
-    <form method="post" action="{% url 'apply_club_user_info_view' %}">
-        {% csrf_token %}
-        <div class="input-box">
-            <div class="basic-info">
-                기본 정보
-                <span class="required-text"> (필수)</span>
-            </div>
-        
-            <div class="input-container">
-                <!-- 이름 입력 -->
-                <label for="name" style="color: #999898;">이름</label>
-                {{ form.user_name }}
-                <div class="warning-message" id="warningName">{{ form.user_name.errors }}</div>
-
-                <!-- 학번 입력 -->
-                <label for="studentID" style="color: #999898;">학번</label>
-                {{ form.user_number }}
-                <div class="warning-message" id="warningStudentID">{{ form.user_number.errors }}</div>
-
-                <!-- 학과 입력 -->
-                <label for="id_user_major" style="color: #999898;" class="input-label">학과</label>
-                {{ form.user_major }}
-                <div class="warning-message" id="warningDepartment">{{ form.user_major.errors }}</div>
-
-                <!-- 전화번호 입력 -->
-                <label for="id_user_phone_number" style="color: #999898;" class="input-label">전화번호('-'없이 입력해 주세요)</label>
-                {{ form.user_phone_number }}
-                <div class="warning-message" id="warningPhoneNumber">{{ form.user_phone_number.errors }}</div>
-            </div>
-        </div>
-
-
-
-        <!-- 지원서 작성하기 버튼 -->
-        <button type="submit" class="enter" id="enter-button">지원서 작성하기</button>
-    </form>
-
-    <!-- Include your JavaScript file -->
+    </div>
     <script src="{% static 'js/joinBasicInfo.js' %}"></script>
 {% endblock %}
-</body>
-</html>

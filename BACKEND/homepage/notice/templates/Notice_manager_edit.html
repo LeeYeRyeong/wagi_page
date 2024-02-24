@@ -9,21 +9,29 @@
         {% csrf_token %}
         <a href="{% url 'notice:notice_list' %}"><div id="notices" class="notice"><span>공지사항</span></div></a>
         <a href="{% url 'notice:notice_create' %}"><input type="button" id="writings" class="writing" value="글 작성"></a>
-        <input type="button" id="regularActivity" name="regularActivity" class="round-button" onclick="updateHiddenValue(this)" value="정기활동">
-        <input type="button" id="event" name="event" class="round-button" onclick="updateHiddenValue(this)" value="행사">
-        <input type="button" id="competition" name="competition" class="round-button" onclick="updateHiddenValue(this)" value="공모전">
+        <input type="button" id="regularActivity" name="정기활동" class="round-button" onclick="updateHiddenValue(this)" value="정기활동">
+        <input type="button" id="event" name="행사" class="round-button" onclick="updateHiddenValue(this)" value="행사">
+        <input type="button" id="competition" name="공모전" class="round-button" onclick="updateHiddenValue(this)" value="공모전">
         <input type="hidden" id="selectedCategory" name="selectedCategory" value="{{ notice.category }}">      
         <div id="writingZone">
-        <textarea id="titleWriting" name="notion_title" rows="4" cols="50" >{{ notice.notion_title }} </textarea>
-        <textarea id="contentsWriting" name="notion_text" rows="10" cols="50" >{{ notice.notion_text }}</textarea>
-        <label for="profile" class="round-button" id="addPhotoLabel">
-            <span>사진추가</span>
-        </label>
-        <input type="file" id="profile" name="image" accept="image/png, image/jpeg"  multiple style="display: none;">
-        <div class="ifimg" id="imagePreview" style="display: none;">    
-            <img class="img_icon" src="{% static 'img/Vector.png' %}" id="selectedImageIcon" alt="Img Icon">
-            <input class="selectedImageName" id="file" value="" placeholder="선택된 사진이 없습니다.">
-        </div>
+            <textarea id="titleWriting" name="notion_title" rows="4" cols="50" >{{ notice.notion_title }} </textarea>
+            <textarea id="contentsWriting" name="notion_text" rows="10" cols="50" >{{ notice.notion_text }}</textarea>
+            <label for="profile" class="round-button" id="addPhotoLabel">
+                <span>사진추가</span>
+            </label>
+            <input type="file" id="profile" name="image" accept="image/png, image/jpeg"  multiple style="display: none;">
+            <div class="ifimg" id="imagePreview">    
+                <img class="img_icon" src="{% static 'img/Vector.png' %}" id="selectedImageIcon" alt="Img Icon">
+                <input class="selectedImageName" id="file" value="" placeholder="선택된 사진이 없습니다." readonly>
+            </div>
+            <label for="profile2" class="round-button" id="addFileLabel">
+                <span>파일추가</span>
+            </label>
+            <input type="file" id="profile2" name="file" multiple style="display: none;">
+            <div class="iffile" id="filePreview" >    
+                <img class="img_icon" src="{% static 'img/Vector.png' %}" id="selectedFileIcon" alt="Img Icon">
+                <input class="selectedFileName" id="file2" value="" placeholder="선택된 파일이 없습니다." readonly>
+            </div>
         </div>
         <input type="submit" id="signUp" value="등록하기">
     </form>

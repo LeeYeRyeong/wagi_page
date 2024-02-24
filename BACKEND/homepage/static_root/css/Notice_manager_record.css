@@ -1,3 +1,9 @@
+@media (min-width: 451px){
+
+    #Notice_title{
+        display: none;
+    }
+    
 #notices {
     margin-left: 130px;
     margin-top: 40px;
@@ -10,6 +16,7 @@
     text-align: center;
     color: black;
 }
+
 
 #writings {
     position: relative;
@@ -28,7 +35,7 @@
 #writingZone {
     position: absolute; 
     width: 80%;
-    height: 514px;
+    height: 540px;
     top: 288px;
     left: 133px;
     border-radius: 20px;
@@ -38,7 +45,7 @@
 
 #titleWriting {
     position: absolute;
-    width: 95%;
+    width: 91%;
     height: 50px;
     padding-top: 12px;
     padding-left: 20px;
@@ -62,16 +69,14 @@
     color: black;
     border-radius: 20px;
     z-index: 30;
-    overflow: hidden;
-    display: flex; 
-    flex-direction: column; 
+    overflow: scroll;
 }
 
 #contentsWriting textarea {
     resize: none;
     border: none;
     width: 100%;
-    height: 30%; 
+    height: 70%; 
     box-sizing: border-box;
     margin-left: 20px;
     margin-top: 12px;
@@ -92,11 +97,41 @@
 
 #imageContainer li {
     margin-right: 10px; 
-}/*사진간에 간격조절하는거에여 맘에 안든다면 맘껏 수정해주세요 -88guri-*/
+}/*ì‚¬ì§„ê°„ì— ê°„ê²©ì¡°ì ˆí•˜ëŠ”ê±°ì—ì—¬ ë§˜ì— ì•ˆë“ ë‹¤ë©´ ë§˜ê» ìˆ˜ì •í•´ì£¼ì„¸ìš” -88guri-*/
 
 #imageContainer img {
     width: 100%; 
     height: auto;
+}
+
+#fileContainer {
+    overflow-x: auto; 
+    white-space: nowrap; 
+    margin-left: 15px;
+    display: block;
+    position: absolute;
+    bottom: 5%;
+}
+
+#fileContainer ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: block;
+}
+
+#fileContainer li {
+    margin-top: 7px; 
+}/*ì‚¬ì§„ê°„ì— ê°„ê²©ì¡°ì ˆí•˜ëŠ”ê±°ì—ì—¬ ë§˜ì— ì•ˆë“ ë‹¤ë©´ ë§˜ê» ìˆ˜ì •í•´ì£¼ì„¸ìš” -88guri-*/
+
+#fileContainer a {
+    width: 100%; 
+    height: auto;
+    color: black;
+    font-size: 12px;
+}
+#file_star{
+    margin-right: 10px;
 }
 textarea:focus{
     outline: none;
@@ -119,7 +154,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 100;
+    z-index: 40;
 }
 
 #event {
@@ -135,7 +170,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 100;
+    z-index: 40;
 }
 
 #competition {
@@ -151,7 +186,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 100;
+    z-index: 40;
 }
 
 #editButton {
@@ -188,7 +223,7 @@ textarea:focus{
     justify-content: center;
     color: black;
     background-color: white;
-    z-index: 100;
+    z-index: 40;
     display: inline-block;
     padding-left: 18px;
 
@@ -197,7 +232,7 @@ textarea:focus{
     position: relative;
     color: black;
     font-size:10px;
-    z-index: 100;
+    z-index: 40;
     display: inline-block;
 
 }
@@ -235,3 +270,280 @@ textarea:focus{
     border-radius: 20px;
     background-color: white;
 }
+
+#firstLine{
+    display: none;
+}
+
+#secondLine{
+    display:none;
+
+}
+
+.category {
+    display: none;
+}
+
+}
+
+ 
+@media (max-width: 450px){
+    *{ font-family: 'Spoqa Han Sans Neo', 'sans-serif'; }
+    
+        #Notice_title{
+            margin-top: 5%;
+            margin-left: 20px;
+        }
+    
+        #star{
+            margin-top: 6px;
+            margin-right: 5px;
+            width: 18px;
+            height: 18px;
+            float: left;
+        }
+    
+        #title{
+            display: inline;
+            font-size:20px;
+        }
+
+        #notices {
+            display:none;
+        }
+        
+        
+        #writings {
+            display:none;
+        }
+        
+        #writingZone {
+            position: absolute; 
+            width: 90%;
+            height: 475px;
+            top: 170px;
+            left: 21px;
+            border-radius: 20px;
+            background-color: white;
+            z-index: 10;
+        }
+    
+        #titleWriting {
+            position: absolute;
+            width: 70%;
+            height: 50px;
+            padding-top: 12px;
+            top: 8px;
+            left: 90px;
+            border: none;
+            color: black;
+            border-radius: 20px;
+            z-index: 30;
+            resize: none;
+        }
+        
+        #contentsWriting {
+            position: absolute;
+            width: 90%;
+            height: 370px;
+            top: 85px;
+            left: 15px;
+            border:none;
+            color: black;
+            border-radius: 20px;
+            z-index: 30;
+            overflow: scroll;
+        }
+        
+        #contentsWriting textarea {
+            resize: none;
+            border: none;
+            width: 100%;
+            height: 50%; 
+            box-sizing: border-box;
+            margin-left: 1px;
+            margin-top: 12px;
+        }
+
+        #imageContainer {
+            white-space: nowrap;
+            margin-left: 15px;
+            margin-top: 70px;
+            overflow-x: scroll;
+        }
+
+        #imageContainer ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: flex;
+        }
+
+        #imageContainer li {
+            box-sizing: content-box; 
+        }
+
+        #imageContainer img {
+            width: calc(100% - 20px); 
+            height: auto;
+            margin-right: 280px; 
+        }
+
+        #imageContainer::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        
+        #imageContainer::-webkit-scrollbar-thumb {
+            background-color: #9EA9D7; 
+            border-radius: 6px; 
+        }
+        
+        #imageContainer::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        #fileContainer {
+            overflow-x: auto; 
+            white-space: nowrap; 
+            margin-left: 15px;
+            display: block;
+            position: absolute;
+            bottom: 5%;
+        }
+        
+        #fileContainer ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            display: block;
+        }
+        
+        #fileContainer li {
+            margin-top: 7px; 
+        }/*ì‚¬ì§„ê°„ì— ê°„ê²©ì¡°ì ˆí•˜ëŠ”ê±°ì—ì—¬ ë§˜ì— ì•ˆë“ ë‹¤ë©´ ë§˜ê» ìˆ˜ì •í•´ì£¼ì„¸ìš” -88guri-*/
+        
+        #fileContainer a {
+            width: 100%; 
+            height: auto;
+            color: black;
+            font-size: 12px;
+        }
+        #file_star{
+            margin-right: 10px;
+        }
+
+        textarea:focus{
+            outline: none;
+        }
+        
+        #realContent{
+            margin-bottom: 80px;
+        }
+        
+        #regularActivity {
+            display:none;
+        }
+        
+        #event {
+            display:none;
+        }
+        
+        #competition {
+            display:none;
+        }
+        
+        #editButton {
+            display:none;
+        }
+        #datePart{
+            width: auto;
+            height: 30px;
+            position: absolute;
+            top: 212px;
+            left: 90px;
+            padding-top: 10px;
+        }
+
+        #date {
+            position: relative;
+            font-size: 80%;
+            top: 10px;
+            left: -70px;
+            border: none;
+            color: black;
+            z-index: 100;
+            padding-left: 18px;
+            }
+
+        #realDate{
+            width:110px;
+            top:12px;
+            position: absolute;
+            color: black;
+            font-size:10px;
+            z-index: 100;
+            display: inline-block;
+        
+        }
+        
+        #regularActivity {
+            margin-left: 20px;
+        }
+        
+        #event {
+            margin-left: 20px;
+        }
+        
+        #competition {
+            margin-left: 20px;
+        }
+        
+        #regularActivityContent,
+        #eventContent,
+        #competitionContent {
+            position: absolute;
+           
+        }
+        
+        
+        #allContent,
+        #regularActivityContent,
+        #eventContent,
+        #competitionContent {
+            position: absolute;
+            width: 1014px;
+            height: 475px;
+            top: 327px;
+            left: 133px;
+            border-radius: 20px;
+            background-color: white;
+        }
+
+        #firstLine{
+            width: 320px;
+            top: 30px;
+            left: 10px;
+            border-bottom: 1.4px solid black;
+            position: absolute;
+            z-index:100;
+        }
+
+        #secondLine{
+            width: 320px;
+            top: 65px;
+            left: 10px;
+            border-bottom: 1.4px solid black;
+            position: absolute;
+            z-index: 100;
+        }
+
+        .category {
+            top: 60px;
+            left: 40px;
+            color: #9EA9D7;
+            border: 0.8px solid #9EA9D7;
+            position: relative;
+            z-index:100;
+            font-size: 60%;
+        }
+    }        

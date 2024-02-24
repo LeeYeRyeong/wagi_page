@@ -1,0 +1,55 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People List</title>
+    <link rel="stylesheet" href="{% static 'css/people.css' %}">
+    <link rel="stylesheet" href="https:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
+    <script src="{% static 'js/people_1.js' %}"></script>
+</head>
+<body>
+    <div class="People-title">
+        <img class="star" src="..\static\img\people\star.svg" alt="별">
+        <h1 class="title">People</h1>
+    </div>
+    <div class = "seoson">
+        <a href="{% url 'show_people_2' %}" class = "seoson2">2기</a>
+        <a href="{% url 'show_people_1' %}" class = "seoson1"style="color: #9EA9D7; text-decoration: underline #9EA9D7 ;">1기</a>        
+    </div>
+
+    <div class ="center">
+
+        {% for person in peopleData %}
+        <div class = "L_bubble">
+
+            <div class = "L_photo"></div>
+
+            <h1 class="L_name"></h1>
+            <div class = "L_link">  </div>
+            
+            
+
+            <h2 class ="L_text" > </h1>
+        </div>
+
+        <div class = "R_bubble">
+            <div class = "R_photo"></div>
+            <div class = "R_link" class = "m_link"></div>
+            <div class="R_name"> </div>
+            <div class = "R_link" class = "p_link"></div>
+            
+            <div class ="R_text" ></div>
+
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
+
+{% endblock %}
