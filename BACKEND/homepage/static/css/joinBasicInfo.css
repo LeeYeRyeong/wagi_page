@@ -10,8 +10,8 @@ input {
     position: absolute;
     width: 188px;
     height: 60px;
-    top: 185px;
-    left: 200px;
+    top: 20%;
+    left: 13%;
     background-color: #e0e0e0;
     border: 1px solid #000000;
     border-radius: 20px;
@@ -23,17 +23,19 @@ input {
 }
 
 .info-text {
-    font-size: 14px;
+    font-size: 23px;
     background-color: #9EA9D7;
     color: black;
+    font-weight: 600;
 }
 
 .input-box {
     position: absolute;
-    width: 80%;
-    height: 520px;
-    top: 271px;
-    left: 200px; /* 변경된 위치 */
+    width: 74%;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
     border: 1px solid #000000;
     border-radius: 20px;
     box-sizing: border-box;
@@ -48,7 +50,7 @@ input {
 
 .input-container {
     margin-top: 10px;
-    width: 100%;
+    width: 98%;
     box-sizing: border-box;
 }
 
@@ -69,20 +71,17 @@ label {
 
 
 .basic-info {
-    font-size: 16px;
+    font-size: 21px;
     margin-bottom: 10px;
-    padding-left: 0; /* 왼쪽 여백 제거 */
-margin-left: 0; /* 왼쪽 여백 제거 */
-background-color: white;
-color: black;
-    
+    padding-left: 0; 
+    margin-left: 0; 
+    background-color: white;
+    color: black;
+    position: absolute;
+    left: 3%;
+    font-weight: 500;
 }
 
-.required-text {
-    font-size: 12px;
-    color: red;
-    background-color: white;
-}
 
 .confirm-button {
     position: absolute;
@@ -108,11 +107,15 @@ color: black;
   width: 375px;
   height: 65px;
   position:absolute;
-  top: 800px;
-  left: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 500%);
   border-radius: 20px;
   background-color:  #9EA9D7;
   cursor: pointer;
+  border-style: none;
+  font-size: 23px;
+  font-weight: 600;
 
 }
 
@@ -175,7 +178,7 @@ input {
 
 label {
     transition: 0.3s;
-    font-size: 16px;
+    font-size: 19px;
     color: #333;
     transform: translateY(14px);
     
@@ -203,9 +206,9 @@ input:focus {
     margin-top: 5px;
 }
 
-  /* 추가된 스타일 */
+
   .input-error {
-    background-color: #FFB6C1; /* 빨간 배경색 */
+    background-color: #FFB6C1; 
     color: red;
 }
 
@@ -234,15 +237,8 @@ input:focus {
 #id_user_file{
     display: none;
 }
-.input-n {
-    padding-top: 15px;
-    font-size: 13px;
-    
-}
 
-.input-n:focus {
-    font-size: 20px; /* 입력된 텍스트 색상 */
-}
+
 
 @media (max-width : 450px) {
     #page-wrapper {
