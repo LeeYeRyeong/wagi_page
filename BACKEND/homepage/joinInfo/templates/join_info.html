@@ -21,17 +21,13 @@
         <div id="main-section1">
             <div class="info-box" style="background-color: #9EA9D7;">
                 <div class="info-text">
-                    지원자 정보
+                    지원서 작성
                 </div>
             </div>
             <div id="form_box">
             <form method="post" action="{% url 'apply_club_user_info_view' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="input-box">
-                    <div class="basic-info">
-                        기본 정보
-                        <span class="required-text">필수</span>
-                    </div>
                 
                     <div class="input-container">
                         <!-- 이름 입력 -->
@@ -41,7 +37,7 @@
 
                         <!-- 학번 입력 -->
                         <label for="studentID" style="color: #999898;">학번(수험번호)</label>
-                        <input type="text" name="{{ form.user_number.name }}" placeholder="신입생은 무조건 '수험번호'로 입력 바랍니다" id="{{ form.user_number.id_for_label }}" class="input-n">
+                        <input type="number" name="{{ form.user_number.name }}" placeholder="신입생은 무조건 '수험번호'로 입력 바랍니다" id="{{ form.user_number.id_for_label }}" class="input-n">
                         <div class="warning-message" id="warningStudentID">{{ form.user_number.errors }}</div>
 
                         <!-- 학과 입력 -->
@@ -54,7 +50,7 @@
                         {{ form.user_phone_number }}
                         <div class="warning-message" id="warningPhoneNumber">{{ form.user_phone_number.errors }}</div>
                         <!--지원서 업로드-->
-                        <label for="id_user_file" id="addFileLabel" style="color: #999898;">지원서 업로드</label>
+                        <label for="id_user_file" class="input-label" id="addFileLabel" style="color: #999898;">지원서 업로드</label>
                         {{ form.user_file }}
                         <div class="warning-message" id="warningFile">{{ form.user_file.errors }}</div>
                         <div class="iffile" id="filePreview" >

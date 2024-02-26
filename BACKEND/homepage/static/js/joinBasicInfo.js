@@ -85,11 +85,9 @@ function validateInput(input) {
 
 function handleInput(input) {
   if (input.value.trim() !== '') {
-      input.previousElementSibling.style.fontSize = '12px';
       input.previousElementSibling.style.color = '#999898';
       input.style.borderBottom = '2px solid #000';
   } else {
-      input.previousElementSibling.style.fontSize = '16px';
       input.previousElementSibling.style.color = '#999898';
       input.style.borderBottom = '1px solid #333';
   }
@@ -114,6 +112,11 @@ document.addEventListener('DOMContentLoaded', function() {
               this.previousElementSibling.classList.remove('input-error');
               this.nextElementSibling.innerHTML = '';
           }
+          if (this.files.length > 0) {
+              this.classList.remove('input-error');
+              this.previousElementSibling.classList.remove('input-error');
+              this.nextElementSibling.innerHTML = '';
+        }
       });
   });
 });
@@ -184,11 +187,9 @@ function validateInput(input) {
 
 function handleInput(input) {
   if (input.value.trim() !== '') {
-      input.previousElementSibling.style.fontSize = '12px';
       input.previousElementSibling.style.color = '#999898';
       input.style.borderBottom = '2px solid #000';
   } else {
-      input.previousElementSibling.style.fontSize = '16px';
       input.previousElementSibling.style.color = '#999898';
       input.style.borderBottom = '1px solid #333';
   }
