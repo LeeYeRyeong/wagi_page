@@ -60,6 +60,8 @@
     font-weight: bold;
     font-size: 20px;
     margin-top: 10px;
+    color: black;
+
 }
 .modal_unavailable{
     position:absolute;
@@ -278,7 +280,6 @@
         font-size: 18px;
         margin-top: 10px;
         margin-left: 7.5vw;
-        color: black;
     }
     .imgWagi {
         width: 155px;
