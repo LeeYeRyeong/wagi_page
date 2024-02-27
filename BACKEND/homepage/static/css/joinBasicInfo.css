@@ -289,10 +289,7 @@ input:focus {
     
     .input-box {
         width: 90vw;
-        height: 433px;
-        margin: 5vw;
-        position: static;
-        border: 1px solid #000000;
+        height: 470px;
         border-radius: 20px;
         box-sizing: border-box;
         padding: 20px;
@@ -300,7 +297,9 @@ input:focus {
         flex-direction: column;
         align-items: center;
         color: black;
-        
+        background-color: white;
+        top: 150px;
+        transform: translate(-50%, 0);
     }
     
     .input-container {
@@ -366,17 +365,12 @@ input:focus {
     }
     
     
-    .input-box{
-    background-color: white;
-    height: 72vh;
-    }
-    
     .enter{
       width: 65vw;
       height: 43px;
-      margin-left: 17.5vw;
       border: none;
-      position: static;
+      transform: translate(-50%, 0);
+      top: 635px;
       border-radius: 20px;
       background-color: white;
       cursor: pointer;
@@ -435,7 +429,7 @@ input:focus {
     }
     
     input {
-        font-size: 20px;
+        font-size: 15px;
         padding: 5px;
         margin-top: 1px;
         border: none;
