@@ -6,24 +6,28 @@ from django.core.mail import EmailMessage
 from django.http import JsonResponse
 
 #  join 버튼 눌렀을 떄
+from datetime import datetime
+
 def join_button(request):
-    current_date = date.today() # 현재 날짜
-    start_j_date = date(2024, 2, 20) # 지원서 제출 시작 날짜
-    end_j_date = date(2024, 3, 5) # 지원서 제 출 끝나는 날짜
-    start_r_date = date(2024, 3, 6) # 합격자 조회 시작 날짜
-    end_r_date = date(2024, 3, 7) # 합격자 조회 끝나는 날짜
+    current_datetime = datetime.now()  # 현재 날짜와 시간
+    start_j_datetime = datetime(2024, 2, 20)  # 지원서 제출 시작 날짜와 시간
+    end_j_datetime = datetime(2024, 3, 5)  # 지원서 제출 끝나는 날짜와 시간
+    start_r_datetime = datetime(2024, 3, 6)  # 합격자 조회 시작 날짜와 시간
+    end_r_datetime = datetime(2024, 3, 7)  # 합격자 조회 끝나는 날짜와 시간
     isDate = 0
-    if start_j_date <= current_date <= end_j_date: # 지원서 제출 기간
+
+    if start_j_datetime <= current_datetime <= end_j_datetime:  # 지원서 제출 기간
         isDate = 1
-        return render(request, 'inquiry.html',{'isDate':isDate})
-    elif start_r_date <= current_date <= end_r_date: # 합격자 조회 기간
+        return render(request, 'inquiry.html', {'isDate': isDate})
+    elif start_r_datetime <= current_datetime <= end_r_datetime:  # 합격자 조회 기간
         isDate = 2
-        return render(request, 'inquiry.html',{'isDate':isDate})
+        return render(request, 'inquiry.html', {'isDate': isDate})
     else:
         isDate = 0
-        if request.method=='GET':
-            data={'result':'show',}
+        if request.method == 'GET':
+            data = {'result': 'show', }
             return JsonResponse(data)
+
 
 # 메일 입력 받음
 def writeMail(request):
