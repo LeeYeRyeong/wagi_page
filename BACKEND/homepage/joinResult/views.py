@@ -12,8 +12,8 @@ def join_button(request):
     current_datetime = datetime.now()  # 현재 날짜와 시간
     start_j_datetime = datetime(2024, 2, 20)  # 지원서 제출 시작 날짜와 시간
     end_j_datetime = datetime(2024, 3, 5)  # 지원서 제출 끝나는 날짜와 시간
-    start_r_datetime = datetime(2024, 3, 10, 15)  # 합격자 조회 시작 날짜와 시간
-    end_r_datetime = datetime(2024, 3, 13)  # 합격자 조회 끝나는 날짜와 시간
+    start_r_datetime = datetime(2024, 3, 5, 20, 35)  # 합격자 조회 시작 날짜와 시간
+    end_r_datetime = datetime(2024, 3, 5, 20, 37)  # 합격자 조회 끝나는 날짜와 시간
     isDate = 0
 
     if start_j_datetime <= current_datetime <= end_j_datetime:  # 지원서 제출 기간
