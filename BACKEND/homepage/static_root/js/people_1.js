@@ -192,11 +192,11 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
     
-      var Y = 100;
+      var Y = 120;
   
       window.addEventListener('scroll', function () {
         var winY = window.scrollY;
-        if (winY > Y*1.2) {
+        if (winY > Y*1.4) {
           const person = peopleData[visibleBubbles];
           createBubble(person, visibleBubbles % 2 === 0);
           visibleBubbles++;
