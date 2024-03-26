@@ -10,7 +10,7 @@
         left: 50%;
         margin-left: -195px;
         position: relative;  
-        margin-top: 8%;
+        margin-top: 3%;
         overflow: hidden;
         color: black;
     }
@@ -207,7 +207,7 @@
     }
     
 }
-
+/*pc*/
 @media (min-width : 450px) {
     body {
         background-color: black;
@@ -216,7 +216,7 @@
     }
     
     .People-title{
-        margin-top: 5%;
+        margin-top: 3%;
         margin-left: 80px;
     }
     .star{
@@ -255,7 +255,7 @@
         left: 50%;
         top: 100px;
         margin-left: -400px;
-        margin-top: 8%;
+        margin-top: 3%;
         overflow: hidden;
         color: black;
       }
@@ -301,7 +301,7 @@
         float: inline-start;
         text-align: center;
         font-weight: bold ;
-        margin-left: 3px;
+        margin-left: -8px;
         font-size: 18px;
         overflow: visible;  
         margin-top: -10px;

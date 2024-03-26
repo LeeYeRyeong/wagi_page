@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link_1: "https://github.com/kdy09687",
       },
       
+      
     ];
 
     //모바일일때 js
