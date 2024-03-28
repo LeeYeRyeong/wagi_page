@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
       name: "김다인",
       photo: "../static/img/people/김다인.png",
       bio: "컴공여신 잇츠미",
-      link_1: "https://github.com/daaaaain",
+      link_1: "https://github.com/daaaaaaain",
     },
     {
       name: "백수진",
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
       name: "고은희",
       photo: "../static/img/people/고은희.png",
       bio: "와기야 왜 자꾸 칭얼거려",
-      link_1: "https://github.com/qumaux",
+      link_1: "https://github.com/qumaux24",
     },
     {
       name: "김채연",
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
     {
       name: "김예은",
       photo: "../static/img/people/김예은.png",
-      bio: " ",
+      bio: " : > ",
       link_1: "https://github.com/yyen0",
     },
     {
